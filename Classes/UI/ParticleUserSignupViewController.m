@@ -12,7 +12,7 @@
 #import <OnePasswordExtension/OnePasswordExtension.h>
 #else
 #import "Particle-SDK.h"
-#import <1PasswordExtension/OnePasswordExtension.h>
+#import <OnePasswordExtension/OnePasswordExtension.h>
 #endif
 #import "ParticleUserLoginViewController.h"
 #import "ParticleSetupWebViewController.h"

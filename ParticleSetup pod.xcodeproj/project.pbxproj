@@ -10,7 +10,6 @@
 		4E5EB2B6B32932F37C3A9A43 /* libPods-ParticleSetup.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 12F8565380E77481E5452695 /* libPods-ParticleSetup.a */; };
 		5014ED4F1CB7268A00A1063E /* ParticleSetupCustomization.h in Headers */ = {isa = PBXBuildFile; fileRef = 509081E01ACF6AF70014E7DF /* ParticleSetupCustomization.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5014ED501CB7268E00A1063E /* ParticleSetupMainController.h in Headers */ = {isa = PBXBuildFile; fileRef = 509081E21ACF6AF70014E7DF /* ParticleSetupMainController.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5061B6CA1EC692EC00EA482E /* ParticleSetupVideoViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 5061B6C81EC692EC00EA482E /* ParticleSetupVideoViewController.h */; };
 		5061B6CB1EC692EC00EA482E /* ParticleSetupVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5061B6C91EC692EC00EA482E /* ParticleSetupVideoViewController.m */; };
 		506C6FE61AD32E1C009D8498 /* ParticleSetupUIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 506C6FE41AD32E1C009D8498 /* ParticleSetupUIViewController.m */; };
 		509081B21ACF6A8A0014E7DF /* setup.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 509081AF1ACF6A8A0014E7DF /* setup.xcassets */; };
@@ -34,14 +33,12 @@
 		509081F61ACF6AF70014E7DF /* ParticleSetupUISpinner.m in Sources */ = {isa = PBXBuildFile; fileRef = 509081DE1ACF6AF70014E7DF /* ParticleSetupUISpinner.m */; };
 		509081F71ACF6AF70014E7DF /* ParticleSetupCustomization.m in Sources */ = {isa = PBXBuildFile; fileRef = 509081E11ACF6AF70014E7DF /* ParticleSetupCustomization.m */; };
 		509081F81ACF6AF70014E7DF /* ParticleSetupMainController.m in Sources */ = {isa = PBXBuildFile; fileRef = 509081E31ACF6AF70014E7DF /* ParticleSetupMainController.m */; };
-		50CAA4C31BA27D70002FEF0F /* ParticleSetupWifiTableViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 50CAA4C11BA27D70002FEF0F /* ParticleSetupWifiTableViewCell.h */; };
 		50CAA4C41BA27D70002FEF0F /* ParticleSetupWifiTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 50CAA4C21BA27D70002FEF0F /* ParticleSetupWifiTableViewCell.m */; };
 		50D095991AD5BB6E008EDBD7 /* ParticleSetup.h in Headers */ = {isa = PBXBuildFile; fileRef = 50D095981AD5BB6E008EDBD7 /* ParticleSetup.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		50E01B041B7AFC510020714F /* ParticleSetupResultViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 50E01B021B7AFC510020714F /* ParticleSetupResultViewController.h */; };
 		50E01B051B7AFC510020714F /* ParticleSetupResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50E01B031B7AFC510020714F /* ParticleSetupResultViewController.m */; };
-		50E840BC1E95FC890038ED42 /* Particle-SDK.h in Headers */ = {isa = PBXBuildFile; fileRef = 50E840BB1E95FC890038ED42 /* Particle-SDK.h */; };
-		50E840BE1E95FC960038ED42 /* ParticleCloud.h in Headers */ = {isa = PBXBuildFile; fileRef = 50E840BD1E95FC960038ED42 /* ParticleCloud.h */; };
-		50E840C01E95FC9E0038ED42 /* ParticleDevice.h in Headers */ = {isa = PBXBuildFile; fileRef = 50E840BF1E95FC9E0038ED42 /* ParticleDevice.h */; };
+		50E840BC1E95FC890038ED42 /* Particle-SDK.h in Headers */ = {isa = PBXBuildFile; fileRef = 50E840BB1E95FC890038ED42 /* Particle-SDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		50E840BE1E95FC960038ED42 /* ParticleCloud.h in Headers */ = {isa = PBXBuildFile; fileRef = 50E840BD1E95FC960038ED42 /* ParticleCloud.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		50E840C01E95FC9E0038ED42 /* ParticleDevice.h in Headers */ = {isa = PBXBuildFile; fileRef = 50E840BF1E95FC9E0038ED42 /* ParticleDevice.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		50EECD9F1CEE8ABF00192EF9 /* ParticleSetup.bundle in CopyFiles */ = {isa = PBXBuildFile; fileRef = 509080DC1ACF494A0014E7DF /* ParticleSetup.bundle */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 /* End PBXBuildFile section */
 
@@ -172,7 +169,7 @@
 			children = (
 				50D095981AD5BB6E008EDBD7 /* ParticleSetup.h */,
 				5018DC4A1ADC862E00ADD403 /* ParticleSetup-Bridging-Header.h */,
-				509082031ACF71500014E7DF /* Spark-SDK Headers */,
+				509082031ACF71500014E7DF /* Particle-SDK Headers */,
 				509081B51ACF6AF70014E7DF /* Comm */,
 				509081BE1ACF6AF70014E7DF /* UI */,
 				509081DF1ACF6AF70014E7DF /* User */,
@@ -270,14 +267,14 @@
 			path = Classes/User;
 			sourceTree = SOURCE_ROOT;
 		};
-		509082031ACF71500014E7DF /* Spark-SDK Headers */ = {
+		509082031ACF71500014E7DF /* Particle-SDK Headers */ = {
 			isa = PBXGroup;
 			children = (
 				50E840BB1E95FC890038ED42 /* Particle-SDK.h */,
 				50E840BD1E95FC960038ED42 /* ParticleCloud.h */,
 				50E840BF1E95FC9E0038ED42 /* ParticleDevice.h */,
 			);
-			name = "Spark-SDK Headers";
+			name = "Particle-SDK Headers";
 			path = ..;
 			sourceTree = "<group>";
 		};
@@ -319,14 +316,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				50E840BE1E95FC960038ED42 /* ParticleCloud.h in Headers */,
-				50E01B041B7AFC510020714F /* ParticleSetupResultViewController.h in Headers */,
-				5061B6CA1EC692EC00EA482E /* ParticleSetupVideoViewController.h in Headers */,
 				50E840C01E95FC9E0038ED42 /* ParticleDevice.h in Headers */,
-				50CAA4C31BA27D70002FEF0F /* ParticleSetupWifiTableViewCell.h in Headers */,
+				50E840BC1E95FC890038ED42 /* Particle-SDK.h in Headers */,
 				5014ED501CB7268E00A1063E /* ParticleSetupMainController.h in Headers */,
 				5014ED4F1CB7268A00A1063E /* ParticleSetupCustomization.h in Headers */,
 				50D095991AD5BB6E008EDBD7 /* ParticleSetup.h in Headers */,
-				50E840BC1E95FC890038ED42 /* Particle-SDK.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -392,7 +386,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 509080B91ACF46600014E7DF /* Build configuration list for PBXProject "ParticleSetup" */;
+			buildConfigurationList = 509080B91ACF46600014E7DF /* Build configuration list for PBXProject "ParticleSetup pod" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -448,7 +442,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-ParticleSetup/Pods-ParticleSetup-resources.sh",
-				"$PODS_CONFIGURATION_BUILD_DIR/1PasswordExtension/OnePasswordExtensionResources.bundle",
+				$PODS_CONFIGURATION_BUILD_DIR/1PasswordExtension/OnePasswordExtensionResources.bundle,
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
@@ -647,6 +641,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0F0C037B32A2CEAB8B682E76 /* Pods-ParticleSetup.debug.xcconfig */;
 			buildSettings = {
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				ENABLE_BITCODE = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -693,6 +688,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 00E1D8A324B3981D5C61BC42 /* Pods-ParticleSetup.release.xcconfig */;
 			buildSettings = {
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				ENABLE_BITCODE = YES;
 				LD_QUOTE_LINKER_ARGUMENTS_FOR_COMPILER_DRIVER = YES;
 				LIBRARY_SEARCH_PATHS = (
@@ -733,7 +729,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		509080B91ACF46600014E7DF /* Build configuration list for PBXProject "ParticleSetup" */ = {
+		509080B91ACF46600014E7DF /* Build configuration list for PBXProject "ParticleSetup pod" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				509080D01ACF46600014E7DF /* Debug */,

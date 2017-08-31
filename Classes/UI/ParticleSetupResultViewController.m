@@ -6,12 +6,12 @@
 //  Copyright (c) 2015 spark. All rights reserved.
 //
 
+#import "ParticleSetupResultViewController.h"
 #ifdef FRAMEWORK
 #import <ParticleSDK/ParticleSDK.h>
 #else
 #import "Particle-SDK.h"
 #endif
-#import "ParticleSetupResultViewController.h"
 #import "ParticleSetupUIElements.h"
 #import "ParticleSetupMainController.h"
 #import "ParticleSetupWebViewController.h"
