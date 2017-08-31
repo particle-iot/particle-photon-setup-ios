@@ -266,7 +266,7 @@
         }
         else
         {
-            if ([SparkSetupCustomization sharedInstance].organization) {
+            if ([ParticleSetupCustomization sharedInstance].organization) {
                 NSException* deprecationException = [NSException
                                                      exceptionWithName:@"OrganizationModeDeprecated"
                                                      reason:@"You can no longer use orgnaization mode, set productMode to true and set your productId"
