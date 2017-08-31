@@ -4,7 +4,7 @@
 
 # Particle Device Setup library (beta)
 
-[![Platform](https://img.shields.io/badge/platform-iOS-10a4fa.svg)]() [![license](https://img.shields.io/hexpm/l/plug.svg)]() [![version](https://img.shields.io/badge/pod-0.6.1-green.svg)]() [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+[![Platform](https://img.shields.io/badge/platform-iOS-10a4fa.svg)]() [![license](https://img.shields.io/hexpm/l/plug.svg)]() [![version](https://img.shields.io/badge/pod-0.8.0-green.svg)]() [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
 
 The Particle Device Setup library is meant for integrating the initial setup process of Particle devices in your app.
@@ -33,7 +33,7 @@ and then invoke the device setup wizard by:
 
 ```objc
 ParticleSetupMainController *setupController = [[ParticleSetupMainController alloc] init];
-setupController.delegate = self; // why? see "Advanced" section below 
+setupController.delegate = self; // why? see "Advanced" section below
 [self presentViewController:setupController animated:YES completion:nil];
 ```
 
@@ -65,16 +65,16 @@ if let setupController = ParticleSetupMainController(authenticationOnly: true)
 }
 ```
 
-This will invoke Particle Cloud authentication (login/signup/password recovery screens) only 
-after user has successfully logged in or signed up, control will be returned to the calling app. 
+This will invoke Particle Cloud authentication (login/signup/password recovery screens) only
+after user has successfully logged in or signed up, control will be returned to the calling app.
 If an active user session already exists control will be returned immediately.
 
 #### Configure device Wi-Fi credentials without claiming it
 
-If your app requires the ability to let users configure device Wi-Fi credentials without changing its ownership you can also do that via `initWithSetupOnly`, 
+If your app requires the ability to let users configure device Wi-Fi credentials without changing its ownership you can also do that via `initWithSetupOnly`,
 and by allowing your users to skip authentication (see `allowSkipAuthentication` flag in customization section) if you present the authentication stage.
-If an active user session exists - it'll be used and device will be claimed, otherwise it won't. 
-So invoking setup without an active user session will go thru the setup steps required for configuring device Wi-Fi credentials but not for claiming it. 
+If an active user session exists - it'll be used and device will be claimed, otherwise it won't.
+So invoking setup without an active user session will go thru the setup steps required for configuring device Wi-Fi credentials but not for claiming it.
 However, calling `-initWithSetupOnly:` method with an active user session is essentially the same as calling `-init:`.
 Usage:
 
@@ -104,13 +104,13 @@ For additional information read [here](https://github.com/AgileBits/onepassword-
 ### Customization
 
 Customize setup look and feel by accessing the `ParticleSetupCustomization` singleton appearance proxy `[ParticleSetupCustomization sharedInstance]`
-and modify its default properties. Setting the properties in this class is optional. 
-These properies are shown in Objective-C syntax for convenience but work the same for Swift projects - use `String`, `Bool` instead of `NSString` and `BOOL`. 
+and modify its default properties. Setting the properties in this class is optional.
+These properies are shown in Objective-C syntax for convenience but work the same for Swift projects - use `String`, `Bool` instead of `NSString` and `BOOL`.
 
 #### Product/brand info:
 
 ```objc
- NSString *deviceName;                  // Device/product name 
+ NSString *deviceName;                  // Device/product name
  UIImage *productImage;                 // Custom product image to display in "Get ready" screen *new*
  NSString *brandName;                   // Your brand name
  UIImage *brandImage;                   // Your brand logo to fit in header of setup wizard screens
@@ -160,7 +160,7 @@ Make sure you inject the `ParticleCloud` class with [scoped OAuth credentials fo
 
 ```objc
  BOOL productMode;              // enable product mode
- NSString *productName;         // product display name 
+ NSString *productName;         // product display name
  NSUInteger productId;			  // Product Id number from Particle console
 ```
 
@@ -208,7 +208,7 @@ func particleSetupViewController(controller: ParticleSetupMainController!, didNo
 
 ### Example
 
-Cocoapods usage example app (in Swift) can be found [here](https://www.github.com/spark/particle-setup-ios-example/). Example app demonstates - invoking the setup wizard, customizing its UI and using the returned ParticleDevice instance once 
+Cocoapods usage example app (in Swift) can be found [here](https://www.github.com/spark/particle-setup-ios-example/). Example app demonstates - invoking the setup wizard, customizing its UI and using the returned ParticleDevice instance once
 setup wizard completes (delegate). Feel free to contribute to the example by submitting pull requests.
 
 ### Reference
@@ -261,7 +261,7 @@ and then run the following command:
 
 *you can also re-use/copy the `bin/setup` shell script in your project, find it [here](https://github.com/spark/particle-setup-ios/blob/master/bin/setup)*
 
-A new folder will be created in your project root folder - when Carthage checkout and builds are done, navigate to the `./Carthage/Build/iOS` folder and drag all the created `.framework`s files into your project in XCode. 
+A new folder will be created in your project root folder - when Carthage checkout and builds are done, navigate to the `./Carthage/Build/iOS` folder and drag all the created `.framework`s files into your project in XCode.
 Go to your XCode target settings->General->Embedded binaries and press `+` and add all the `.framework` files there too - make sure the `ParticleDeviceSetupLibrary.framework`, `ParticleSDK.framework` and the `AFNetworking.framework` are listed there.
 Build your project - you now have the Particle SDK embedded in your project.
 Use `#import <ParticleDeviceSetupLibrary/ParticleDeviceSetupLibrary.h>` in Obj-C files or `import ParticleDeviceSetupLibrary` for Swift files to gain access to `ParticleSetupMainController` (see usage example).

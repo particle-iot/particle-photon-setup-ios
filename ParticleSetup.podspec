@@ -3,10 +3,10 @@ Pod::Spec.new do |s|
     s.version          = "0.8.0"
     s.summary          = "Particle iOS Device Setup library for easy integration of setup process for Particle devices in your app"
     s.description      = <<-DESC
-                        Particle (formerly Particle) Device Setup library for integrating setup process of Particle devices in your app
+                        Particle (formerly Spark) Device Setup library for integrating a customized setup process of Particle Wifi devices in your app
                         This library will allow you to easily invoke a standalone setup wizard UI for setting up
-                        Particle devices (photon) from within your app. Setup UI look & feel can be easily customized with custom brand
-                        logos/colors/fonts/texts and instructional video.
+                        Particle devices (photon/P1) from within your app. Setup UI look & feel can be easily customized with custom brand
+                        logos/colors/fonts/texts and instructional video. Further customization can be done by directly modifying the setup.storyboard file.
                         DESC
     s.homepage         = "https://github.com/spark/spark-setup-ios"
     s.screenshots      = "http://i58.tinypic.com/15yhdeb.jpg"
