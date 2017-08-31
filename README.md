@@ -206,10 +206,13 @@ func particleSetupViewController(controller: ParticleSetupMainController!, didNo
 ```
 
 
-### Example
+### Example code
 
-Cocoapods usage example app (in Swift) can be found [here](https://www.github.com/spark/particle-setup-ios-example/). Example app demonstates - invoking the setup wizard, customizing its UI and using the returned ParticleDevice instance once
-setup wizard completes (delegate). Feel free to contribute to the example by submitting pull requests.
+Cocoapods usage example app can be found [here](https://www.github.com/spark/ios-app-example-pod/).
+Carthage usage example app can be found [here](https://www.github.com/spark/ios-app-example-carthage/).
+
+Example apps demonstrates invoking the setup wizard, customizing the UI and using the returned ParticleDevice instance once, as well as invoking Particle API functions via the Particle-SDK.
+Contributions to the example apps are welcome by submitting pull requests.
 
 ### Reference
 
