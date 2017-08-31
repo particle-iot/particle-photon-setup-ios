@@ -11,7 +11,7 @@
 #ifdef FRAMEWORK
 #import <ParticleSDK/ParticleSDK.h>
 #else
-#import "Particle-SDK.h"
+//#import "Particle-SDK.h"
 #endif
 
 @protocol ParticleUserLoginDelegate <NSObject>

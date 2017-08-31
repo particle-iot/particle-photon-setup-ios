@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		4E5EB2B6B32932F37C3A9A43 /* libPods-ParticleSetup.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 12F8565380E77481E5452695 /* libPods-ParticleSetup.a */; };
+		500638FA1F57FD9A00D09FB2 /* ParticleCloud.h in Headers */ = {isa = PBXBuildFile; fileRef = 500638F71F57FD9A00D09FB2 /* ParticleCloud.h */; };
+		500638FB1F57FD9A00D09FB2 /* ParticleDevice.h in Headers */ = {isa = PBXBuildFile; fileRef = 500638F81F57FD9A00D09FB2 /* ParticleDevice.h */; };
+		500638FE1F57FE4F00D09FB2 /* OnePasswordExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = 500638FD1F57FE4F00D09FB2 /* OnePasswordExtension.h */; };
 		5014ED4F1CB7268A00A1063E /* ParticleSetupCustomization.h in Headers */ = {isa = PBXBuildFile; fileRef = 509081E01ACF6AF70014E7DF /* ParticleSetupCustomization.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5014ED501CB7268E00A1063E /* ParticleSetupMainController.h in Headers */ = {isa = PBXBuildFile; fileRef = 509081E21ACF6AF70014E7DF /* ParticleSetupMainController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5061B6CB1EC692EC00EA482E /* ParticleSetupVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5061B6C91EC692EC00EA482E /* ParticleSetupVideoViewController.m */; };
@@ -36,9 +39,6 @@
 		50CAA4C41BA27D70002FEF0F /* ParticleSetupWifiTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 50CAA4C21BA27D70002FEF0F /* ParticleSetupWifiTableViewCell.m */; };
 		50D095991AD5BB6E008EDBD7 /* ParticleSetup.h in Headers */ = {isa = PBXBuildFile; fileRef = 50D095981AD5BB6E008EDBD7 /* ParticleSetup.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		50E01B051B7AFC510020714F /* ParticleSetupResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50E01B031B7AFC510020714F /* ParticleSetupResultViewController.m */; };
-		50E840BC1E95FC890038ED42 /* Particle-SDK.h in Headers */ = {isa = PBXBuildFile; fileRef = 50E840BB1E95FC890038ED42 /* Particle-SDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		50E840BE1E95FC960038ED42 /* ParticleCloud.h in Headers */ = {isa = PBXBuildFile; fileRef = 50E840BD1E95FC960038ED42 /* ParticleCloud.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		50E840C01E95FC9E0038ED42 /* ParticleDevice.h in Headers */ = {isa = PBXBuildFile; fileRef = 50E840BF1E95FC9E0038ED42 /* ParticleDevice.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		50EECD9F1CEE8ABF00192EF9 /* ParticleSetup.bundle in CopyFiles */ = {isa = PBXBuildFile; fileRef = 509080DC1ACF494A0014E7DF /* ParticleSetup.bundle */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 /* End PBXBuildFile section */
 
@@ -61,6 +61,10 @@
 		12F8565380E77481E5452695 /* libPods-ParticleSetup.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ParticleSetup.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		50016D281F54CA0A007C743A /* libPods-ParticleSetup.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-ParticleSetup.a"; path = "Pods/../build/Debug-iphoneos/libPods-ParticleSetup.a"; sourceTree = "<group>"; };
 		50016D2A1F54CA16007C743A /* libParticle-SDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libParticle-SDK.a"; path = "Pods/../build/Debug-iphoneos/Particle-SDK/libParticle-SDK.a"; sourceTree = "<group>"; };
+		500638F61F57FD9A00D09FB2 /* Particle-SDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Particle-SDK.h"; path = "particle-setup-ios/Pods/Particle-SDK/Pod/Classes/Particle-SDK.h"; sourceTree = "<group>"; };
+		500638F71F57FD9A00D09FB2 /* ParticleCloud.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ParticleCloud.h; path = "particle-setup-ios/Pods/Particle-SDK/Pod/Classes/SDK/ParticleCloud.h"; sourceTree = "<group>"; };
+		500638F81F57FD9A00D09FB2 /* ParticleDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ParticleDevice.h; path = "particle-setup-ios/Pods/Particle-SDK/Pod/Classes/SDK/ParticleDevice.h"; sourceTree = "<group>"; };
+		500638FD1F57FE4F00D09FB2 /* OnePasswordExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OnePasswordExtension.h; path = Pods/1PasswordExtension/OnePasswordExtension.h; sourceTree = "<group>"; };
 		5018DC4A1ADC862E00ADD403 /* ParticleSetup-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = "ParticleSetup-Bridging-Header.h"; path = "Classes/ParticleSetup-Bridging-Header.h"; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		5061B6C81EC692EC00EA482E /* ParticleSetupVideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParticleSetupVideoViewController.h; sourceTree = "<group>"; };
 		5061B6C91EC692EC00EA482E /* ParticleSetupVideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParticleSetupVideoViewController.m; sourceTree = "<group>"; };
@@ -119,9 +123,6 @@
 		50D095981AD5BB6E008EDBD7 /* ParticleSetup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = ParticleSetup.h; path = Classes/ParticleSetup.h; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		50E01B021B7AFC510020714F /* ParticleSetupResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = ParticleSetupResultViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		50E01B031B7AFC510020714F /* ParticleSetupResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = ParticleSetupResultViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
-		50E840BB1E95FC890038ED42 /* Particle-SDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Particle-SDK.h"; path = "spark-setup-ios/Pods/Particle-SDK/Pod/Classes/Particle-SDK.h"; sourceTree = "<group>"; };
-		50E840BD1E95FC960038ED42 /* ParticleCloud.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ParticleCloud.h; path = "spark-setup-ios/Pods/Particle-SDK/Pod/Classes/SDK/ParticleCloud.h"; sourceTree = "<group>"; };
-		50E840BF1E95FC9E0038ED42 /* ParticleDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ParticleDevice.h; path = "spark-setup-ios/Pods/Particle-SDK/Pod/Classes/SDK/ParticleDevice.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +144,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		500638FC1F57FE3900D09FB2 /* Misc headers */ = {
+			isa = PBXGroup;
+			children = (
+				500638FD1F57FE4F00D09FB2 /* OnePasswordExtension.h */,
+			);
+			name = "Misc headers";
+			sourceTree = "<group>";
+		};
 		509080B51ACF46600014E7DF = {
 			isa = PBXGroup;
 			children = (
@@ -151,7 +160,6 @@
 				509081611ACF66E60014E7DF /* Classes */,
 				509081AE1ACF6A8A0014E7DF /* Resources */,
 				6983E8FE21D2126E573DA5A7 /* Pods */,
-				E8196A50FC0297B5934BFE01 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -167,12 +175,14 @@
 		509081611ACF66E60014E7DF /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				500638FC1F57FE3900D09FB2 /* Misc headers */,
 				50D095981AD5BB6E008EDBD7 /* ParticleSetup.h */,
 				5018DC4A1ADC862E00ADD403 /* ParticleSetup-Bridging-Header.h */,
 				509082031ACF71500014E7DF /* Particle-SDK Headers */,
 				509081B51ACF6AF70014E7DF /* Comm */,
 				509081BE1ACF6AF70014E7DF /* UI */,
 				509081DF1ACF6AF70014E7DF /* User */,
+				E8196A50FC0297B5934BFE01 /* Frameworks */,
 			);
 			name = Classes;
 			path = "Soft AP setup";
@@ -270,9 +280,9 @@
 		509082031ACF71500014E7DF /* Particle-SDK Headers */ = {
 			isa = PBXGroup;
 			children = (
-				50E840BB1E95FC890038ED42 /* Particle-SDK.h */,
-				50E840BD1E95FC960038ED42 /* ParticleCloud.h */,
-				50E840BF1E95FC9E0038ED42 /* ParticleDevice.h */,
+				500638F61F57FD9A00D09FB2 /* Particle-SDK.h */,
+				500638F71F57FD9A00D09FB2 /* ParticleCloud.h */,
+				500638F81F57FD9A00D09FB2 /* ParticleDevice.h */,
 			);
 			name = "Particle-SDK Headers";
 			path = ..;
@@ -306,6 +316,7 @@
 				12F8565380E77481E5452695 /* libPods-ParticleSetup.a */,
 			);
 			name = Frameworks;
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -315,12 +326,12 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				50E840BE1E95FC960038ED42 /* ParticleCloud.h in Headers */,
-				50E840C01E95FC9E0038ED42 /* ParticleDevice.h in Headers */,
-				50E840BC1E95FC890038ED42 /* Particle-SDK.h in Headers */,
+				500638FA1F57FD9A00D09FB2 /* ParticleCloud.h in Headers */,
 				5014ED501CB7268E00A1063E /* ParticleSetupMainController.h in Headers */,
 				5014ED4F1CB7268A00A1063E /* ParticleSetupCustomization.h in Headers */,
 				50D095991AD5BB6E008EDBD7 /* ParticleSetup.h in Headers */,
+				500638FB1F57FD9A00D09FB2 /* ParticleDevice.h in Headers */,
+				500638FE1F57FE4F00D09FB2 /* OnePasswordExtension.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -500,10 +511,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_MODULES_AUTOLINK = NO;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
@@ -554,10 +567,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_MODULES_AUTOLINK = NO;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;

@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 spark. All rights reserved.
 //
 
-#import "ParticleSetupResultViewController.h"
+
 #ifdef FRAMEWORK
 #import <ParticleSDK/ParticleSDK.h>
 #else
@@ -16,6 +16,7 @@
 #import "ParticleSetupMainController.h"
 #import "ParticleSetupWebViewController.h"
 #import "ParticleSetupCustomization.h"
+#import "ParticleSetupResultViewController.h"
 #ifdef ANALYTICS
 #import <SEGAnalytics.h>
 #endif

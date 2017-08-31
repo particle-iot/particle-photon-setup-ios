@@ -12,7 +12,7 @@
 #import <OnePasswordExtension/OnePasswordExtension.h>
 #else
 #import "Particle-SDK.h"
-#import <OnePasswordExtension/OnePasswordExtension.h>
+#import "OnePasswordExtension.h"
 #endif
 #import "ParticleUserLoginViewController.h"
 #import "ParticleSetupWebViewController.h"
@@ -266,6 +266,8 @@
         }
         else
         {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
             if ([ParticleSetupCustomization sharedInstance].organization) {
                 NSException* deprecationException = [NSException
                                                      exceptionWithName:@"OrganizationModeDeprecated"
@@ -273,7 +275,8 @@
                                                      userInfo:nil];
                 @throw deprecationException;
             }
-
+#pragma clang diagnostic pop
+            
             // normal user sign up
             [self.spinner startAnimating];
             self.signupButton.enabled = NO;

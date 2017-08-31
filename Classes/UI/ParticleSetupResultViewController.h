@@ -11,10 +11,10 @@
 #ifdef FRAMEWORK
 #import <ParticleSDK/ParticleSDK.h>
 #else
-#import "Particle-SDK.h"
+//#import "Particle-SDK.h"
 #endif
 
-//@class ParticleDevice;
+@class ParticleDevice;
 
 @interface ParticleSetupResultViewController : ParticleSetupUIViewController
 @property (nonatomic, strong) ParticleDevice *device; // device instance for successful setup
