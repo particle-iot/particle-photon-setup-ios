@@ -3,6 +3,10 @@ All notable changes to this project will be documented in this file.
 Particle iOS Device Setup library adheres to [Semantic Versioning](http://semver.org/).
 
 ---
+## [0.8.0](https://github.com/spark/spark-setup-ios/releases/tag/0.8.0) (2017-3-28)
+
+* Grand rename Spark->Particle accross Pod name, classes, files etc
+
 ## [0.7.0](https://github.com/spark/spark-setup-ios/releases/tag/0.7.0) (2017-3-28)
 
 * Change: XCode 8 compatibility fixes
@@ -55,7 +59,7 @@ Particle iOS Device Setup library adheres to [Semantic Versioning](http://semver
 
 * New delegate function didFailWithDeviceID - will report the device ID that setup failed setting up
 
-* Main setup delegate function will now report detailed failture codes via the SparkSetupMainControllerResult enum (updated)
+* Main setup delegate function will now report detailed failture codes via the ParticleSetupMainControllerResult enum (updated)
 
 ## [0.4.1](https://github.com/spark/spark-setup-ios/releases/tag/0.4.1) (2016-5-19)
 

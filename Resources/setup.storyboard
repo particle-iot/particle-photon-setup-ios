@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -20,10 +19,10 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Spark User Signup View Controller-->
+        <!--Particle User Signup View Controller-->
         <scene sceneID="mf8-9P-uaR">
             <objects>
-                <viewController storyboardIdentifier="signup" id="lRJ-Zc-d9X" customClass="SparkUserSignupViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="signup" id="lRJ-Zc-d9X" customClass="ParticleUserSignupViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="oBN-nk-P7G"/>
                         <viewControllerLayoutGuide type="bottom" id="HXM-Qh-9kM"/>
@@ -124,7 +123,7 @@
                                     </mask>
                                 </variation>
                             </textField>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create account" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="240" translatesAutoresizingMaskIntoConstraints="NO" id="vg2-z0-M92" customClass="SparkSetupUILabel">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create account" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="240" translatesAutoresizingMaskIntoConstraints="NO" id="vg2-z0-M92" customClass="ParticleSetupUILabel">
                                 <rect key="frame" x="127" y="65" width="160" height="29"/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="24"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -136,7 +135,7 @@
                             <view contentMode="scaleToFill" verticalHuggingPriority="252" translatesAutoresizingMaskIntoConstraints="NO" id="ZJd-3i-xnf">
                                 <rect key="frame" x="67" y="636" width="280" height="80"/>
                                 <subviews>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="By clicking &quot;SIGN UP&quot; you are indicating that you have read and agreed to the" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kRO-Z7-PiJ" customClass="SparkSetupUILabel">
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="By clicking &quot;SIGN UP&quot; you are indicating that you have read and agreed to the" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kRO-Z7-PiJ" customClass="ParticleSetupUILabel">
                                         <rect key="frame" x="-47" y="28.666666666666629" width="374" height="31.333333333333371"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="48" id="GN9-qU-oWg">
@@ -157,7 +156,7 @@
                                             </mask>
                                         </variation>
                                     </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="and" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LDX-XG-Ep7" customClass="SparkSetupUILabel">
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="and" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LDX-XG-Ep7" customClass="ParticleSetupUILabel">
                                         <rect key="frame" x="137" y="52" width="22" height="28"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="17" id="Aaf-IU-iEr"/>
@@ -179,7 +178,7 @@
                                             </mask>
                                         </variation>
                                     </label>
-                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mRd-ei-guU" customClass="SparkSetupUIButton">
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mRd-ei-guU" customClass="ParticleSetupUIButton">
                                         <rect key="frame" x="163" y="52" width="84" height="28"/>
                                         <accessibility key="accessibilityConfiguration">
                                             <accessibilityTraits key="traits" button="YES" link="YES"/>
@@ -195,7 +194,7 @@
                                             <action selector="privacyPolicyButton:" destination="lRJ-Zc-d9X" eventType="touchUpInside" id="yVJ-S4-1ZM"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vzU-UX-EDD" customClass="SparkSetupUIButton">
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vzU-UX-EDD" customClass="ParticleSetupUIButton">
                                         <rect key="frame" x="31.666666666666679" y="52" width="101.33333333333331" height="28"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <state key="normal" title="Terms of Service">
@@ -275,7 +274,7 @@
                                     </mask>
                                 </variation>
                             </view>
-                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QFf-6f-5yx" customClass="SparkSetupUIButton">
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QFf-6f-5yx" customClass="ParticleSetupUIButton">
                                 <rect key="frame" x="90" y="397" width="234" height="32"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <state key="normal" title="I already have a {brand} account">
@@ -288,7 +287,7 @@
                                     <action selector="haveAnAccountButtonTouched:" destination="lRJ-Zc-d9X" eventType="touchUpInside" id="tjc-Eu-fRW"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="hTx-ZG-e7U" customClass="SparkSetupUIButton">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="hTx-ZG-e7U" customClass="ParticleSetupUIButton">
                                 <rect key="frame" x="83" y="341" width="248" height="40"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -321,7 +320,7 @@
                                     <action selector="signupButton:" destination="lRJ-Zc-d9X" eventType="touchUpInside" id="TeA-X5-lTv"/>
                                 </connections>
                             </button>
-                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="spinner" translatesAutoresizingMaskIntoConstraints="NO" id="xbQ-5h-nSM" customClass="SparkSetupUISpinner">
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="spinner" translatesAutoresizingMaskIntoConstraints="NO" id="xbQ-5h-nSM" customClass="ParticleSetupUISpinner">
                                 <rect key="frame" x="87" y="351" width="20" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="32" id="9FB-2T-EpT">
@@ -350,7 +349,7 @@
                                     </mask>
                                 </variation>
                             </imageView>
-                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wVT-3c-Czs" customClass="SparkSetupUIButton">
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wVT-3c-Czs" customClass="ParticleSetupUIButton">
                                 <rect key="frame" x="137" y="437" width="140" height="32"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <state key="normal" title="Skip authentication">
@@ -464,7 +463,7 @@
                                     </mask>
                                 </variation>
                             </textField>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is a business account" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e4j-Sw-Za4" customClass="SparkSetupUILabel">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is a business account" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e4j-Sw-Za4" customClass="ParticleSetupUILabel">
                                 <rect key="frame" x="144" y="308.66666666666669" width="180" height="18"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="CEg-ax-hYK">
@@ -636,10 +635,10 @@
             </objects>
             <point key="canvasLocation" x="-421.875" y="846.12676056338034"/>
         </scene>
-        <!--Spark User Login View Controller-->
+        <!--Particle User Login View Controller-->
         <scene sceneID="7ex-bS-8Mc">
             <objects>
-                <viewController storyboardIdentifier="login" id="aoV-ks-Ppc" customClass="SparkUserLoginViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="login" id="aoV-ks-Ppc" customClass="ParticleUserLoginViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="4yP-xM-W5n"/>
                         <viewControllerLayoutGuide type="bottom" id="DOb-bh-cjU"/>
@@ -679,7 +678,7 @@
                                             <outlet property="delegate" destination="aoV-ks-Ppc" id="YKp-aj-i4A"/>
                                         </connections>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="COP-ta-WJN" customClass="SparkSetupUIButton">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="COP-ta-WJN" customClass="ParticleSetupUIButton">
                                         <rect key="frame" x="36" y="134" width="248" height="40"/>
                                         <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
@@ -712,7 +711,7 @@
                                             <action selector="loginButton:" destination="aoV-ks-Ppc" eventType="touchUpInside" id="0j4-BE-fl3"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qTe-aG-SyA" customClass="SparkSetupUIButton">
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qTe-aG-SyA" customClass="ParticleSetupUIButton">
                                         <rect key="frame" x="88" y="228" width="144" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="29" id="X52-DV-fbz"/>
@@ -768,7 +767,7 @@
                                             <outlet property="delegate" destination="aoV-ks-Ppc" id="7n3-Y0-qaH"/>
                                         </connections>
                                     </textField>
-                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eXt-yE-xbn" customClass="SparkSetupUIButton">
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eXt-yE-xbn" customClass="ParticleSetupUIButton">
                                         <rect key="frame" x="57" y="186" width="206" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="280" id="Y9p-Y2-5yk"/>
@@ -797,7 +796,7 @@
                                             <action selector="noAccountButton:" destination="aoV-ks-Ppc" eventType="touchUpInside" id="ZgK-5g-3Fc"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your account" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="240" translatesAutoresizingMaskIntoConstraints="NO" id="0xp-43-haj" customClass="SparkSetupUILabel">
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your account" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="240" translatesAutoresizingMaskIntoConstraints="NO" id="0xp-43-haj" customClass="ParticleSetupUILabel">
                                         <rect key="frame" x="91.666666666666671" y="0.0" width="138" height="29"/>
                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="24"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -806,7 +805,7 @@
                                             <userDefinedRuntimeAttribute type="string" keyPath="type" value="header"/>
                                         </userDefinedRuntimeAttributes>
                                     </label>
-                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="spinner" translatesAutoresizingMaskIntoConstraints="NO" id="Imh-oc-1kL" customClass="SparkSetupUISpinner">
+                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="spinner" translatesAutoresizingMaskIntoConstraints="NO" id="Imh-oc-1kL" customClass="ParticleSetupUISpinner">
                                         <rect key="frame" x="42" y="144" width="20" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="32" id="dyQ-gB-YJi">
@@ -832,7 +831,7 @@
                                             </mask>
                                         </variation>
                                     </imageView>
-                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ojn-N2-37N" customClass="SparkSetupUIButton">
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ojn-N2-37N" customClass="ParticleSetupUIButton">
                                         <rect key="frame" x="94" y="270" width="132" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="280" id="hAL-Zc-NBU"/>
@@ -1021,12 +1020,7 @@
                             <constraint firstItem="UOq-6u-boa" firstAttribute="trailing" secondItem="aiM-NV-bxW" secondAttribute="trailingMargin" id="09K-sR-bBP">
                                 <variation key="heightClass=regular-widthClass=compact" constant="20"/>
                             </constraint>
-                            <constraint firstItem="tqn-yt-8jc" firstAttribute="leading" secondItem="aiM-NV-bxW" secondAttribute="leadingMargin" constant="24" id="6IB-Ia-cf7"/>
-                            <constraint firstItem="DOb-bh-cjU" firstAttribute="top" secondItem="tqn-yt-8jc" secondAttribute="bottom" constant="238" id="FMV-S1-4fe"/>
                             <constraint firstAttribute="centerY" secondItem="tqn-yt-8jc" secondAttribute="centerY" id="G19-Ok-GAn"/>
-                            <constraint firstItem="tqn-yt-8jc" firstAttribute="top" secondItem="UOq-6u-boa" secondAttribute="bottom" constant="110" id="UkH-Dt-WGk">
-                                <variation key="heightClass=regular-widthClass=compact" constant="60"/>
-                            </constraint>
                             <constraint firstAttribute="centerX" secondItem="tqn-yt-8jc" secondAttribute="centerX" id="jCp-ZS-zgw"/>
                             <constraint firstItem="UOq-6u-boa" firstAttribute="top" secondItem="4yP-xM-W5n" secondAttribute="bottom" constant="-20" id="nyv-bj-2d5"/>
                             <constraint firstItem="UOq-6u-boa" firstAttribute="leading" secondItem="aiM-NV-bxW" secondAttribute="leadingMargin" id="wOW-uC-gqf">
@@ -1037,9 +1031,7 @@
                             <mask key="constraints">
                                 <exclude reference="09K-sR-bBP"/>
                                 <exclude reference="wOW-uC-gqf"/>
-                                <exclude reference="6IB-Ia-cf7"/>
                                 <exclude reference="G19-Ok-GAn"/>
-                                <exclude reference="UkH-Dt-WGk"/>
                                 <exclude reference="jCp-ZS-zgw"/>
                             </mask>
                         </variation>
@@ -1047,11 +1039,8 @@
                             <mask key="constraints">
                                 <include reference="09K-sR-bBP"/>
                                 <include reference="wOW-uC-gqf"/>
-                                <exclude reference="6IB-Ia-cf7"/>
                                 <include reference="G19-Ok-GAn"/>
-                                <exclude reference="UkH-Dt-WGk"/>
                                 <include reference="jCp-ZS-zgw"/>
-                                <exclude reference="FMV-S1-4fe"/>
                             </mask>
                         </variation>
                     </view>
@@ -1074,10 +1063,10 @@
             </objects>
             <point key="canvasLocation" x="411" y="846.75"/>
         </scene>
-        <!--Spark User Forgot Password View Controller-->
+        <!--Particle User Forgot Password View Controller-->
         <scene sceneID="bd7-Cf-2aF">
             <objects>
-                <viewController storyboardIdentifier="password_reset" id="Yiu-ge-Gp9" customClass="SparkUserForgotPasswordViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="password_reset" id="Yiu-ge-Gp9" customClass="ParticleUserForgotPasswordViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="lBJ-k6-vEI"/>
                         <viewControllerLayoutGuide type="bottom" id="j2x-xR-01J"/>
@@ -1089,7 +1078,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DBd-QT-spH">
                                 <rect key="frame" x="20" y="229.66666666666669" width="374" height="240.00000000000006"/>
                                 <subviews>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Request password reset" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="240" translatesAutoresizingMaskIntoConstraints="NO" id="8jW-zN-6UE" customClass="SparkSetupUILabel">
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Request password reset" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="240" translatesAutoresizingMaskIntoConstraints="NO" id="8jW-zN-6UE" customClass="ParticleSetupUILabel">
                                         <rect key="frame" x="61.666666666666686" y="8" width="251" height="29.000000000000028"/>
                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="24"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1124,7 +1113,7 @@
                                             <outlet property="delegate" destination="aoV-ks-Ppc" id="ALP-gb-s1W"/>
                                         </connections>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l3y-XJ-EXr" customClass="SparkSetupUIButton">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l3y-XJ-EXr" customClass="ParticleSetupUIButton">
                                         <rect key="frame" x="63" y="141.00000000000003" width="248" height="40"/>
                                         <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
@@ -1158,7 +1147,7 @@
                                             <action selector="resetPasswordButtonTapped:" destination="Yiu-ge-Gp9" eventType="touchUpInside" id="7g8-f0-e2W"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vEF-rf-PHn" customClass="SparkSetupUIButton">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vEF-rf-PHn" customClass="ParticleSetupUIButton">
                                         <rect key="frame" x="100.66666666666669" y="197.00000000000003" width="173" height="20"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
@@ -1174,7 +1163,7 @@
                                             <action selector="loginButton:" destination="aoV-ks-Ppc" eventType="touchUpInside" id="bBQ-YO-cMN"/>
                                         </connections>
                                     </button>
-                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="spinner" translatesAutoresizingMaskIntoConstraints="NO" id="VOF-kh-r3G" customClass="SparkSetupUISpinner">
+                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="spinner" translatesAutoresizingMaskIntoConstraints="NO" id="VOF-kh-r3G" customClass="ParticleSetupUISpinner">
                                         <rect key="frame" x="67" y="151.00000000000003" width="20" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="32" id="AUL-Kj-9IG">
@@ -1200,7 +1189,7 @@
                                             </mask>
                                         </variation>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="An email will be sent to you with a link to a webpage where you can create a new password." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wJl-gR-eDB" customClass="SparkSetupUILabel">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="An email will be sent to you with a link to a webpage where you can create a new password." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wJl-gR-eDB" customClass="ParticleSetupUILabel">
                                         <rect key="frame" x="12" y="45.000000000000028" width="362" height="36"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <nil key="highlightedColor"/>
@@ -1323,7 +1312,6 @@
                         <color key="backgroundColor" red="0.95564913749694824" green="0.95562052726745605" blue="0.95563679933547974" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="I8l-1c-uV9" firstAttribute="leading" secondItem="XuY-6L-DdQ" secondAttribute="leading" id="5qI-dz-XT5"/>
-                            <constraint firstAttribute="centerX" secondItem="DBd-QT-spH" secondAttribute="centerX" id="9n0-dZ-Yea"/>
                             <constraint firstAttribute="trailing" secondItem="I8l-1c-uV9" secondAttribute="trailing" id="Ljv-r9-KOj"/>
                             <constraint firstAttribute="trailingMargin" secondItem="DBd-QT-spH" secondAttribute="trailing" constant="24" id="Nyo-di-lyK">
                                 <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
@@ -1343,7 +1331,6 @@
                                 <exclude reference="5qI-dz-XT5"/>
                                 <exclude reference="Ljv-r9-KOj"/>
                                 <exclude reference="eXo-GL-boS"/>
-                                <exclude reference="9n0-dZ-Yea"/>
                                 <exclude reference="Nyo-di-lyK"/>
                                 <exclude reference="T8s-J0-DLA"/>
                                 <exclude reference="YX3-YY-dJs"/>
@@ -1358,7 +1345,6 @@
                                 <include reference="5qI-dz-XT5"/>
                                 <include reference="Ljv-r9-KOj"/>
                                 <include reference="eXo-GL-boS"/>
-                                <exclude reference="9n0-dZ-Yea"/>
                                 <include reference="Nyo-di-lyK"/>
                                 <include reference="T8s-J0-DLA"/>
                                 <include reference="YX3-YY-dJs"/>
@@ -1376,10 +1362,10 @@
             </objects>
             <point key="canvasLocation" x="1249.5" y="846.75"/>
         </scene>
-        <!--Spark Setup Web View Controller-->
+        <!--Particle Setup Web View Controller-->
         <scene sceneID="PMd-xx-OKt">
             <objects>
-                <viewController storyboardIdentifier="webview" modalPresentationStyle="overCurrentContext" id="958-ft-t5V" customClass="SparkSetupWebViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="webview" modalPresentationStyle="overCurrentContext" id="958-ft-t5V" customClass="ParticleSetupWebViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="60P-IW-fMc"/>
                         <viewControllerLayoutGuide type="bottom" id="9aq-TY-i4Q"/>
@@ -1404,7 +1390,7 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="spinner_big" translatesAutoresizingMaskIntoConstraints="NO" id="asE-42-lNZ" customClass="SparkSetupUISpinner">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="spinner_big" translatesAutoresizingMaskIntoConstraints="NO" id="asE-42-lNZ" customClass="ParticleSetupUISpinner">
                                 <rect key="frame" x="191" y="352" width="32" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="64" id="4MW-Lc-qJX">
@@ -1498,10 +1484,10 @@
             </objects>
             <point key="canvasLocation" x="2031" y="846.75"/>
         </scene>
-        <!--Spark Discover Device View Controller-->
+        <!--Particle Discover Device View Controller-->
         <scene sceneID="bQl-2p-6GE">
             <objects>
-                <viewController storyboardIdentifier="discover" id="DQd-hP-ryy" customClass="SparkDiscoverDeviceViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="discover" id="DQd-hP-ryy" customClass="ParticleDiscoverDeviceViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Qqv-RB-eCJ"/>
                         <viewControllerLayoutGuide type="bottom" id="idL-Yx-DPA"/>
@@ -1529,7 +1515,7 @@
                                     </mask>
                                 </variation>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fpC-uh-IqQ" customClass="SparkSetupUIButton">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fpC-uh-IqQ" customClass="ParticleSetupUIButton">
                                 <rect key="frame" x="83" y="676" width="248" height="40"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -1608,7 +1594,7 @@
                                                     </mask>
                                                 </variation>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap Home &gt; Settings &gt; Wi-Fi" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0C3-l9-xXN" customClass="SparkSetupUILabel">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap Home &gt; Settings &gt; Wi-Fi" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0C3-l9-xXN" customClass="ParticleSetupUILabel">
                                                 <rect key="frame" x="38" y="80.333333333333343" width="336" height="20.666666666666657"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="highlightedColor"/>
@@ -1723,7 +1709,7 @@
                                                     </mask>
                                                 </variation>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Make sure Wi-Fi is turned on, and choose the network below:" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LNI-7x-S77" customClass="SparkSetupUILabel">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Make sure Wi-Fi is turned on, and choose the network below:" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LNI-7x-S77" customClass="ParticleSetupUILabel">
                                                 <rect key="frame" x="38" y="10" width="336" height="40.666666666666629"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="highlightedColor"/>
@@ -1754,7 +1740,7 @@
                                                             </mask>
                                                         </variation>
                                                     </imageView>
-                                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="spinner_big" translatesAutoresizingMaskIntoConstraints="NO" id="Nop-7n-cfM" customClass="SparkSetupUISpinner">
+                                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="spinner_big" translatesAutoresizingMaskIntoConstraints="NO" id="Nop-7n-cfM" customClass="ParticleSetupUISpinner">
                                                         <rect key="frame" x="336" y="8" width="24" height="24"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="26" id="GO3-18-RlK">
@@ -1886,7 +1872,7 @@
                                                     </mask>
                                                 </variation>
                                             </view>
-                                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="XXXX will be a unique 4-digit code" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gki-aR-4fS" customClass="SparkSetupUILabel">
+                                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="XXXX will be a unique 4-digit code" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gki-aR-4fS" customClass="ParticleSetupUILabel">
                                                 <rect key="frame" x="88.666666666666686" y="104.66666666666663" width="197" height="15"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <nil key="highlightedColor"/>
@@ -2038,7 +2024,7 @@
                                                     </mask>
                                                 </variation>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Once connected, return to this app" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZdX-DX-tBe" customClass="SparkSetupUILabel">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Once connected, return to this app" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZdX-DX-tBe" customClass="ParticleSetupUILabel">
                                                 <rect key="frame" x="38" y="79.666666666666629" width="336" height="20.333333333333371"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="highlightedColor"/>
@@ -2261,15 +2247,11 @@
                         </subviews>
                         <color key="backgroundColor" red="0.95564913749694824" green="0.95562052726745605" blue="0.95563679933547974" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="iXX-Qf-QZC" firstAttribute="leading" secondItem="av0-fS-2U8" secondAttribute="leadingMargin" constant="-116" id="1Jw-6D-q2R"/>
                             <constraint firstItem="bH6-hD-cea" firstAttribute="leading" secondItem="av0-fS-2U8" secondAttribute="leadingMargin" constant="-16" id="20t-w5-en3">
                                 <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
                             </constraint>
                             <constraint firstItem="bH6-hD-cea" firstAttribute="top" secondItem="iXX-Qf-QZC" secondAttribute="bottom" constant="-51" id="3e3-cJ-Ol3">
                                 <variation key="heightClass=regular-widthClass=compact" constant="-32"/>
-                            </constraint>
-                            <constraint firstItem="iXX-Qf-QZC" firstAttribute="leading" secondItem="av0-fS-2U8" secondAttribute="leadingMargin" constant="-116" id="5MW-Po-U31">
-                                <variation key="heightClass=regular-widthClass=compact" constant="30"/>
                             </constraint>
                             <constraint firstItem="yjq-4r-6tw" firstAttribute="top" secondItem="av0-fS-2U8" secondAttribute="top" id="6Ua-6A-pGX"/>
                             <constraint firstAttribute="trailing" secondItem="yjq-4r-6tw" secondAttribute="trailing" id="A2w-f9-rcN"/>
@@ -2283,10 +2265,6 @@
                             </constraint>
                             <constraint firstAttribute="centerX" secondItem="iXX-Qf-QZC" secondAttribute="centerX" id="d53-rH-3ua"/>
                             <constraint firstAttribute="centerX" secondItem="fpC-uh-IqQ" secondAttribute="centerX" id="esZ-Ra-ScA"/>
-                            <constraint firstItem="fpC-uh-IqQ" firstAttribute="top" secondItem="7Qv-7J-ByG" secondAttribute="bottom" constant="21" id="hbg-wU-jdH"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="iXX-Qf-QZC" secondAttribute="trailing" constant="-116" id="k2w-Ad-aXo">
-                                <variation key="heightClass=regular-widthClass=compact" constant="30"/>
-                            </constraint>
                             <constraint firstItem="iXX-Qf-QZC" firstAttribute="top" secondItem="yjq-4r-6tw" secondAttribute="bottom" constant="32" id="lAy-El-iH9">
                                 <variation key="heightClass=regular-widthClass=compact" constant="16"/>
                             </constraint>
@@ -2310,10 +2288,7 @@
                                 <exclude reference="6Ua-6A-pGX"/>
                                 <exclude reference="A2w-f9-rcN"/>
                                 <exclude reference="U8B-U0-C9I"/>
-                                <exclude reference="1Jw-6D-q2R"/>
-                                <exclude reference="5MW-Po-U31"/>
                                 <exclude reference="d53-rH-3ua"/>
-                                <exclude reference="k2w-Ad-aXo"/>
                                 <exclude reference="lAy-El-iH9"/>
                                 <exclude reference="20t-w5-en3"/>
                                 <exclude reference="3e3-cJ-Ol3"/>
@@ -2321,7 +2296,6 @@
                                 <exclude reference="YkB-WI-Pzf"/>
                                 <exclude reference="Vhk-ON-PZz"/>
                                 <exclude reference="esZ-Ra-ScA"/>
-                                <exclude reference="hbg-wU-jdH"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -2337,10 +2311,7 @@
                                 <include reference="6Ua-6A-pGX"/>
                                 <include reference="A2w-f9-rcN"/>
                                 <include reference="U8B-U0-C9I"/>
-                                <exclude reference="1Jw-6D-q2R"/>
-                                <exclude reference="5MW-Po-U31"/>
                                 <include reference="d53-rH-3ua"/>
-                                <exclude reference="k2w-Ad-aXo"/>
                                 <include reference="lAy-El-iH9"/>
                                 <include reference="20t-w5-en3"/>
                                 <include reference="3e3-cJ-Ol3"/>
@@ -2348,7 +2319,6 @@
                                 <include reference="YkB-WI-Pzf"/>
                                 <include reference="Vhk-ON-PZz"/>
                                 <include reference="esZ-Ra-ScA"/>
-                                <exclude reference="hbg-wU-jdH"/>
                             </mask>
                         </variation>
                     </view>
@@ -2372,10 +2342,10 @@
             </objects>
             <point key="canvasLocation" x="2031" y="-112.5"/>
         </scene>
-        <!--Spark Select Network View Controller-->
+        <!--Particle Select Network View Controller-->
         <scene sceneID="5mr-9s-c2P">
             <objects>
-                <viewController id="HmA-2l-zkq" customClass="SparkSelectNetworkViewController" sceneMemberID="viewController">
+                <viewController id="HmA-2l-zkq" customClass="ParticleSelectNetworkViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="WJB-qA-vdk"/>
                         <viewControllerLayoutGuide type="bottom" id="f5j-NK-nTL"/>
@@ -2384,7 +2354,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TR1-ME-BYk" customClass="SparkSetupUIButton">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TR1-ME-BYk" customClass="ParticleSetupUIButton">
                                 <rect key="frame" x="83" y="676" width="248" height="40"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -2435,7 +2405,7 @@
                                     </mask>
                                 </variation>
                             </imageView>
-                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="spinner" translatesAutoresizingMaskIntoConstraints="NO" id="TPt-BY-VBm" customClass="SparkSetupUISpinner">
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="spinner" translatesAutoresizingMaskIntoConstraints="NO" id="TPt-BY-VBm" customClass="ParticleSetupUISpinner">
                                 <rect key="frame" x="87" y="686" width="20" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="32" id="D9u-bw-TxD">
@@ -2461,7 +2431,7 @@
                                     </mask>
                                 </variation>
                             </imageView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select your Wi-Fi network" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cXr-RN-psz" customClass="SparkSetupUILabel">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select your Wi-Fi network" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cXr-RN-psz" customClass="ParticleSetupUILabel">
                                 <rect key="frame" x="20" y="72" width="374" height="27.666666666666671"/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="23"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -2470,7 +2440,7 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="type" value="header"/>
                                 </userDefinedRuntimeAttributes>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KB8-Fp-xL8" customClass="SparkSetupUIButton">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KB8-Fp-xL8" customClass="ParticleSetupUIButton">
                                 <rect key="frame" x="125.66666666666669" y="642" width="163" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="248" id="1c9-Jd-KHz"/>
@@ -2509,7 +2479,7 @@
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <color key="sectionIndexBackgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="wifiCell" rowHeight="44" id="Zt9-Gu-dqE" customClass="SparkSetupWifiTableViewCell">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="wifiCell" rowHeight="44" id="Zt9-Gu-dqE" customClass="ParticleSetupWifiTableViewCell">
                                         <rect key="frame" x="0.0" y="28" width="406" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Zt9-Gu-dqE" id="eac-hz-gRp">
@@ -2639,13 +2609,7 @@
                             <constraint firstItem="TR1-ME-BYk" firstAttribute="top" secondItem="KB8-Fp-xL8" secondAttribute="bottom" constant="14" id="5fH-Ou-iEO">
                                 <variation key="heightClass=regular-widthClass=compact" constant="4"/>
                             </constraint>
-                            <constraint firstItem="cXr-RN-psz" firstAttribute="top" secondItem="WJB-qA-vdk" secondAttribute="bottom" constant="129" id="7Up-lA-ItW"/>
-                            <constraint firstItem="f5j-NK-nTL" firstAttribute="top" secondItem="KB8-Fp-xL8" secondAttribute="bottom" constant="20" id="CCe-oH-Euq"/>
-                            <constraint firstItem="TR1-ME-BYk" firstAttribute="top" secondItem="BdB-vi-zpj" secondAttribute="bottom" constant="10" id="D0E-SG-Qum">
-                                <variation key="heightClass=regular-widthClass=compact" constant="60"/>
-                            </constraint>
                             <constraint firstItem="f5j-NK-nTL" firstAttribute="top" secondItem="TR1-ME-BYk" secondAttribute="bottom" constant="20" id="IJG-aN-sVe"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="NBp-nB-TmB" secondAttribute="trailing" id="IVm-iN-Znj"/>
                             <constraint firstItem="cXr-RN-psz" firstAttribute="leading" secondItem="jPx-aH-LOr" secondAttribute="leadingMargin" id="Iu0-PA-eWU"/>
                             <constraint firstItem="NBp-nB-TmB" firstAttribute="leading" secondItem="jPx-aH-LOr" secondAttribute="leadingMargin" constant="-16" id="Iyg-HL-LSq">
                                 <variation key="heightClass=regular-widthClass=compact" constant="-20"/>
@@ -2657,7 +2621,6 @@
                             <constraint firstItem="TPt-BY-VBm" firstAttribute="centerY" secondItem="TR1-ME-BYk" secondAttribute="centerY" constant="-4" id="Qy3-YD-n4i">
                                 <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
                             </constraint>
-                            <constraint firstItem="TR1-ME-BYk" firstAttribute="top" secondItem="BdB-vi-zpj" secondAttribute="bottom" constant="49" id="UB4-FZ-1i7"/>
                             <constraint firstItem="NBp-nB-TmB" firstAttribute="top" secondItem="jPx-aH-LOr" secondAttribute="topMargin" id="Wfb-7B-JEa"/>
                             <constraint firstItem="BdB-vi-zpj" firstAttribute="leading" secondItem="jPx-aH-LOr" secondAttribute="leadingMargin" id="XnO-C8-P0Y">
                                 <variation key="heightClass=regular-widthClass=compact" constant="-16"/>
@@ -2665,26 +2628,13 @@
                             <constraint firstItem="NBp-nB-TmB" firstAttribute="top" secondItem="jPx-aH-LOr" secondAttribute="topMargin" id="Z13-1W-vmq"/>
                             <constraint firstItem="KB8-Fp-xL8" firstAttribute="top" secondItem="BdB-vi-zpj" secondAttribute="bottom" constant="8" id="Zr8-VN-Cm2"/>
                             <constraint firstItem="cXr-RN-psz" firstAttribute="trailing" secondItem="jPx-aH-LOr" secondAttribute="trailingMargin" id="dLK-03-BwO"/>
-                            <constraint firstAttribute="centerX" secondItem="NBp-nB-TmB" secondAttribute="centerX" id="ezO-Cq-fk6"/>
                             <constraint firstAttribute="centerX" secondItem="BdB-vi-zpj" secondAttribute="centerX" id="f4N-YH-uQI"/>
-                            <constraint firstItem="cXr-RN-psz" firstAttribute="top" secondItem="WJB-qA-vdk" secondAttribute="bottom" constant="154" id="fEn-Vp-dg6"/>
                             <constraint firstItem="BdB-vi-zpj" firstAttribute="top" secondItem="cXr-RN-psz" secondAttribute="bottom" constant="-1" id="jHe-bk-fEE">
                                 <variation key="heightClass=regular-widthClass=compact" constant="8"/>
                             </constraint>
-                            <constraint firstItem="TR1-ME-BYk" firstAttribute="top" secondItem="TPt-BY-VBm" secondAttribute="top" id="jau-WV-1v0"/>
-                            <constraint firstItem="KB8-Fp-xL8" firstAttribute="leading" secondItem="jPx-aH-LOr" secondAttribute="leadingMargin" id="kxp-oa-5h4"/>
                             <constraint firstAttribute="centerX" secondItem="KB8-Fp-xL8" secondAttribute="centerX" id="sPH-B9-8xe"/>
-                            <constraint firstItem="f5j-NK-nTL" firstAttribute="top" secondItem="BdB-vi-zpj" secondAttribute="bottom" constant="100" id="sWX-Qx-xuD"/>
-                            <constraint firstItem="NBp-nB-TmB" firstAttribute="leading" secondItem="jPx-aH-LOr" secondAttribute="leadingMargin" id="tOq-i4-9OK"/>
-                            <constraint firstItem="KB8-Fp-xL8" firstAttribute="top" secondItem="TR1-ME-BYk" secondAttribute="bottom" constant="10" id="u5C-e3-4Lt">
-                                <variation key="heightClass=regular-widthClass=compact" constant="12"/>
-                            </constraint>
                             <constraint firstAttribute="trailingMargin" secondItem="NBp-nB-TmB" secondAttribute="trailing" constant="-16" id="uzF-Ck-x9S">
                                 <variation key="heightClass=regular-widthClass=compact" constant="-20"/>
-                            </constraint>
-                            <constraint firstAttribute="centerX" secondItem="NBp-nB-TmB" secondAttribute="centerX" id="xXP-Yt-d6G"/>
-                            <constraint firstItem="f5j-NK-nTL" firstAttribute="top" secondItem="TR1-ME-BYk" secondAttribute="bottom" constant="20" id="xnL-eh-21o">
-                                <variation key="heightClass=regular-widthClass=compact" constant="62"/>
                             </constraint>
                         </constraints>
                         <variation key="default">
@@ -2697,38 +2647,24 @@
                                 <exclude reference="BdB-vi-zpj"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="CCe-oH-Euq"/>
                                 <exclude reference="IJG-aN-sVe"/>
-                                <exclude reference="sWX-Qx-xuD"/>
-                                <exclude reference="xnL-eh-21o"/>
-                                <exclude reference="IVm-iN-Znj"/>
                                 <exclude reference="Iyg-HL-LSq"/>
                                 <exclude reference="Wfb-7B-JEa"/>
                                 <exclude reference="Z13-1W-vmq"/>
-                                <exclude reference="ezO-Cq-fk6"/>
-                                <exclude reference="tOq-i4-9OK"/>
                                 <exclude reference="uzF-Ck-x9S"/>
-                                <exclude reference="xXP-Yt-d6G"/>
-                                <exclude reference="7Up-lA-ItW"/>
                                 <exclude reference="Iu0-PA-eWU"/>
                                 <exclude reference="MyV-wn-fDt"/>
                                 <exclude reference="dLK-03-BwO"/>
-                                <exclude reference="fEn-Vp-dg6"/>
                                 <exclude reference="NJn-eD-IkW"/>
                                 <exclude reference="XnO-C8-P0Y"/>
                                 <exclude reference="f4N-YH-uQI"/>
                                 <exclude reference="jHe-bk-fEE"/>
                                 <exclude reference="Zr8-VN-Cm2"/>
-                                <exclude reference="kxp-oa-5h4"/>
                                 <exclude reference="sPH-B9-8xe"/>
-                                <exclude reference="u5C-e3-4Lt"/>
                                 <exclude reference="Qy3-YD-n4i"/>
                                 <exclude reference="1FU-oQ-S1o"/>
                                 <exclude reference="1t8-NG-lHa"/>
                                 <exclude reference="5fH-Ou-iEO"/>
-                                <exclude reference="D0E-SG-Qum"/>
-                                <exclude reference="UB4-FZ-1i7"/>
-                                <exclude reference="jau-WV-1v0"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -2741,38 +2677,24 @@
                                 <include reference="BdB-vi-zpj"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="CCe-oH-Euq"/>
                                 <include reference="IJG-aN-sVe"/>
-                                <exclude reference="sWX-Qx-xuD"/>
-                                <exclude reference="xnL-eh-21o"/>
-                                <exclude reference="IVm-iN-Znj"/>
                                 <include reference="Iyg-HL-LSq"/>
                                 <include reference="Wfb-7B-JEa"/>
                                 <include reference="Z13-1W-vmq"/>
-                                <exclude reference="ezO-Cq-fk6"/>
-                                <exclude reference="tOq-i4-9OK"/>
                                 <include reference="uzF-Ck-x9S"/>
-                                <exclude reference="xXP-Yt-d6G"/>
-                                <exclude reference="7Up-lA-ItW"/>
                                 <include reference="Iu0-PA-eWU"/>
                                 <include reference="MyV-wn-fDt"/>
                                 <include reference="dLK-03-BwO"/>
-                                <exclude reference="fEn-Vp-dg6"/>
                                 <include reference="NJn-eD-IkW"/>
                                 <include reference="XnO-C8-P0Y"/>
                                 <include reference="f4N-YH-uQI"/>
                                 <include reference="jHe-bk-fEE"/>
                                 <include reference="Zr8-VN-Cm2"/>
-                                <exclude reference="kxp-oa-5h4"/>
                                 <include reference="sPH-B9-8xe"/>
-                                <exclude reference="u5C-e3-4Lt"/>
                                 <include reference="Qy3-YD-n4i"/>
                                 <include reference="1FU-oQ-S1o"/>
                                 <include reference="1t8-NG-lHa"/>
                                 <include reference="5fH-Ou-iEO"/>
-                                <exclude reference="D0E-SG-Qum"/>
-                                <exclude reference="UB4-FZ-1i7"/>
-                                <exclude reference="jau-WV-1v0"/>
                             </mask>
                         </variation>
                     </view>
@@ -2791,10 +2713,10 @@
             </objects>
             <point key="canvasLocation" x="2802" y="150.75"/>
         </scene>
-        <!--Spark Connecting Progress View Controller-->
+        <!--Particle Connecting Progress View Controller-->
         <scene sceneID="pU4-vR-fWy">
             <objects>
-                <viewController id="lWW-BP-U6f" customClass="SparkConnectingProgressViewController" sceneMemberID="viewController">
+                <viewController id="lWW-BP-U6f" customClass="ParticleConnectingProgressViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ETu-KJ-qbF"/>
                         <viewControllerLayoutGuide type="bottom" id="IzB-Lz-4Wh"/>
@@ -2803,13 +2725,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your {device} is connecting to:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sVc-hH-dHk" customClass="SparkSetupUILabel">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your {device} is connecting to:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sVc-hH-dHk" customClass="ParticleSetupUILabel">
                                 <rect key="frame" x="20" y="80" width="374" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SSID" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="240" translatesAutoresizingMaskIntoConstraints="NO" id="cOI-4H-O0J" customClass="SparkSetupUILabel">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SSID" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="240" translatesAutoresizingMaskIntoConstraints="NO" id="cOI-4H-O0J" customClass="ParticleSetupUILabel">
                                 <rect key="frame" x="190.66666666666666" y="106" width="33" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -2818,7 +2740,7 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="type" value="bold"/>
                                 </userDefinedRuntimeAttributes>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This can take about a minute." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pE1-ji-8tD" customClass="SparkSetupUILabel">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This can take about a minute." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pE1-ji-8tD" customClass="ParticleSetupUILabel">
                                 <rect key="frame" x="106.66666666666669" y="132" width="201" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -2862,7 +2784,7 @@
                                     </mask>
                                 </variation>
                             </imageView>
-                            <view hidden="YES" tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l7F-fD-FkN" customClass="SparkConnectingProgressView">
+                            <view hidden="YES" tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l7F-fD-FkN" customClass="ParticleConnectingProgressView">
                                 <rect key="frame" x="20" y="200" width="374" height="40"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="spinner_big" translatesAutoresizingMaskIntoConstraints="NO" id="AyL-b2-yuA">
@@ -2939,7 +2861,7 @@
                                     <outlet property="spinner" destination="AyL-b2-yuA" id="oQl-xO-0E4"/>
                                 </connections>
                             </view>
-                            <view hidden="YES" tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c42-pG-Oeu" customClass="SparkConnectingProgressView">
+                            <view hidden="YES" tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c42-pG-Oeu" customClass="ParticleConnectingProgressView">
                                 <rect key="frame" x="20" y="242" width="374" height="40"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="spinner_big" translatesAutoresizingMaskIntoConstraints="NO" id="jMw-h9-m48">
@@ -3016,7 +2938,7 @@
                                     <outlet property="spinner" destination="jMw-h9-m48" id="ihf-ot-Vph"/>
                                 </connections>
                             </view>
-                            <view hidden="YES" tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m7h-qk-v7W" customClass="SparkConnectingProgressView">
+                            <view hidden="YES" tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m7h-qk-v7W" customClass="ParticleConnectingProgressView">
                                 <rect key="frame" x="20" y="284" width="374" height="40"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="spinner_big" translatesAutoresizingMaskIntoConstraints="NO" id="Idj-bo-wgj">
@@ -3093,7 +3015,7 @@
                                     <outlet property="spinner" destination="Idj-bo-wgj" id="HeU-X8-jj3"/>
                                 </connections>
                             </view>
-                            <view hidden="YES" tag="4" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tB4-8N-o30" customClass="SparkConnectingProgressView">
+                            <view hidden="YES" tag="4" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tB4-8N-o30" customClass="ParticleConnectingProgressView">
                                 <rect key="frame" x="20" y="326" width="374" height="40"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="spinner_big" translatesAutoresizingMaskIntoConstraints="NO" id="gd0-Tt-HYj">
@@ -3170,7 +3092,7 @@
                                     <outlet property="spinner" destination="gd0-Tt-HYj" id="AMZ-u7-Fkg"/>
                                 </connections>
                             </view>
-                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R3W-op-31b" customClass="SparkConnectingProgressView">
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R3W-op-31b" customClass="ParticleConnectingProgressView">
                                 <rect key="frame" x="20" y="158" width="374" height="40"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="spinner_big" translatesAutoresizingMaskIntoConstraints="NO" id="HhJ-5t-crK">
@@ -3251,7 +3173,6 @@
                         <color key="backgroundColor" red="0.95564913749694824" green="0.95562052726745605" blue="0.95563679933547974" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="R3W-op-31b" firstAttribute="top" secondItem="pE1-ji-8tD" secondAttribute="bottom" constant="8" id="1vK-ay-A8m"/>
-                            <constraint firstItem="sVc-hH-dHk" firstAttribute="top" secondItem="ETu-KJ-qbF" secondAttribute="bottom" constant="129" id="2UB-Dw-XKS"/>
                             <constraint firstItem="eud-gX-Qzz" firstAttribute="leading" secondItem="dyM-qm-UaJ" secondAttribute="leadingMargin" constant="-16" id="5X6-e9-RKX">
                                 <variation key="heightClass=regular-widthClass=compact" constant="-20"/>
                             </constraint>
@@ -3278,20 +3199,16 @@
                             <constraint firstItem="sVc-hH-dHk" firstAttribute="top" secondItem="eud-gX-Qzz" secondAttribute="bottom" constant="14" id="RRz-NG-iTf">
                                 <variation key="heightClass=regular-widthClass=compact" constant="16"/>
                             </constraint>
-                            <constraint firstItem="eud-gX-Qzz" firstAttribute="leading" secondItem="dyM-qm-UaJ" secondAttribute="leadingMargin" id="SSu-oy-JUP"/>
                             <constraint firstItem="c42-pG-Oeu" firstAttribute="trailing" secondItem="dyM-qm-UaJ" secondAttribute="trailingMargin" id="VSk-OA-zc0"/>
                             <constraint firstItem="R3W-op-31b" firstAttribute="trailing" secondItem="dyM-qm-UaJ" secondAttribute="trailingMargin" id="W1u-9z-MO7"/>
                             <constraint firstItem="l7F-fD-FkN" firstAttribute="top" secondItem="R3W-op-31b" secondAttribute="bottom" constant="1" id="cxj-sP-4jW">
                                 <variation key="heightClass=regular-widthClass=compact" constant="2"/>
                             </constraint>
                             <constraint firstItem="c42-pG-Oeu" firstAttribute="leading" secondItem="dyM-qm-UaJ" secondAttribute="leadingMargin" id="dE0-1y-nFf"/>
-                            <constraint firstAttribute="centerX" secondItem="eud-gX-Qzz" secondAttribute="centerX" id="e3d-f7-Xce"/>
                             <constraint firstAttribute="centerX" secondItem="pE1-ji-8tD" secondAttribute="centerX" id="fQE-gc-jya"/>
                             <constraint firstItem="R3W-op-31b" firstAttribute="leading" secondItem="dyM-qm-UaJ" secondAttribute="leadingMargin" id="iIU-Qr-eTa"/>
                             <constraint firstItem="tB4-8N-o30" firstAttribute="trailing" secondItem="dyM-qm-UaJ" secondAttribute="trailingMargin" id="kbb-GZ-aD4"/>
                             <constraint firstItem="sVc-hH-dHk" firstAttribute="trailing" secondItem="dyM-qm-UaJ" secondAttribute="trailingMargin" id="l38-Y8-255"/>
-                            <constraint firstItem="sVc-hH-dHk" firstAttribute="top" secondItem="ETu-KJ-qbF" secondAttribute="bottom" constant="154" id="mve-Kx-mJX"/>
-                            <constraint firstItem="b2A-QU-4k0" firstAttribute="top" secondItem="sVc-hH-dHk" secondAttribute="bottom" constant="3" id="n6t-qd-MSM"/>
                             <constraint firstItem="tB4-8N-o30" firstAttribute="top" secondItem="m7h-qk-v7W" secondAttribute="bottom" constant="3" id="nu1-c7-rsT">
                                 <variation key="heightClass=regular-widthClass=compact" constant="2"/>
                             </constraint>
@@ -3299,7 +3216,6 @@
                             <constraint firstItem="pE1-ji-8tD" firstAttribute="top" secondItem="cOI-4H-O0J" secondAttribute="bottom" constant="7" id="thv-mV-dd6">
                                 <variation key="heightClass=regular-widthClass=compact" constant="8"/>
                             </constraint>
-                            <constraint firstAttribute="trailingMargin" secondItem="eud-gX-Qzz" secondAttribute="trailing" id="tnm-0N-i1s"/>
                             <constraint firstItem="b2A-QU-4k0" firstAttribute="centerY" secondItem="cOI-4H-O0J" secondAttribute="centerY" constant="-3.5" id="vgz-gB-H40">
                                 <variation key="heightClass=regular-widthClass=compact" constant="-2"/>
                             </constraint>
@@ -3323,21 +3239,15 @@
                                 <exclude reference="Cla-K4-3YF"/>
                                 <exclude reference="DVc-xY-a4A"/>
                                 <exclude reference="QW2-Yu-vYl"/>
-                                <exclude reference="SSu-oy-JUP"/>
-                                <exclude reference="e3d-f7-Xce"/>
-                                <exclude reference="tnm-0N-i1s"/>
-                                <exclude reference="2UB-Dw-XKS"/>
                                 <exclude reference="EcO-R3-W8Q"/>
                                 <exclude reference="Gbn-bI-dwP"/>
                                 <exclude reference="RRz-NG-iTf"/>
                                 <exclude reference="l38-Y8-255"/>
-                                <exclude reference="mve-Kx-mJX"/>
                                 <exclude reference="fQE-gc-jya"/>
                                 <exclude reference="thv-mV-dd6"/>
                                 <exclude reference="1vK-ay-A8m"/>
                                 <exclude reference="W1u-9z-MO7"/>
                                 <exclude reference="iIU-Qr-eTa"/>
-                                <exclude reference="n6t-qd-MSM"/>
                                 <exclude reference="vgz-gB-H40"/>
                                 <exclude reference="MvW-Cv-MyL"/>
                                 <exclude reference="QDx-7G-uz9"/>
@@ -3375,21 +3285,15 @@
                                 <include reference="Cla-K4-3YF"/>
                                 <include reference="DVc-xY-a4A"/>
                                 <include reference="QW2-Yu-vYl"/>
-                                <exclude reference="SSu-oy-JUP"/>
-                                <exclude reference="e3d-f7-Xce"/>
-                                <exclude reference="tnm-0N-i1s"/>
-                                <exclude reference="2UB-Dw-XKS"/>
                                 <include reference="EcO-R3-W8Q"/>
                                 <include reference="Gbn-bI-dwP"/>
                                 <include reference="RRz-NG-iTf"/>
                                 <include reference="l38-Y8-255"/>
-                                <exclude reference="mve-Kx-mJX"/>
                                 <include reference="fQE-gc-jya"/>
                                 <include reference="thv-mV-dd6"/>
                                 <include reference="1vK-ay-A8m"/>
                                 <include reference="W1u-9z-MO7"/>
                                 <include reference="iIU-Qr-eTa"/>
-                                <exclude reference="n6t-qd-MSM"/>
                                 <include reference="vgz-gB-H40"/>
                                 <include reference="MvW-Cv-MyL"/>
                                 <include reference="QDx-7G-uz9"/>
@@ -3427,10 +3331,10 @@
             </objects>
             <point key="canvasLocation" x="4440" y="150.75"/>
         </scene>
-        <!--Spark Setup Result View Controller-->
+        <!--Particle Setup Result View Controller-->
         <scene sceneID="Uha-um-OAW">
             <objects>
-                <viewController id="fH1-BW-ERq" customClass="SparkSetupResultViewController" sceneMemberID="viewController">
+                <viewController id="fH1-BW-ERq" customClass="ParticleSetupResultViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="cjD-af-kcU"/>
                         <viewControllerLayoutGuide type="bottom" id="aDq-1v-zeu"/>
@@ -3484,7 +3388,7 @@
                                     </mask>
                                 </variation>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You successfully setup you device! hooray!" lineBreakMode="wordWrap" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nUz-dW-L6z" customClass="SparkSetupUILabel">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You successfully setup you device! hooray!" lineBreakMode="wordWrap" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nUz-dW-L6z" customClass="ParticleSetupUILabel">
                                 <rect key="frame" x="20" y="241" width="374" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -3493,7 +3397,7 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="type" value="normal"/>
                                 </userDefinedRuntimeAttributes>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vtn-Ip-3FT" customClass="SparkSetupUIButton">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vtn-Ip-3FT" customClass="ParticleSetupUIButton">
                                 <rect key="frame" x="83" y="676" width="248" height="40"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -3525,7 +3429,7 @@
                                     <action selector="doneButtonTapped:" destination="fH1-BW-ERq" eventType="touchUpInside" id="blt-sj-hH6"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Setup status" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="ywE-ZV-rVm" customClass="SparkSetupUILabel">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Setup status" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="ywE-ZV-rVm" customClass="ParticleSetupUILabel">
                                 <rect key="frame" x="20" y="196" width="374" height="29"/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="24"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -3534,7 +3438,7 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="type" value="header"/>
                                 </userDefinedRuntimeAttributes>
                             </label>
-                            <button hidden="YES" opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YZM-QG-orr" customClass="SparkSetupUIButton">
+                            <button hidden="YES" opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YZM-QG-orr" customClass="ParticleSetupUIButton">
                                 <rect key="frame" x="151" y="638" width="112" height="30"/>
                                 <state key="normal" title="Troubleshooting">
                                     <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -3546,7 +3450,7 @@
                                     <action selector="troubleshootingButtonTouched:" destination="fH1-BW-ERq" eventType="touchUpInside" id="Nx4-2s-QfT"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name your new device:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jkc-Z7-m2G" customClass="SparkSetupUILabel">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name your new device:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jkc-Z7-m2G" customClass="ParticleSetupUILabel">
                                 <rect key="frame" x="20" y="275" width="160" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -3585,7 +3489,6 @@
                             <constraint firstItem="nUz-dW-L6z" firstAttribute="top" secondItem="ywE-ZV-rVm" secondAttribute="bottom" constant="16" id="7w6-rj-pgc"/>
                             <constraint firstItem="dxu-kn-9q9" firstAttribute="top" secondItem="4qS-vF-byz" secondAttribute="top" id="8aA-R0-N5y"/>
                             <constraint firstItem="ywE-ZV-rVm" firstAttribute="leading" secondItem="4qS-vF-byz" secondAttribute="leadingMargin" id="AWe-1M-kzI"/>
-                            <constraint firstItem="vtn-Ip-3FT" firstAttribute="bottom" secondItem="nUz-dW-L6z" secondAttribute="bottom" constant="471" id="GuY-l5-0uf"/>
                             <constraint firstAttribute="centerX" secondItem="vtn-Ip-3FT" secondAttribute="centerX" id="Ijg-ta-hZo"/>
                             <constraint firstAttribute="centerX" secondItem="48y-vy-AG6" secondAttribute="centerX" id="KMj-6N-Aqi"/>
                             <constraint firstItem="vtn-Ip-3FT" firstAttribute="top" secondItem="YZM-QG-orr" secondAttribute="bottom" constant="8" id="Kpe-Cs-1JY"/>
@@ -3646,7 +3549,6 @@
                                 <exclude reference="nO7-HR-5Qt"/>
                                 <exclude reference="uqE-WU-my8"/>
                                 <exclude reference="mkS-9z-5Ye"/>
-                                <exclude reference="GuY-l5-0uf"/>
                                 <exclude reference="Ijg-ta-hZo"/>
                                 <exclude reference="Kpe-Cs-1JY"/>
                             </mask>
@@ -3682,7 +3584,6 @@
                                 <include reference="nO7-HR-5Qt"/>
                                 <include reference="uqE-WU-my8"/>
                                 <include reference="mkS-9z-5Ye"/>
-                                <exclude reference="GuY-l5-0uf"/>
                                 <include reference="Ijg-ta-hZo"/>
                                 <include reference="Kpe-Cs-1JY"/>
                             </mask>
@@ -3701,10 +3602,10 @@
             </objects>
             <point key="canvasLocation" x="5400" y="150.75"/>
         </scene>
-        <!--Spark Setup Main Controller-->
+        <!--Particle Setup Main Controller-->
         <scene sceneID="Cqt-4j-Alu">
             <objects>
-                <viewController storyboardIdentifier="root" id="OLQ-3R-oFq" customClass="SparkSetupMainController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="root" id="OLQ-3R-oFq" customClass="ParticleSetupMainController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Pgk-0f-Nxs"/>
                         <viewControllerLayoutGuide type="bottom" id="yLp-kS-Hsd"/>
@@ -3769,10 +3670,10 @@
             </objects>
             <point key="canvasLocation" x="411" y="-112"/>
         </scene>
-        <!--Spark Get Ready View Controller-->
+        <!--Particle Get Ready View Controller-->
         <scene sceneID="uDk-Ph-8Sm">
             <objects>
-                <viewController storyboardIdentifier="get_ready" title="Spark Get Ready View Controller" id="Z3p-Ig-NCk" customClass="SparkGetReadyViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="get_ready" title="Particle Get Ready View Controller" id="Z3p-Ig-NCk" customClass="ParticleGetReadyViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="vUh-Wu-dKe"/>
                         <viewControllerLayoutGuide type="bottom" id="evs-MU-1zL"/>
@@ -3813,7 +3714,7 @@
                                                     </mask>
                                                 </variation>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The on-board LED should be blinking blue. If not, hold the {mode button} for 3 seconds" lineBreakMode="wordWrap" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oHW-yI-y9u" customClass="SparkSetupUILabel">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The on-board LED should be blinking blue. If not, hold the {mode button} for 3 seconds" lineBreakMode="wordWrap" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oHW-yI-y9u" customClass="ParticleSetupUILabel">
                                                 <rect key="frame" x="45" y="46.666666666666686" width="329" height="61"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="highlightedColor"/>
@@ -3897,7 +3798,7 @@
                                                     </mask>
                                                 </variation>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Make sure your iOS device is connected to the Internet" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y1h-An-sff" customClass="SparkSetupUILabel">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Make sure your iOS device is connected to the Internet" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y1h-An-sff" customClass="ParticleSetupUILabel">
                                                 <rect key="frame" x="45" y="56.999999999999943" width="329" height="40.666666666666742"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="highlightedColor"/>
@@ -3981,7 +3882,7 @@
                                                     </mask>
                                                 </variation>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Plug in your {device} to power it on" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m7e-HY-AYj" customClass="SparkSetupUILabel">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Plug in your {device} to power it on" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m7e-HY-AYj" customClass="ParticleSetupUILabel">
                                                 <rect key="frame" x="45" y="66.666666666666657" width="329" height="20.666666666666657"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="highlightedColor"/>
@@ -4143,7 +4044,7 @@
                                     </mask>
                                 </variation>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UNy-JD-Bob" customClass="SparkSetupUIButton">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UNy-JD-Bob" customClass="ParticleSetupUIButton">
                                 <rect key="frame" x="83" y="676" width="248" height="40"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -4176,7 +4077,7 @@
                                     <action selector="readyButtonTapped:" destination="Z3p-Ig-NCk" eventType="touchUpInside" id="O4v-Zq-VIx"/>
                                 </connections>
                             </button>
-                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="spinner" translatesAutoresizingMaskIntoConstraints="NO" id="Ald-Di-X3r" customClass="SparkSetupUISpinner">
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="spinner" translatesAutoresizingMaskIntoConstraints="NO" id="Ald-Di-X3r" customClass="ParticleSetupUISpinner">
                                 <rect key="frame" x="89" y="686" width="20" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="32" id="mst-fn-d3A">
@@ -4299,7 +4200,7 @@
                                     <action selector="cancelSetup:" destination="Z3p-Ig-NCk" eventType="touchUpInside" id="3YB-XC-VhV"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.69999999999999973" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Logged in as:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2ys-oq-6AP" customClass="SparkSetupUILabel">
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.69999999999999973" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Logged in as:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2ys-oq-6AP" customClass="ParticleSetupUILabel">
                                 <rect key="frame" x="161" y="650" width="92" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -4316,28 +4217,19 @@
                                 <variation key="heightClass=regular-widthClass=compact" constant="32"/>
                             </constraint>
                             <constraint firstItem="Dom-kg-WP6" firstAttribute="trailing" secondItem="xP3-D7-C6C" secondAttribute="trailingMargin" id="4Ra-NF-ZeN"/>
-                            <constraint firstItem="NXe-vV-Moq" firstAttribute="top" secondItem="ldG-Y4-BA3" secondAttribute="bottom" constant="-36" id="4t6-GS-9V9"/>
                             <constraint firstItem="ldG-Y4-BA3" firstAttribute="top" secondItem="vUh-Wu-dKe" secondAttribute="bottom" constant="-20" id="5cJ-Ic-2eu"/>
                             <constraint firstAttribute="centerX" secondItem="UNy-JD-Bob" secondAttribute="centerX" constant="18" id="6LE-Fl-8tf">
                                 <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
                             </constraint>
                             <constraint firstItem="Ald-Di-X3r" firstAttribute="centerY" secondItem="UNy-JD-Bob" secondAttribute="centerY" id="76c-HT-3ca"/>
-                            <constraint firstItem="ldG-Y4-BA3" firstAttribute="leading" secondItem="xP3-D7-C6C" secondAttribute="leading" id="ADu-92-mEK"/>
                             <constraint firstItem="ldG-Y4-BA3" firstAttribute="leading" secondItem="xP3-D7-C6C" secondAttribute="leadingMargin" constant="-16" id="EiR-Ug-m8r">
                                 <variation key="heightClass=regular-widthClass=compact" constant="-20"/>
-                            </constraint>
-                            <constraint firstItem="UNy-JD-Bob" firstAttribute="top" secondItem="kZE-3U-nVp" secondAttribute="bottom" constant="8" id="HIC-F5-0Zs">
-                                <variation key="heightClass=regular-widthClass=compact" constant="12"/>
                             </constraint>
                             <constraint firstAttribute="trailingMargin" secondItem="kZE-3U-nVp" secondAttribute="trailing" constant="-16" id="INY-dG-Ke2">
                                 <variation key="heightClass=regular-widthClass=compact" constant="-8"/>
                             </constraint>
-                            <constraint firstItem="ldG-Y4-BA3" firstAttribute="leading" secondItem="NXe-vV-Moq" secondAttribute="trailing" constant="-64" id="MGv-px-6yP"/>
-                            <constraint firstItem="ldG-Y4-BA3" firstAttribute="top" secondItem="xP3-D7-C6C" secondAttribute="top" id="Ohc-oK-fzm"/>
                             <constraint firstItem="Dom-kg-WP6" firstAttribute="leading" secondItem="xP3-D7-C6C" secondAttribute="leadingMargin" id="Yau-dy-lFo"/>
                             <constraint firstAttribute="centerX" secondItem="2ys-oq-6AP" secondAttribute="centerX" id="b55-e2-WTK"/>
-                            <constraint firstItem="UNy-JD-Bob" firstAttribute="top" secondItem="kZE-3U-nVp" secondAttribute="bottom" constant="8" id="cjH-6G-4ld"/>
-                            <constraint firstAttribute="centerX" secondItem="kZE-3U-nVp" secondAttribute="centerX" id="gv3-gO-MrM"/>
                             <constraint firstItem="UNy-JD-Bob" firstAttribute="top" secondItem="2ys-oq-6AP" secondAttribute="bottom" constant="8" id="j9v-OG-VVk"/>
                             <constraint firstItem="evs-MU-1zL" firstAttribute="top" secondItem="UNy-JD-Bob" secondAttribute="bottom" constant="180" id="kxC-aR-8MR">
                                 <variation key="heightClass=regular-widthClass=compact" constant="20"/>
@@ -4373,20 +4265,15 @@
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="kxC-aR-8MR"/>
-                                <exclude reference="4t6-GS-9V9"/>
                                 <exclude reference="teM-uq-SgN"/>
                                 <exclude reference="yrB-AV-Pv8"/>
                                 <exclude reference="5cJ-Ic-2eu"/>
-                                <exclude reference="ADu-92-mEK"/>
                                 <exclude reference="EiR-Ug-m8r"/>
-                                <exclude reference="MGv-px-6yP"/>
-                                <exclude reference="Ohc-oK-fzm"/>
                                 <exclude reference="oGF-pD-zfD"/>
                                 <exclude reference="12i-hG-M1u"/>
                                 <exclude reference="4Ra-NF-ZeN"/>
                                 <exclude reference="Yau-dy-lFo"/>
                                 <exclude reference="INY-dG-Ke2"/>
-                                <exclude reference="gv3-gO-MrM"/>
                                 <exclude reference="qcX-hF-K7F"/>
                                 <exclude reference="08j-Bi-dpM"/>
                                 <exclude reference="n9d-qU-yAx"/>
@@ -4396,8 +4283,6 @@
                                 <exclude reference="tHe-bM-L5Y"/>
                                 <exclude reference="3bd-Mk-KSK"/>
                                 <exclude reference="6LE-Fl-8tf"/>
-                                <exclude reference="HIC-F5-0Zs"/>
-                                <exclude reference="cjH-6G-4ld"/>
                                 <exclude reference="j9v-OG-VVk"/>
                             </mask>
                         </variation>
@@ -4414,20 +4299,15 @@
                             </mask>
                             <mask key="constraints">
                                 <include reference="kxC-aR-8MR"/>
-                                <exclude reference="4t6-GS-9V9"/>
                                 <include reference="teM-uq-SgN"/>
                                 <include reference="yrB-AV-Pv8"/>
                                 <include reference="5cJ-Ic-2eu"/>
-                                <exclude reference="ADu-92-mEK"/>
                                 <include reference="EiR-Ug-m8r"/>
-                                <exclude reference="MGv-px-6yP"/>
-                                <exclude reference="Ohc-oK-fzm"/>
                                 <include reference="oGF-pD-zfD"/>
                                 <include reference="12i-hG-M1u"/>
                                 <include reference="4Ra-NF-ZeN"/>
                                 <include reference="Yau-dy-lFo"/>
                                 <include reference="INY-dG-Ke2"/>
-                                <exclude reference="gv3-gO-MrM"/>
                                 <include reference="qcX-hF-K7F"/>
                                 <include reference="08j-Bi-dpM"/>
                                 <include reference="n9d-qU-yAx"/>
@@ -4437,8 +4317,6 @@
                                 <include reference="tHe-bM-L5Y"/>
                                 <include reference="3bd-Mk-KSK"/>
                                 <include reference="6LE-Fl-8tf"/>
-                                <exclude reference="HIC-F5-0Zs"/>
-                                <exclude reference="cjH-6G-4ld"/>
                                 <include reference="j9v-OG-VVk"/>
                             </mask>
                         </variation>
@@ -4461,10 +4339,10 @@
             </objects>
             <point key="canvasLocation" x="1241" y="-112"/>
         </scene>
-        <!--Spark Setup Password Entry View Controller-->
+        <!--Particle Setup Password Entry View Controller-->
         <scene sceneID="OZS-XG-R09">
             <objects>
-                <viewController storyboardIdentifier="enter_password" id="URz-wL-Fyt" customClass="SparkSetupPasswordEntryViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="enter_password" id="URz-wL-Fyt" customClass="ParticleSetupPasswordEntryViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="1yh-eh-fm3"/>
                         <viewControllerLayoutGuide type="bottom" id="Evh-19-Hy9"/>
@@ -4495,7 +4373,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aGH-RZ-uLL">
                                 <rect key="frame" x="20" y="263" width="374" height="170"/>
                                 <subviews>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Secured network password" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="18" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="J4Z-in-rrz" customClass="SparkSetupUILabel">
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Secured network password" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="18" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="J4Z-in-rrz" customClass="ParticleSetupUILabel">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="29"/>
                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="24"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -4504,7 +4382,7 @@
                                             <userDefinedRuntimeAttribute type="string" keyPath="type" value="header"/>
                                         </userDefinedRuntimeAttributes>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Network name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yjo-nA-HOv" customClass="SparkSetupUILabel">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Network name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yjo-nA-HOv" customClass="ParticleSetupUILabel">
                                         <rect key="frame" x="42" y="45" width="113" height="19.666666666666686"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -4532,7 +4410,7 @@
                                             </mask>
                                         </variation>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Security type" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r1M-iA-Igy" customClass="SparkSetupUILabel">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Security type" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r1M-iA-Igy" customClass="ParticleSetupUILabel">
                                         <rect key="frame" x="275" y="46" width="91" height="18"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -4563,7 +4441,7 @@
                                             <action selector="showPasswordSwitchTapped:" destination="URz-wL-Fyt" eventType="valueChanged" id="Fb3-BB-MSh"/>
                                         </connections>
                                     </switch>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hide password" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GRe-Uh-isD" customClass="SparkSetupUILabel">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hide password" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GRe-Uh-isD" customClass="ParticleSetupUILabel">
                                         <rect key="frame" x="65" y="134.66666666666669" width="107.66666666666666" height="19.333333333333314"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -4703,7 +4581,7 @@
                                     <action selector="changeNetworkButtonTapped:" destination="URz-wL-Fyt" eventType="touchUpInside" id="Nhm-kT-llT"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XBN-QE-HKZ" customClass="SparkSetupUIButton">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XBN-QE-HKZ" customClass="ParticleSetupUIButton">
                                 <rect key="frame" x="83" y="676" width="248" height="40"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -4738,25 +4616,12 @@
                         </subviews>
                         <color key="backgroundColor" red="0.95564913749694824" green="0.95562052726745605" blue="0.95563679933547974" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="aGH-RZ-uLL" firstAttribute="top" secondItem="6tN-9j-HsE" secondAttribute="bottom" constant="8" id="0U0-vK-bPj"/>
-                            <constraint firstItem="Evh-19-Hy9" firstAttribute="top" secondItem="fYN-rW-HM4" secondAttribute="bottom" constant="20" id="1g4-Dm-ivS"/>
                             <constraint firstItem="Evh-19-Hy9" firstAttribute="top" secondItem="XBN-QE-HKZ" secondAttribute="bottom" constant="20" id="7Cw-Hv-aIk"/>
                             <constraint firstAttribute="trailingMargin" secondItem="6tN-9j-HsE" secondAttribute="trailing" constant="-16" id="CCz-pP-Nyz">
                                 <variation key="heightClass=regular-widthClass=compact" constant="-20"/>
                             </constraint>
                             <constraint firstAttribute="centerX" secondItem="6tN-9j-HsE" secondAttribute="centerX" id="CVG-tS-Sxv"/>
-                            <constraint firstAttribute="centerY" secondItem="aGH-RZ-uLL" secondAttribute="centerY" id="E7E-VS-32O"/>
-                            <constraint firstAttribute="centerX" secondItem="fYN-rW-HM4" secondAttribute="centerX" constant="-13" id="Igi-K4-GtX">
-                                <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
-                            </constraint>
                             <constraint firstItem="6tN-9j-HsE" firstAttribute="top" secondItem="pa8-S2-Yq3" secondAttribute="topMargin" id="JBJ-Wm-4Il"/>
-                            <constraint firstAttribute="centerX" secondItem="aGH-RZ-uLL" secondAttribute="centerX" id="MaS-a5-17o"/>
-                            <constraint firstItem="Evh-19-Hy9" firstAttribute="top" secondItem="aGH-RZ-uLL" secondAttribute="bottom" constant="8" id="TUg-3x-4DY"/>
-                            <constraint firstItem="fYN-rW-HM4" firstAttribute="top" secondItem="XBN-QE-HKZ" secondAttribute="bottom" constant="22" id="XHz-dj-4yb">
-                                <variation key="heightClass=regular-widthClass=compact" constant="16"/>
-                            </constraint>
-                            <constraint firstAttribute="trailingMargin" secondItem="6tN-9j-HsE" secondAttribute="trailing" id="XZx-Wj-w89"/>
-                            <constraint firstAttribute="centerX" secondItem="6tN-9j-HsE" secondAttribute="centerX" id="d6i-nH-Ae3"/>
                             <constraint firstItem="aGH-RZ-uLL" firstAttribute="trailing" secondItem="pa8-S2-Yq3" secondAttribute="trailingMargin" id="dSI-xx-M2r"/>
                             <constraint firstItem="aGH-RZ-uLL" firstAttribute="leading" secondItem="pa8-S2-Yq3" secondAttribute="leadingMargin" id="fJX-TH-Hfb"/>
                             <constraint firstAttribute="centerY" secondItem="aGH-RZ-uLL" secondAttribute="centerY" constant="-32" id="hNI-e3-gZ6">
@@ -4769,8 +4634,6 @@
                                 <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
                             </constraint>
                             <constraint firstItem="fYN-rW-HM4" firstAttribute="top" secondItem="1yh-eh-fm3" secondAttribute="bottom" constant="8" id="veH-yl-cRy"/>
-                            <constraint firstItem="6tN-9j-HsE" firstAttribute="top" secondItem="pa8-S2-Yq3" secondAttribute="topMargin" id="xHz-hF-jFs"/>
-                            <constraint firstItem="6tN-9j-HsE" firstAttribute="leading" secondItem="pa8-S2-Yq3" secondAttribute="leadingMargin" id="yf4-cd-Ge8"/>
                             <constraint firstItem="6tN-9j-HsE" firstAttribute="leading" secondItem="pa8-S2-Yq3" secondAttribute="leadingMargin" constant="-16" id="zaC-ig-WtI">
                                 <variation key="heightClass=regular-widthClass=compact" constant="-20"/>
                             </constraint>
@@ -4783,24 +4646,13 @@
                                 <exclude reference="XBN-QE-HKZ"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="1g4-Dm-ivS"/>
                                 <exclude reference="7Cw-Hv-aIk"/>
-                                <exclude reference="TUg-3x-4DY"/>
-                                <exclude reference="Igi-K4-GtX"/>
-                                <exclude reference="XHz-dj-4yb"/>
                                 <exclude reference="rvw-rL-JCZ"/>
                                 <exclude reference="veH-yl-cRy"/>
                                 <exclude reference="CCz-pP-Nyz"/>
                                 <exclude reference="CVG-tS-Sxv"/>
                                 <exclude reference="JBJ-Wm-4Il"/>
-                                <exclude reference="XZx-Wj-w89"/>
-                                <exclude reference="d6i-nH-Ae3"/>
-                                <exclude reference="xHz-hF-jFs"/>
-                                <exclude reference="yf4-cd-Ge8"/>
                                 <exclude reference="zaC-ig-WtI"/>
-                                <exclude reference="0U0-vK-bPj"/>
-                                <exclude reference="E7E-VS-32O"/>
-                                <exclude reference="MaS-a5-17o"/>
                                 <exclude reference="dSI-xx-M2r"/>
                                 <exclude reference="fJX-TH-Hfb"/>
                                 <exclude reference="hNI-e3-gZ6"/>
@@ -4815,24 +4667,13 @@
                                 <include reference="XBN-QE-HKZ"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="1g4-Dm-ivS"/>
                                 <include reference="7Cw-Hv-aIk"/>
-                                <exclude reference="TUg-3x-4DY"/>
-                                <exclude reference="Igi-K4-GtX"/>
-                                <exclude reference="XHz-dj-4yb"/>
                                 <include reference="rvw-rL-JCZ"/>
                                 <include reference="veH-yl-cRy"/>
                                 <include reference="CCz-pP-Nyz"/>
                                 <include reference="CVG-tS-Sxv"/>
                                 <include reference="JBJ-Wm-4Il"/>
-                                <exclude reference="XZx-Wj-w89"/>
-                                <exclude reference="d6i-nH-Ae3"/>
-                                <exclude reference="xHz-hF-jFs"/>
-                                <exclude reference="yf4-cd-Ge8"/>
                                 <include reference="zaC-ig-WtI"/>
-                                <exclude reference="0U0-vK-bPj"/>
-                                <exclude reference="E7E-VS-32O"/>
-                                <exclude reference="MaS-a5-17o"/>
                                 <include reference="dSI-xx-M2r"/>
                                 <include reference="fJX-TH-Hfb"/>
                                 <include reference="hNI-e3-gZ6"/>
@@ -4856,10 +4697,10 @@
             </objects>
             <point key="canvasLocation" x="3622.5" y="583.5"/>
         </scene>
-        <!--Spark Manual Network View Controller-->
+        <!--Particle Manual Network View Controller-->
         <scene sceneID="BiO-zA-MmH">
             <objects>
-                <viewController id="dRz-80-B65" customClass="SparkManualNetworkViewController" sceneMemberID="viewController">
+                <viewController id="dRz-80-B65" customClass="ParticleManualNetworkViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="PNm-wN-xvV"/>
                         <viewControllerLayoutGuide type="bottom" id="gSr-wm-pWw"/>
@@ -4890,7 +4731,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Els-s6-JaP">
                                 <rect key="frame" x="20" y="268" width="374" height="160"/>
                                 <subviews>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Manual network name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="18" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="h5u-ch-YzL" customClass="SparkSetupUILabel">
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Manual network name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="18" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="h5u-ch-YzL" customClass="ParticleSetupUILabel">
                                         <rect key="frame" x="34" y="8" width="340" height="29"/>
                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="24"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -4921,7 +4762,7 @@
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kTu-57-lbv">
                                         <rect key="frame" x="0.0" y="105" width="51" height="31"/>
                                     </switch>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Network requires password" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rd4-RO-nNO" customClass="SparkSetupUILabel">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Network requires password" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rd4-RO-nNO" customClass="ParticleSetupUILabel">
                                         <rect key="frame" x="57" y="111" width="198" height="19.666666666666686"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -5051,7 +4892,7 @@
                                     </mask>
                                 </variation>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p7A-Fe-1Rf" customClass="SparkSetupUIButton">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p7A-Fe-1Rf" customClass="ParticleSetupUIButton">
                                 <rect key="frame" x="83" y="676" width="248" height="40"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -5113,32 +4954,16 @@
                         <color key="backgroundColor" red="0.95564913749694824" green="0.95562052726745605" blue="0.95563679933547974" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="MD3-cf-C0M" firstAttribute="top" secondItem="ivc-Ce-LLj" secondAttribute="top" id="2eE-h0-Qu8"/>
-                            <constraint firstItem="Els-s6-JaP" firstAttribute="top" secondItem="MD3-cf-C0M" secondAttribute="bottom" constant="8" id="99F-Hs-XUX"/>
-                            <constraint firstItem="Els-s6-JaP" firstAttribute="top" secondItem="MD3-cf-C0M" secondAttribute="bottom" constant="8" id="9oH-6U-lru"/>
-                            <constraint firstItem="h5u-ch-YzL" firstAttribute="top" secondItem="MD3-cf-C0M" secondAttribute="bottom" constant="16" id="CpA-V9-uBo"/>
-                            <constraint firstAttribute="centerX" secondItem="Els-s6-JaP" secondAttribute="centerX" id="H7b-Jz-AdD"/>
-                            <constraint firstItem="MD3-cf-C0M" firstAttribute="leading" secondItem="ivc-Ce-LLj" secondAttribute="leadingMargin" id="JX6-rL-YwW"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="MD3-cf-C0M" secondAttribute="trailing" id="K0q-c5-kUL"/>
-                            <constraint firstItem="gSr-wm-pWw" firstAttribute="top" secondItem="pY6-oD-PoU" secondAttribute="bottom" constant="20" id="KRG-Dw-b8X"/>
                             <constraint firstItem="Els-s6-JaP" firstAttribute="leading" secondItem="ivc-Ce-LLj" secondAttribute="leadingMargin" id="OjL-FT-pim"/>
                             <constraint firstItem="gSr-wm-pWw" firstAttribute="top" secondItem="p7A-Fe-1Rf" secondAttribute="bottom" constant="20" id="Utz-vd-AQS"/>
-                            <constraint firstItem="Els-s6-JaP" firstAttribute="leading" secondItem="ivc-Ce-LLj" secondAttribute="leadingMargin" id="WDi-kP-hWk"/>
                             <constraint firstAttribute="centerX" secondItem="p7A-Fe-1Rf" secondAttribute="centerX" id="WmV-f6-Q0Q"/>
                             <constraint firstItem="pY6-oD-PoU" firstAttribute="top" secondItem="PNm-wN-xvV" secondAttribute="bottom" constant="8" id="XJL-4L-gPc"/>
-                            <constraint firstItem="gSr-wm-pWw" firstAttribute="top" secondItem="Els-s6-JaP" secondAttribute="bottom" constant="8" id="Ygq-PO-miY"/>
                             <constraint firstAttribute="centerY" secondItem="Els-s6-JaP" secondAttribute="centerY" constant="200.5" id="Z2l-oR-j1l">
                                 <variation key="heightClass=regular-widthClass=compact" constant="20"/>
                             </constraint>
-                            <constraint firstAttribute="centerY" secondItem="Els-s6-JaP" secondAttribute="centerY" id="c5F-hE-l6o"/>
-                            <constraint firstItem="Els-s6-JaP" firstAttribute="trailing" secondItem="ivc-Ce-LLj" secondAttribute="trailingMargin" id="fdI-3s-4iw"/>
-                            <constraint firstAttribute="centerX" secondItem="pY6-oD-PoU" secondAttribute="centerX" id="hkI-XL-vbU"/>
-                            <constraint firstAttribute="centerX" secondItem="MD3-cf-C0M" secondAttribute="centerX" id="ih7-z5-R8M"/>
-                            <constraint firstItem="gSr-wm-pWw" firstAttribute="top" secondItem="Els-s6-JaP" secondAttribute="bottom" constant="8" id="itu-8k-fCM"/>
                             <constraint firstItem="Els-s6-JaP" firstAttribute="trailing" secondItem="ivc-Ce-LLj" secondAttribute="trailingMargin" id="jPp-1Y-Aoc"/>
                             <constraint firstItem="MD3-cf-C0M" firstAttribute="leading" secondItem="ivc-Ce-LLj" secondAttribute="leading" id="nS0-oc-Sr4"/>
                             <constraint firstItem="pY6-oD-PoU" firstAttribute="leading" secondItem="ivc-Ce-LLj" secondAttribute="leadingMargin" constant="-8" id="tpJ-VB-RSM"/>
-                            <constraint firstItem="Els-s6-JaP" firstAttribute="top" secondItem="MD3-cf-C0M" secondAttribute="top" constant="108" id="xdJ-vS-d49"/>
-                            <constraint firstItem="pY6-oD-PoU" firstAttribute="top" secondItem="p7A-Fe-1Rf" secondAttribute="bottom" constant="16" id="yVZ-j1-6KF"/>
                             <constraint firstAttribute="trailing" secondItem="MD3-cf-C0M" secondAttribute="trailing" id="zgk-pY-Ygm"/>
                         </constraints>
                         <variation key="default">
@@ -5148,30 +4973,14 @@
                                 <exclude reference="p7A-Fe-1Rf"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="KRG-Dw-b8X"/>
                                 <exclude reference="Utz-vd-AQS"/>
-                                <exclude reference="itu-8k-fCM"/>
-                                <exclude reference="K0q-c5-kUL"/>
-                                <exclude reference="ih7-z5-R8M"/>
+                                <exclude reference="2eE-h0-Qu8"/>
+                                <exclude reference="nS0-oc-Sr4"/>
                                 <exclude reference="zgk-pY-Ygm"/>
-                                <exclude reference="99F-Hs-XUX"/>
                                 <exclude reference="OjL-FT-pim"/>
                                 <exclude reference="Z2l-oR-j1l"/>
-                                <exclude reference="c5F-hE-l6o"/>
-                                <exclude reference="xdJ-vS-d49"/>
-                                <exclude reference="XJL-4L-gPc"/>
-                                <exclude reference="yVZ-j1-6KF"/>
-                                <exclude reference="Ygq-PO-miY"/>
-                                <exclude reference="CpA-V9-uBo"/>
-                                <exclude reference="2eE-h0-Qu8"/>
-                                <exclude reference="JX6-rL-YwW"/>
-                                <exclude reference="nS0-oc-Sr4"/>
-                                <exclude reference="9oH-6U-lru"/>
-                                <exclude reference="H7b-Jz-AdD"/>
-                                <exclude reference="WDi-kP-hWk"/>
-                                <exclude reference="fdI-3s-4iw"/>
                                 <exclude reference="jPp-1Y-Aoc"/>
-                                <exclude reference="hkI-XL-vbU"/>
+                                <exclude reference="XJL-4L-gPc"/>
                                 <exclude reference="tpJ-VB-RSM"/>
                                 <exclude reference="WmV-f6-Q0Q"/>
                             </mask>
@@ -5184,30 +4993,14 @@
                                 <include reference="pY6-oD-PoU"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="KRG-Dw-b8X"/>
                                 <include reference="Utz-vd-AQS"/>
-                                <exclude reference="itu-8k-fCM"/>
-                                <exclude reference="K0q-c5-kUL"/>
-                                <exclude reference="ih7-z5-R8M"/>
+                                <include reference="2eE-h0-Qu8"/>
+                                <include reference="nS0-oc-Sr4"/>
                                 <include reference="zgk-pY-Ygm"/>
-                                <exclude reference="99F-Hs-XUX"/>
                                 <include reference="OjL-FT-pim"/>
                                 <include reference="Z2l-oR-j1l"/>
-                                <exclude reference="c5F-hE-l6o"/>
-                                <exclude reference="xdJ-vS-d49"/>
-                                <include reference="XJL-4L-gPc"/>
-                                <exclude reference="yVZ-j1-6KF"/>
-                                <exclude reference="Ygq-PO-miY"/>
-                                <exclude reference="CpA-V9-uBo"/>
-                                <include reference="2eE-h0-Qu8"/>
-                                <exclude reference="JX6-rL-YwW"/>
-                                <include reference="nS0-oc-Sr4"/>
-                                <exclude reference="9oH-6U-lru"/>
-                                <exclude reference="H7b-Jz-AdD"/>
-                                <exclude reference="WDi-kP-hWk"/>
-                                <exclude reference="fdI-3s-4iw"/>
                                 <include reference="jPp-1Y-Aoc"/>
-                                <exclude reference="hkI-XL-vbU"/>
+                                <include reference="XJL-4L-gPc"/>
                                 <include reference="tpJ-VB-RSM"/>
                                 <include reference="WmV-f6-Q0Q"/>
                             </mask>
@@ -5228,10 +5021,10 @@
             </objects>
             <point key="canvasLocation" x="3622.5" y="-256.5"/>
         </scene>
-        <!--Spark Setup Video View Controller-->
+        <!--Particle Setup Video View Controller-->
         <scene sceneID="nmi-Ol-iWg">
             <objects>
-                <viewController id="TSc-Cc-JEA" customClass="SparkSetupVideoViewController" sceneMemberID="viewController">
+                <viewController id="TSc-Cc-JEA" customClass="ParticleSetupVideoViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hNZ-78-gmF"/>
                         <viewControllerLayoutGuide type="bottom" id="Sh4-hX-WYC"/>
