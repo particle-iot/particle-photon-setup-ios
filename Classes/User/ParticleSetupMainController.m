@@ -51,7 +51,11 @@ NSString *const kParticleSetupDidFailDeviceIDKey = @"kParticleSetupDidFailDevice
     // frameework has assets as
     NSBundle *bundle = [NSBundle bundleForClass:self];
 #else
-    NSBundle *bundle = [NSBundle bundleWithURL:[[NSBundle bundleForClass:[self class]] URLForResource:@"ParticleSetup" withExtension:@"bundle"]];
+    NSBundle * bundle = nil;
+    if ([ParticleSetupCustomization sharedInstance].useAppResources)
+      bundle = [NSBundle mainBundle];
+    else
+      bundle = [NSBundle bundleWithURL:[[NSBundle bundleForClass:[self class]] URLForResource:@"ParticleSetup" withExtension:@"bundle"]];
 #endif
     return bundle;
 }
@@ -59,8 +63,13 @@ NSString *const kParticleSetupDidFailDeviceIDKey = @"kParticleSetupDidFailDevice
 
 +(UIStoryboard *)getSetupStoryboard
 {
-    UIStoryboard *setupStoryboard = [UIStoryboard storyboardWithName:@"setup" bundle:[ParticleSetupMainController getResourcesBundle]];
-    return setupStoryboard;
+  UIStoryboard *setupStoryboard = nil;
+  
+  if ( [[ParticleSetupMainController getResourcesBundle] pathForResource:[ParticleSetupCustomization sharedInstance].appResourcesRefName ofType:@"storyboardc"] != nil )
+    setupStoryboard = [UIStoryboard storyboardWithName:[ParticleSetupCustomization sharedInstance].appResourcesRefName bundle:[ParticleSetupMainController getResourcesBundle]];
+  else
+    NSLog(@"ERROR: app bundle must have storyboard with name \"%@\"\n", [ParticleSetupCustomization sharedInstance].appResourcesRefName);
+  return setupStoryboard;
 }
 
 +(UIImage *)loadImageFromResourceBundle:(NSString *)imageName
