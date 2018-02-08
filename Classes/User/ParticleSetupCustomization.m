@@ -24,6 +24,7 @@
 
 @implementation ParticleSetupCustomization
 
+@synthesize brandImage = _brandImage;
 
 +(instancetype)sharedInstance
 {
@@ -49,7 +50,7 @@
 //        self.deviceImage = [UIImage imageNamed:@"photon" inBundle:[ParticleSetupMainController getResourcesBundle] compatibleWithTraitCollection:nil]; // TODO: make iOS7 compatible
         self.brandName = @"Particle";
 //        self.brandImage = [UIImage imageNamed:@"spark-logo-head" inBundle:[ParticleSetupMainController getResourcesBundle] compatibleWithTraitCollection:nil]; // TODO: make iOS7 compatible
-        self.brandImage = [ParticleSetupMainController loadImageFromResourceBundle:@"spark-logo-head"];
+        _brandImage = nil;
 //        self.brandImageBackgroundColor = [UIColor colorWithRed:0.79f green:0.79f blue:0.79f alpha:1.0f];
         self.brandImageBackgroundColor = [UIColor colorWithRed:229 green:229 blue:237];
       
@@ -93,6 +94,12 @@
         self.productName = @"Photon";
         self.allowPasswordManager = YES;
 
+        // set 'useAppResources' to YES if you want to supply the storyboard and asset catalog from
+        // the app bundle instead of using the SDK's built-in version.  Your storyboard and asset catalog
+        // must be named 'setup' or change it by setting 'appResourcesRefName' to your liking.
+        self.useAppResources = NO;
+        self.appResourcesRefName = @"setup";
+      
         self.allowSkipAuthentication = NO;
         self.skipAuthenticationMessage = @"Skipping authentication will allow you to configure Wi-Fi credentials to your device but it will not be claimed to your account. Are you sure you want to skip authentication?";
         self.disableLogOutOption = NO;
@@ -102,4 +109,15 @@
     return nil;
 }
 
+-(UIImage *)brandImage {
+  if (_brandImage == nil) {
+    _brandImage = [ParticleSetupMainController loadImageFromResourceBundle:@"spark-logo-head"];
+  }
+  return _brandImage;
+}
+
+-(void)setBrandImage:(UIImage *)brandImage {
+  if (_brandImage != brandImage)
+    _brandImage = brandImage;
+}
 @end
