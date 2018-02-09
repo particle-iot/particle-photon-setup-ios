@@ -110,7 +110,11 @@
     
     if (self.passwordTextField.text.length < minWifiPassChars)
     {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Invalid password" message:[NSString stringWithFormat:@"Password must be %d characters or longer",minWifiPassChars] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        UIAlertView *alert = [[UIAlertView alloc]
+                              initWithTitle:[ParticleSetupCustomization sharedInstance].alertPassword_Title
+                              message:[NSString stringWithFormat:[ParticleSetupCustomization sharedInstance].alertPassword_Message,minWifiPassChars] delegate:nil
+                              cancelButtonTitle:[ParticleSetupCustomization sharedInstance].alertPassword_CancelBtn
+                              otherButtonTitles:nil];
         [alert show];
     }
     else

@@ -100,8 +100,8 @@
         case ParticleSetupMainControllerResultSuccess:
         {
             self.setupResultImageView.image = [ParticleSetupMainController loadImageFromResourceBundle:@"success"];
-            self.shortMessageLabel.text = @"Setup completed successfully";
-            self.longMessageLabel.text = @"Congrats! You've successfully set up your {device}.";
+            self.shortMessageLabel.text = [ParticleSetupCustomization sharedInstance].resultSuccess_Short;
+            self.longMessageLabel.text = [ParticleSetupCustomization sharedInstance].resultSuccess_Long;
             
             self.nameDeviceLabel.hidden = NO;
             self.nameDeviceTextField.hidden = NO;
@@ -118,8 +118,8 @@
         case ParticleSetupMainControllerResultSuccessDeviceOffline:
         {
             self.setupResultImageView.image = [ParticleSetupMainController loadImageFromResourceBundle:@"warning"];
-            self.shortMessageLabel.text = @"Setup completed";
-            self.longMessageLabel.text = @"Your device has been successfully claimed to your account, however it is offline. If the device was already claimed before this setup, then the Wi-Fi connection may have failed, and you should try setup again.";
+            self.shortMessageLabel.text = [ParticleSetupCustomization sharedInstance].resultOffLine_Short;
+            self.longMessageLabel.text = [ParticleSetupCustomization sharedInstance].resultSuccess_Long;
             
 #ifdef ANALYTICS
             [[SEGAnalytics sharedAnalytics] track:@"Device Setup: Success" properties:@{@"reason":@"device offline"}];
@@ -130,8 +130,8 @@
         case ParticleSetupMainControllerResultSuccessNotClaimed:
         {
             self.setupResultImageView.image = [ParticleSetupMainController loadImageFromResourceBundle:@"success"];
-            self.shortMessageLabel.text = @"Setup completed";
-            self.longMessageLabel.text = @"Setup was successful, but since you do not own this device we cannot know if the {device} has connected to the Internet. If you see the LED breathing cyan this means it worked! If not, please restart the setup process.";
+            self.shortMessageLabel.text = [ParticleSetupCustomization sharedInstance].resultNotClaimed_Short;
+            self.longMessageLabel.text = [ParticleSetupCustomization sharedInstance].resultNotClaimed_Long;
             
 #ifdef ANALYTICS
             [[SEGAnalytics sharedAnalytics] track:@"Device Setup: Success" properties:@{@"reason":@"not claimed"}];
@@ -143,10 +143,10 @@
         case ParticleSetupMainControllerResultFailureClaiming:
         {
             self.setupResultImageView.image = [ParticleSetupMainController loadImageFromResourceBundle:@"failure"];
-            self.shortMessageLabel.text = @"Setup failed";
+            self.shortMessageLabel.text = [ParticleSetupCustomization sharedInstance].resultFailed_Short;
             // TODO: add customization point for custom troubleshoot texts
 //            self.longMessageLabel.text = @"Setup process failed at claiming your {device}, if your {device} LED is blinking in blue or green this means that you provided wrong Wi-Fi credentials. If {device} LED is breathing cyan an internal cloud issue occured - please contact product support.";
-            self.longMessageLabel.text = @"Setup process failed at claiming your {device}, if your {device} LED is blinking in blue or green this means that you provided wrong Wi-Fi credentials, please try setup process again.";
+            self.longMessageLabel.text = [ParticleSetupCustomization sharedInstance].resultFailed_Long;
 #ifdef ANALYTICS
             [[SEGAnalytics sharedAnalytics] track:@"Device Setup: Failure" properties:@{@"reason":@"claiming failed"}];
 #endif
@@ -157,8 +157,8 @@
         case ParticleSetupMainControllerResultFailureCannotDisconnectFromDevice:
         {
             self.setupResultImageView.image = [ParticleSetupMainController loadImageFromResourceBundle:@"failure"];
-            self.shortMessageLabel.text = @"Oops!";
-            self.longMessageLabel.text = @"Setup process couldn't disconnect from the {device} Wi-fi network. This is an internal problem with the device, so please try running setup again after resetting your {device} and putting it back in listen mode (blinking blue LED) if needed.";
+            self.shortMessageLabel.text = [ParticleSetupCustomization sharedInstance].resultFailedToDisconnect_Short;
+            self.longMessageLabel.text = [ParticleSetupCustomization sharedInstance].resultFailedToDisconnect_Long;
 #ifdef ANALYTICS
             [[SEGAnalytics sharedAnalytics] track:@"Device Setup: Failure" properties:@{@"reason":@"cannot disconnect"}];
 #endif
@@ -170,8 +170,8 @@
         case ParticleSetupMainControllerResultFailureConfigure:
         {
             self.setupResultImageView.image = [ParticleSetupMainController loadImageFromResourceBundle:@"failure"];
-            self.shortMessageLabel.text = @"Error!";
-            self.longMessageLabel.text = @"Setup process couldn't configure the Wi-Fi credentials for your {device}, please try running setup again after resetting your {device} and putting it back in blinking blue listen mode if needed.";
+            self.shortMessageLabel.text = [ParticleSetupCustomization sharedInstance].resultFailedToConfigure_Short;
+            self.longMessageLabel.text = [ParticleSetupCustomization sharedInstance].resultFailedToConfigure_Long;
 #ifdef ANALYTICS
             [[SEGAnalytics sharedAnalytics] track:@"Device Setup: Failure" properties:@{@"reason":@"cannot configure"}];
 #endif
@@ -181,8 +181,8 @@
         default: //ParticleSetupMainControllerResultFailureLostConnectionToDevice
         {
             self.setupResultImageView.image = [ParticleSetupMainController loadImageFromResourceBundle:@"failure"];
-            self.shortMessageLabel.text = @"Uh oh!";
-            self.longMessageLabel.text = @"Setup lost connection to the device before finalizing configuration process, please try running setup again after putting {device} back in blinking blue listen mode.";
+            self.shortMessageLabel.text = [ParticleSetupCustomization sharedInstance].resultFailedConnectionLost_Short;
+            self.longMessageLabel.text = [ParticleSetupCustomization sharedInstance].resultFailedConnectionLost_Long;
 #ifdef ANALYTICS
             [[SEGAnalytics sharedAnalytics] track:@"Device Setup: Failure" properties:@{@"reason":@"lost connection"}];
 #endif
@@ -255,7 +255,12 @@
         // Update zero notice to user
         // TODO: condition message only if its really getting update zero (need event listening)
         if (![[NSUserDefaults standardUserDefaults] boolForKey:@"shownUpdateZeroNotice"]) {
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Firmware update" message:@"If this is the first time you are setting up this device it might blink its LED in magenta color for a while, this means the device is currently updating its firmware from the cloud to the latest version. Please be patient and do not press the reset button. Device LED will breathe cyan once update has completed and it has come online." delegate:nil cancelButtonTitle:@"Understood" otherButtonTitles:nil];
+            UIAlertView *alert = [[UIAlertView alloc]
+                                  initWithTitle:[ParticleSetupCustomization sharedInstance].alertFirmware_Title
+                                        message:[ParticleSetupCustomization sharedInstance].alertFirmware_Message
+                                       delegate:nil
+                              cancelButtonTitle:[ParticleSetupCustomization sharedInstance].alertFirmware_CancelBtn
+                              otherButtonTitles:nil];
             [alert show];
             
             [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"shownUpdateZeroNotice"];

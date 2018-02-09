@@ -75,11 +75,11 @@
     if (self.businessAccountSwitch.on) {
         self.companyNameTextField.alpha = 1.0;
         self.companyNameTextField.userInteractionEnabled = YES;
-        self.businessAccountLabel.text = @"This is a business account";
+        self.businessAccountLabel.text = [ParticleSetupCustomization sharedInstance].bizAccountLabelText;
     } else {
         self.companyNameTextField.alpha = 0.6;
         self.companyNameTextField.userInteractionEnabled = NO;
-        self.businessAccountLabel.text = @"This is a personal account";
+      self.businessAccountLabel.text = [ParticleSetupCustomization sharedInstance].personalAccountLabelText;
     }
 }
 
@@ -226,11 +226,19 @@
     
     if (self.passwordTextField.text.length < 8)
     {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Password must be at least 8 characters long" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:[ParticleSetupCustomization sharedInstance].alertPwdLengthError_Title
+                                                        message:[ParticleSetupCustomization sharedInstance].alertPwdLengthError_Message
+                                                       delegate:nil
+                                              cancelButtonTitle:[ParticleSetupCustomization sharedInstance].alertPwdLengthError_OKBtn
+                                              otherButtonTitles:nil];
         [alert show];
     } else if (![self.passwordTextField.text isEqualToString:self.passwordVerifyTextField.text])
     {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Passwords do not match" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:[ParticleSetupCustomization sharedInstance].alertPwdMatchError_Title
+                                                        message:[ParticleSetupCustomization sharedInstance].alertPwdMatchError_Message
+                                                       delegate:nil
+                                              cancelButtonTitle:[ParticleSetupCustomization sharedInstance].alertPwdMatchError_OKBtn
+                                              otherButtonTitles:nil];
         [alert show];
     }
     else if ([self isValidEmail:email])
@@ -258,7 +266,11 @@
                     [self.spinner stopAnimating];
                     self.signupButton.enabled = YES;
                     NSLog(@"Error signing up: %@",error.localizedDescription);
-                    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Could not signup" message:@"Make sure your user email does not already exist and that you have entered the activation code correctly and that it was not already used"/*error.localizedDescription*/ delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+                    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:[ParticleSetupCustomization sharedInstance].alertSignUpError_Title
+                                                                    message:[ParticleSetupCustomization sharedInstance].alertSignUpError_Message
+                                                                   delegate:nil
+                                                          cancelButtonTitle:[ParticleSetupCustomization sharedInstance].alertSignUpError_OKBtn
+                                                          otherButtonTitles:nil];
                     [alert show];
                 }
                 

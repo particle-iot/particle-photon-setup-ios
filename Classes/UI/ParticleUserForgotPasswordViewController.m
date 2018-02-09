@@ -78,13 +78,21 @@
             [[SEGAnalytics sharedAnalytics] track:@"Auth: Request password reset"];
 #endif
             
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Reset password" message:@"Instuctions how to reset your password will be sent to the provided email address. Please check your email and continue according to instructions." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:[ParticleSetupCustomization sharedInstance].alertPwdResetWithEmail_Title
+                                                            message:[ParticleSetupCustomization sharedInstance].alertPwdResetWithEmail_Message
+                                                           delegate:nil
+                                                  cancelButtonTitle:[ParticleSetupCustomization sharedInstance].alertPwdResetWithEmail_CancelBtn
+                                                  otherButtonTitles:nil];
             alert.delegate = self;
             [alert show];
         }
         else
         {
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Reset password" message:@"Could not find a user with supplied email address, please check the address supplied or create a new user via signup screen" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:[ParticleSetupCustomization sharedInstance].alertPwdResetNoEmail_Title
+                                                            message:[ParticleSetupCustomization sharedInstance].alertPwdResetNoEmail_Title
+                                                           delegate:nil
+                                                  cancelButtonTitle:[ParticleSetupCustomization sharedInstance].alertPwdResetNoEmail_Title
+                                                  otherButtonTitles:nil];
             [alert show];
             
         }
