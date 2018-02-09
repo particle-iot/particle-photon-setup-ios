@@ -103,7 +103,65 @@
         self.allowSkipAuthentication = NO;
         self.skipAuthenticationMessage = @"Skipping authentication will allow you to configure Wi-Fi credentials to your device but it will not be claimed to your account. Are you sure you want to skip authentication?";
         self.disableLogOutOption = NO;
-        return self;
+      
+        // translatable terms section
+        self.bizAccountLabelText = @"This is a business account";
+        self.personalAccountLabelText = @"This is a personal account";
+      
+        self.resultSuccess_Short = @"Setup completed successfully";
+        self.resultSuccess_Long = @"Congrats! You've successfully set up your {device}.";
+        self.resultOffLine_Short = @"Setup completed";
+        self.resultOffLine_Long = @"Your device has been successfully claimed to your account, however it is offline. If the device was already claimed before this setup, then the Wi-Fi connection may have failed, and you should try setup again.";
+        self.resultNotClaimed_Short = @"Setup completed";
+        self.resultNotClaimed_Long = @"Setup was successful, but since you do not own this device we cannot know if the {device} has connected to the Internet. If you see the LED breathing cyan this means it worked! If not, please restart the setup process.";
+        self.resultFailed_Short = @"Setup failed";
+        self.resultFailed_Long = @"Setup process failed at claiming your {device}, if your {device} LED is blinking in blue or green this means that you provided wrong Wi-Fi credentials, please try setup process again.";
+
+        self.resultFailedToDisconnect_Short = @"Oops!";
+        self.resultFailedToDisconnect_Long = @"Setup process couldn't disconnect from the {device} Wi-fi network. This is an internal problem with the device, so please try running setup again after resetting your {device} and putting it back in listen mode (blinking blue LED) if needed.";
+      
+        self.resultFailedToConfigure_Short = @"Error!";
+        self.resultFailedToConfigure_Long = @"Setup process couldn't configure the Wi-Fi credentials for your {device}, please try running setup again after resetting your {device} and putting it back in blinking blue listen mode if needed.";
+      
+        self.resultFailedConnectionLost_Short = @"Uh oh!";
+        self.resultFailedConnectionLost_Long = @"Setup lost connection to the device before finalizing configuration process, please try running setup again after putting {device} back in blinking blue listen mode.";
+      
+        self.alertFirmware_Title = @"Firmware update";
+        self.alertFirmware_Message = @"If this is the first time you are setting up this device it might blink its LED in magenta color for a while, this means the device is currently updating its firmware from the cloud to the latest version. Please be patient and do not press the reset button. Device LED will breathe cyan once update has completed and it has come online.";
+        self.alertFirmware_CancelBtn = @"Understood";
+      
+        self.alertPassword_Title = @"Invalid password";
+        self.alertPassword_Message = @"Password must be %d characters or longer";
+        self.alertPassword_CancelBtn = @"OK";
+      
+        self.alertPwdResetWithEmail_Title = @"Reset password";
+        self.alertPwdResetWithEmail_Message = @"Instuctions how to reset your password will be sent to the provided email address. Please check your email and continue according to instructions.";
+        self.alertPwdResetWithEmail_CancelBtn = @"OK";
+      
+        self.alertPwdResetNoEmail_Title = @"Reset password";
+        self.alertPwdResetNoEmail_Message = @"Could not find a user with supplied email address, please check the address supplied or create a new user via signup screen";
+        self.alertPwdResetNoEmail_CancelBtn = @"OK";
+      
+        self.alertLoginFailed_Title = @"Cannot Sign In";
+        self.alertLoginFailed_Message = @"Incorrect username and/or pasword";
+        self.alertLoginFailed_OKBtn = @"OK";
+      
+        self.alertInvalidEmail_Title = @"Cannot Sign In";
+        self.alertInvalidEmail_Message = @"Invalid email address";
+        self.alertInvalidEmail_OKBtn = @"OK";
+      
+        self.alertPwdLengthError_Title = @"Error";
+        self.alertPwdLengthError_Message = @"Password must be at least 8 characters long";
+        self.alertPwdLengthError_OKBtn = @"OK";
+      
+        self.alertPwdMatchError_Title = @"Error";
+        self.alertPwdMatchError_Message = @"Passwords do not match";
+        self.alertPwdMatchError_OKBtn = @"OK";
+      
+        self.alertSignUpError_Title = @"Could not signup";
+        self.alertSignUpError_Message = @"Make sure your user email does not already exist and that you have entered the activation code correctly and that it was not already used";
+        self.alertSignUpError_OKBtn = @"OK";
+      return self;
     }
     
     return nil;

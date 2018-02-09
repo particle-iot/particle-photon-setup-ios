@@ -85,4 +85,58 @@
 @property (nonatomic, strong) NSString *skipAuthenticationMessage;    // Prompt to display to user when he's requesting to skip authentication
 @property (nonatomic) BOOL disableLogOutOption; // Do not allow the user to log out from the GetReady page.
 
+@property (nonatomic, strong) NSString *bizAccountLabelText;
+@property (nonatomic, strong) NSString *personalAccountLabelText;
+
+@property (nonatomic, strong) NSString *resultSuccess_Short;
+@property (nonatomic, strong) NSString *resultSuccess_Long;
+@property (nonatomic, strong) NSString *resultOffLine_Short;
+@property (nonatomic, strong) NSString *resultOffLine_Long;
+@property (nonatomic, strong) NSString *resultNotClaimed_Short;
+@property (nonatomic, strong) NSString *resultNotClaimed_Long;
+@property (nonatomic, strong) NSString *resultFailed_Short;
+@property (nonatomic, strong) NSString *resultFailed_Long;
+@property (nonatomic, strong) NSString *resultFailedToDisconnect_Short;
+@property (nonatomic, strong) NSString *resultFailedToDisconnect_Long;
+@property (nonatomic, strong) NSString *resultFailedToConfigure_Short;
+@property (nonatomic, strong) NSString *resultFailedToConfigure_Long;
+@property (nonatomic, strong) NSString *resultFailedConnectionLost_Short;
+@property (nonatomic, strong) NSString *resultFailedConnectionLost_Long;
+@property (nonatomic, strong) NSString *alertFirmware_Title;
+@property (nonatomic, strong) NSString *alertFirmware_Message;
+@property (nonatomic, strong) NSString *alertFirmware_CancelBtn;
+
+@property (nonatomic, strong) NSString *alertPassword_Title;
+@property (nonatomic, strong) NSString *alertPassword_Message;
+@property (nonatomic, strong) NSString *alertPassword_CancelBtn;
+
+@property (nonatomic, strong) NSString *alertPwdResetWithEmail_Title;
+@property (nonatomic, strong) NSString *alertPwdResetWithEmail_Message;
+@property (nonatomic, strong) NSString *alertPwdResetWithEmail_CancelBtn;
+
+
+@property (nonatomic, strong) NSString *alertPwdResetNoEmail_Title;
+@property (nonatomic, strong) NSString *alertPwdResetNoEmail_Message;
+@property (nonatomic, strong) NSString *alertPwdResetNoEmail_CancelBtn;
+
+@property (nonatomic, strong) NSString *alertLoginFailed_Title;
+@property (nonatomic, strong) NSString *alertLoginFailed_Message;
+@property (nonatomic, strong) NSString *alertLoginFailed_OKBtn;
+
+@property (nonatomic, strong) NSString *alertInvalidEmail_Title;
+@property (nonatomic, strong) NSString *alertInvalidEmail_Message;
+@property (nonatomic, strong) NSString *alertInvalidEmail_OKBtn;
+
+@property (nonatomic, strong) NSString *alertPwdLengthError_Title;
+@property (nonatomic, strong) NSString *alertPwdLengthError_Message;
+@property (nonatomic, strong) NSString *alertPwdLengthError_OKBtn;
+
+@property (nonatomic, strong) NSString *alertPwdMatchError_Title;
+@property (nonatomic, strong) NSString *alertPwdMatchError_Message;
+@property (nonatomic, strong) NSString *alertPwdMatchError_OKBtn;
+
+@property (nonatomic, strong) NSString *alertSignUpError_Title;
+@property (nonatomic, strong) NSString *alertSignUpError_Message;
+@property (nonatomic, strong) NSString *alertSignUpError_OKBtn;
+
 @end
