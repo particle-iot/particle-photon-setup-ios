@@ -149,6 +149,29 @@ These properies are shown in Objective-C syntax for convenience but work the sam
  BOOL lightStatusAndNavBar;        // Make navigation and status bar appear in white or black color characters to contrast the selected brandImage color // *New since v0.6.1*
 ```
 
+#### Total Control
+Using the `ParticleSetupCustomization` singleton gives quick control over customization needed for most cases. However, if fine control is needed to completely match the particle setup look & feel to that of your app's look & feel, you may want to take control of the embedded storyboard and provide your own. To get started, find the setup.storyboard and setup.xcassets files in the ParticleSetup folder and copy them to your application folder. Make sure that the storyboard you copied has its `Target Membership` flag set. Then using the `ParticleSetupCustomization` singleton, set the following properties:
+
+**Objective-C**
+
+```objc
+useAppResources = YES
+appResourcesRefName = @"setup"   // change to the storyboard name
+```
+
+**Swift**
+
+```swift
+useAppResources = true
+appResourcesRefName = "setup"   // change to the storyboard name
+```
+
+When using your own provided storyboard, besure to adhere to the specific flow and linkages as the Particle Setup SDK relies on these. However, you can now fine tune the position of all visible elements so it passes your company's style police!  Additionally, you can apply XCode localization techniques to translate all text.
+
+#### Localization
+The `ParticleSetupCustomization` singleton also exposes all user-facing text so this permits modification with text more in tune with your specific application as well as localization.
+
+
 #### Product creators
 
 If you're developing an app for your product / you're a product creator you should set `productMode` to YES (or true for Swift) - this will enable product mode which uses different API endpoints to allow adding/setting up devices assigned to your product.
