@@ -8,64 +8,32 @@
 
 #import "ParticleSetupVideoViewController.h"
 #import "ParticleSetupCustomization.h"
-#import <MediaPlayer/MediaPlayer.h>
+
+#import <AVFoundation/AVFoundation.h>
 #if ANALYTICS
 #import <Mixpanel.h>
 #endif
 
 @interface ParticleSetupVideoViewController ()
-@property (strong, nonatomic) MPMoviePlayerController *videoPlayer;
 
 @property (weak, nonatomic) IBOutlet UIButton *closeButton;
 
 @end
 
-@implementation ParticleSetupVideoViewController
-
-/*
-- (NSUInteger)supportedInterfaceOrientations {
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
-        // iPad: Allow all orientations
-        return UIInterfaceOrientationMaskAll;
-    } else {
-        // iPhone: Allow only landscape
-        return UIInterfaceOrientationMaskLandscape;
-    }
+@implementation ParticleSetupVideoViewController {
+    AVPlayerLayer *_layer;
+    AVPlayer *_player;
 }
 
-
-
-- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation {
-    return UIInterfaceOrientationLandscapeLeft;
-}
-
-
--(BOOL)shouldAutorotate {
-    return NO;
-}
- */
 
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // move to super viewdidload?
+
+    if (self.backgroundView) {
+        [self.backgroundView removeFromSuperview];
+    }
 }
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 
 
 -(void)viewWillDisappear:(BOOL)animated
@@ -85,14 +53,12 @@
     return YES;
 }
 
-//-(void)viewDidAppear:(BOOL)animated
 -(void)viewWillAppear:(BOOL)animated
 {
     
     [super viewDidAppear:animated];
     [self setNeedsStatusBarAppearanceUpdate];
     
-    //    self.videoViewWidth.constant = ((self.videoView.frame.size.height * 9.0)/16.0);
 #ifdef ANALYTICS
     [[Mixpanel sharedInstance] timeEvent:@"Device Setup: How-To video screen activity"];
 #endif
@@ -100,63 +66,77 @@
     
     if (self.videoFilePath)
     {
+
         NSArray *videoFilenameArr = [self.videoFilePath componentsSeparatedByString:@"."];
         NSString *path = [[NSBundle mainBundle] pathForResource:videoFilenameArr[0] ofType:videoFilenameArr[1]];
-        
-        if (path)
-            self.videoPlayer = [[MPMoviePlayerController alloc] initWithContentURL:[NSURL fileURLWithPath:path]];
-        if (self.videoPlayer)
-        {
-            [[NSNotificationCenter defaultCenter] addObserver:self
-                                                     selector:@selector(moviePlayBackDidFinish:)
-                                                         name:MPMoviePlayerPlaybackDidFinishNotification
-                                                       object:self.videoPlayer];
-            
-            self.videoPlayer.shouldAutoplay = YES;
-//            self.videoPlayer.view.frame = self.view.frame;//self.videoView.bounds;
-            [self.videoPlayer setFullscreen:YES animated:YES];
-            
-            self.videoPlayer.repeatMode = MPMovieRepeatModeNone;
-//            self.videoPlayer.fullscreen = NO;
-            self.videoPlayer.movieSourceType = MPMovieSourceTypeFile;
-//            self.videoPlayer.scalingMode = MPMovieScalingModeAspectFit;
-            self.videoPlayer.controlStyle = MPMovieControlStyleNone;//Fullscreen;// None;
-            self.videoPlayer.view.transform = CGAffineTransformConcat(self.videoPlayer.view.transform, CGAffineTransformMakeRotation(M_PI_2));
-            [self.videoPlayer.view setFrame: self.view.bounds];
-            [self.view addSubview: self.videoPlayer.view];
-            
-            [self.view bringSubviewToFront:self.closeButton];
-//            [self.videoView addSubview:self.videoPlayer.view]; //videoView
-            
-            [self.videoPlayer play];
-//            self.videoView.layer.borderColor = [UIColor lightGrayColor].CGColor;
-//            self.videoView.layer.borderWidth = 0.5;
-            
-            
-        }
+
+        NSURL *url = [NSURL fileURLWithPath:path];
+        _player = [AVPlayer playerWithURL:url];
+
+        _layer = [AVPlayerLayer playerLayerWithPlayer:_player];
+        _player.actionAtItemEnd = AVPlayerActionAtItemEndPause;
+
+        _layer.affineTransform = CGAffineTransformConcat(_layer.affineTransform, CGAffineTransformMakeRotation(M_PI_2));
+        _layer.frame = self.view.bounds;
+        [self.view.layer addSublayer:_layer];
+
+
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(itemDidFinishPlaying:)
+                                                     name:AVPlayerItemDidPlayToEndTimeNotification
+                                                   object:_player.currentItem];
+
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(enterBackground:)
+                                                     name:UIApplicationDidEnterBackgroundNotification
+                                                   object:nil];
+
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(enterForeground:)
+                                                     name:UIApplicationWillEnterForegroundNotification
+                                                   object:nil];
+
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(itemDidFail:)
+                                                     name:AVPlayerItemFailedToPlayToEndTimeNotification
+                                                   object:_player.currentItem];
+
+
+        [self.view bringSubviewToFront:self.closeButton];
+        [_player play];
     }
 }
 
--(void)dismissPlayer {
-    [self.videoPlayer stop];
-    [self.videoPlayer.view removeFromSuperview];
-    
-    [self dismissViewControllerAnimated:YES completion:nil];
-    
+- (void)itemDidFail:(NSNotification *)notification {
+    NSLog(@"Failed to play video");
 }
 
-- (void)moviePlayBackDidFinish:(NSNotification*)notification {
-    MPMoviePlayerController *player = [notification object];
-    [[NSNotificationCenter defaultCenter]
-     removeObserver:self
-     name:MPMoviePlayerPlaybackDidFinishNotification
-     object:player];
-
+- (void)itemDidFinishPlaying:(NSNotification *)notification {
     [self dismissPlayer];
+}
 
+- (void)enterBackground:(NSNotification *)notification {
+    [_player pause];
+}
+
+- (void)enterForeground:(NSNotification *)notification {
+    [_player play];
 }
 
 
 
+-(void)dismissPlayer {
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:AVPlayerItemDidPlayToEndTimeNotification object:_player.currentItem];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIApplicationDidEnterBackgroundNotification object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIApplicationWillEnterForegroundNotification object:nil];
+
+    [_player pause];
+    [_layer removeFromSuperlayer];
+
+    _player = nil;
+    _layer = nil;
+
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 
 @end

@@ -16,6 +16,8 @@
 
 @interface ParticleSetupUIViewController : UIViewController
 
+@property (nonatomic, strong) UIView *backgroundView; //image or solid color
+
 -(BOOL)isValidEmail:(NSString *)checkString; // should be in NSString category
 -(void)disableKeyboardMovesViewUp; // might not be needed when we remove all popups
 

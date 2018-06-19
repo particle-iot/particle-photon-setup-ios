@@ -19,6 +19,8 @@
 
 #pragma mark view controller life cycle
 
+@synthesize backgroundView = _backgroundView;
+
 -(void)viewDidLoad {
     [super viewDidLoad];
     
@@ -30,6 +32,8 @@
         backgroundImage.contentMode = UIViewContentModeScaleToFill;
         [self.view addSubview:backgroundImage];
         [self.view sendSubviewToBack:backgroundImage];
+
+        _backgroundView = backgroundImage;
     }
     
     
@@ -39,6 +43,8 @@
         view.backgroundColor = [ParticleSetupCustomization sharedInstance].pageBackgroundColor;
         [self.view addSubview:view];
         [self.view sendSubviewToBack:view];
+
+        _backgroundView = view;
     }
     
    
