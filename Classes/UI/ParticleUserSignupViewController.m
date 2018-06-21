@@ -38,7 +38,6 @@
 @property (weak, nonatomic) IBOutlet UIImageView *logoImageView;
 @property (weak, nonatomic) IBOutlet UIButton *haveAccountButton;
 @property (weak, nonatomic) IBOutlet UILabel *createAccountLabel;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *signupButtonSpace;
 @property (weak, nonatomic) IBOutlet ParticleSetupUIButton *skipAuthButton;
 @property (strong, nonatomic) UIAlertView *skipAuthAlertView;
 @property (weak, nonatomic) IBOutlet UIButton *onePasswordButton;
@@ -48,6 +47,11 @@
 @property (weak, nonatomic) IBOutlet UISwitch *businessAccountSwitch;
 @property (weak, nonatomic) IBOutlet ParticleSetupUILabel *businessAccountLabel;
 @property (weak, nonatomic) IBOutlet UIView *TosAndPpView;
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (weak, nonatomic) IBOutlet UIStackView *contentView;
+@property (weak, nonatomic) IBOutlet UIView *extraSpacer;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *TOSSpacerHeightConstraint;
+@property (weak, nonatomic) IBOutlet UIView *BottomSpacer;
 
 @end
 
@@ -86,16 +90,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    // Add underlines to link buttons / bold to navigation buttons
-//    [self makeLinkButton:self.termsButton withText:nil];
-//    [self makeLinkButton:self.privacyButton withText:nil];
-//    [self makeBoldButton:self.haveAccountButton withText:nil];
-    
     // set brand logo
     self.logoImageView.image = [ParticleSetupCustomization sharedInstance].brandImage;
     self.logoImageView.backgroundColor = [ParticleSetupCustomization sharedInstance].brandImageBackgroundColor;
     
 
+    [self applyDesignToTextField:self.emailTextField];
     [self applyDesignToTextField:self.emailTextField];
     [self applyDesignToTextField:self.passwordTextField];
     [self applyDesignToTextField:self.passwordVerifyTextField];
@@ -104,16 +104,7 @@
     [self applyDesignToTextField:self.lastNameTextField];
     [self applyDesignToTextField:self.companyNameTextField];
     
-    
-    
-    if (isiPhone4) { // 3.5" inch screens are too small to display this stuff
-        self.TosAndPpView.hidden = YES;
-    }
-    
-    
 
-    
-    
     if ([ParticleSetupCustomization sharedInstance].productMode)
     {
         self.firstNameTextField.hidden = YES;
@@ -121,18 +112,20 @@
         self.companyNameTextField.hidden = YES;
         self.businessAccountLabel.hidden = YES;
         self.businessAccountSwitch.hidden = YES;
+
+        self.extraSpacer.hidden = YES;
     }
 
     // make sign up button be closer to verify password textfield (no activation code field)
-    self.signupButtonSpace.constant = 16;
-    self.skipAuthButton.hidden = !([ParticleSetupCustomization sharedInstance].allowSkipAuthentication);
+     self.skipAuthButton.hidden = !([ParticleSetupCustomization sharedInstance].allowSkipAuthentication);
     
     [self.onePasswordButton setHidden:![[OnePasswordExtension sharedExtension] isAppExtensionAvailable]];
     if (!self.onePasswordButton.hidden) {
         self.onePasswordButton.hidden = ![ParticleSetupCustomization sharedInstance].allowPasswordManager;
     }
 
-    
+    [self.view setNeedsLayout];
+    [self.view layoutIfNeeded];
 }
 
 
@@ -148,12 +141,40 @@
     }
     if (textField == self.passwordVerifyTextField)
     {
+        [self.firstNameTextField becomeFirstResponder];
+    }
+    if (textField == self.firstNameTextField)
+    {
+        [self.lastNameTextField becomeFirstResponder];
+    }
+    if (textField == self.lastNameTextField)
+    {
         [self signupButton:self];
     }
 
     return YES;
-    
 }
+
+
+- (void)viewWillLayoutSubviews{
+    [super viewWillLayoutSubviews];
+
+    UIEdgeInsets scrollViewInsets = UIEdgeInsetsZero;
+
+    self.TOSSpacerHeightConstraint.constant = 6;
+    self.BottomSpacer.hidden = NO;
+
+    if (CGRectGetHeight(self.scrollView.bounds) > (CGRectGetHeight(self.contentView.bounds) + 10)) {
+        CGFloat inset = (CGRectGetHeight(self.scrollView.bounds) - CGRectGetHeight(self.contentView.bounds)) / 2;
+        scrollViewInsets.top = inset - 5.0f;
+
+        self.TOSSpacerHeightConstraint.constant = inset + 10;
+        self.BottomSpacer.hidden = YES;
+    }
+
+    self.scrollView.contentInset = scrollViewInsets;
+}
+
 
 -(void)viewWillAppear:(BOOL)animated
 {
@@ -343,7 +364,6 @@
     
     ParticleSetupWebViewController* webVC = [[ParticleSetupMainController getSetupStoryboard]instantiateViewControllerWithIdentifier:@"webview"];
     webVC.link = [ParticleSetupCustomization sharedInstance].privacyPolicyLinkURL;
-//    webVC.htmlFilename = @"test";
     [self presentViewController:webVC animated:YES completion:nil];
 }
 
@@ -352,6 +372,7 @@
 - (IBAction)termOfServiceButton:(id)sender
 {
     [self.view endEditing:YES];
+
     ParticleSetupWebViewController* webVC = [[ParticleSetupMainController getSetupStoryboard] instantiateViewControllerWithIdentifier:@"webview"];
     webVC.link = [ParticleSetupCustomization sharedInstance].termsOfServiceLinkURL;
     [self presentViewController:webVC animated:YES completion:nil];
@@ -363,13 +384,6 @@
 {
     [self.view endEditing:YES];
     [self.delegate didRequestUserLogin:self];
-    
-    /*
-    ParticleUserLoginViewController* loginVC = [[UIStoryboard storyboardWithName:@"setup" bundle:[NSBundle bundleWithIdentifier:SPARK_SETUP_RESOURCE_BUNDLE_IDENTIFIER]] instantiateViewControllerWithIdentifier:@"login"];
-    loginVC.delegate = self.delegate;
-    loginVC.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;// //UIModalPresentationPageSheet;
-    [self presentViewController:loginVC animated:YES completion:nil];
-     */
 }
 
 - (IBAction)skipAuthButtonTapped:(id)sender {
