@@ -242,16 +242,31 @@
     }];
 }
 
+- (void) trimTextFieldValue:(UITextField *)textfield {
+    textfield.text = [[textfield.text lowercaseString] stringByTrimmingCharactersInSet:NSCharacterSet.whitespaceCharacterSet];
+}
+
 - (IBAction)signupButton:(id)sender
 {
     [self.view endEditing:YES];
-    __block NSString *email = [self.emailTextField.text lowercaseString];
-    
-    if (self.passwordTextField.text.length < 8)
+
+    //trim spaces on all textfields
+    [self trimTextFieldValue:self.emailTextField];
+    [self trimTextFieldValue:self.passwordTextField];
+    [self trimTextFieldValue:self.passwordVerifyTextField];
+    [self trimTextFieldValue:self.firstNameTextField];
+    [self trimTextFieldValue:self.lastNameTextField];
+    [self trimTextFieldValue:self.companyNameTextField];
+
+    NSString *email = [self.emailTextField.text lowercaseString];
+    NSString *password1 = self.passwordTextField.text;
+    NSString *password2 = self.passwordVerifyTextField.text;
+
+    if (password1.length < 8)
     {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Password must be at least 8 characters long" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [alert show];
-    } else if (![self.passwordTextField.text isEqualToString:self.passwordVerifyTextField.text])
+    } else if (![password1 isEqualToString:password2])
     {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Passwords do not match" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [alert show];
@@ -266,7 +281,7 @@
             self.signupButton.enabled = NO;
             
             // Sign up and then login
-            [[ParticleCloud sharedInstance] createCustomer:email password:self.passwordTextField.text productId:[ParticleSetupCustomization sharedInstance].productId accountInfo:nil completion:^(NSError *error) {
+            [[ParticleCloud sharedInstance] createCustomer:email password:password1 productId:[ParticleSetupCustomization sharedInstance].productId accountInfo:nil completion:^(NSError *error) {
                 if (!error)
                 {
 #ifdef ANALYTICS
@@ -303,16 +318,20 @@
             // normal user sign up
             [self.spinner startAnimating];
             self.signupButton.enabled = NO;
-            
+
+            NSString *firstName = self.firstNameTextField.text;
+            NSString *lastName = self.lastNameTextField.text;
+            NSString *companyName = self.companyNameTextField.text;
+
             NSMutableDictionary *accountInfo;
-            if ((![self.firstNameTextField.text isEqualToString:@""]) || (![self.lastNameTextField.text isEqualToString:@""]) || (![self.companyNameTextField.text isEqualToString:@""])) {
-                accountInfo = [@{@"first_name":self.firstNameTextField.text,
-                                 @"last_name":self.lastNameTextField.text,
+            if (firstName.length > 0 || lastName.length > 0 || companyName.length > 0) {
+                accountInfo = [@{@"first_name":firstName,
+                                 @"last_name":lastName,
                                  @"business_account":[NSNumber numberWithBool:self.businessAccountSwitch.on]
                                  } mutableCopy];
                 
                 if (self.businessAccountSwitch.on) {
-                    accountInfo[@"company_name"] = self.companyNameTextField.text;
+                    accountInfo[@"company_name"] = companyName;
                 }
             }
             

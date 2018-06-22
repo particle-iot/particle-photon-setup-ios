@@ -135,11 +135,17 @@
 #endif
 }
 
-
+- (void) trimTextFieldValue:(UITextField *)textfield {
+    textfield.text = [[textfield.text lowercaseString] stringByTrimmingCharactersInSet:NSCharacterSet.whitespaceCharacterSet];
+}
 
 - (IBAction)loginButton:(id)sender
 {
     [self.view endEditing:YES];
+
+    [self trimTextFieldValue:self.passwordTextField];
+    [self trimTextFieldValue:self.emailTextField];
+
     if (self.passwordTextField.text.length == 0)
     {
         UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Cannot Sign In" message:@"Password cannot be blank" preferredStyle:UIAlertControllerStyleAlert];

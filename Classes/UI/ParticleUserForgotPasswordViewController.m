@@ -65,10 +65,14 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void) trimTextFieldValue:(UITextField *)textfield {
+    textfield.text = [[textfield.text lowercaseString] stringByTrimmingCharactersInSet:NSCharacterSet.whitespaceCharacterSet];
+}
 
 - (IBAction)resetPasswordButtonTapped:(id)sender
 {
     [self.view endEditing:YES];
+    [self trimTextFieldValue:self.emailTextField];
     [self.spinner startAnimating];
     
     void (^passwordResetCallback)(NSError *) = ^void(NSError *error) {
