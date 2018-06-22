@@ -28,21 +28,34 @@
     if ([ParticleSetupCustomization sharedInstance].pageBackgroundImage)
     {
         UIImageView *backgroundImage = [[UIImageView alloc] initWithImage:[ParticleSetupCustomization sharedInstance].pageBackgroundImage];
-        backgroundImage.frame = [UIScreen mainScreen].bounds;
+        backgroundImage.translatesAutoresizingMaskIntoConstraints = NO;
         backgroundImage.contentMode = UIViewContentModeScaleToFill;
+
         [self.view addSubview:backgroundImage];
         [self.view sendSubviewToBack:backgroundImage];
 
+        [backgroundImage.leftAnchor constraintEqualToAnchor:self.view.leftAnchor].active = YES;
+        [backgroundImage.rightAnchor constraintEqualToAnchor:self.view.rightAnchor].active = YES;
+        [backgroundImage.topAnchor constraintEqualToAnchor:self.view.topAnchor].active = YES;
+        [backgroundImage.bottomAnchor constraintEqualToAnchor:self.view.bottomAnchor].active = YES;
+
         _backgroundView = backgroundImage;
     }
-    
-    
+
+
     if ([ParticleSetupCustomization sharedInstance].pageBackgroundColor) //TODO: check this
     {
         UIView *view = [[UIView alloc] initWithFrame:[UIScreen mainScreen].bounds];
         view.backgroundColor = [ParticleSetupCustomization sharedInstance].pageBackgroundColor;
+        view.translatesAutoresizingMaskIntoConstraints = NO;
+
         [self.view addSubview:view];
         [self.view sendSubviewToBack:view];
+
+        [view.leftAnchor constraintEqualToAnchor:self.view.leftAnchor].active = YES;
+        [view.rightAnchor constraintEqualToAnchor:self.view.rightAnchor].active = YES;
+        [view.topAnchor constraintEqualToAnchor:self.view.topAnchor].active = YES;
+        [view.bottomAnchor constraintEqualToAnchor:self.view.bottomAnchor].active = YES;
 
         _backgroundView = view;
     }

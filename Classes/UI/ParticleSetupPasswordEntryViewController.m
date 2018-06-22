@@ -23,6 +23,7 @@
 @property (weak, nonatomic) IBOutlet ParticleSetupUILabel *securityTypeLabel;
 @property (weak, nonatomic) IBOutlet UISwitch *showPasswordSwitch;
 @property (weak, nonatomic) IBOutlet UIImageView *brandImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *brandBackgroundImageView;
 @property (weak, nonatomic) IBOutlet UIImageView *wifiSymbolImageView;
 @property (weak, nonatomic) IBOutlet UIButton *backButton;
 
@@ -42,8 +43,10 @@
     
     // move to super viewdidload?
     self.brandImageView.image = [ParticleSetupCustomization sharedInstance].brandImage;
-    self.brandImageView.backgroundColor = [ParticleSetupCustomization sharedInstance].brandImageBackgroundColor;
-    
+    self.brandImageView.backgroundColor = [UIColor clearColor];
+    self.brandBackgroundImageView.backgroundColor = [ParticleSetupCustomization sharedInstance].brandImageBackgroundColor;
+
+
     
     UIColor *navBarButtonsColor = ([ParticleSetupCustomization sharedInstance].lightStatusAndNavBar) ? [UIColor whiteColor] : [UIColor blackColor];
     [self.backButton setTitleColor:navBarButtonsColor forState:UIControlStateNormal];

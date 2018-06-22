@@ -23,6 +23,7 @@
 @interface ParticleUserForgotPasswordViewController () <UIAlertViewDelegate, UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *emailTextField;
 @property (weak, nonatomic) IBOutlet UIImageView *brandImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *brandBackgroundImageView;
 @property (weak, nonatomic) IBOutlet ParticleSetupUISpinner *spinner;
 @property (weak, nonatomic) IBOutlet ParticleSetupUIButton *resetPasswordButton;
 
@@ -40,10 +41,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+
     self.brandImageView.image = [ParticleSetupCustomization sharedInstance].brandImage;
-    self.brandImageView.backgroundColor = [ParticleSetupCustomization sharedInstance].brandImageBackgroundColor;
-    
+    self.brandImageView.backgroundColor = [UIColor clearColor];
+    self.brandBackgroundImageView.backgroundColor = [ParticleSetupCustomization sharedInstance].brandImageBackgroundColor;
+
+
+
     // Trick to add an inset from the left of the text fields
     CGRect  viewRect = CGRectMake(0, 0, 10, 32);
     UIView* emptyView = [[UIView alloc] initWithFrame:viewRect];

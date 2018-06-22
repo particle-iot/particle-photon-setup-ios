@@ -8,7 +8,6 @@
 
 #import "ParticleGetReadyViewController.h"
 #import "ParticleSetupWebViewController.h"
-#import <MediaPlayer/MediaPlayer.h>
 #ifdef FRAMEWORK
 #import <ParticleSDK/ParticleSDK.h>
 #else
@@ -26,6 +25,7 @@
 
 @interface ParticleGetReadyViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *brandImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *brandBackgroundImageView;
 @property (weak, nonatomic) IBOutlet UIButton *readyButton;
 @property (weak, nonatomic) IBOutlet ParticleSetupUISpinner *spinner;
 
@@ -58,7 +58,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.brandImageView.image = [ParticleSetupCustomization sharedInstance].brandImage;
-    self.brandImageView.backgroundColor = [ParticleSetupCustomization sharedInstance].brandImageBackgroundColor;
+    self.brandImageView.backgroundColor = [UIColor clearColor];
+    self.brandBackgroundImageView.backgroundColor = [ParticleSetupCustomization sharedInstance].brandImageBackgroundColor;
     
     UIColor *navBarButtonsColor = ([ParticleSetupCustomization sharedInstance].lightStatusAndNavBar) ? [UIColor whiteColor] : [UIColor blackColor];
     [self.cancelSetupButton setTitleColor:navBarButtonsColor forState:UIControlStateNormal];

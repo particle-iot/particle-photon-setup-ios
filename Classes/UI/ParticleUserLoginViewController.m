@@ -31,6 +31,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *forgotButton;
 @property (weak, nonatomic) IBOutlet UIButton *loginButton;
 @property (weak, nonatomic) IBOutlet UIImageView *brandImage;
+@property (weak, nonatomic) IBOutlet UIImageView *brandBackgroundImageView;
 @property (weak, nonatomic) IBOutlet UIButton *noAccountButton;
 @property (weak, nonatomic) IBOutlet UILabel *loginLabel;
 @property (weak, nonatomic) IBOutlet ParticleSetupUISpinner *spinner;
@@ -55,8 +56,9 @@
     
     // move to super viewdidload?
     self.brandImage.image = [ParticleSetupCustomization sharedInstance].brandImage;
-    self.brandImage.backgroundColor = [ParticleSetupCustomization sharedInstance].brandImageBackgroundColor;
-    
+    self.brandImage.backgroundColor = [UIColor clearColor];
+    self.brandBackgroundImageView.backgroundColor = [ParticleSetupCustomization sharedInstance].brandImageBackgroundColor;
+
     // Trick to add an inset from the left of the text fields
     CGRect  viewRect = CGRectMake(0, 0, 10, 32);
     UIView* emptyView1 = [[UIView alloc] initWithFrame:viewRect];

@@ -46,11 +46,8 @@
     {
         // Defaults
         self.deviceName = @"Particle device";
-//        self.deviceImage = [UIImage imageNamed:@"photon" inBundle:[ParticleSetupMainController getResourcesBundle] compatibleWithTraitCollection:nil]; // TODO: make iOS7 compatible
         self.brandName = @"Particle";
-//        self.brandImage = [UIImage imageNamed:@"spark-logo-head" inBundle:[ParticleSetupMainController getResourcesBundle] compatibleWithTraitCollection:nil]; // TODO: make iOS7 compatible
         self.brandImage = [ParticleSetupMainController loadImageFromResourceBundle:@"spark-logo-head"];
-//        self.brandImageBackgroundColor = [UIColor colorWithRed:0.79f green:0.79f blue:0.79f alpha:1.0f];
         self.brandImageBackgroundColor = [UIColor colorWithRed:229 green:229 blue:237];
       
         self.modeButtonName = @"Setup button";

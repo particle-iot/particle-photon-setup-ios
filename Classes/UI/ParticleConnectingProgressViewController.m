@@ -56,6 +56,7 @@ typedef NS_ENUM(NSInteger, ParticleSetupConnectionProgressState) {
 @property (nonatomic, strong) NSMutableArray *connectionProgressTextList;
 @property (weak, nonatomic) IBOutlet UILabel *deviceIsConnectingLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *brandImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *brandBackgroundImageView;
 //@property (weak, nonatomic) IBOutlet UIButton *troubleshootingButton;
 @property (strong, nonatomic) ParticleDevice *device;
 
@@ -99,7 +100,9 @@ typedef NS_ENUM(NSInteger, ParticleSetupConnectionProgressState) {
     
     // set logo
     self.brandImageView.image = [ParticleSetupCustomization sharedInstance].brandImage;
-    self.brandImageView.backgroundColor = [ParticleSetupCustomization sharedInstance].brandImageBackgroundColor;
+    self.brandImageView.backgroundColor = [UIColor clearColor];
+    self.brandBackgroundImageView.backgroundColor = [ParticleSetupCustomization sharedInstance].brandImageBackgroundColor;
+
     
     // force load from resource bundle
     self.wifiSymbolImageView.image = [ParticleSetupMainController loadImageFromResourceBundle:@"wifi3"];

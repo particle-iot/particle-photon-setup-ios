@@ -19,6 +19,7 @@
 
 @interface ParticleManualNetworkViewController () <UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *brandImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *brandBackgroundImageView;
 @property (weak, nonatomic) IBOutlet UITextField *networkNameTextField;
 @property (weak, nonatomic) IBOutlet UISwitch *networkRequiresPasswordSwitch;
 @property (weak, nonatomic) IBOutlet UIImageView *wifiSymbolImageView;
@@ -40,7 +41,9 @@
 
     // move to super viewdidload?
     self.brandImageView.image = [ParticleSetupCustomization sharedInstance].brandImage;
-    self.brandImageView.backgroundColor = [ParticleSetupCustomization sharedInstance].brandImageBackgroundColor;
+    self.brandImageView.backgroundColor = [UIColor clearColor];
+    self.brandBackgroundImageView.backgroundColor = [ParticleSetupCustomization sharedInstance].brandImageBackgroundColor;
+
     
     UIColor *navBarButtonsColor = ([ParticleSetupCustomization sharedInstance].lightStatusAndNavBar) ? [UIColor whiteColor] : [UIColor blackColor];
     [self.backButton setTitleColor:navBarButtonsColor forState:UIControlStateNormal];

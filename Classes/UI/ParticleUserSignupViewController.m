@@ -36,6 +36,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *privacyButton;
 @property (weak, nonatomic) IBOutlet UIButton *signupButton;
 @property (weak, nonatomic) IBOutlet UIImageView *logoImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *logoBackgroundImageView;
 @property (weak, nonatomic) IBOutlet UIButton *haveAccountButton;
 @property (weak, nonatomic) IBOutlet UILabel *createAccountLabel;
 @property (weak, nonatomic) IBOutlet ParticleSetupUIButton *skipAuthButton;
@@ -92,10 +93,11 @@
 
     // set brand logo
     self.logoImageView.image = [ParticleSetupCustomization sharedInstance].brandImage;
-    self.logoImageView.backgroundColor = [ParticleSetupCustomization sharedInstance].brandImageBackgroundColor;
+    self.logoImageView.backgroundColor = [UIColor clearColor];
+
+    self.logoBackgroundImageView.backgroundColor = [ParticleSetupCustomization sharedInstance].brandImageBackgroundColor;
     
 
-    [self applyDesignToTextField:self.emailTextField];
     [self applyDesignToTextField:self.emailTextField];
     [self applyDesignToTextField:self.passwordTextField];
     [self applyDesignToTextField:self.passwordVerifyTextField];

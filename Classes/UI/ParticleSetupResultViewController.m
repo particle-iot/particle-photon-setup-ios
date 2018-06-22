@@ -26,6 +26,7 @@
 @property (weak, nonatomic) IBOutlet ParticleSetupUILabel *longMessageLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *setupResultImageView;
 @property (weak, nonatomic) IBOutlet UIImageView *brandImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *brandBackgroundImageView;
 
 @property (weak, nonatomic) IBOutlet ParticleSetupUILabel *nameDeviceLabel;
 @property (weak, nonatomic) IBOutlet UITextField *nameDeviceTextField;
@@ -46,8 +47,10 @@
     [super viewDidLoad];
     // set logo
     self.brandImageView.image = [ParticleSetupCustomization sharedInstance].brandImage;
-    self.brandImageView.backgroundColor = [ParticleSetupCustomization sharedInstance].brandImageBackgroundColor;
-    
+    self.brandImageView.backgroundColor = [UIColor clearColor];
+    self.brandBackgroundImageView.backgroundColor = [ParticleSetupCustomization sharedInstance].brandImageBackgroundColor;
+
+
     self.nameDeviceLabel.hidden = YES;
     self.nameDeviceTextField.hidden = YES;
 

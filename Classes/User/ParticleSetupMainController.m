@@ -252,11 +252,18 @@ NSString *const kParticleSetupDidFailDeviceIDKey = @"kParticleSetupDidFailDevice
         [self transitionFromViewController:self.currentVC toViewController:viewController duration:0.5f options:UIViewAnimationOptionTransitionFlipFromTop animations:nil completion:nil];
         [self hideViewController:self.currentVC];
     }
+
     self.currentVC = viewController;
+
     [self.containerView endEditing:YES];
     [self addChildViewController:viewController];
-    viewController.view.frame = self.containerView.bounds;
     [self.containerView addSubview:viewController.view];
+
+    viewController.view.translatesAutoresizingMaskIntoConstraints = NO;
+    [viewController.view.leftAnchor constraintEqualToAnchor:self.containerView.leftAnchor].active = YES;
+    [viewController.view.rightAnchor constraintEqualToAnchor:self.containerView.rightAnchor].active = YES;
+    [viewController.view.topAnchor constraintEqualToAnchor:self.containerView.topAnchor].active = YES;
+    [viewController.view.bottomAnchor constraintEqualToAnchor:self.containerView.bottomAnchor].active = YES;
     [viewController didMoveToParentViewController:self];
 }
 

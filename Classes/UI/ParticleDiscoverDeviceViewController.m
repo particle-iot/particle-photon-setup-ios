@@ -36,6 +36,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *networkNameLabel;
 @property (weak, nonatomic) IBOutlet UIButton *troubleShootingButton;
 @property (weak, nonatomic) IBOutlet UIImageView *brandImage;
+@property (weak, nonatomic) IBOutlet UIImageView *brandBackgroundImage;
 @property (strong, nonatomic) NSArray *scannedWifiList;
 @property (weak, nonatomic) IBOutlet UIButton *cancelSetupButton;
 @property (weak, nonatomic) IBOutlet ParticleSetupUILabel *step3Label;
@@ -100,7 +101,8 @@
     
     // customize logo
     self.brandImage.image = [ParticleSetupCustomization sharedInstance].brandImage;
-    self.brandImage.backgroundColor = [ParticleSetupCustomization sharedInstance].brandImageBackgroundColor;
+    self.brandImage.backgroundColor = [UIColor clearColor];
+    self.brandBackgroundImage.backgroundColor = [ParticleSetupCustomization sharedInstance].brandImageBackgroundColor;
 
     // force load of images from resource bundle
     self.connectToWifiImageView.image = [ParticleSetupMainController loadImageFromResourceBundle:@"connect-to-wifi"];
