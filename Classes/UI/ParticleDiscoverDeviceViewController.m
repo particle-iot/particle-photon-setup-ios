@@ -103,6 +103,7 @@
     self.brandImage.image = [ParticleSetupCustomization sharedInstance].brandImage;
     self.brandImage.backgroundColor = [UIColor clearColor];
     self.brandBackgroundImage.backgroundColor = [ParticleSetupCustomization sharedInstance].brandImageBackgroundColor;
+    self.brandBackgroundImage.image = [ParticleSetupCustomization sharedInstance].brandImageBackgroundImage;
 
     // force load of images from resource bundle
     self.connectToWifiImageView.image = [ParticleSetupMainController loadImageFromResourceBundle:@"connect-to-wifi"];

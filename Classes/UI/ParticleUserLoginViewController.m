@@ -58,6 +58,7 @@
     self.brandImage.image = [ParticleSetupCustomization sharedInstance].brandImage;
     self.brandImage.backgroundColor = [UIColor clearColor];
     self.brandBackgroundImageView.backgroundColor = [ParticleSetupCustomization sharedInstance].brandImageBackgroundColor;
+    self.brandBackgroundImageView.image = [ParticleSetupCustomization sharedInstance].brandImageBackgroundImage;
 
     // Trick to add an inset from the left of the text fields
     CGRect  viewRect = CGRectMake(0, 0, 10, 32);

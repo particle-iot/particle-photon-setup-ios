@@ -49,6 +49,7 @@
         self.brandName = @"Particle";
         self.brandImage = [ParticleSetupMainController loadImageFromResourceBundle:@"spark-logo-head"];
         self.brandImageBackgroundColor = [UIColor colorWithRed:229 green:229 blue:237];
+        self.brandImageBackgroundImage = nil;
       
         self.modeButtonName = @"Setup button";
         self.networkNamePrefix = @"Photon";

@@ -49,6 +49,7 @@
     self.brandImageView.image = [ParticleSetupCustomization sharedInstance].brandImage;
     self.brandImageView.backgroundColor = [UIColor clearColor];
     self.brandBackgroundImageView.backgroundColor = [ParticleSetupCustomization sharedInstance].brandImageBackgroundColor;
+    self.brandBackgroundImageView.image = [ParticleSetupCustomization sharedInstance].brandImageBackgroundImage;
 
 
     self.nameDeviceLabel.hidden = YES;

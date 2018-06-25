@@ -101,7 +101,9 @@ typedef NS_ENUM(NSInteger, ParticleSetupConnectionProgressState) {
     // set logo
     self.brandImageView.image = [ParticleSetupCustomization sharedInstance].brandImage;
     self.brandImageView.backgroundColor = [UIColor clearColor];
+
     self.brandBackgroundImageView.backgroundColor = [ParticleSetupCustomization sharedInstance].brandImageBackgroundColor;
+    self.brandBackgroundImageView.image = [ParticleSetupCustomization sharedInstance].brandImageBackgroundImage;
 
     
     // force load from resource bundle

@@ -96,6 +96,7 @@
     self.logoImageView.backgroundColor = [UIColor clearColor];
 
     self.logoBackgroundImageView.backgroundColor = [ParticleSetupCustomization sharedInstance].brandImageBackgroundColor;
+    self.logoBackgroundImageView.image = [ParticleSetupCustomization sharedInstance].brandImageBackgroundImage;
     
 
     [self applyDesignToTextField:self.emailTextField];

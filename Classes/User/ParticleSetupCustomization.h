@@ -25,6 +25,7 @@
 
 @property (nonatomic, strong) NSString *brandName;
 @property (nonatomic, strong) UIImage *brandImage;
+@property (nonatomic, strong) UIImage *brandImageBackgroundImage;
 @property (nonatomic, strong) UIColor *brandImageBackgroundColor;
 @property (nonatomic, strong) NSString *instructionalVideoFilename;
 
