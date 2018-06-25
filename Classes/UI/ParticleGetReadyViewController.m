@@ -230,12 +230,13 @@
 
 - (IBAction)logoutButtonTouched:(id)sender
 {
-//    [self.checkConnectionTimer invalidate];
-    [[ParticleCloud sharedInstance] logout];
-    // call main delegate or post notification
-    [[NSNotificationCenter defaultCenter] postNotificationName:kParticleSetupDidLogoutNotification object:nil userInfo:nil];
-    //    [self.navigationController popToRootViewControllerAnimated:YES];
-    
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Log out" message:@"Are you sure you want to log out?" preferredStyle:UIAlertControllerStyleAlert];
+    [alert addAction:[UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:nil]];
+    [alert addAction:[UIAlertAction actionWithTitle:@"Log out" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        [[ParticleCloud sharedInstance] logout];
+        [[NSNotificationCenter defaultCenter] postNotificationName:kParticleSetupDidLogoutNotification object:nil userInfo:nil];
+    }]];
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 
