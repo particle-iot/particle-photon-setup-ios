@@ -66,7 +66,7 @@
     self.wifiSymbolImageView.tintColor = [ParticleSetupCustomization sharedInstance].normalTextColor;// elementBackgroundColor;;
 
     self.backButton.imageView.image = [self.backButton.imageView.image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-    self.backButton.imageView.tintColor = [ParticleSetupCustomization sharedInstance].normalTextColor;// elementBackgroundColor;;
+    self.backButton.imageView.tintColor = navBarButtonsColor;// elementBackgroundColor;;
     
 }
 
