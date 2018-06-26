@@ -144,7 +144,6 @@
 {
     [self.view endEditing:YES];
 
-    [self trimTextFieldValue:self.passwordTextField];
     [self trimTextFieldValue:self.emailTextField];
 
     if (self.passwordTextField.text.length == 0)

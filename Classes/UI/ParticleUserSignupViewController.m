@@ -253,8 +253,6 @@
 
     //trim spaces on all textfields
     [self trimTextFieldValue:self.emailTextField];
-    [self trimTextFieldValue:self.passwordTextField];
-    [self trimTextFieldValue:self.passwordVerifyTextField];
     [self trimTextFieldValue:self.firstNameTextField];
     [self trimTextFieldValue:self.lastNameTextField];
     [self trimTextFieldValue:self.companyNameTextField];

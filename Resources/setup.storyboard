@@ -248,19 +248,19 @@
                                                 <rect key="frame" x="0.0" y="457.66666666666663" width="375.66666666666669" height="55"/>
                                                 <subviews>
                                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="By clicking &quot;SIGN UP&quot; you are indicating that you have read and agreed to the" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kRO-Z7-PiJ" customClass="ParticleSetupUILabel">
-                                                        <rect key="frame" x="20" y="3.6666666666667407" width="335" height="31.333333333333329"/>
+                                                        <rect key="frame" x="20" y="1.6666666666667407" width="335" height="31.333333333333329"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="and" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LDX-XG-Ep7" customClass="ParticleSetupUILabel">
-                                                        <rect key="frame" x="176.33333333333334" y="27" width="24.333333333333343" height="28"/>
+                                                        <rect key="frame" x="177.66666666666666" y="27" width="22" height="28"/>
                                                         <fontDescription key="fontDescription" name="Gotham-Book" family="Gotham" pointSize="13"/>
                                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mRd-ei-guU" customClass="ParticleSetupUIButton">
-                                                        <rect key="frame" x="204.66666666666666" y="27" width="83.999999999999972" height="28"/>
+                                                        <rect key="frame" x="203.66666666666666" y="27" width="83.999999999999972" height="28"/>
                                                         <accessibility key="accessibilityConfiguration">
                                                             <accessibilityTraits key="traits" button="YES" link="YES"/>
                                                         </accessibility>
@@ -276,7 +276,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vzU-UX-EDD" customClass="ParticleSetupUIButton">
-                                                        <rect key="frame" x="70.333333333333329" y="27" width="101.99999999999999" height="28"/>
+                                                        <rect key="frame" x="71.666666666666671" y="27" width="102.00000000000001" height="28"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                         <state key="normal" title="Terms of Service">
                                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -299,7 +299,7 @@
                                                     <constraint firstItem="LDX-XG-Ep7" firstAttribute="centerY" secondItem="vzU-UX-EDD" secondAttribute="centerY" id="Tpc-gK-7Gg"/>
                                                     <constraint firstAttribute="bottom" secondItem="vzU-UX-EDD" secondAttribute="bottom" id="VNP-K1-C2z"/>
                                                     <constraint firstItem="kRO-Z7-PiJ" firstAttribute="leading" secondItem="p75-jt-eQR" secondAttribute="leading" constant="20" id="gFr-0r-eNI"/>
-                                                    <constraint firstItem="kRO-Z7-PiJ" firstAttribute="bottom" secondItem="LDX-XG-Ep7" secondAttribute="top" constant="8" id="lGX-sa-AO1"/>
+                                                    <constraint firstItem="kRO-Z7-PiJ" firstAttribute="bottom" secondItem="LDX-XG-Ep7" secondAttribute="top" constant="6" id="lGX-sa-AO1"/>
                                                     <constraint firstAttribute="height" constant="55" id="oMN-Gf-hjo"/>
                                                     <constraint firstItem="LDX-XG-Ep7" firstAttribute="leading" secondItem="vzU-UX-EDD" secondAttribute="trailing" constant="4" id="qwh-Ta-XUa"/>
                                                 </constraints>
