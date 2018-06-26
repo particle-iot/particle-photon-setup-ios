@@ -215,9 +215,10 @@
     
     if (textField == self.nameDeviceTextField)
     {
+        [self trimTextFieldValue:self.nameDeviceTextField];
         [self.device rename:self.nameDeviceTextField.text completion:^(NSError *error) {
             if (error) {
-                NSLog(@"Rrror naming device %@",error.description);
+                NSLog(@"Error naming device %@",error.description);
             } else {
                 self.deviceNamed = YES;
             }

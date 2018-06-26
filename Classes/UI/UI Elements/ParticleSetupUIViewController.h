@@ -20,5 +20,6 @@
 
 -(BOOL)isValidEmail:(NSString *)checkString; // should be in NSString category
 -(void)disableKeyboardMovesViewUp; // might not be needed when we remove all popups
+- (void)trimTextFieldValue:(UITextField *)textfield;
 
 @end

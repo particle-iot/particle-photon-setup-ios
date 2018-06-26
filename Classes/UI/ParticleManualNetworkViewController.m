@@ -132,6 +132,7 @@
 
 - (IBAction)connectButtonTapped:(id)sender
 {
+    [self trimTextFieldValue:self.networkNameTextField];
     if (![self.networkNameTextField.text isEqualToString:@""])
     {
         [self.view endEditing:YES];

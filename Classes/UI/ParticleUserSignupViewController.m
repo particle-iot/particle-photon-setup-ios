@@ -243,10 +243,6 @@
     }];
 }
 
-- (void) trimTextFieldValue:(UITextField *)textfield {
-    textfield.text = [[textfield.text lowercaseString] stringByTrimmingCharactersInSet:NSCharacterSet.whitespaceCharacterSet];
-}
-
 - (IBAction)signupButton:(id)sender
 {
     [self.view endEditing:YES];

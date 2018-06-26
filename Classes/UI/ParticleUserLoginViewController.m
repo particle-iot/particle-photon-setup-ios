@@ -136,10 +136,6 @@
 #endif
 }
 
-- (void) trimTextFieldValue:(UITextField *)textfield {
-    textfield.text = [[textfield.text lowercaseString] stringByTrimmingCharactersInSet:NSCharacterSet.whitespaceCharacterSet];
-}
-
 - (IBAction)loginButton:(id)sender
 {
     [self.view endEditing:YES];
