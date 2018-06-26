@@ -102,6 +102,11 @@
 #endif
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [self.passwordTextField becomeFirstResponder];
+}
+
 
 - (IBAction)connectButtonTapped:(id)sender
 {

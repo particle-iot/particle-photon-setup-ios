@@ -84,6 +84,11 @@
 #endif
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [self.networkNameTextField becomeFirstResponder];
+}
+
 
 /*
 #pragma mark - Navigation

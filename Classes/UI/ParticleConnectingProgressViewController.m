@@ -124,6 +124,11 @@ typedef NS_ENUM(NSInteger, ParticleSetupConnectionProgressState) {
         self.wifiSymbolImageView.image = [self.wifiSymbolImageView.image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
         self.wifiSymbolImageView.tintColor = [ParticleSetupCustomization sharedInstance].normalTextColor;// elementBackgroundColor;;
     }
+
+    //hide all views initially
+    for (int i = 0; i < self.progressViews.count; i++) {
+        ((ParticleConnectingProgressView *)self.progressViews[i]).hidden = YES;
+    }
 }
 
 -(void)viewWillAppear:(BOOL)animated
