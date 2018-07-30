@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name             = "ParticleSetup"
-    s.version          = "0.8.0"
+    s.version          = "0.9.0"
     s.summary          = "Particle iOS Device Setup library for easy integration of setup process for Particle devices in your app"
     s.description      = <<-DESC
                         Particle (formerly Spark) Device Setup library for integrating a customized setup process of Particle Wifi devices in your app
@@ -15,16 +15,16 @@ Pod::Spec.new do |s|
     s.source           = { :git => "https://github.com/spark/particle-setup-ios.git", :tag => s.version.to_s }
     s.social_media_url = 'https://twitter.com/particle'
 
-    s.platform     = :ios, '8.0'
+    s.platform     = :ios, '9.0'
     s.requires_arc = true
 
-    s.public_header_files = 'Classes/*.h'
-    s.source_files  = 'Classes/*.h'
+    s.public_header_files = 'ParticleSetup/*.h'
+    s.source_files  = 'ParticleSetup/*.h'
 
-    s.resource_bundle = {'ParticleSetup' => 'Resources/**/*.{xcassets,storyboard}'}
+    s.resource_bundle = {'ParticleSetup' => 'ParticleSetupResources/**/*.{xcassets,storyboard}'}
 
     s.subspec 'Core' do |core|
-        core.source_files  = 'Classes/User/**/*.{h,m}', 'Classes/UI/**/*'
+        core.source_files  = 'ParticleSetup/User/**/*.{h,m}', 'ParticleSetup/UI/**/*'
         core.dependency 'Particle-SDK'
         core.dependency '1PasswordExtension'
         core.dependency 'ParticleSetup/Comm'
@@ -32,7 +32,7 @@ Pod::Spec.new do |s|
     end
 
     s.subspec 'Comm' do |comm|
-        comm.source_files  = 'Classes/Comm/**/*'
+        comm.source_files  = 'ParticleSetup/Comm/**/*'
         comm.ios.frameworks    = 'SystemConfiguration', 'Security'
     end
 

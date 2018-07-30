@@ -115,6 +115,7 @@ These properies are shown in Objective-C syntax for convenience but work the sam
  NSString *brandName;                   // Your brand name
  UIImage *brandImage;                   // Your brand logo to fit in header of setup wizard screens
  UIColor *brandImageBackgroundColor;    // brand logo background color
+ UIImage *brandImageBackgroundImage;    // brand logo background image (introduced in v0.9)
  NSString *instructionalVideoFilename;  // Instructional video shown landscape full screen mode when "Show me how" button pressed on second setup screen
 ```
 
@@ -286,3 +287,4 @@ Particle Device Setup library is available under the Apache license 2.0. See the
 ## Maintainers
 
 - [Ido Kleinman](https://www.github.com/idokleinman)
+- [Raimundas Sakalauskas](https://www.github.com/RaimundasSakalauskas)

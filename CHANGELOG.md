@@ -3,6 +3,26 @@ All notable changes to this project will be documented in this file.
 Particle iOS Device Setup library adheres to [Semantic Versioning](http://semver.org/).
 
 ---
+## [0.9.0](https://github.com/spark/spark-setup-ios/releases/tag/0.9.0) (2018-6-27)
+
+* Dropped iOS 8 support. Now supporting iOS 9.0 and up. 
+
+* Added: iPhone X support
+
+* Added: brandImageBackgroundImage customization point
+
+* Added: Log out prompt message
+
+* Change: Reworked sign up screen to properly display content on all screen sizes
+
+* Change: Textfield values are now trimmed before being submitted (except password field)
+
+* Bugfix: Removed pods that were accidentally committed to library repo
+
+* Bugfix: Reworked setup video screen fixing a bug preventing the screen to render on some devices
+
+* Bugfix: Removed excessive constraints in storyboard file
+
 ## [0.8.0](https://github.com/spark/spark-setup-ios/releases/tag/0.8.0) (2017-3-28)
 
 * Grand rename Spark->Particle accross Pod name, classes, files etc
