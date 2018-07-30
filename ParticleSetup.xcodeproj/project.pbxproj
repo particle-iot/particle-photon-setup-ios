@@ -35,93 +35,93 @@
 		936F14E5210B9F4C0095A12F /* ParticleSetupCustomization.m in Sources */ = {isa = PBXBuildFile; fileRef = 9383690C21063A400064D8E3 /* ParticleSetupCustomization.m */; };
 		936F14E6210B9F4C0095A12F /* ParticleDiscoverDeviceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 938368E521063A400064D8E3 /* ParticleDiscoverDeviceViewController.m */; };
 		936F14E7210B9F4C0095A12F /* ParticleSetupWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 938368F321063A400064D8E3 /* ParticleSetupWebViewController.m */; };
-		936F14ED210B9F4C0095A12F /* ParticleSetupUISpinner.h in Headers */ = {isa = PBXBuildFile; fileRef = 9383690421063A400064D8E3 /* ParticleSetupUISpinner.h */; };
-		936F14EE210B9F4C0095A12F /* ParticleUserSignupViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 938368FA21063A400064D8E3 /* ParticleUserSignupViewController.h */; };
-		936F14EF210B9F4C0095A12F /* ParticleSetupSecurityManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 938368DB21063A400064D8E3 /* ParticleSetupSecurityManager.h */; };
-		936F14F0210B9F4C0095A12F /* Reachability.h in Headers */ = {isa = PBXBuildFile; fileRef = 938368DD21063A400064D8E3 /* Reachability.h */; };
-		936F14F1210B9F4C0095A12F /* ParticleSetupUIElements.h in Headers */ = {isa = PBXBuildFile; fileRef = 9383690121063A400064D8E3 /* ParticleSetupUIElements.h */; };
-		936F14F2210B9F4C0095A12F /* ParticleUserLoginViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 938368F621063A400064D8E3 /* ParticleUserLoginViewController.h */; };
-		936F14F3210B9F4C0095A12F /* ParticleManualNetworkViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 938368E821063A400064D8E3 /* ParticleManualNetworkViewController.h */; };
-		936F14F4210B9F4C0095A12F /* ParticleSetupVideoViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 938368F021063A400064D8E3 /* ParticleSetupVideoViewController.h */; };
-		936F14F5210B9F4C0095A12F /* ParticleSetupConnection.h in Headers */ = {isa = PBXBuildFile; fileRef = 938368D921063A400064D8E3 /* ParticleSetupConnection.h */; };
-		936F14F6210B9F4C0095A12F /* ParticleSetupCommManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 938368D721063A400064D8E3 /* ParticleSetupCommManager.h */; };
-		936F14F7210B9F4C0095A12F /* ParticleSetupWifiTableViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 9383690821063A400064D8E3 /* ParticleSetupWifiTableViewCell.h */; };
-		936F14F8210B9F4C0095A12F /* ParticleUserForgotPasswordViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 938368F421063A400064D8E3 /* ParticleUserForgotPasswordViewController.h */; };
-		936F14F9210B9F4C0095A12F /* ParticleSetupUILabel.h in Headers */ = {isa = PBXBuildFile; fileRef = 9383690221063A400064D8E3 /* ParticleSetupUILabel.h */; };
-		936F14FA210B9F4C0095A12F /* ParticleSetup.h in Headers */ = {isa = PBXBuildFile; fileRef = 938368E021063A400064D8E3 /* ParticleSetup.h */; };
-		936F14FB210B9F4C0095A12F /* ParticleSetup-Bridging-Header.h in Headers */ = {isa = PBXBuildFile; fileRef = 938368DF21063A400064D8E3 /* ParticleSetup-Bridging-Header.h */; };
-		936F14FC210B9F4C0095A12F /* ParticleGetReadyViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 938368E621063A400064D8E3 /* ParticleGetReadyViewController.h */; };
-		936F14FD210B9F4C0095A12F /* ParticleSetupResultViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 938368EE21063A400064D8E3 /* ParticleSetupResultViewController.h */; };
-		936F14FE210B9F4C0095A12F /* ParticleDeviceSetupLibrary.h in Headers */ = {isa = PBXBuildFile; fileRef = 9383694821063A8D0064D8E3 /* ParticleDeviceSetupLibrary.h */; };
-		936F14FF210B9F4C0095A12F /* ParticleSetupSpacerView.h in Headers */ = {isa = PBXBuildFile; fileRef = 938368FD21063A400064D8E3 /* ParticleSetupSpacerView.h */; };
-		936F1500210B9F4C0095A12F /* ParticleSetupUIViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 9383690621063A400064D8E3 /* ParticleSetupUIViewController.h */; };
-		936F1501210B9F4C0095A12F /* ParticleSelectNetworkViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 938368EA21063A400064D8E3 /* ParticleSelectNetworkViewController.h */; };
-		936F1502210B9F4C0095A12F /* ParticleSetupPasswordEntryViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 938368EC21063A400064D8E3 /* ParticleSetupPasswordEntryViewController.h */; };
-		936F1503210B9F4C0095A12F /* ParticleSetupMainController.h in Headers */ = {isa = PBXBuildFile; fileRef = 9383690D21063A400064D8E3 /* ParticleSetupMainController.h */; };
-		936F1504210B9F4C0095A12F /* ParticleSetupWebViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 938368F221063A400064D8E3 /* ParticleSetupWebViewController.h */; };
-		936F1505210B9F4C0095A12F /* ParticleSetupUIButton.h in Headers */ = {isa = PBXBuildFile; fileRef = 938368FF21063A400064D8E3 /* ParticleSetupUIButton.h */; };
-		936F1506210B9F4C0095A12F /* ParticleUserMFAViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 938368F821063A400064D8E3 /* ParticleUserMFAViewController.h */; };
-		936F1507210B9F4C0095A12F /* ParticleDiscoverDeviceViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 938368E421063A400064D8E3 /* ParticleDiscoverDeviceViewController.h */; };
-		936F1508210B9F4C0095A12F /* ParticleConnectingProgressViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 938368E221063A400064D8E3 /* ParticleConnectingProgressViewController.h */; };
-		936F1509210B9F4C0095A12F /* ParticleSetupCustomization.h in Headers */ = {isa = PBXBuildFile; fileRef = 9383690B21063A400064D8E3 /* ParticleSetupCustomization.h */; };
+		936F14ED210B9F4C0095A12F /* ParticleSetupUISpinner.h in Headers */ = {isa = PBXBuildFile; fileRef = 9383690421063A400064D8E3 /* ParticleSetupUISpinner.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		936F14EE210B9F4C0095A12F /* ParticleUserSignupViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 938368FA21063A400064D8E3 /* ParticleUserSignupViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		936F14EF210B9F4C0095A12F /* ParticleSetupSecurityManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 938368DB21063A400064D8E3 /* ParticleSetupSecurityManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		936F14F0210B9F4C0095A12F /* Reachability.h in Headers */ = {isa = PBXBuildFile; fileRef = 938368DD21063A400064D8E3 /* Reachability.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		936F14F1210B9F4C0095A12F /* ParticleSetupUIElements.h in Headers */ = {isa = PBXBuildFile; fileRef = 9383690121063A400064D8E3 /* ParticleSetupUIElements.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		936F14F2210B9F4C0095A12F /* ParticleUserLoginViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 938368F621063A400064D8E3 /* ParticleUserLoginViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		936F14F3210B9F4C0095A12F /* ParticleManualNetworkViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 938368E821063A400064D8E3 /* ParticleManualNetworkViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		936F14F4210B9F4C0095A12F /* ParticleSetupVideoViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 938368F021063A400064D8E3 /* ParticleSetupVideoViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		936F14F5210B9F4C0095A12F /* ParticleSetupConnection.h in Headers */ = {isa = PBXBuildFile; fileRef = 938368D921063A400064D8E3 /* ParticleSetupConnection.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		936F14F6210B9F4C0095A12F /* ParticleSetupCommManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 938368D721063A400064D8E3 /* ParticleSetupCommManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		936F14F7210B9F4C0095A12F /* ParticleSetupWifiTableViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 9383690821063A400064D8E3 /* ParticleSetupWifiTableViewCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		936F14F8210B9F4C0095A12F /* ParticleUserForgotPasswordViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 938368F421063A400064D8E3 /* ParticleUserForgotPasswordViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		936F14F9210B9F4C0095A12F /* ParticleSetupUILabel.h in Headers */ = {isa = PBXBuildFile; fileRef = 9383690221063A400064D8E3 /* ParticleSetupUILabel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		936F14FA210B9F4C0095A12F /* ParticleSetup.h in Headers */ = {isa = PBXBuildFile; fileRef = 938368E021063A400064D8E3 /* ParticleSetup.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		936F14FB210B9F4C0095A12F /* ParticleSetup-Bridging-Header.h in Headers */ = {isa = PBXBuildFile; fileRef = 938368DF21063A400064D8E3 /* ParticleSetup-Bridging-Header.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		936F14FC210B9F4C0095A12F /* ParticleGetReadyViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 938368E621063A400064D8E3 /* ParticleGetReadyViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		936F14FD210B9F4C0095A12F /* ParticleSetupResultViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 938368EE21063A400064D8E3 /* ParticleSetupResultViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		936F14FE210B9F4C0095A12F /* ParticleDeviceSetupLibrary.h in Headers */ = {isa = PBXBuildFile; fileRef = 9383694821063A8D0064D8E3 /* ParticleDeviceSetupLibrary.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		936F14FF210B9F4C0095A12F /* ParticleSetupSpacerView.h in Headers */ = {isa = PBXBuildFile; fileRef = 938368FD21063A400064D8E3 /* ParticleSetupSpacerView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		936F1500210B9F4C0095A12F /* ParticleSetupUIViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 9383690621063A400064D8E3 /* ParticleSetupUIViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		936F1501210B9F4C0095A12F /* ParticleSelectNetworkViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 938368EA21063A400064D8E3 /* ParticleSelectNetworkViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		936F1502210B9F4C0095A12F /* ParticleSetupPasswordEntryViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 938368EC21063A400064D8E3 /* ParticleSetupPasswordEntryViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		936F1503210B9F4C0095A12F /* ParticleSetupMainController.h in Headers */ = {isa = PBXBuildFile; fileRef = 9383690D21063A400064D8E3 /* ParticleSetupMainController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		936F1504210B9F4C0095A12F /* ParticleSetupWebViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 938368F221063A400064D8E3 /* ParticleSetupWebViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		936F1505210B9F4C0095A12F /* ParticleSetupUIButton.h in Headers */ = {isa = PBXBuildFile; fileRef = 938368FF21063A400064D8E3 /* ParticleSetupUIButton.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		936F1506210B9F4C0095A12F /* ParticleUserMFAViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 938368F821063A400064D8E3 /* ParticleUserMFAViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		936F1507210B9F4C0095A12F /* ParticleDiscoverDeviceViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 938368E421063A400064D8E3 /* ParticleDiscoverDeviceViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		936F1508210B9F4C0095A12F /* ParticleConnectingProgressViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 938368E221063A400064D8E3 /* ParticleConnectingProgressViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		936F1509210B9F4C0095A12F /* ParticleSetupCustomization.h in Headers */ = {isa = PBXBuildFile; fileRef = 9383690B21063A400064D8E3 /* ParticleSetupCustomization.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		936F150B210B9F4C0095A12F /* setup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 938368D321063A400064D8E3 /* setup.storyboard */; };
 		936F150C210B9F4C0095A12F /* setup.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 938368D421063A400064D8E3 /* setup.xcassets */; };
 		9383690F21063A400064D8E3 /* setup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 938368D321063A400064D8E3 /* setup.storyboard */; };
 		9383691021063A400064D8E3 /* setup.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 938368D421063A400064D8E3 /* setup.xcassets */; };
-		9383691121063A400064D8E3 /* ParticleSetupCommManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 938368D721063A400064D8E3 /* ParticleSetupCommManager.h */; };
+		9383691121063A400064D8E3 /* ParticleSetupCommManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 938368D721063A400064D8E3 /* ParticleSetupCommManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9383691221063A400064D8E3 /* ParticleSetupCommManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 938368D821063A400064D8E3 /* ParticleSetupCommManager.m */; };
-		9383691321063A400064D8E3 /* ParticleSetupConnection.h in Headers */ = {isa = PBXBuildFile; fileRef = 938368D921063A400064D8E3 /* ParticleSetupConnection.h */; };
+		9383691321063A400064D8E3 /* ParticleSetupConnection.h in Headers */ = {isa = PBXBuildFile; fileRef = 938368D921063A400064D8E3 /* ParticleSetupConnection.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9383691421063A400064D8E3 /* ParticleSetupConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 938368DA21063A400064D8E3 /* ParticleSetupConnection.m */; };
 		9383691521063A400064D8E3 /* ParticleSetupSecurityManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 938368DB21063A400064D8E3 /* ParticleSetupSecurityManager.h */; };
 		9383691621063A400064D8E3 /* ParticleSetupSecurityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 938368DC21063A400064D8E3 /* ParticleSetupSecurityManager.m */; };
-		9383691721063A400064D8E3 /* Reachability.h in Headers */ = {isa = PBXBuildFile; fileRef = 938368DD21063A400064D8E3 /* Reachability.h */; };
+		9383691721063A400064D8E3 /* Reachability.h in Headers */ = {isa = PBXBuildFile; fileRef = 938368DD21063A400064D8E3 /* Reachability.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9383691821063A400064D8E3 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 938368DE21063A400064D8E3 /* Reachability.m */; };
-		9383691921063A400064D8E3 /* ParticleSetup-Bridging-Header.h in Headers */ = {isa = PBXBuildFile; fileRef = 938368DF21063A400064D8E3 /* ParticleSetup-Bridging-Header.h */; };
-		9383691A21063A400064D8E3 /* ParticleSetup.h in Headers */ = {isa = PBXBuildFile; fileRef = 938368E021063A400064D8E3 /* ParticleSetup.h */; };
-		9383691B21063A400064D8E3 /* ParticleConnectingProgressViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 938368E221063A400064D8E3 /* ParticleConnectingProgressViewController.h */; };
+		9383691921063A400064D8E3 /* ParticleSetup-Bridging-Header.h in Headers */ = {isa = PBXBuildFile; fileRef = 938368DF21063A400064D8E3 /* ParticleSetup-Bridging-Header.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9383691A21063A400064D8E3 /* ParticleSetup.h in Headers */ = {isa = PBXBuildFile; fileRef = 938368E021063A400064D8E3 /* ParticleSetup.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9383691B21063A400064D8E3 /* ParticleConnectingProgressViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 938368E221063A400064D8E3 /* ParticleConnectingProgressViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9383691C21063A400064D8E3 /* ParticleConnectingProgressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 938368E321063A400064D8E3 /* ParticleConnectingProgressViewController.m */; };
-		9383691D21063A400064D8E3 /* ParticleDiscoverDeviceViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 938368E421063A400064D8E3 /* ParticleDiscoverDeviceViewController.h */; };
+		9383691D21063A400064D8E3 /* ParticleDiscoverDeviceViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 938368E421063A400064D8E3 /* ParticleDiscoverDeviceViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9383691E21063A400064D8E3 /* ParticleDiscoverDeviceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 938368E521063A400064D8E3 /* ParticleDiscoverDeviceViewController.m */; };
-		9383691F21063A400064D8E3 /* ParticleGetReadyViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 938368E621063A400064D8E3 /* ParticleGetReadyViewController.h */; };
+		9383691F21063A400064D8E3 /* ParticleGetReadyViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 938368E621063A400064D8E3 /* ParticleGetReadyViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9383692021063A400064D8E3 /* ParticleGetReadyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 938368E721063A400064D8E3 /* ParticleGetReadyViewController.m */; };
-		9383692121063A400064D8E3 /* ParticleManualNetworkViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 938368E821063A400064D8E3 /* ParticleManualNetworkViewController.h */; };
+		9383692121063A400064D8E3 /* ParticleManualNetworkViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 938368E821063A400064D8E3 /* ParticleManualNetworkViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9383692221063A400064D8E3 /* ParticleManualNetworkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 938368E921063A400064D8E3 /* ParticleManualNetworkViewController.m */; };
-		9383692321063A400064D8E3 /* ParticleSelectNetworkViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 938368EA21063A400064D8E3 /* ParticleSelectNetworkViewController.h */; };
+		9383692321063A400064D8E3 /* ParticleSelectNetworkViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 938368EA21063A400064D8E3 /* ParticleSelectNetworkViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9383692421063A400064D8E3 /* ParticleSelectNetworkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 938368EB21063A400064D8E3 /* ParticleSelectNetworkViewController.m */; };
-		9383692521063A400064D8E3 /* ParticleSetupPasswordEntryViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 938368EC21063A400064D8E3 /* ParticleSetupPasswordEntryViewController.h */; };
+		9383692521063A400064D8E3 /* ParticleSetupPasswordEntryViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 938368EC21063A400064D8E3 /* ParticleSetupPasswordEntryViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9383692621063A400064D8E3 /* ParticleSetupPasswordEntryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 938368ED21063A400064D8E3 /* ParticleSetupPasswordEntryViewController.m */; };
-		9383692721063A400064D8E3 /* ParticleSetupResultViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 938368EE21063A400064D8E3 /* ParticleSetupResultViewController.h */; };
+		9383692721063A400064D8E3 /* ParticleSetupResultViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 938368EE21063A400064D8E3 /* ParticleSetupResultViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9383692821063A400064D8E3 /* ParticleSetupResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 938368EF21063A400064D8E3 /* ParticleSetupResultViewController.m */; };
-		9383692921063A400064D8E3 /* ParticleSetupVideoViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 938368F021063A400064D8E3 /* ParticleSetupVideoViewController.h */; };
+		9383692921063A400064D8E3 /* ParticleSetupVideoViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 938368F021063A400064D8E3 /* ParticleSetupVideoViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9383692A21063A400064D8E3 /* ParticleSetupVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 938368F121063A400064D8E3 /* ParticleSetupVideoViewController.m */; };
-		9383692B21063A400064D8E3 /* ParticleSetupWebViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 938368F221063A400064D8E3 /* ParticleSetupWebViewController.h */; };
+		9383692B21063A400064D8E3 /* ParticleSetupWebViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 938368F221063A400064D8E3 /* ParticleSetupWebViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9383692C21063A400064D8E3 /* ParticleSetupWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 938368F321063A400064D8E3 /* ParticleSetupWebViewController.m */; };
-		9383692D21063A400064D8E3 /* ParticleUserForgotPasswordViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 938368F421063A400064D8E3 /* ParticleUserForgotPasswordViewController.h */; };
+		9383692D21063A400064D8E3 /* ParticleUserForgotPasswordViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 938368F421063A400064D8E3 /* ParticleUserForgotPasswordViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9383692E21063A400064D8E3 /* ParticleUserForgotPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 938368F521063A400064D8E3 /* ParticleUserForgotPasswordViewController.m */; };
-		9383692F21063A400064D8E3 /* ParticleUserLoginViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 938368F621063A400064D8E3 /* ParticleUserLoginViewController.h */; };
+		9383692F21063A400064D8E3 /* ParticleUserLoginViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 938368F621063A400064D8E3 /* ParticleUserLoginViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9383693021063A400064D8E3 /* ParticleUserLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 938368F721063A400064D8E3 /* ParticleUserLoginViewController.m */; };
-		9383693121063A400064D8E3 /* ParticleUserMFAViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 938368F821063A400064D8E3 /* ParticleUserMFAViewController.h */; };
+		9383693121063A400064D8E3 /* ParticleUserMFAViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 938368F821063A400064D8E3 /* ParticleUserMFAViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9383693221063A400064D8E3 /* ParticleUserMFAViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 938368F921063A400064D8E3 /* ParticleUserMFAViewController.m */; };
 		9383693321063A400064D8E3 /* ParticleUserSignupViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 938368FA21063A400064D8E3 /* ParticleUserSignupViewController.h */; };
 		9383693421063A400064D8E3 /* ParticleUserSignupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 938368FB21063A400064D8E3 /* ParticleUserSignupViewController.m */; };
-		9383693521063A400064D8E3 /* ParticleSetupSpacerView.h in Headers */ = {isa = PBXBuildFile; fileRef = 938368FD21063A400064D8E3 /* ParticleSetupSpacerView.h */; };
+		9383693521063A400064D8E3 /* ParticleSetupSpacerView.h in Headers */ = {isa = PBXBuildFile; fileRef = 938368FD21063A400064D8E3 /* ParticleSetupSpacerView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9383693621063A400064D8E3 /* ParticleSetupSpacerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 938368FE21063A400064D8E3 /* ParticleSetupSpacerView.m */; };
-		9383693721063A400064D8E3 /* ParticleSetupUIButton.h in Headers */ = {isa = PBXBuildFile; fileRef = 938368FF21063A400064D8E3 /* ParticleSetupUIButton.h */; };
+		9383693721063A400064D8E3 /* ParticleSetupUIButton.h in Headers */ = {isa = PBXBuildFile; fileRef = 938368FF21063A400064D8E3 /* ParticleSetupUIButton.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9383693821063A400064D8E3 /* ParticleSetupUIButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 9383690021063A400064D8E3 /* ParticleSetupUIButton.m */; };
-		9383693921063A400064D8E3 /* ParticleSetupUIElements.h in Headers */ = {isa = PBXBuildFile; fileRef = 9383690121063A400064D8E3 /* ParticleSetupUIElements.h */; };
-		9383693A21063A400064D8E3 /* ParticleSetupUILabel.h in Headers */ = {isa = PBXBuildFile; fileRef = 9383690221063A400064D8E3 /* ParticleSetupUILabel.h */; };
+		9383693921063A400064D8E3 /* ParticleSetupUIElements.h in Headers */ = {isa = PBXBuildFile; fileRef = 9383690121063A400064D8E3 /* ParticleSetupUIElements.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9383693A21063A400064D8E3 /* ParticleSetupUILabel.h in Headers */ = {isa = PBXBuildFile; fileRef = 9383690221063A400064D8E3 /* ParticleSetupUILabel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9383693B21063A400064D8E3 /* ParticleSetupUILabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9383690321063A400064D8E3 /* ParticleSetupUILabel.m */; };
 		9383693C21063A400064D8E3 /* ParticleSetupUISpinner.h in Headers */ = {isa = PBXBuildFile; fileRef = 9383690421063A400064D8E3 /* ParticleSetupUISpinner.h */; };
 		9383693D21063A400064D8E3 /* ParticleSetupUISpinner.m in Sources */ = {isa = PBXBuildFile; fileRef = 9383690521063A400064D8E3 /* ParticleSetupUISpinner.m */; };
-		9383693E21063A400064D8E3 /* ParticleSetupUIViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 9383690621063A400064D8E3 /* ParticleSetupUIViewController.h */; };
+		9383693E21063A400064D8E3 /* ParticleSetupUIViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 9383690621063A400064D8E3 /* ParticleSetupUIViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9383693F21063A400064D8E3 /* ParticleSetupUIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9383690721063A400064D8E3 /* ParticleSetupUIViewController.m */; };
-		9383694021063A400064D8E3 /* ParticleSetupWifiTableViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 9383690821063A400064D8E3 /* ParticleSetupWifiTableViewCell.h */; };
+		9383694021063A400064D8E3 /* ParticleSetupWifiTableViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 9383690821063A400064D8E3 /* ParticleSetupWifiTableViewCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9383694121063A400064D8E3 /* ParticleSetupWifiTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9383690921063A400064D8E3 /* ParticleSetupWifiTableViewCell.m */; };
-		9383694221063A400064D8E3 /* ParticleSetupCustomization.h in Headers */ = {isa = PBXBuildFile; fileRef = 9383690B21063A400064D8E3 /* ParticleSetupCustomization.h */; };
+		9383694221063A400064D8E3 /* ParticleSetupCustomization.h in Headers */ = {isa = PBXBuildFile; fileRef = 9383690B21063A400064D8E3 /* ParticleSetupCustomization.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9383694321063A400064D8E3 /* ParticleSetupCustomization.m in Sources */ = {isa = PBXBuildFile; fileRef = 9383690C21063A400064D8E3 /* ParticleSetupCustomization.m */; };
-		9383694421063A400064D8E3 /* ParticleSetupMainController.h in Headers */ = {isa = PBXBuildFile; fileRef = 9383690D21063A400064D8E3 /* ParticleSetupMainController.h */; };
+		9383694421063A400064D8E3 /* ParticleSetupMainController.h in Headers */ = {isa = PBXBuildFile; fileRef = 9383690D21063A400064D8E3 /* ParticleSetupMainController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9383694521063A400064D8E3 /* ParticleSetupMainController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9383690E21063A400064D8E3 /* ParticleSetupMainController.m */; };
-		9383694A21063A8D0064D8E3 /* ParticleDeviceSetupLibrary.h in Headers */ = {isa = PBXBuildFile; fileRef = 9383694821063A8D0064D8E3 /* ParticleDeviceSetupLibrary.h */; };
+		9383694A21063A8D0064D8E3 /* ParticleDeviceSetupLibrary.h in Headers */ = {isa = PBXBuildFile; fileRef = 9383694821063A8D0064D8E3 /* ParticleDeviceSetupLibrary.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D7667127E5C77B71CF259481 /* libPods-ParticleSetupPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F7B6A53EB33E74D70D12EB9 /* libPods-ParticleSetupPods.a */; };
 /* End PBXBuildFile section */
 
@@ -411,9 +411,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9383693C21063A400064D8E3 /* ParticleSetupUISpinner.h in Headers */,
-				9383693321063A400064D8E3 /* ParticleUserSignupViewController.h in Headers */,
-				9383691521063A400064D8E3 /* ParticleSetupSecurityManager.h in Headers */,
 				9383691721063A400064D8E3 /* Reachability.h in Headers */,
 				9383693921063A400064D8E3 /* ParticleSetupUIElements.h in Headers */,
 				9383692F21063A400064D8E3 /* ParticleUserLoginViewController.h in Headers */,
@@ -440,6 +437,9 @@
 				9383691D21063A400064D8E3 /* ParticleDiscoverDeviceViewController.h in Headers */,
 				9383691B21063A400064D8E3 /* ParticleConnectingProgressViewController.h in Headers */,
 				9383694221063A400064D8E3 /* ParticleSetupCustomization.h in Headers */,
+				9383693C21063A400064D8E3 /* ParticleSetupUISpinner.h in Headers */,
+				9383693321063A400064D8E3 /* ParticleUserSignupViewController.h in Headers */,
+				9383691521063A400064D8E3 /* ParticleSetupSecurityManager.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
