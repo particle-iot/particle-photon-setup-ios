@@ -1,0 +1,9 @@
+[submodule "Carthage/Checkouts/AFNetworking"]
+	path = Carthage/Checkouts/AFNetworking
+	url = https://github.com/AFNetworking/AFNetworking.git
+[submodule "Carthage/Checkouts/onepassword-extension"]
+	path = Carthage/Checkouts/onepassword-extension
+	url = https://github.com/AgileBits/onepassword-extension.git
+[submodule "Carthage/Checkouts/SDK"]
+	path = Carthage/Checkouts/SDK
+	url = file:///Volumes/Data/Projects/Particle/SDK

@@ -179,17 +179,7 @@ NSString *const kParticleSetupDidFailDeviceIDKey = @"kParticleSetupDidFailDevice
     otpVC.delegate = self;
     otpVC.mfaToken = mfaToken;
     otpVC.username = username;
-    otpVC.recoveryScreen = NO;
     [self showViewController:otpVC];
-}
-
--(void)showMFARecovery:(NSString *)mfaToken username:(NSString *)username {
-    ParticleUserMFAViewController *mfaRecoveryVC = [[ParticleSetupMainController getSetupStoryboard] instantiateViewControllerWithIdentifier:@"mfa_recovery"];
-    mfaRecoveryVC.delegate = self;
-    mfaRecoveryVC.mfaToken = mfaToken;
-    mfaRecoveryVC.username = username;
-    mfaRecoveryVC.recoveryScreen = YES;
-    [self showViewController:mfaRecoveryVC];
 }
 
 
@@ -243,10 +233,6 @@ NSString *const kParticleSetupDidFailDeviceIDKey = @"kParticleSetupDidFailDevice
     [self showMFAOTP:mfaToken username:username];
 }
 
--(void)didRequestMFARecovery:(id)sender mfaToken:(NSString *)mfaToken username:(NSString *)username
-{
-    [self showMFARecovery:mfaToken username:username];
-}
 
 #pragma mark Observer for setup end notifications
 -(void)setupDidFinishObserver:(NSNotification *)note

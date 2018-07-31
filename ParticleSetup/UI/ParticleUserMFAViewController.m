@@ -30,7 +30,6 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *verifyButton;
 @property (weak, nonatomic) IBOutlet UIButton *recoveryCodeButton;
-@property (weak, nonatomic) IBOutlet UIButton *loginCodeButton;
 
 @end
 
@@ -62,6 +61,8 @@
     self.codeTextField.returnKeyType = UIReturnKeyGo;
     self.codeTextField.font = [UIFont fontWithName:[ParticleSetupCustomization sharedInstance].normalTextFontName size:16.0];
 
+    self.recoveryCodeButton.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
+    self.recoveryCodeButton.titleLabel.textAlignment = NSTextAlignmentCenter;
 }
 
 - (IBAction)otpVerifyButtonTapped:(id)sender {
@@ -94,47 +95,11 @@
     }
 }
 
-- (IBAction)recoveryVerifyButtonTapped:(id)sender {
-    [self.view endEditing:YES];
-    [self trimTextFieldValue:self.codeTextField];
-    [self.spinner startAnimating];
-
-    if ([self.codeTextField.text isEqualToString:@""]) {
-        [self.spinner stopAnimating];
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Please enter the code." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-        [alert show];
-    } else {
-        [[ParticleCloud sharedInstance] loginWithUser:self.username mfaToken:self.mfaToken recoveryCode:self.codeTextField.text completion:^(NSError *error) {
-            if (!error) {
-#ifdef ANALYTICS
-                [[SEGAnalytics sharedAnalytics] track:@"Auth: MFA Recovery Login success"];
-#endif
-
-                [self.delegate didFinishUserAuthentication:self loggedIn:YES];
-            } else {
-#ifdef ANALYTICS
-                [[SEGAnalytics sharedAnalytics] track:@"Auth: MFA Recovery failure"];
-#endif
-
-                UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Two-step Authentication Error" message:error.localizedDescription preferredStyle:UIAlertControllerStyleAlert];
-                [alertController addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
-                [self presentViewController:alertController animated:YES completion:nil];
-
-            }
-        }];
-    }
-}
-
-
 
 -(void)viewWillAppear:(BOOL)animated
 {
 #ifdef ANALYTICS
-    if (self.recoveryScreen) {
-        [[SEGAnalytics sharedAnalytics] track:@"Auth: MFA Recovery Screen"];
-    } else {
-        [[SEGAnalytics sharedAnalytics] track:@"Auth: MFA OTP Screen"];
-    }
+    [[SEGAnalytics sharedAnalytics] track:@"Auth: MFA OTP Screen"];
 #endif
 }
 
@@ -144,11 +109,7 @@
 {
     if (textField == self.codeTextField)
     {
-        if (self.recoveryScreen) {
-            [self recoveryVerifyButtonTapped:self];
-        } else {
-            [self otpVerifyButtonTapped:self];
-        }
+        [self otpVerifyButtonTapped:self];
 
         return YES;
 
@@ -159,12 +120,13 @@
 
 - (IBAction)recoveryButtonTapped:(id)sender
 {
-    [self.delegate didRequestMFARecovery:self mfaToken:self.mfaToken username:self.username];
+    NSURL *url = [[NSURL alloc] initWithString:@"https://login.particle.io/account-info"];
+    if (@available(iOS 10, *)) {
+        [[UIApplication sharedApplication] openURL:url options:nil completionHandler:nil];
+    } else {
+        [[UIApplication sharedApplication] openURL:url];
+    }
 }
 
-- (IBAction)cancelButtonTapped:(id)sender
-{
-    [self.delegate didTriggerMFA:self mfaToken:self.mfaToken username:self.username];
-}
 
 @end

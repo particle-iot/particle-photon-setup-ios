@@ -21,7 +21,6 @@
 -(void)didRequestUserLogin:(id)sender;
 -(void)didRequestPasswordReset:(id)sender;
 -(void)didTriggerMFA:(id)sender mfaToken:(NSString *)mfaToken username:(NSString *)username;
--(void)didRequestMFARecovery:(id)sender mfaToken:(NSString *)mfaToken username:(NSString *)username;
 @end
 
 

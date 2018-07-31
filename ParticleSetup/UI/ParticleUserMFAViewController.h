@@ -13,7 +13,6 @@
 
 @property (nonatomic, strong) id<ParticleUserLoginDelegate> delegate;
 
-@property (nonatomic, assign) BOOL recoveryScreen;
 @property (nonatomic, strong) NSString *mfaToken;
 @property (nonatomic, strong) NSString *username;
 
