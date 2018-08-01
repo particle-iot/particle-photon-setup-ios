@@ -3,9 +3,11 @@ All notable changes to this project will be documented in this file.
 Particle iOS Device Setup library adheres to [Semantic Versioning](http://semver.org/).
 
 ---
-## [0.9.0](https://github.com/spark/spark-setup-ios/releases/tag/0.9.0) (2018-6-27)
+## [0.9.0](https://github.com/spark/spark-setup-ios/releases/tag/0.9.0) (2018-08-01)
 
-* Dropped iOS 8 support. Now supporting iOS 9.0 and up. 
+* Dropped iOS 8 support. Now supporting iOS 9.0 and up.
+
+* Added: two-step verification support
 
 * Added: iPhone X support
 
@@ -15,6 +17,8 @@ Particle iOS Device Setup library adheres to [Semantic Versioning](http://semver
 
 * Change: Reworked sign up screen to properly display content on all screen sizes
 
+* Change: new library folder structure
+
 * Change: Textfield values are now trimmed before being submitted (except password field)
 
 * Bugfix: Removed pods that were accidentally committed to library repo
@@ -23,11 +27,11 @@ Particle iOS Device Setup library adheres to [Semantic Versioning](http://semver
 
 * Bugfix: Removed excessive constraints in storyboard file
 
-## [0.8.0](https://github.com/spark/spark-setup-ios/releases/tag/0.8.0) (2017-3-28)
+## [0.8.0](https://github.com/spark/spark-setup-ios/releases/tag/0.8.0) (2017-03-28)
 
 * Grand rename Spark->Particle accross Pod name, classes, files etc
 
-## [0.7.0](https://github.com/spark/spark-setup-ios/releases/tag/0.7.0) (2017-3-28)
+## [0.7.0](https://github.com/spark/spark-setup-ios/releases/tag/0.7.0) (2017-03-28)
 
 * Change: XCode 8 compatibility fixes
 
@@ -51,7 +55,7 @@ Particle iOS Device Setup library adheres to [Semantic Versioning](http://semver
 
 * Change: Updated Pods and Carthage
 
-## [0.6.1](https://github.com/spark/spark-setup-ios/releases/tag/0.6.1) (2016-9-12)
+## [0.6.1](https://github.com/spark/spark-setup-ios/releases/tag/0.6.1) (2016-09-12)
 
 * Bugfix: Privacy policy and TOS will not cause app crash now
 
@@ -65,7 +69,7 @@ Particle iOS Device Setup library adheres to [Semantic Versioning](http://semver
 
 * Bugfix: Removed some obsolete NSLogs
 
-## [0.6.0](https://github.com/spark/spark-setup-ios/releases/tag/0.6.0) (2016-7-22)
+## [0.6.0](https://github.com/spark/spark-setup-ios/releases/tag/0.6.0) (2016-07-22)
 
 * Bugfix: didNotSucceedWithDeviceId - will only be called if delegate supports that (@optional)
 
