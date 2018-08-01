@@ -869,6 +869,9 @@
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="string" keyPath="type" value="action"/>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="otpVerifyButtonTapped:" destination="Ag6-36-cFj" eventType="touchUpInside" id="QgY-kW-raP"/>
+                                        </connections>
                                     </button>
                                     <view contentMode="scaleToFill" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="Gto-9j-2aM" customClass="ParticleSetupSpacerView">
                                         <rect key="frame" x="137.66666666666666" y="173.66666666666663" width="100" height="14"/>
