@@ -70,12 +70,18 @@
     [self trimTextFieldValue:self.codeTextField];
     [self.spinner startAnimating];
 
+
     if ([self.codeTextField.text isEqualToString:@""]) {
         [self.spinner stopAnimating];
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Please enter the code." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [alert show];
     } else {
+        self.recoveryCodeButton.userInteractionEnabled = NO;
+        self.verifyButton.userInteractionEnabled = NO;
+
         [[ParticleCloud sharedInstance] loginWithUser:self.username mfaToken:self.mfaToken OTPToken:self.codeTextField.text completion:^(NSError *error) {
+            self.recoveryCodeButton.userInteractionEnabled = YES;
+            self.verifyButton.userInteractionEnabled = YES;
             if (!error) {
 #ifdef ANALYTICS
                 [[SEGAnalytics sharedAnalytics] track:@"Auth: MFA Login success"];
