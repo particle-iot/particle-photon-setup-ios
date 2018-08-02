@@ -511,8 +511,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				938368C6210639760064D8E3 /* ParticleSetupCarthage */,
 				936F14CD210B9F4C0095A12F /* ParticleSetupPods */,
+				938368C6210639760064D8E3 /* ParticleSetupCarthage */,
 			);
 		};
 /* End PBXProject section */

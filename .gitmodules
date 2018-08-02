@@ -7,3 +7,6 @@
 [submodule "Carthage/Checkouts/SDK"]
 	path = Carthage/Checkouts/SDK
 	url = file:///Volumes/Data/Projects/Particle/SDK
+[submodule "Carthage/Checkouts/particle-sdk-ios"]
+	path = Carthage/Checkouts/particle-sdk-ios
+	url = https://github.com/particle-iot/particle-sdk-ios.git
