@@ -21,6 +21,11 @@ iOS Device setup library is implemented as an open-source Cocoapod static librar
 ### Getting Started
 
 - Refer to our [documentation](https://docs.particle.io/reference/ios/) for getting started guide, API reference, support & feedback links.
+- Cocoapods usage example app can be found [here](https://www.github.com/spark/ios-app-example-pod/).
+- Carthage usage example app can be found [here](https://www.github.com/spark/ios-app-example-carthage/).
+
+Example apps demonstrates invoking the setup wizard, customizing the UI and using the returned ParticleDevice instance once, as well as invoking Particle API functions via the Particle-SDK.
+Contributions to the example apps are welcome by submitting pull requests.
 
 
 ### Communication
