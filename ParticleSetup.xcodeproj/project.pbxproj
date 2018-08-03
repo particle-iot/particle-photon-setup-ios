@@ -132,10 +132,10 @@
 		936F14C7210B9E6C0095A12F /* OnePasswordExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OnePasswordExtension.framework; path = Carthage/Build/iOS/OnePasswordExtension.framework; sourceTree = "<group>"; };
 		936F14C8210B9E6C0095A12F /* ParticleSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParticleSDK.framework; path = Carthage/Build/iOS/ParticleSDK.framework; sourceTree = "<group>"; };
 		936F14C9210B9E6C0095A12F /* AFNetworking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AFNetworking.framework; path = Carthage/Build/iOS/AFNetworking.framework; sourceTree = "<group>"; };
-		936F1512210B9F4C0095A12F /* ParticleSetup.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ParticleSetup.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		936F1512210B9F4C0095A12F /* ParticleDeviceSetupLibrary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ParticleDeviceSetupLibrary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		936F1514210B9F820095A12F /* ParticleSetupPodsInfo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = ParticleSetupPodsInfo.plist; path = Framework/ParticleSetupPodsInfo.plist; sourceTree = SOURCE_ROOT; };
 		936F1515210B9F820095A12F /* ParticleSetupCarthageInfo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = ParticleSetupCarthageInfo.plist; path = Framework/ParticleSetupCarthageInfo.plist; sourceTree = SOURCE_ROOT; };
-		938368C7210639760064D8E3 /* ParticleSetup.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ParticleSetup.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		938368C7210639760064D8E3 /* ParticleDeviceSetupLibrary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ParticleDeviceSetupLibrary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		938368D321063A400064D8E3 /* setup.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = setup.storyboard; sourceTree = "<group>"; };
 		938368D421063A400064D8E3 /* setup.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = setup.xcassets; sourceTree = "<group>"; };
 		938368D721063A400064D8E3 /* ParticleSetupCommManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParticleSetupCommManager.h; sourceTree = "<group>"; };
@@ -242,8 +242,8 @@
 		938368C8210639760064D8E3 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				938368C7210639760064D8E3 /* ParticleSetup.framework */,
-				936F1512210B9F4C0095A12F /* ParticleSetup.framework */,
+				938368C7210639760064D8E3 /* ParticleDeviceSetupLibrary.framework */,
+				936F1512210B9F4C0095A12F /* ParticleDeviceSetupLibrary.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -463,7 +463,7 @@
 			);
 			name = ParticleSetupPods;
 			productName = ParticleSetupLibrary;
-			productReference = 936F1512210B9F4C0095A12F /* ParticleSetup.framework */;
+			productReference = 936F1512210B9F4C0095A12F /* ParticleDeviceSetupLibrary.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		938368C6210639760064D8E3 /* ParticleSetupCarthage */ = {
@@ -482,7 +482,7 @@
 			);
 			name = ParticleSetupCarthage;
 			productName = ParticleSetupLibrary;
-			productReference = 938368C7210639760064D8E3 /* ParticleSetup.framework */;
+			productReference = 938368C7210639760064D8E3 /* ParticleDeviceSetupLibrary.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -685,7 +685,7 @@
 					"@loader_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.particle.ParticleSetupLibrary;
-				PRODUCT_NAME = ParticleSetup;
+				PRODUCT_NAME = ParticleDeviceSetupLibrary;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -715,7 +715,7 @@
 					"@loader_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.particle.ParticleSetupLibrary;
-				PRODUCT_NAME = ParticleSetup;
+				PRODUCT_NAME = ParticleDeviceSetupLibrary;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -863,7 +863,7 @@
 					"@loader_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.particle.ParticleSetupLibrary;
-				PRODUCT_NAME = ParticleSetup;
+				PRODUCT_NAME = ParticleDeviceSetupLibrary;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -895,7 +895,7 @@
 					"@loader_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.particle.ParticleSetupLibrary;
-				PRODUCT_NAME = ParticleSetup;
+				PRODUCT_NAME = ParticleDeviceSetupLibrary;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

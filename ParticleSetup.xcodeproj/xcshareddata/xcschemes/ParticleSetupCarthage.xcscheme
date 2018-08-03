@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "938368C6210639760064D8E3"
-               BuildableName = "ParticleSetup.framework"
+               BuildableName = "ParticleDeviceSetupLibrary.framework"
                BlueprintName = "ParticleSetupCarthage"
                ReferencedContainer = "container:ParticleSetup.xcodeproj">
             </BuildableReference>
@@ -46,7 +46,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "938368C6210639760064D8E3"
-            BuildableName = "ParticleSetup.framework"
+            BuildableName = "ParticleDeviceSetupLibrary.framework"
             BlueprintName = "ParticleSetupCarthage"
             ReferencedContainer = "container:ParticleSetup.xcodeproj">
          </BuildableReference>
@@ -64,7 +64,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "938368C6210639760064D8E3"
-            BuildableName = "ParticleSetup.framework"
+            BuildableName = "ParticleDeviceSetupLibrary.framework"
             BlueprintName = "ParticleSetupCarthage"
             ReferencedContainer = "container:ParticleSetup.xcodeproj">
          </BuildableReference>
