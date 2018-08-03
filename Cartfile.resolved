@@ -1,3 +1,3 @@
-git "/Volumes/Data/Projects/Particle/SDK" "9755149da00e076c27af3e46b0b64f225c3a946d"
 github "AFNetworking/AFNetworking" "3.2.1"
 github "AgileBits/onepassword-extension" "bcc4cc97fed9a6e73fa204f2e61138e353cb3ef7"
+github "particle-iot/particle-sdk-ios" "0.8.1"

@@ -1,3 +1,3 @@
 github "AFNetworking/AFNetworking" ~> 3.0.0
-git "/Volumes/Data/Projects/Particle/SDK" "master"
+github "particle-iot/particle-sdk-ios" ~> 0.8.1
 github "AgileBits/onepassword-extension" "add-framework-support"

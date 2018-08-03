@@ -15,12 +15,12 @@ PODS:
   - AFNetworking/Serialization (3.2.1)
   - AFNetworking/UIKit (3.2.1):
     - AFNetworking/NSURLSession
-  - Particle-SDK (0.8.0):
-    - Particle-SDK/Helpers (= 0.8.0)
-    - Particle-SDK/SDK (= 0.8.0)
-  - Particle-SDK/Helpers (0.8.0):
+  - Particle-SDK (0.8.1):
+    - Particle-SDK/Helpers (= 0.8.1)
+    - Particle-SDK/SDK (= 0.8.1)
+  - Particle-SDK/Helpers (0.8.1):
     - AFNetworking (~> 3.0)
-  - Particle-SDK/SDK (0.8.0):
+  - Particle-SDK/SDK (0.8.1):
     - AFNetworking (~> 3.0)
     - Particle-SDK/Helpers
 
@@ -38,7 +38,7 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   1PasswordExtension: e775a29310c65851e5a6cec1afc349ab4e334e47
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
-  Particle-SDK: d9538a956995c2f8292d2c6e89691e794140b1f2
+  Particle-SDK: 3e91cf117f74b131216dfec15d8655ce9594821c
 
 PODFILE CHECKSUM: 0f32fd9817e10ab3002eedad5b03b781273686fc
 
