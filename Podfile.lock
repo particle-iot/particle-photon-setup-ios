@@ -1,25 +1,26 @@
 PODS:
   - 1PasswordExtension (1.8.4)
-  - AFNetworking (3.1.0):
-    - AFNetworking/NSURLSession (= 3.1.0)
-    - AFNetworking/Reachability (= 3.1.0)
-    - AFNetworking/Security (= 3.1.0)
-    - AFNetworking/Serialization (= 3.1.0)
-    - AFNetworking/UIKit (= 3.1.0)
-  - AFNetworking/NSURLSession (3.1.0):
+  - AFNetworking (3.2.1):
+    - AFNetworking/NSURLSession (= 3.2.1)
+    - AFNetworking/Reachability (= 3.2.1)
+    - AFNetworking/Security (= 3.2.1)
+    - AFNetworking/Serialization (= 3.2.1)
+    - AFNetworking/UIKit (= 3.2.1)
+  - AFNetworking/NSURLSession (3.2.1):
     - AFNetworking/Reachability
     - AFNetworking/Security
     - AFNetworking/Serialization
-  - AFNetworking/Reachability (3.1.0)
-  - AFNetworking/Security (3.1.0)
-  - AFNetworking/Serialization (3.1.0)
-  - AFNetworking/UIKit (3.1.0):
+  - AFNetworking/Reachability (3.2.1)
+  - AFNetworking/Security (3.2.1)
+  - AFNetworking/Serialization (3.2.1)
+  - AFNetworking/UIKit (3.2.1):
     - AFNetworking/NSURLSession
-  - Particle-SDK (0.7.0):
-    - Particle-SDK/Helpers (= 0.7.0)
-    - Particle-SDK/SDK (= 0.7.0)
-  - Particle-SDK/Helpers (0.7.0)
-  - Particle-SDK/SDK (0.7.0):
+  - Particle-SDK (0.8.1):
+    - Particle-SDK/Helpers (= 0.8.1)
+    - Particle-SDK/SDK (= 0.8.1)
+  - Particle-SDK/Helpers (0.8.1):
+    - AFNetworking (~> 3.0)
+  - Particle-SDK/SDK (0.8.1):
     - AFNetworking (~> 3.0)
     - Particle-SDK/Helpers
 
@@ -28,11 +29,17 @@ DEPENDENCIES:
   - AFNetworking
   - Particle-SDK
 
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - 1PasswordExtension
+    - AFNetworking
+    - Particle-SDK
+
 SPEC CHECKSUMS:
   1PasswordExtension: e775a29310c65851e5a6cec1afc349ab4e334e47
-  AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
-  Particle-SDK: d08e4a9e42c927bd997cd4817e5a01894ace4187
+  AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
+  Particle-SDK: 3e91cf117f74b131216dfec15d8655ce9594821c
 
-PODFILE CHECKSUM: f866209a14faa101295fdcc2829551024d8ca11a
+PODFILE CHECKSUM: 0f32fd9817e10ab3002eedad5b03b781273686fc
 
-COCOAPODS: 1.3.1
+COCOAPODS: 1.5.3
