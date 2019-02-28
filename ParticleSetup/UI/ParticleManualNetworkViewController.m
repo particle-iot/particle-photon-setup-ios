@@ -80,7 +80,7 @@
 -(void)viewWillAppear:(BOOL)animated
 {
 #ifdef ANALYTICS
-    [[SEGAnalytics sharedAnalytics] track:@"Device Setup: Manual network entry screen"];
+    [[SEGAnalytics sharedAnalytics] track:@"DeviceSetup_ManualNetworkEntryScreen"];
 #endif
 }
 
@@ -139,14 +139,14 @@
         if (self.networkRequiresPasswordSwitch.isOn)
         {
 #ifdef ANALYTICS
-            [[SEGAnalytics sharedAnalytics] track:@"Device Setup: Selected secured network"];
+            [[SEGAnalytics sharedAnalytics] track:@"DeviceSetup_SelectedSecuredNetwork"];
 #endif
             [self performSegueWithIdentifier:@"require_password" sender:self];
         }
         else
         {
 #ifdef ANALYTICS
-            [[SEGAnalytics sharedAnalytics] track:@"Device Setup: Selected open network"];
+            [[SEGAnalytics sharedAnalytics] track:@"DeviceSetup_SelectedOpenNetwork"];
 #endif
             [self performSegueWithIdentifier:@"connect" sender:self];
             

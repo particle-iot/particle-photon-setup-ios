@@ -84,13 +84,13 @@
             self.verifyButton.userInteractionEnabled = YES;
             if (!error) {
 #ifdef ANALYTICS
-                [[SEGAnalytics sharedAnalytics] track:@"Auth: MFA Login success"];
+                [[SEGAnalytics sharedAnalytics] track:@"Auth_MFALoginSuccess"];
 #endif
 
                 [self.delegate didFinishUserAuthentication:self loggedIn:YES];
             } else {
 #ifdef ANALYTICS
-                [[SEGAnalytics sharedAnalytics] track:@"Auth: MFA failure"];
+                [[SEGAnalytics sharedAnalytics] track:@"Auth_MFAFailure"];
 #endif
 
                 UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Two-step Authentication Error" message:error.localizedDescription preferredStyle:UIAlertControllerStyleAlert];
@@ -105,7 +105,7 @@
 -(void)viewWillAppear:(BOOL)animated
 {
 #ifdef ANALYTICS
-    [[SEGAnalytics sharedAnalytics] track:@"Auth: MFA OTP Screen"];
+    [[SEGAnalytics sharedAnalytics] track:@"Auth_MFAOTPScreen"];
 #endif
 }
 

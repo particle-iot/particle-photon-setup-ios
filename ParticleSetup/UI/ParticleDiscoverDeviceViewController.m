@@ -130,7 +130,7 @@
 
     
 #ifdef ANALYTICS
-    [[SEGAnalytics sharedAnalytics] track:@"Device Setup: Device discovery screen"];
+    [[SEGAnalytics sharedAnalytics] track:@"DeviceSetup_DeviceDiscoveryScreen"];
 #endif
 
 

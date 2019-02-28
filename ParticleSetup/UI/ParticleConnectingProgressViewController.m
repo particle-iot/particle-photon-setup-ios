@@ -140,7 +140,7 @@ typedef NS_ENUM(NSInteger, ParticleSetupConnectionProgressState) {
     [self startAnimatingSpinner:self.currentStateView.spinner];
     [self tintConnectionProgressStateSpinner];
 #ifdef ANALYTICS
-    [[SEGAnalytics sharedAnalytics] track:@"Device Setup: Connecting progress screen"];
+    [[SEGAnalytics sharedAnalytics] track:@"DeviceSetup_ConnectingProgressScreen"];
 #endif
     
 }

@@ -98,7 +98,7 @@
 -(void)viewWillAppear:(BOOL)animated
 {
 #ifdef ANALYTICS
-    [[SEGAnalytics sharedAnalytics] track:@"Device Setup: Password Entry Screen"];
+    [[SEGAnalytics sharedAnalytics] track:@"DeviceSetup_PasswordEntryScreen"];
 #endif
 }
 

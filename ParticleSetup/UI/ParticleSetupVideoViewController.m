@@ -36,7 +36,7 @@
 -(void)viewWillDisappear:(BOOL)animated
 {
 #ifdef ANALYTICS
-    [[SEGAnalytics sharedAnalytics] track:@"Device Setup: How-To video screen activity"];
+    [[SEGAnalytics sharedAnalytics] track:@"DeviceSetup_HowToVideoScreenActivity"];
 #endif
     
 }
@@ -57,7 +57,7 @@
     [self setNeedsStatusBarAppearanceUpdate];
     
 #ifdef ANALYTICS
-    [[SEGAnalytics sharedAnalytics] track:@"Device Setup: How-To video screen activity"];
+    [[SEGAnalytics sharedAnalytics] track:@"DeviceSetup_HowToVideoScreenActivity"];
 #endif
    
     

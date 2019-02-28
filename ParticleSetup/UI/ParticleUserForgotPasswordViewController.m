@@ -80,7 +80,7 @@
         if (!error)
         {
 #ifdef ANALYTICS
-            [[SEGAnalytics sharedAnalytics] track:@"Auth: Request password reset"];
+            [[SEGAnalytics sharedAnalytics] track:@"Auth_RequestPasswordReset"];
 #endif
             
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Reset password" message:@"Instuctions how to reset your password will be sent to the provided email address. Please check your email and continue according to instructions." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
@@ -124,7 +124,7 @@
 -(void)viewWillAppear:(BOOL)animated
 {
 #ifdef ANALYTICS
-    [[SEGAnalytics sharedAnalytics] track:@"Auth: Forgot password screen"];
+    [[SEGAnalytics sharedAnalytics] track:@"Auth_ForgotPasswordScreen"];
 #endif
 }
 

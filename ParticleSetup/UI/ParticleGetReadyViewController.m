@@ -225,7 +225,7 @@
 -(void)viewWillAppear:(BOOL)animated
 {
 #ifdef ANALYTICS
-    [[SEGAnalytics sharedAnalytics] track:@"Device Setup: Get ready screen"];
+    [[SEGAnalytics sharedAnalytics] track:@"DeviceSetup_GetReadyScreen"];
 //    NSLog(@"analytics enabled");
 #endif
 }

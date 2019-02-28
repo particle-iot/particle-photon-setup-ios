@@ -106,7 +106,7 @@
 -(void)viewWillAppear:(BOOL)animated
 {
 #ifdef ANALYTICS
-    [[SEGAnalytics sharedAnalytics] track:@"Device Setup: Webview Screen"];
+    [[SEGAnalytics sharedAnalytics] track:@"DeviceSetup_WebviewScreen"];
 #endif
 }
 

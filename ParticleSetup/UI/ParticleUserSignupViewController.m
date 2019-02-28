@@ -182,7 +182,7 @@
 -(void)viewWillAppear:(BOOL)animated
 {
 #ifdef ANALYTICS
-    [[SEGAnalytics sharedAnalytics] track:@"Auth: Sign Up screen"];
+    [[SEGAnalytics sharedAnalytics] track:@"Auth_SignUpScreen"];
 #endif
     [self businessAccountSwitchChanged:self];
 }
@@ -280,7 +280,7 @@
                 if (!error)
                 {
 #ifdef ANALYTICS
-                    [[SEGAnalytics sharedAnalytics] track:@"Auth: Signed Up New Customer"];
+                    [[SEGAnalytics sharedAnalytics] track:@"Auth_SignedUpNewCustomer"];
 #endif
                     
                     [self.delegate didFinishUserAuthentication:self loggedIn:YES];
@@ -335,7 +335,7 @@
                 if (!error)
                 {
 #ifdef ANALYTICS
-                    [[SEGAnalytics sharedAnalytics] track:@"Auth: Signed Up New User"];
+                    [[SEGAnalytics sharedAnalytics] track:@"Auth_SignedUpNewUser"];
 #endif
                     
                     [[ParticleCloud sharedInstance] loginWithUser:email password:self.passwordTextField.text completion:^(NSError *error) {
@@ -418,7 +418,7 @@
         if (buttonIndex == 0) //YES
         {
 #ifdef ANALYTICS
-            [[SEGAnalytics sharedAnalytics] track:@"Auth: Auth skipped"];
+            [[SEGAnalytics sharedAnalytics] track:@"Auth_AuthSkipped"];
 #endif
             [self.delegate didFinishUserAuthentication:self loggedIn:NO];
         }

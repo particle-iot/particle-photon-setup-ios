@@ -129,7 +129,7 @@
 -(void)viewWillAppear:(BOOL)animated
 {
 #ifdef ANALYTICS
-    [[SEGAnalytics sharedAnalytics] track:@"Auth: Login Screen"];
+    [[SEGAnalytics sharedAnalytics] track:@"Auth_Login_Screen"];
 #endif
 }
 
@@ -157,7 +157,7 @@
              if (!error)
              {
 #ifdef ANALYTICS
-                 [[SEGAnalytics sharedAnalytics] track:@"Auth: Login success"];
+                 [[SEGAnalytics sharedAnalytics] track:@"Auth_LoginSuccess"];
 #endif
 
                  [self.delegate didFinishUserAuthentication:self loggedIn:YES];
@@ -170,13 +170,13 @@
 
                  if ([errorCode isEqualToString:@"mfa_required"]) {
 #ifdef ANALYTICS
-                 [[SEGAnalytics sharedAnalytics] track:@"Auth: MFA triggered"];
+                 [[SEGAnalytics sharedAnalytics] track:@"Auth_MFATriggered"];
 #endif
 
                      [self.delegate didTriggerMFA:self mfaToken:responseBody[@"mfa_token"] username:email];
                  } else {
 #ifdef ANALYTICS
-                     [[SEGAnalytics sharedAnalytics] track:@"Auth: Login failure"];
+                     [[SEGAnalytics sharedAnalytics] track:@"Auth_LoginFailure"];
 #endif
 
                      UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Cannot Sign In" message:error.localizedDescription preferredStyle:UIAlertControllerStyleAlert];
@@ -213,7 +213,7 @@
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Skip Authentication" message:messageStr preferredStyle:UIAlertControllerStyleAlert];
     [alertController addAction:[UIAlertAction actionWithTitle:@"Yes" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
 #ifdef ANALYTICS
-        [[SEGAnalytics sharedAnalytics] track:@"Auth: Auth skipped"];
+        [[SEGAnalytics sharedAnalytics] track:@"Auth_AuthSkipped"];
 #endif
         [self.delegate didFinishUserAuthentication:self loggedIn:NO];
     }]];

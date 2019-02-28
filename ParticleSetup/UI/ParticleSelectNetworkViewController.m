@@ -330,7 +330,7 @@
     if (secInt == ParticleSetupWifiSecurityTypeOpen)
     {
 #ifdef ANALYTICS
-        [[SEGAnalytics sharedAnalytics] track:@"Device Setup: Selected open network"];
+        [[SEGAnalytics sharedAnalytics] track:@"DeviceSetup_SelectedOpenNetwork"];
 #endif
         [self performSegueWithIdentifier:@"connect" sender:self];
         
@@ -338,7 +338,7 @@
     else
     {
 #ifdef ANALYTICS
-        [[SEGAnalytics sharedAnalytics] track:@"Device Setup: Selected secured network"];
+        [[SEGAnalytics sharedAnalytics] track:@"DeviceSetup_SelectedSecuredNetwork"];
 #endif
         [self performSegueWithIdentifier:@"require_password" sender:self];
     }
@@ -369,7 +369,7 @@
 -(void)viewWillAppear:(BOOL)animated
 {
 #ifdef ANALYTICS
-    [[SEGAnalytics sharedAnalytics] track:@"Device Setup: Select Network Screen"];
+    [[SEGAnalytics sharedAnalytics] track:@"DeviceSetup_SelectNetworkScreen"];
 #endif
 }
 
