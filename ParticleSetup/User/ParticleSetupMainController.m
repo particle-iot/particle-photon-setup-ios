@@ -130,7 +130,12 @@ NSString *const kParticleSetupDidFailDeviceIDKey = @"kParticleSetupDidFailDevice
         if (self.setupOnly)
             [self runSetup];
         else
-            [self showSignup];
+            if (self.startWithLogin) {
+                [self showLogin];
+            } else {
+                [self showSignup];
+            }
+
     }
 
 
