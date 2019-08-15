@@ -257,6 +257,9 @@
     NSString *password1 = self.passwordTextField.text;
     NSString *password2 = self.passwordVerifyTextField.text;
 
+    [[NSUserDefaults standardUserDefaults] setObject:email forKey:@"last_used_email"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+
     if (password1.length < 8)
     {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Password must be at least 8 characters long" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
