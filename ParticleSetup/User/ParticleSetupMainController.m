@@ -87,6 +87,12 @@ NSString *const kParticleSetupDidFailDeviceIDKey = @"kParticleSetupDidFailDevice
     return mainVC;
 }
 
+- (void)awakeFromNib {
+    [super awakeFromNib];
+
+    self.modalPresentationStyle = UIModalPresentationFullScreen;
+}
+
 
 -(instancetype)initWithSetupOnly:(BOOL)yesOrNo
 {
