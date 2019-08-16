@@ -23,7 +23,16 @@
 
 -(void)viewDidLoad {
     [super viewDidLoad];
-    
+
+
+    //Force light mode on iOS 13
+    if (@available(iOS 13.0, *)) {
+        if ([self respondsToSelector:NSSelectorFromString(@"overrideUserInterfaceStyle")])
+        {
+            [self setValue:@(UIUserInterfaceStyleLight) forKey:@"overrideUserInterfaceStyle"];
+        }
+    }
+
     //    self.view.backgroundColor = [ParticleSetupCustomization sharedInstance].pageBackgroundColor;
     if ([ParticleSetupCustomization sharedInstance].pageBackgroundImage)
     {
