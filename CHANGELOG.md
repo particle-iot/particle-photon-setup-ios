@@ -2,6 +2,14 @@
 All notable changes to this project will be documented in this file.
 Particle iOS Device Setup library adheres to [Semantic Versioning](http://semver.org/).
 
+## [0.9.1](https://github.com/spark/spark-setup-ios/releases/tag/0.9.0) (2019-08-20)
+
+* Added: Setup flow now requests location permission if it's running on iOS 13 device
+
+* Added: `ParticleSetupMainController` now has property `startWithLogin` to allow login screen to be first screen instead of sign up screen
+
+* Added: Partial support for Apple password autofill. For full support please see: https://developer.apple.com/documentation/security/password_autofill/
+
 ---
 ## [0.9.0](https://github.com/spark/spark-setup-ios/releases/tag/0.9.0) (2018-08-01)
 
