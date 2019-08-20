@@ -66,6 +66,9 @@ extern NSString *const kParticleSetupDidFailDeviceIDKey;
 
 @interface ParticleSetupMainController : UIViewController
 
+// Allows first screen to be login instead of setup
+@property (nonatomic) BOOL startWithLogin;
+
 // Viewcontroller displaying the modal setup UI control
 @property (nonatomic, weak) UIViewController<ParticleSetupMainControllerDelegate>* delegate;
 

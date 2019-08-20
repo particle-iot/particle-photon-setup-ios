@@ -92,47 +92,18 @@ int const kParticleSetupConnectionEndpointPort = 5609;
 
 +(BOOL)checkParticleDeviceWifiConnection:(NSString *)networkPrefix
 {
-    // starting iOS 9: just try to open socket to photon - networkPrefix is ignored
-    /*
-    if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"9.0"))
-    {
-        static BOOL bOpeningSocket = NO;
-        
-        if (bOpeningSocket)
-            return NO;
-        
-        
-        bOpeningSocket = YES;
-        FastSocket *socket = [[FastSocket alloc] initWithHost:kParticleSetupConnectionEndpointAddress andPort:kParticleSetupConnectionEndpointPortString];
-        
-        if ([socket connect])
-        {
-            [socket close];
-            bOpeningSocket = NO;
-            return YES;
-        }
-        else
-        {
-            bOpeningSocket = NO;
-            return NO;
-        }
-    }
-    else*/
-//    {
-    
         // for iOS 8:
         NSArray *ifs = (__bridge_transfer NSArray *)CNCopySupportedInterfaces();
-        //    NSLog(@"Supported interfaces: %@", ifs);
+
         NSDictionary *info;
         for (NSString *ifnam in ifs) {
             info = (__bridge_transfer NSDictionary *)CNCopyCurrentNetworkInfo((__bridge CFStringRef)ifnam);
-            //        NSLog(@"%@ => %@", ifnam, info);
             if (info && [info count]) { break; }
         }
-        
+
+        NSLog(@"info = %@", info);
+
         NSString *SSID = info[@"SSID"];
-        //    NSLog(@"currently connected SSID: %@",SSID);
-        //    if ([SSID hasPrefix:[ParticleSetupCustomization sharedInstance].networkNamePrefix])
         if ([SSID hasPrefix:networkPrefix])
         {
             return YES;

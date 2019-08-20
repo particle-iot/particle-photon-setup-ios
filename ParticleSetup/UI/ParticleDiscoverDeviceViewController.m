@@ -22,6 +22,7 @@
 #import "ParticleSetupUIElements.h"
 #import "ParticleSetupVideoViewController.h"
 #import <QuartzCore/QuartzCore.h>
+#import <CoreLocation/CoreLocation.h>
 #import "ParticleSetupCustomization.h"
 #import "ParticleSetupConnection.h"
 #import "ParticleSetupCommManager.h"
@@ -208,24 +209,24 @@
 
 -(void)checkDeviceConnectionForNotification:(NSTimer *)timer
 {
-    UIApplicationState state = [[UIApplication sharedApplication] applicationState];
-    if (state == UIApplicationStateBackground || state == UIApplicationStateInactive)
-    {
-//        NSLog(@"checkDeviceConnectionForNotification (background)");
-
-        if ([ParticleSetupCommManager checkParticleDeviceWifiConnection:[ParticleSetupCustomization sharedInstance].networkNamePrefix])
+    dispatch_async(dispatch_get_main_queue(), ^{
+        UIApplicationState state = [[UIApplication sharedApplication] applicationState];
+        if (state == UIApplicationStateBackground || state == UIApplicationStateInactive)
         {
-            UILocalNotification *localNotification = [[UILocalNotification alloc] init];
-            localNotification.alertAction = @"Connected";
-            NSString *notifText = [NSString stringWithFormat:@"Your phone has connected to %@. Tap to continue Setup.",[ParticleSetupCustomization sharedInstance].deviceName];
-            localNotification.alertBody = notifText;
-            localNotification.alertAction = @"open"; // text that is displayed after "slide to..." on the lock screen - defaults to "slide to view"
-            localNotification.soundName = UILocalNotificationDefaultSoundName; // play default sound
-            localNotification.fireDate = [[NSDate alloc] initWithTimeIntervalSinceNow:0];
-            [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
-            [timer invalidate];
+            if ([ParticleSetupCommManager checkParticleDeviceWifiConnection:[ParticleSetupCustomization sharedInstance].networkNamePrefix])
+            {
+                UILocalNotification *localNotification = [[UILocalNotification alloc] init];
+                localNotification.alertAction = @"Connected";
+                NSString *notifText = [NSString stringWithFormat:@"Your phone has connected to %@. Tap to continue Setup.",[ParticleSetupCustomization sharedInstance].deviceName];
+                localNotification.alertBody = notifText;
+                localNotification.alertAction = @"open"; // text that is displayed after "slide to..." on the lock screen - defaults to "slide to view"
+                localNotification.soundName = UILocalNotificationDefaultSoundName; // play default sound
+                localNotification.fireDate = [[NSDate alloc] initWithTimeIntervalSinceNow:0];
+                [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
+                [timer invalidate];
+            }
         }
-    }
+    });
 }
 
 -(void)scheduleBackgroundTask
@@ -260,41 +261,41 @@
 
 -(void)startPhotonQuery
 {
-    if ([UIApplication sharedApplication].applicationState == UIApplicationStateActive)
-    {
-        [self.checkConnectionTimer invalidate];
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
-            
-            // UI activity indicator
-            self.wifiSignalImageView.hidden = YES;
-            [self.spinner startAnimating];
-        });
-        
-        // Start connection command chain process with a small delay
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            [self getDeviceID];
-        });
-        
-    }
+    dispatch_async(dispatch_get_main_queue(), ^{
+        if ([UIApplication sharedApplication].applicationState == UIApplicationStateActive) {
+            [self.checkConnectionTimer invalidate];
+
+            dispatch_async(dispatch_get_main_queue(), ^{
+                // UI activity indicator
+                self.wifiSignalImageView.hidden = YES;
+                [self.spinner startAnimating];
+            });
+
+            // Start connection command chain process with a small delay
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t) (0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                [self getDeviceID];
+            });
+        }
+    });
 
 }
 
 
 -(void)checkDeviceWifiConnection:(id)sender
 {
-    //    printf("Detect device timer\n");
-    
-    
-    UIApplicationState state = [[UIApplication sharedApplication] applicationState];
-    if (state == UIApplicationStateActive)
-    {
-        //        NSLog(@"ParticleDiscover -> checkDeviceWifiConnection timer");
-        
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-            if ([ParticleSetupCommManager checkParticleDeviceWifiConnection:[ParticleSetupCustomization sharedInstance].networkNamePrefix])
-            {
-                [self startPhotonQuery];
+    if (@available(iOS 13.0, *), ![CLLocationManager locationServicesEnabled] || ([CLLocationManager authorizationStatus] != kCLAuthorizationStatusAuthorizedWhenInUse && [CLLocationManager authorizationStatus] != kCLAuthorizationStatusAuthorizedAlways)) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.navigationController popViewControllerAnimated:NO];
+        });
+    } else {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            UIApplicationState state = [[UIApplication sharedApplication] applicationState];
+            if (state == UIApplicationStateActive) {
+                dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+                    if ([ParticleSetupCommManager checkParticleDeviceWifiConnection:[ParticleSetupCustomization sharedInstance].networkNamePrefix]) {
+                        [self startPhotonQuery];
+                    }
+                });
             }
         });
     }

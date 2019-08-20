@@ -68,18 +68,32 @@
     self.emailTextField.leftView = emptyView1;
     self.emailTextField.leftViewMode = UITextFieldViewModeAlways;
     self.emailTextField.delegate = self;
+    if (@available(iOS 10.0, *)) {
+        self.emailTextField.textContentType = UITextContentTypeUsername;
+    }
     self.emailTextField.returnKeyType = UIReturnKeyNext;
     self.emailTextField.font = [UIFont fontWithName:[ParticleSetupCustomization sharedInstance].normalTextFontName size:16.0];
 
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"last_used_email"])
+        self.emailTextField.text = (NSString *)[[NSUserDefaults standardUserDefaults] objectForKey:@"last_used_email"];
+
+
     self.passwordTextField.leftView = emptyView2;
     self.passwordTextField.leftViewMode = UITextFieldViewModeAlways;
+    if (@available(iOS 10.0, *)) {
+        self.passwordTextField.textContentType = UITextContentTypePassword;
+    }
     self.passwordTextField.delegate = self;
     self.passwordTextField.font = [UIFont fontWithName:[ParticleSetupCustomization sharedInstance].normalTextFontName size:16.0];
+
 
     self.skipAuthButton.hidden = !([ParticleSetupCustomization sharedInstance].allowSkipAuthentication);
     [self.onePasswordButton setHidden:![[OnePasswordExtension sharedExtension] isAppExtensionAvailable]];
     if (!self.onePasswordButton.hidden) {
         self.onePasswordButton.hidden = ![ParticleSetupCustomization sharedInstance].allowPasswordManager;
+    }
+    if (!self.onePasswordButton.hidden) {
+        self.passwordTextField.clearButtonMode = UITextFieldViewModeNever;
     }
 }
 
@@ -138,6 +152,9 @@
     [self.view endEditing:YES];
 
     [self trimTextFieldValue:self.emailTextField];
+
+    [[NSUserDefaults standardUserDefaults] setObject:self.emailTextField.text forKey:@"last_used_email"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
 
     if (self.passwordTextField.text.length == 0)
     {

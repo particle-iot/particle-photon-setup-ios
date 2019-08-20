@@ -8,6 +8,8 @@
 
 #import "ParticleGetReadyViewController.h"
 #import "ParticleSetupWebViewController.h"
+#import <CoreLocation/CoreLocation.h>
+
 #ifdef USE_FRAMEWORKS
 #import <ParticleSDK/ParticleSDK.h>
 #else
@@ -18,6 +20,8 @@
 #import "ParticleSetupUIElements.h"
 #import "ParticleSetupResultViewController.h"
 #import "ParticleSetupCustomization.h"
+#import "ParticleGetLocationPermissionViewController.h"
+
 #ifdef ANALYTICS
 #import <SEGAnalytics.h>
 #endif
@@ -138,11 +142,27 @@
 
 }
 
+- (void)selectSegue {
+    if (@available(iOS 13.0, *)) {
+        if ([CLLocationManager locationServicesEnabled] &&
+                ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusAuthorizedWhenInUse || [CLLocationManager authorizationStatus] == kCLAuthorizationStatusAuthorizedAlways)) {
+            [self performSegueWithIdentifier:@"discover" sender:self];
+        } else {
+            [self performSegueWithIdentifier:@"corelocation" sender:self];
+        }
+    } else {
+        [self performSegueWithIdentifier:@"discover" sender:self];
+    }
+}
+
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([[segue identifier] isEqualToString:@"discover"])
-    {
+    if ([[segue identifier] isEqualToString:@"discover"]) {
         ParticleDiscoverDeviceViewController *vc = [segue destinationViewController];
+        vc.claimCode = self.claimCode;
+        vc.claimedDevices = self.claimedDevices;
+    } else if ([[segue identifier] isEqualToString:@"corelocation"]) {
+        ParticleGetLocationPermissionViewController *vc = [segue destinationViewController];
         vc.claimCode = self.claimCode;
         vc.claimedDevices = self.claimedDevices;
     }
@@ -169,8 +189,7 @@
             self.claimedDevices = userClaimedDeviceIDs;
             //            NSLog(@"Got claim code: %@",self.claimCode);
             //            NSLog(@"Devices IDs owned by user: %@",self.claimedDevices);
-            [self performSegueWithIdentifier:@"discover" sender:self];
-            
+            [self selectSegue];
         }
         else
         {
@@ -216,7 +235,7 @@
     else
     {
         // authentication skipped by user
-        [self performSegueWithIdentifier:@"discover" sender:self];
+        [self selectSegue];
     }
     
     
