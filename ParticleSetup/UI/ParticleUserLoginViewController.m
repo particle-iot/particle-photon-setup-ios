@@ -68,7 +68,7 @@
     self.emailTextField.leftView = emptyView1;
     self.emailTextField.leftViewMode = UITextFieldViewModeAlways;
     self.emailTextField.delegate = self;
-    if (@available(iOS 10.0, *)) {
+    if (@available(iOS 11.0, *)) {
         self.emailTextField.textContentType = UITextContentTypeUsername;
     }
     self.emailTextField.returnKeyType = UIReturnKeyNext;
@@ -80,7 +80,7 @@
 
     self.passwordTextField.leftView = emptyView2;
     self.passwordTextField.leftViewMode = UITextFieldViewModeAlways;
-    if (@available(iOS 10.0, *)) {
+    if (@available(iOS 11.0, *)) {
         self.passwordTextField.textContentType = UITextContentTypePassword;
     }
     self.passwordTextField.delegate = self;
