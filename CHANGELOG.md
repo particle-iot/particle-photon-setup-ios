@@ -2,7 +2,11 @@
 All notable changes to this project will be documented in this file.
 Particle iOS Device Setup library adheres to [Semantic Versioning](http://semver.org/).
 
-## [0.9.1](https://github.com/spark/spark-setup-ios/releases/tag/0.9.0) (2019-08-20)
+## [0.9.2](https://github.com/spark/spark-setup-ios/releases/tag/0.9.2) (2019-08-22)
+
+* Bugfix: Fixed a crash on iOS 10 due to usage of constants that were introduced in iOS 11.
+
+## [0.9.1](https://github.com/spark/spark-setup-ios/releases/tag/0.9.1) (2019-08-20)
 
 * Added: Setup flow now requests location permission if it's running on iOS 13 device
 
@@ -10,7 +14,6 @@ Particle iOS Device Setup library adheres to [Semantic Versioning](http://semver
 
 * Added: Partial support for Apple password autofill. For full support please see: https://developer.apple.com/documentation/security/password_autofill/
 
----
 ## [0.9.0](https://github.com/spark/spark-setup-ios/releases/tag/0.9.0) (2018-08-01)
 
 * Dropped iOS 8 support. Now supporting iOS 9.0 and up.
