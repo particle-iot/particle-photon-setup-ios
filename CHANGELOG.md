@@ -2,6 +2,10 @@
 All notable changes to this project will be documented in this file.
 Particle iOS Device Setup library adheres to [Semantic Versioning](http://semver.org/).
 
+## [0.9.3](https://github.com/spark/spark-setup-ios/releases/tag/0.9.3) (2019-08-30)
+
+* Bugfix: Fixed a problem with setup flow returning to get ready screen unexpectedly on all current iOS versions (< iOS 13)
+
 ## [0.9.2](https://github.com/spark/spark-setup-ios/releases/tag/0.9.2) (2019-08-22)
 
 * Bugfix: Fixed a crash on iOS 10 due to usage of constants that were introduced in iOS 11.
