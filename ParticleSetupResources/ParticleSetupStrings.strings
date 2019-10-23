@@ -1,0 +1,13 @@
+// Generated on 2019-10-23 17:38:31 by iOS.py
+
+"ParticleSetupStrings.Action.Cancel" = "_Cancel_";
+"ParticleSetupStrings.Action.LogOut" = "_Log out_";
+
+"ParticleSetupStrings.GetReady.Button.Ready" = "_READY_";
+
+"ParticleSetupStrings.GetReady.Text1" = "_Plug in your {device} to power it on_";
+"ParticleSetupStrings.GetReady.Text2" = "_The on-board LED should be blinking blue. If not, hold the {mode button} for 3 seconds_";
+"ParticleSetupStrings.GetReady.Text3" = "_Make sure your iOS device is connected to the Internet_";
+
+
+
