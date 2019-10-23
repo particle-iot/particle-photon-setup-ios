@@ -21,7 +21,7 @@ Pod::Spec.new do |s|
     s.public_header_files = 'ParticleSetup/*.h'
     s.source_files  = 'ParticleSetup/*.h'
 
-    s.resource_bundle = {'ParticleSetup' => 'ParticleSetupResources/**/*.{xcassets,storyboard}'}
+    s.resource_bundle = {'ParticleSetup' => 'ParticleSetupResources/**/*.{xcassets,storyboard,strings}'}
 
     s.subspec 'Core' do |core|
         core.source_files  = 'ParticleSetup/User/**/*.{h,m}', 'ParticleSetup/UI/**/*'
