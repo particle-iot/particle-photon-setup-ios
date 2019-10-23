@@ -72,7 +72,30 @@
     // do customization
 }
 
-- (void) trimTextFieldValue:(UITextField *)textfield {
+- (void)awakeFromNib {
+    [super awakeFromNib];
+
+    [self replaceSetupStrings:self.view];
+}
+
+- (void)replaceSetupStrings:(UIView *)target {
+    NSArray<UIView *> *subviews = target.subviews;
+
+    for (UIView *subview in subviews) {
+        NSLog(@"%@", subview);;
+        if ([subview isKindOfClass:[UILabel class]]) {
+            UILabel *label = subview;
+            label.text = [label.text particleLocalized];
+        } else if ([subview isKindOfClass:[UIButton class]]) {
+            UIButton *button = subview;
+            [button setTitle:[button.currentTitle particleLocalized] forState:UIControlStateNormal];
+        } else {
+            [self replaceSetupStrings:subview];
+        }
+    }
+}
+
+- (void)trimTextFieldValue:(UITextField *)textfield {
     textfield.text = [[textfield.text lowercaseString] stringByTrimmingCharactersInSet:NSCharacterSet.whitespaceCharacterSet];
 }
 

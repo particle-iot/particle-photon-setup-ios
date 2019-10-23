@@ -7,6 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ParticleSetupStrings.h"
+#import "ParticleSetupStringsExtensions.h"
+
 
 #define SPARK_SETUP_RESOURCE_BUNDLE_IDENTIFIER  @"io.spark.ParticleSetup"
 
