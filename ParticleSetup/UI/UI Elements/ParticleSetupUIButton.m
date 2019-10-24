@@ -85,13 +85,10 @@
 
     if ([type isEqualToString:@"link"])
     {
-        NSMutableAttributedString *s;
-        NSString *text = self.titleLabel.text;
-        
-        s = [[NSMutableAttributedString alloc] initWithString:text];
+        NSMutableAttributedString *s = [[NSMutableAttributedString alloc] initWithString:[self titleForState:UIControlStateNormal]];
         [s addAttribute:NSUnderlineStyleAttributeName value:[NSNumber numberWithInteger:NSUnderlineStyleSingle] range:NSMakeRange(0, [s length])];
-
         [self setAttributedTitle:s forState:UIControlStateNormal];
+
         self.titleLabel.textColor = [ParticleSetupCustomization sharedInstance].linkTextColor;
         [self setTitleColor:[ParticleSetupCustomization sharedInstance].linkTextColor forState:UIControlStateNormal];
 
@@ -119,6 +116,15 @@
     [self layoutIfNeeded];
 }
 
+- (void)setTitle:(nullable NSString *)title forState:(UIControlState)state {
+    [super setTitle:title forState:state];
+
+    if (self.type != nil && [self.type isEqualToString:@"link"]) {
+        NSMutableAttributedString *s = [[NSMutableAttributedString alloc] initWithString:[self titleForState:UIControlStateNormal]];
+        [s addAttribute:NSUnderlineStyleAttributeName value:[NSNumber numberWithInteger:NSUnderlineStyleSingle] range:NSMakeRange(0, [s length])];
+        [self setAttributedTitle:s forState:UIControlStateNormal];
+    }
+}
 
 
 -(void)setEnabled:(BOOL)enabled
