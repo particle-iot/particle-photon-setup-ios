@@ -1,13 +1,61 @@
-// Generated on 2019-10-23 17:38:31 by iOS.py
+// Generated on 2019-10-24 19:03:57 by iOS.py
 
 "ParticleSetupStrings.Action.Cancel" = "_Cancel_";
 "ParticleSetupStrings.Action.LogOut" = "_Log out_";
+
+"ParticleSetupStrings.Connecting.Text1" = "_Configure Wi-Fi credentials_";
+"ParticleSetupStrings.Connecting.Text2" = "_Connect to Wi-Fi network_";
+"ParticleSetupStrings.Connecting.Text3" = "_Wait for device cloud connection_";
+"ParticleSetupStrings.Connecting.Text4" = "_Check for internet connectivity_";
+"ParticleSetupStrings.Connecting.Text5" = "_Verify device ownership_";
+"ParticleSetupStrings.Connecting.Title1" = "_Your {device} is connecting to:_";
+"ParticleSetupStrings.Connecting.Title2" = "_This can take about a minute._";
+
+"ParticleSetupStrings.DiscoverDevices.Button.ShowMeHow" = "_SHOW ME HOW_";
+
+"ParticleSetupStrings.DiscoverDevices.Text1" = "_Tap Home > Settings > Wi-Fi_";
+"ParticleSetupStrings.DiscoverDevices.Text2" = "_Make sure Wi-Fi is turned on, and choose the network below:_";
+"ParticleSetupStrings.DiscoverDevices.Text3" = "_Once connected, return to this app_";
+"ParticleSetupStrings.DiscoverDevices.WiFiCellNote" = "_XXXX will be a unique 4-digit code_";
+"ParticleSetupStrings.DiscoverDevices.WiFiCellText" = "_{network prefix}-XXXX_";
+
+"ParticleSetupStrings.GetLocationPermission.Button.GrantPermission" = "_GRANT PERMISSION_";
+
+"ParticleSetupStrings.GetLocationPermission.Text" = "_Photon setup reads current WIFI SSID to determine when you phone connects to a device.\n\nStarting iOS 13, for apps to have access to WIFI SSID information, user must grant Core Location permission.
+
+Particle app will only use this permission to read WIFI SSID and not to track your location._";
+"ParticleSetupStrings.GetLocationPermission.Title" = "_Permission to read WIFI SSID_";
 
 "ParticleSetupStrings.GetReady.Button.Ready" = "_READY_";
 
 "ParticleSetupStrings.GetReady.Text1" = "_Plug in your {device} to power it on_";
 "ParticleSetupStrings.GetReady.Text2" = "_The on-board LED should be blinking blue. If not, hold the {mode button} for 3 seconds_";
 "ParticleSetupStrings.GetReady.Text3" = "_Make sure your iOS device is connected to the Internet_";
+
+"ParticleSetupStrings.ManualNetwork.Button.Connect" = "_CONNECT_";
+
+"ParticleSetupStrings.ManualNetwork.NamePlaceholder" = "_Network name_";
+"ParticleSetupStrings.ManualNetwork.RequiresPassword" = "_Network requires password_";
+"ParticleSetupStrings.ManualNetwork.Title" = "_Manual network name_";
+
+"ParticleSetupStrings.NetworkPassword.Button.Connect" = "_CONNECT_";
+
+"ParticleSetupStrings.NetworkPassword.HidePassword" = "_Hide password_";
+"ParticleSetupStrings.NetworkPassword.PasswordPlaceholder" = "_Password_";
+"ParticleSetupStrings.NetworkPassword.Title" = "_Secured network password_";
+
+"ParticleSetupStrings.SelectNetwork.Button.NotListed" = "_My network is not listed_";
+"ParticleSetupStrings.SelectNetwork.Button.Refresh" = "_REFRESH_";
+
+"ParticleSetupStrings.SelectNetwork.Title" = "_Select your Wi-Fi network_";
+
+"ParticleSetupStrings.SetupResult.Button.Done" = "_DONE_";
+"ParticleSetupStrings.SetupResult.Button.Troubleshooting" = "_Troubleshooting_";
+
+"ParticleSetupStrings.SetupResult.DeviceName" = "_Name your new device:_";
+"ParticleSetupStrings.SetupResult.DeviceNamePlaceholder" = "_DeviceNamePlaceholder_";
+"ParticleSetupStrings.SetupResult.Text" = "_You successfully setup you device! hooray!_";
+"ParticleSetupStrings.SetupResult.Title" = "_Setup status_";
 
 
 
