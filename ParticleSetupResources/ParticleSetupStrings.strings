@@ -1,4 +1,4 @@
-// Generated on 2019-10-24 19:03:57 by iOS.py
+// Generated on 2019-10-25 02:37:51 by iOS.py
 
 "ParticleSetupStrings.Action.Cancel" = "_Cancel_";
 "ParticleSetupStrings.Action.LogOut" = "_Log out_";
@@ -44,7 +44,7 @@ Particle app will only use this permission to read WIFI SSID and not to track yo
 "ParticleSetupStrings.NetworkPassword.PasswordPlaceholder" = "_Password_";
 "ParticleSetupStrings.NetworkPassword.Title" = "_Secured network password_";
 
-"ParticleSetupStrings.SelectNetwork.Button.NotListed" = "_My network is not listed_";
+"ParticleSetupStrings.SelectNetwork.Button.NetworkNotListed" = "_My network is not listed_";
 "ParticleSetupStrings.SelectNetwork.Button.Refresh" = "_REFRESH_";
 
 "ParticleSetupStrings.SelectNetwork.Title" = "_Select your Wi-Fi network_";

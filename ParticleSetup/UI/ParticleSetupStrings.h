@@ -1,4 +1,4 @@
-// Generated on 2019-10-24 19:03:57 by iOS.py
+// Generated on 2019-10-25 02:37:51 by iOS.py
 
 #define ParticleSetupStrings_Action_Cancel NSLocalizedStringFromTableInBundle(@"ParticleSetupStrings.Action.Cancel", @"ParticleSetupStrings", [ParticleSetupMainController getResourcesBundle], @"")
 #define ParticleSetupStrings_Action_LogOut NSLocalizedStringFromTableInBundle(@"ParticleSetupStrings.Action.LogOut", @"ParticleSetupStrings", [ParticleSetupMainController getResourcesBundle], @"")
@@ -42,7 +42,7 @@
 #define ParticleSetupStrings_NetworkPassword_PasswordPlaceholder NSLocalizedStringFromTableInBundle(@"ParticleSetupStrings.NetworkPassword.PasswordPlaceholder", @"ParticleSetupStrings", [ParticleSetupMainController getResourcesBundle], @"")
 #define ParticleSetupStrings_NetworkPassword_Title NSLocalizedStringFromTableInBundle(@"ParticleSetupStrings.NetworkPassword.Title", @"ParticleSetupStrings", [ParticleSetupMainController getResourcesBundle], @"")
 
-#define ParticleSetupStrings_SelectNetwork_Button_NotListed NSLocalizedStringFromTableInBundle(@"ParticleSetupStrings.SelectNetwork.Button.NotListed", @"ParticleSetupStrings", [ParticleSetupMainController getResourcesBundle], @"")
+#define ParticleSetupStrings_SelectNetwork_Button_NetworkNotListed NSLocalizedStringFromTableInBundle(@"ParticleSetupStrings.SelectNetwork.Button.NetworkNotListed", @"ParticleSetupStrings", [ParticleSetupMainController getResourcesBundle], @"")
 #define ParticleSetupStrings_SelectNetwork_Button_Refresh NSLocalizedStringFromTableInBundle(@"ParticleSetupStrings.SelectNetwork.Button.Refresh", @"ParticleSetupStrings", [ParticleSetupMainController getResourcesBundle], @"")
 
 #define ParticleSetupStrings_SelectNetwork_Title NSLocalizedStringFromTableInBundle(@"ParticleSetupStrings.SelectNetwork.Title", @"ParticleSetupStrings", [ParticleSetupMainController getResourcesBundle], @"")
