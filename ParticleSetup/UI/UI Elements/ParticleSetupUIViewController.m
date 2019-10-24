@@ -69,22 +69,31 @@
     [self replaceSetupStrings:self.view];
 }
 
+
+
 - (void)replaceSetupStrings:(UIView *)target {
     NSArray<UIView *> *subviews = target.subviews;
 
     for (UIView *subview in subviews) {
-        NSLog(@"%@", subview);;
         if ([subview isKindOfClass:[UILabel class]]) {
-            UILabel *label = subview;
+            UILabel *label = (UILabel *)subview;
             label.text = [label.text particleLocalized];
         } else if ([subview isKindOfClass:[UIButton class]]) {
-            UIButton *button = subview;
+            UIButton *button = (UIButton *)subview;
             [button setTitle:[button.currentTitle particleLocalized] forState:UIControlStateNormal];
+        } else if ([subview isKindOfClass:[UITextView class]]) {
+            UITextView *textview = (UITextView *)subview;
+            textview.text = [textview.text particleLocalized];
+        } else if ([subview isKindOfClass:[UITextField class]]) {
+            UITextField *textfield = (UITextField *)subview;
+            textfield.text = [textfield.text particleLocalized];
+            textfield.placeholder = [textfield.placeholder particleLocalized];
         } else {
             [self replaceSetupStrings:subview];
         }
     }
 }
+
 
 - (void)trimTextFieldValue:(UITextField *)textfield {
     textfield.text = [[textfield.text lowercaseString] stringByTrimmingCharactersInSet:NSCharacterSet.whitespaceCharacterSet];
