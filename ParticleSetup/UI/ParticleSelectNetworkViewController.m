@@ -66,43 +66,13 @@
     self.brandBackgroundImageView.image = [ParticleSetupCustomization sharedInstance].brandImageBackgroundImage;
 
     [self sortWifiList];
-
-//    if ([ParticleSetupCustomization sharedInstance].tintSetupImages)
-//    {
-        self.wifiTableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
-//    }
-//    else
-//    {
-//        self.wifiTableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
-//        self.wifiTableView.separatorColor = [ParticleSetupCustomization sharedInstance].normalTextColor;
-//    }
-
-//    self.wifiTableView.layer.borderWidth = 0.5;
-//    self.wifiTableView.backgroundColor = [ParticleSetupCustomization sharedInstance].brandImageBackgroundColor;
-
-    // temporary test init
-    /*
-    self.wifiList = @[
-                      @{@"ssid" : @"network1", @"rssi" : @-70, @"sec" : @1},
-                      @{@"ssid" : @"some-wifi", @"rssi" : @-75, @"sec" : @1},
-                      @{@"ssid" : @"open_wifi", @"rssi" : @-80, @"sec" : @0},
-                      @{@"ssid" : @"anotherone", @"rssi" : @-90, @"sec" : @1},
-                      @{@"ssid" : @"hide_yer_kids_hide_yer_wifi", @"rssi" : @-65, @"sec" : @YES}];
-     
-     */
-    
+     self.wifiTableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
 }
 
 
 -(void)sortWifiList
 {
-    
-    // sort by strength:
-    
-//    NSDictionary *lastNetwork;
-
     // sort alphabeticly
-    
     NSSortDescriptor *descriptor = [[NSSortDescriptor alloc] initWithKey:@"ssid" ascending:YES comparator:^NSComparisonResult(id obj1, id obj2) {
         NSString *s1 = obj1;
         NSString *s2 = obj2;
@@ -152,22 +122,11 @@
 {
     static NSString *CellIdentifer = @"wifiCell";
     ParticleSetupWifiTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifer forIndexPath:indexPath];
-    
-    // Using a cell identifier will allow your app to reuse cells as they come and go from the screen.
-//    if (cell == nil)
-//    {
-//        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifer];
-//    }
-//    
+
     NSUInteger row = [indexPath row];
-    
-//    UILabel *textLabel = (UILabel *)[cell.contentView viewWithTag:10];
     cell.ssidLabel.text = self.wifiList[row][@"ssid"];
-//    textLabel.text
     cell.ssidLabel.textColor = [ParticleSetupCustomization sharedInstance].normalTextColor;
-    
-//    UIImageView *signalStrengthImageView = cell.wifiStrengthImageView; // (UIImageView *)[cell.contentView viewWithTag:30];
-    
+
     int rssi = [self.wifiList[row][@"rssi"] intValue];
     if (rssi > kParticleWifiRSSIThresholdStrong)
     {
@@ -186,13 +145,9 @@
     cell.wifiStrengthImageView.image = [cell.wifiStrengthImageView.image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
     cell.wifiStrengthImageView.tintColor = [ParticleSetupCustomization sharedInstance].normalTextColor;;
 
-   
-//    UIImageView *secureImageView = (UIImageView *)[cell.contentView viewWithTag:20];
     ParticleSetupWifiSecurityType sec = [self.wifiList[row][@"sec"] intValue];
     if (sec != ParticleSetupWifiSecurityTypeOpen)
     {
-//        [cell.contentView viewWithTag:20].hidden = NO;
-//        UIImageView *lock = cell.securedNetworkIconImageView; //(UIImageView *)[cell.contentView viewWithTag:20];
         cell.securedNetworkIconImageView.hidden = NO;
         [cell.securedNetworkIconImageView setImage:[ParticleSetupMainController loadImageFromResourceBundle:@"lock"]];
         cell.securedNetworkIconImageView.image = [cell.securedNetworkIconImageView.image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
@@ -201,31 +156,16 @@
     else
     {
         cell.securedNetworkIconImageView.hidden = YES;
-//        [cell.contentView viewWithTag:20].hidden = YES;
     }
     
-    /*
-    if ((indexPath.row % 2) == 0)
-    {
-        cell.backgroundColor = [UIColor colorWithRed: 0.1 green: 0.1 blue: 0.1 alpha: 0.25];
-    }
-    else // clear if even
-    {
-     */
     cell.backgroundColor = [UIColor clearColor];
-//    }
-    
-    
-     
 
-//    [cell setNeedsLayout];
     return cell;
 }
 
 
 -(void)checkPhotonConnection:(id)sender
 {
-//    NSLog(@"checkPhotonConnection");
     if (![ParticleSetupCommManager checkParticleDeviceWifiConnection:[ParticleSetupCustomization sharedInstance].networkNamePrefix])
     {
         [self.checkConnectionTimer invalidate];
@@ -266,12 +206,6 @@
 {
     return 1;
 }
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -343,26 +277,6 @@
         [self performSegueWithIdentifier:@"require_password" sender:self];
     }
   
-}
-
-
-//-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
-//{
-//    if (buttonIndex == 1)
-//    {
-//        NSString *password = [alertView textFieldAtIndex:0].text;
-//        NSLog(@"password: %@",password);
-//        [self connectToSelectedNetwork:self.selectedNetworkIndexPath withPassword:password];
-//    }
-//    else // User Cancelled
-//        [self restartDeviceDetectionTimer];
-//
-//}
-
-
-- (IBAction)manualNetworkButtonTapped:(id)sender
-{
-    
 }
 
 

@@ -13,15 +13,6 @@
 
 @implementation ParticleSetupUIButton
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
-}
-*/
-
-
 - (id)initWithCoder:(NSCoder *)aDecoder
 {
     self = [super initWithCoder:aDecoder];
@@ -34,17 +25,6 @@
     }
     return self;
 }
-
--(void)replacePredefinedText
-{
-    self.titleLabel.text = [self.titleLabel.text stringByReplacingOccurrencesOfString:@"{device}" withString:[ParticleSetupCustomization sharedInstance].deviceName];
-    self.titleLabel.text = [self.titleLabel.text stringByReplacingOccurrencesOfString:@"{brand}" withString:[ParticleSetupCustomization sharedInstance].brandName];
-    self.titleLabel.text = [self.titleLabel.text stringByReplacingOccurrencesOfString:@"{color}" withString:[ParticleSetupCustomization sharedInstance].listenModeLEDColorName];
-    self.titleLabel.text = [self.titleLabel.text stringByReplacingOccurrencesOfString:@"{mode button}" withString:[ParticleSetupCustomization sharedInstance].modeButtonName];
-    self.titleLabel.text = [self.titleLabel.text stringByReplacingOccurrencesOfString:@"{network prefix}" withString:[ParticleSetupCustomization sharedInstance].networkNamePrefix];
-}
-
-
 
 - (UIColor *)darkerColorForColor:(UIColor *)c // TODO: category for UIColor?
 {
@@ -64,8 +44,6 @@
     {
         UIColor *color = [ParticleSetupCustomization sharedInstance].elementBackgroundColor;
         self.backgroundColor = [self darkerColorForColor:color];
-
-//        self.layer.shadowOffset = CGSizeMake(0.0f, 0.0f);
         self.layer.shadowOpacity = 0;
 
     }
@@ -78,8 +56,6 @@
     if ([self.type isEqualToString:@"action"])
     {
         self.backgroundColor = [ParticleSetupCustomization sharedInstance].elementBackgroundColor;
-        
-//        self.layer.shadowOffset = CGSizeMake(0.0f, 1.0f);
         self.layer.shadowOpacity = 0.3;
 
     }
@@ -91,9 +67,7 @@
 -(void)setType:(NSString *)type
 {
     _type = type;
-    [self replacePredefinedText];
 
-    
     if (([type isEqualToString:@"action"]) || ([type isEqualToString:@"primary"]))
     {
         UIFont *boldFont = [UIFont fontWithName:[ParticleSetupCustomization sharedInstance].boldTextFontName size:self.titleLabel.font.pointSize+[ParticleSetupCustomization sharedInstance].fontSizeOffset];
@@ -131,7 +105,6 @@
         
         UIFont *boldFont = [UIFont fontWithName:[ParticleSetupCustomization sharedInstance].boldTextFontName size:self.titleLabel.font.pointSize+[ParticleSetupCustomization sharedInstance].fontSizeOffset];
         self.titleLabel.font = boldFont;
-//        self.titleLabel.textColor = [ParticleSetupCustomization sharedInstance].normalTextColor;
         [self setTitleColor:[ParticleSetupCustomization sharedInstance].normalTextColor forState:UIControlStateNormal];
         
         self.titleLabel.backgroundColor = [UIColor clearColor];
@@ -140,11 +113,7 @@
         self.layer.backgroundColor = [UIColor clearColor].CGColor;
         self.layer.cornerRadius = 3.0;
         self.layer.borderWidth = 2.0;
-        
-
     }
-
-    
 
     [self setNeedsDisplay];
     [self layoutIfNeeded];
@@ -167,4 +136,5 @@
     [self setNeedsDisplay];
     
 }
+
 @end

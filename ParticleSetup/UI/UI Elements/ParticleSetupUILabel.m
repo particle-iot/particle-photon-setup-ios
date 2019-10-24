@@ -10,26 +10,6 @@
 #import "ParticleSetupCustomization.h"
 @implementation ParticleSetupUILabel
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
-}
-*/
-
--(void)replacePredefinedText
-{
-    self.text = [self.text stringByReplacingOccurrencesOfString:@"{device}" withString:[ParticleSetupCustomization sharedInstance].deviceName];
-    self.text = [self.text stringByReplacingOccurrencesOfString:@"{brand}" withString:[ParticleSetupCustomization sharedInstance].brandName];
-    self.text = [self.text stringByReplacingOccurrencesOfString:@"{color}" withString:[ParticleSetupCustomization sharedInstance].listenModeLEDColorName];
-    self.text = [self.text stringByReplacingOccurrencesOfString:@"{mode button}" withString:[ParticleSetupCustomization sharedInstance].modeButtonName];
-    self.text = [self.text stringByReplacingOccurrencesOfString:@"{network prefix}" withString:[ParticleSetupCustomization sharedInstance].networkNamePrefix];
-    self.text = [self.text stringByReplacingOccurrencesOfString:@"{product}" withString:[ParticleSetupCustomization sharedInstance].productName];
-
-    //    self.text = [self.text stringByReplacingOccurrencesOfString:@"{app name}" withString:[ParticleSetupCustomization sharedInstance].appName];
-}
-
 -(id)initWithCoder:(NSCoder *)aDecoder
 {
     if (self = [super initWithCoder:aDecoder])
@@ -60,11 +40,9 @@
         self.textColor = [ParticleSetupCustomization sharedInstance].normalTextColor;
         
     }
-    [self replacePredefinedText];
-    
+
     [self setNeedsDisplay];
     [self layoutIfNeeded];
-  
 }
 
 @end

@@ -24,7 +24,6 @@
 -(void)viewDidLoad {
     [super viewDidLoad];
 
-
     //Force light mode on iOS 13
     if (@available(iOS 13.0, *)) {
         if ([self respondsToSelector:NSSelectorFromString(@"overrideUserInterfaceStyle")]) {
@@ -32,7 +31,6 @@
         }
     }
 
-    //    self.view.backgroundColor = [ParticleSetupCustomization sharedInstance].pageBackgroundColor;
     if ([ParticleSetupCustomization sharedInstance].pageBackgroundImage)
     {
         UIImageView *backgroundImage = [[UIImageView alloc] initWithImage:[ParticleSetupCustomization sharedInstance].pageBackgroundImage];
@@ -67,13 +65,6 @@
 
         _backgroundView = view;
     }
-    
-   
-    // do customization
-}
-
-- (void)awakeFromNib {
-    [super awakeFromNib];
 
     [self replaceSetupStrings:self.view];
 }

@@ -111,7 +111,6 @@
     self.checkmarkImageView.image = [ParticleSetupMainController loadImageFromResourceBundle:@"iosCheckmark"];
     self.wifiInfoImageView.image = [ParticleSetupMainController loadImageFromResourceBundle:@"iosSettingWifi"];
 
-//    self.wifiSignalImageView.image = [UIImage imageNamed:@"iosSettingsWifi" inBundle:[ParticleSetupMainController getResourcesBundle] compatibleWithTraitCollection:nil]; // TODO: make iOS7 compatible
     self.wifiSignalImageView.hidden = NO;
     self.needToCheckDeviceClaimed = NO;
     
@@ -122,9 +121,7 @@
     self.wifiView.layer.borderColor = [UIColor lightGrayColor].CGColor;
     self.wifiView.layer.borderWidth = 1.0f;
     
-//    self.cancelSetupButton. // customize color too
     self.cancelSetupButton.titleLabel.font = [UIFont fontWithName:[ParticleSetupCustomization sharedInstance].headerTextFontName size:self.self.cancelSetupButton.titleLabel.font.pointSize];
-//    [self.cancelSetupButton setTitleColor:[ParticleSetupCustomization sharedInstance].normalTextColor forState:UIControlStateNormal];
     UIColor *navBarButtonsColor = ([ParticleSetupCustomization sharedInstance].lightStatusAndNavBar) ? [UIColor whiteColor] : [UIColor blackColor];
     [self.cancelSetupButton setTitleColor:navBarButtonsColor forState:UIControlStateNormal];
 
@@ -137,18 +134,9 @@
 
 }
 
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-
 -(void)resetWifiSignalIconWithDelay
 {
-    // TODO: this is a little bit of a hack
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-//        self.wifiSignalImageView.image = [UIImage imageNamed:@"iosSettingsWifi" inBundle:[ParticleSetupMainController getResourcesBundle] compatibleWithTraitCollection:nil]; // TODO: make iOS7 compatible
         [self.spinner stopAnimating];
         self.wifiSignalImageView.hidden = NO;
     });
@@ -156,7 +144,6 @@
 
 -(void)restartDeviceDetectionTimer
 {
-//    NSLog(@"restartDeviceDetectionTimer called");
     [self.checkConnectionTimer invalidate];
     self.checkConnectionTimer = nil;
 
