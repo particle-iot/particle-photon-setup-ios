@@ -77,13 +77,10 @@
         self.loggedInLabel.text = [self.loggedInLabel.text stringByAppendingString:[ParticleCloud sharedInstance].loggedInUsername];
     else
         self.loggedInLabel.text = @"";
+
     self.loggedInLabel.alpha = 0.85;
     self.logoutButton.titleLabel.font = [UIFont fontWithName:[ParticleSetupCustomization sharedInstance].headerTextFontName size:self.logoutButton.titleLabel.font.pointSize];
-//    [self.logoutButton setTitleColor:[ParticleSetupCustomization sharedInstance].normalTextColor forState:UIControlStateNormal];
-
-    //    self.cancelSetupButton. // customize color too
     self.cancelSetupButton.titleLabel.font = [UIFont fontWithName:[ParticleSetupCustomization sharedInstance].headerTextFontName size:self.self.cancelSetupButton.titleLabel.font.pointSize];
-//    [self.cancelSetupButton setTitleColor:[ParticleSetupCustomization sharedInstance].normalTextColor forState:UIControlStateNormal];
 
     if ([ParticleCloud sharedInstance].isAuthenticated)
     {
@@ -99,12 +96,6 @@
     }
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-    
-}
-
 - (IBAction)cancelSetup:(id)sender {
     [[NSNotificationCenter defaultCenter] postNotificationName:kParticleSetupDidFinishNotification object:nil userInfo:@{kParticleSetupDidFinishStateKey:@(ParticleSetupMainControllerResultUserCancel)}];
 
@@ -114,8 +105,7 @@
 -(void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-//    self.videoViewWidth.constant = ((self.videoView.frame.size.height * 9.0)/16.0);
- 
+
     UIUserNotificationType types = UIUserNotificationTypeAlert|UIUserNotificationTypeSound;
     UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:types categories:nil];
     [[UIApplication sharedApplication] registerUserNotificationSettings:settings];
@@ -175,11 +165,9 @@
     self.readyButton.userInteractionEnabled = NO;
     
     
-    
-    //    [[ParticleCloud sharedInstance] generateClaimCode
+
     void (^claimCodeCompletionBlock)(NSString *, NSArray *, NSError *) = ^void(NSString *claimCode, NSArray *userClaimedDeviceIDs, NSError *error) {
-        //  [[ParticleCloud sharedInstance] generateClaimCode:^(NSString *claimCode, NSArray *userClaimedDeviceIDs, NSError *error) {
-        
+
         self.readyButton.userInteractionEnabled = YES;
         [self.spinner stopAnimating];
         
@@ -187,8 +175,6 @@
         {
             self.claimCode = claimCode;
             self.claimedDevices = userClaimedDeviceIDs;
-            //            NSLog(@"Got claim code: %@",self.claimCode);
-            //            NSLog(@"Devices IDs owned by user: %@",self.claimedDevices);
             [self selectSegue];
         }
         else
@@ -199,7 +185,6 @@
                 UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Access denied" message:errStr delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
                 [alert show];
                 [[ParticleCloud sharedInstance] logout];
-                // call main delegate or post notification
                 [[NSNotificationCenter defaultCenter] postNotificationName:kParticleSetupDidLogoutNotification object:nil userInfo:nil];
             }
             else
@@ -234,7 +219,6 @@
     }
     else
     {
-        // authentication skipped by user
         [self selectSegue];
     }
     

@@ -190,7 +190,6 @@
 {
     [self.checkConnectionTimer invalidate];
     self.checkConnectionTimer = [NSTimer scheduledTimerWithTimeInterval:2.0f target:self selector:@selector(checkPhotonConnection:) userInfo:nil repeats:YES];
-
 }
 
 
@@ -291,7 +290,6 @@
 
 -(void)photonScanAP
 {
-    
     self.refreshButton.enabled = NO;
     [self.spinner startAnimating];
     ParticleSetupCommManager *manager = [[ParticleSetupCommManager alloc] init];
