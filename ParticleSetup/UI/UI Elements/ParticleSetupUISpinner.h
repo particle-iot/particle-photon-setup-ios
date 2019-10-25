@@ -9,10 +9,12 @@
 #import <UIKit/UIKit.h>
 
 @interface ParticleSetupUISpinner : UIImageView
-@property (nonatomic, strong) NSString *type; // "foreground" (colored on a view) or "background" (white on a button)
+@property(nonatomic, strong) NSString *type; // "foreground" (colored on a view) or "background" (white on a button)
 
--(void)startAnimating;
--(void)stopAnimating;
--(instancetype)initWithType:(NSString *)type;
+- (void)startAnimating;
+
+- (void)stopAnimating;
+
+- (instancetype)initWithType:(NSString *)type;
 
 @end

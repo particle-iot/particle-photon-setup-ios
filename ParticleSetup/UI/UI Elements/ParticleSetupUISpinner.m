@@ -19,55 +19,42 @@
     // Drawing code
 }
 */
--(void)setType:(NSString *)type
-{
-    if ((type) && ([type isEqualToString:@"foreground"]))
-    {
-//        self.image = [UIImage imageNamed:@"spinner_big" inBundle:[ParticleSetupMainController getResourcesBundle] compatibleWithTraitCollection:nil]; // TODO: make iOS7 compatible
+- (void)setType:(NSString *)type {
+    if ((type) && ([type isEqualToString:@"foreground"])) {
         self.image = [ParticleSetupMainController loadImageFromResourceBundle:@"spinner_big"];
         self.image = [self.image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
         self.tintColor = [ParticleSetupCustomization sharedInstance].elementBackgroundColor;
-    }
-    else
-    {
-//        self.image = [UIImage imageNamed:@"spinner" inBundle:[ParticleSetupMainController getResourcesBundle] compatibleWithTraitCollection:nil]; // TODO: make iOS7 compatible
+    } else {
         self.image = [ParticleSetupMainController loadImageFromResourceBundle:@"spinner"];
-//        NSLog(@"spinner: %@",self.image);
     }
-    
+
     [self setNeedsDisplay];
     [self layoutIfNeeded];
 }
 
 
--(void)startAnimating
-{
-        self.hidden = NO;
-        CABasicAnimation *rotation;
-        rotation = [CABasicAnimation animationWithKeyPath:@"transform.rotation"];
-        rotation.fromValue = [NSNumber numberWithFloat:0];
-        rotation.toValue = [NSNumber numberWithFloat:(2*M_PI)];
-        rotation.duration = 1.11; // Speed
-        rotation.repeatCount = HUGE_VALF; // Repeat forever. Can be a finite number.
-        [self.layer addAnimation:rotation forKey:@"Spin"];
+- (void)startAnimating {
+    self.hidden = NO;
+    CABasicAnimation *rotation;
+    rotation = [CABasicAnimation animationWithKeyPath:@"transform.rotation"];
+    rotation.fromValue = [NSNumber numberWithFloat:0];
+    rotation.toValue = [NSNumber numberWithFloat:(2 * M_PI)];
+    rotation.duration = 1.11; // Speed
+    rotation.repeatCount = HUGE_VALF; // Repeat forever. Can be a finite number.
+    [self.layer addAnimation:rotation forKey:@"Spin"];
 }
 
-                   
-                   
 
--(void)stopAnimating
-{
+- (void)stopAnimating {
     self.hidden = YES;
     [self.layer removeAllAnimations];
 }
 
 
--(instancetype)initWithType:(NSString *)type
-{
-    if (self = [super init])
-    {
+- (instancetype)initWithType:(NSString *)type {
+    if (self = [super init]) {
         [self setType:type];
-        
+
         return self;
     }
     return nil;

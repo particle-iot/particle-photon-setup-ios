@@ -9,9 +9,9 @@
 #import "ParticleSetupUIViewController.h"
 #import <CoreLocation/CoreLocation.h>
 
-@interface ParticleGetLocationPermissionViewController: ParticleSetupUIViewController <CLLocationManagerDelegate>
+@interface ParticleGetLocationPermissionViewController : ParticleSetupUIViewController <CLLocationManagerDelegate>
 
-@property (nonatomic, strong) NSString *claimCode;
-@property (nonatomic, strong) NSArray *claimedDevices;
+@property(nonatomic, strong) NSString *claimCode;
+@property(nonatomic, strong) NSArray *claimedDevices;
 
 @end

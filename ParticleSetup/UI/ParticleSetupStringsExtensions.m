@@ -8,13 +8,13 @@
 
 @implementation NSString (ParticleString)
 
-- (NSString * _Nullable)particleLocalized {
+- (NSString *_Nullable)particleLocalized {
 
     if ([self isEqualToString:@"ParticleSetupStrings.SelectNetwork.Button.NotListed"]) {
-        NSLog(@"[NSString replaceVariablesInStrings: NSLocalizedStringFromTableInBundle(self, @\"ParticleSetupStrings\", [ParticleSetupMainController getResourcesBundle], @"")]; = %@", [NSString replaceVariablesInStrings: NSLocalizedStringFromTableInBundle(self, @"ParticleSetupStrings", [ParticleSetupMainController getResourcesBundle], @"")]);
+        NSLog(@"[NSString replaceVariablesInStrings: NSLocalizedStringFromTableInBundle(self, @\"ParticleSetupStrings\", [ParticleSetupMainController getResourcesBundle], @"")]; = %@", [NSString replaceVariablesInStrings:NSLocalizedStringFromTableInBundle(self, @"ParticleSetupStrings", [ParticleSetupMainController getResourcesBundle], @"")]);
     }
 
-    return [NSString replaceVariablesInStrings: NSLocalizedStringFromTableInBundle(self, @"ParticleSetupStrings", [ParticleSetupMainController getResourcesBundle], @"")];
+    return [NSString replaceVariablesInStrings:NSLocalizedStringFromTableInBundle(self, @"ParticleSetupStrings", [ParticleSetupMainController getResourcesBundle], @"")];
 
 }
 

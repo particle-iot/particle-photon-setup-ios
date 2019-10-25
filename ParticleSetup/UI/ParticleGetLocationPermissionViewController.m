@@ -13,8 +13,11 @@
 #ifdef USE_FRAMEWORKS
 #import <ParticleSDK/ParticleSDK.h>
 #else
+
 #import "Particle-SDK.h"
+
 #endif
+
 #import "ParticleSetupMainController.h"
 #import "ParticleDiscoverDeviceViewController.h"
 #import "ParticleSetupUIElements.h"
@@ -29,11 +32,11 @@
 
 @interface ParticleGetLocationPermissionViewController ()
 
-@property (weak, nonatomic) IBOutlet UIImageView *brandImage;
-@property (weak, nonatomic) IBOutlet UIImageView *brandBackgroundImage;
-@property (weak, nonatomic) IBOutlet UIButton *cancelSetupButton;
-@property (weak, nonatomic) IBOutlet UIButton *continueButton;
-@property (weak, nonatomic) IBOutlet UILabel *bodyLabel;
+@property(weak, nonatomic) IBOutlet UIImageView *brandImage;
+@property(weak, nonatomic) IBOutlet UIImageView *brandBackgroundImage;
+@property(weak, nonatomic) IBOutlet UIButton *cancelSetupButton;
+@property(weak, nonatomic) IBOutlet UIButton *continueButton;
+@property(weak, nonatomic) IBOutlet UILabel *bodyLabel;
 
 @end
 
@@ -43,8 +46,7 @@
 }
 
 
-- (UIStatusBarStyle)preferredStatusBarStyle
-{
+- (UIStatusBarStyle)preferredStatusBarStyle {
     return ([ParticleSetupCustomization sharedInstance].lightStatusAndNavBar) ? UIStatusBarStyleLightContent : UIStatusBarStyleDefault;
 }
 
@@ -77,8 +79,7 @@
 }
 
 
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:@"discover"]) {
         ParticleDiscoverDeviceViewController *vc = [segue destinationViewController];
         vc.claimCode = self.claimCode;
@@ -89,16 +90,14 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
 
-    #ifdef ANALYTICS
-        [[SEGAnalytics sharedAnalytics] track:@"DeviceSetup_GetLocationPermission"];
-    //    NSLog(@"analytics enabled");
-    #endif
+#ifdef ANALYTICS
+    [[SEGAnalytics sharedAnalytics] track:@"DeviceSetup_GetLocationPermission"];
+//    NSLog(@"analytics enabled");
+#endif
 }
 
 
-
--(void)viewWillAppear:(BOOL)animated
-{
+- (void)viewWillAppear:(BOOL)animated {
     [self updateContent];
 }
 
@@ -129,9 +128,8 @@
     [self updateContent];
 }
 
-- (IBAction)cancelButtonTouched:(id)sender
-{
-    [[NSNotificationCenter defaultCenter] postNotificationName:kParticleSetupDidFinishNotification object:nil userInfo:@{kParticleSetupDidFinishStateKey:@(ParticleSetupMainControllerResultUserCancel)}];
+- (IBAction)cancelButtonTouched:(id)sender {
+    [[NSNotificationCenter defaultCenter] postNotificationName:kParticleSetupDidFinishNotification object:nil userInfo:@{kParticleSetupDidFinishStateKey: @(ParticleSetupMainControllerResultUserCancel)}];
 }
 
 - (IBAction)continueButtonTouched:(id)sender {
@@ -147,8 +145,6 @@
             [[UIApplication sharedApplication] openURL:url];
     }
 }
-
-
 
 
 @end

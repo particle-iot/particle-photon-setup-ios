@@ -13,8 +13,11 @@
 #ifdef USE_FRAMEWORKS
 #import <ParticleSDK/ParticleSDK.h>
 #else
+
 #import "Particle-SDK.h"
+
 #endif
+
 #import "ParticleSetupMainController.h"
 #import "ParticleDiscoverDeviceViewController.h"
 #import "ParticleSetupUIElements.h"
@@ -28,34 +31,32 @@
 
 
 @interface ParticleGetReadyViewController ()
-@property (weak, nonatomic) IBOutlet UIImageView *brandImageView;
-@property (weak, nonatomic) IBOutlet UIImageView *brandBackgroundImageView;
-@property (weak, nonatomic) IBOutlet UIButton *readyButton;
-@property (weak, nonatomic) IBOutlet ParticleSetupUISpinner *spinner;
+@property(weak, nonatomic) IBOutlet UIImageView *brandImageView;
+@property(weak, nonatomic) IBOutlet UIImageView *brandBackgroundImageView;
+@property(weak, nonatomic) IBOutlet UIButton *readyButton;
+@property(weak, nonatomic) IBOutlet ParticleSetupUISpinner *spinner;
 
-@property (weak, nonatomic) IBOutlet UILabel *loggedInLabel;
-@property (weak, nonatomic) IBOutlet ParticleSetupUILabel *instructionsLabel;
+@property(weak, nonatomic) IBOutlet UILabel *loggedInLabel;
+@property(weak, nonatomic) IBOutlet ParticleSetupUILabel *instructionsLabel;
 //@property (weak, nonatomic) IBOutlet NSLayoutConstraint *scrollViewHeight;
 
-@property (weak, nonatomic) IBOutlet UIImageView *productImageView;
+@property(weak, nonatomic) IBOutlet UIImageView *productImageView;
 
 // new claiming process
-@property (nonatomic, strong) NSString *claimCode;
-@property (nonatomic, strong) NSArray *claimedDevices;
-@property (weak, nonatomic) IBOutlet ParticleSetupUIButton *logoutButton;
-@property (weak, nonatomic) IBOutlet UIButton *cancelSetupButton;
-@property (weak, nonatomic) IBOutlet ParticleSetupUILabel *loggedInUserLabel;
+@property(nonatomic, strong) NSString *claimCode;
+@property(nonatomic, strong) NSArray *claimedDevices;
+@property(weak, nonatomic) IBOutlet ParticleSetupUIButton *logoutButton;
+@property(weak, nonatomic) IBOutlet UIButton *cancelSetupButton;
+@property(weak, nonatomic) IBOutlet ParticleSetupUILabel *loggedInUserLabel;
 
 @end
 
 @implementation ParticleGetReadyViewController
 
 
-- (UIStatusBarStyle)preferredStatusBarStyle
-{
+- (UIStatusBarStyle)preferredStatusBarStyle {
     return ([ParticleSetupCustomization sharedInstance].lightStatusAndNavBar) ? UIStatusBarStyleLightContent : UIStatusBarStyleDefault;
 }
-
 
 
 - (void)viewDidLoad {
@@ -65,11 +66,11 @@
     self.brandImageView.backgroundColor = [UIColor clearColor];
     self.brandBackgroundImageView.backgroundColor = [ParticleSetupCustomization sharedInstance].brandImageBackgroundColor;
     self.brandBackgroundImageView.image = [ParticleSetupCustomization sharedInstance].brandImageBackgroundImage;
-    
+
     UIColor *navBarButtonsColor = ([ParticleSetupCustomization sharedInstance].lightStatusAndNavBar) ? [UIColor whiteColor] : [UIColor blackColor];
     [self.cancelSetupButton setTitleColor:navBarButtonsColor forState:UIControlStateNormal];
     [self.logoutButton setTitleColor:navBarButtonsColor forState:UIControlStateNormal];
-    
+
     if ([ParticleSetupCustomization sharedInstance].productImage)
         self.productImageView.image = [ParticleSetupCustomization sharedInstance].productImage;
 
@@ -82,12 +83,9 @@
     self.logoutButton.titleLabel.font = [UIFont fontWithName:[ParticleSetupCustomization sharedInstance].headerTextFontName size:self.logoutButton.titleLabel.font.pointSize];
     self.cancelSetupButton.titleLabel.font = [UIFont fontWithName:[ParticleSetupCustomization sharedInstance].headerTextFontName size:self.self.cancelSetupButton.titleLabel.font.pointSize];
 
-    if ([ParticleCloud sharedInstance].isAuthenticated)
-    {
+    if ([ParticleCloud sharedInstance].isAuthenticated) {
         self.loggedInLabel.text = [ParticleCloud sharedInstance].loggedInUsername;
-    }
-    else
-    {
+    } else {
         [self.logoutButton setTitle:@"Log in" forState:UIControlStateNormal];
         self.loggedInLabel.text = @"";
     }
@@ -97,36 +95,33 @@
 }
 
 - (IBAction)cancelSetup:(id)sender {
-    [[NSNotificationCenter defaultCenter] postNotificationName:kParticleSetupDidFinishNotification object:nil userInfo:@{kParticleSetupDidFinishStateKey:@(ParticleSetupMainControllerResultUserCancel)}];
+    [[NSNotificationCenter defaultCenter] postNotificationName:kParticleSetupDidFinishNotification object:nil userInfo:@{kParticleSetupDidFinishStateKey: @(ParticleSetupMainControllerResultUserCancel)}];
 
 }
 
 
--(void)viewDidAppear:(BOOL)animated
-{
+- (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
 
-    UIUserNotificationType types = UIUserNotificationTypeAlert|UIUserNotificationTypeSound;
+    UIUserNotificationType types = UIUserNotificationTypeAlert | UIUserNotificationTypeSound;
     UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:types categories:nil];
     [[UIApplication sharedApplication] registerUserNotificationSettings:settings];
-    
 
-    if (isiPhone4)
-    {
-        self.instructionsLabel.text = [NSString stringWithFormat:@"Scroll down for more instructions:\n%@",self.instructionsLabel.text];
+
+    if (isiPhone4) {
+        self.instructionsLabel.text = [NSString stringWithFormat:@"Scroll down for more instructions:\n%@", self.instructionsLabel.text];
         [self.view setNeedsUpdateConstraints];
-        
+
         [UIView animateWithDuration:0.25f animations:^{
             [self.view layoutIfNeeded];
         }];
     }
-    
+
 
 }
 
-- (IBAction)troubleShootingButtonTapped:(id)sender
-{
-    ParticleSetupWebViewController* webVC = [[UIStoryboard storyboardWithName:@"setup" bundle:[NSBundle bundleWithIdentifier:SPARK_SETUP_RESOURCE_BUNDLE_IDENTIFIER]] instantiateViewControllerWithIdentifier:@"webview"];
+- (IBAction)troubleShootingButtonTapped:(id)sender {
+    ParticleSetupWebViewController *webVC = [[UIStoryboard storyboardWithName:@"setup" bundle:[NSBundle bundleWithIdentifier:SPARK_SETUP_RESOURCE_BUNDLE_IDENTIFIER]] instantiateViewControllerWithIdentifier:@"webview"];
     webVC.link = [ParticleSetupCustomization sharedInstance].troubleshootingLinkURL;
     [self presentViewController:webVC animated:YES completion:nil];
 
@@ -145,8 +140,7 @@
     }
 }
 
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:@"discover"]) {
         ParticleDiscoverDeviceViewController *vc = [segue destinationViewController];
         vc.claimCode = self.claimCode;
@@ -159,74 +153,60 @@
 }
 
 
-- (IBAction)readyButtonTapped:(id)sender
-{
+- (IBAction)readyButtonTapped:(id)sender {
     [self.spinner startAnimating];
     self.readyButton.userInteractionEnabled = NO;
-    
-    
+
 
     void (^claimCodeCompletionBlock)(NSString *, NSArray *, NSError *) = ^void(NSString *claimCode, NSArray *userClaimedDeviceIDs, NSError *error) {
 
         self.readyButton.userInteractionEnabled = YES;
         [self.spinner stopAnimating];
-        
-        if (!error)
-        {
+
+        if (!error) {
             self.claimCode = claimCode;
             self.claimedDevices = userClaimedDeviceIDs;
             [self selectSegue];
-        }
-        else
-        {
+        } else {
             if (error.code == 401)// localizedDescription containsString:@"unauthorized"])
             {
-                NSString *errStr = [NSString stringWithFormat:@"Sorry, you must be logged in as a %@ customer.",[ParticleSetupCustomization sharedInstance].brandName];
+                NSString *errStr = [NSString stringWithFormat:@"Sorry, you must be logged in as a %@ customer.", [ParticleSetupCustomization sharedInstance].brandName];
                 UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Access denied" message:errStr delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
                 [alert show];
                 [[ParticleCloud sharedInstance] logout];
                 [[NSNotificationCenter defaultCenter] postNotificationName:kParticleSetupDidLogoutNotification object:nil userInfo:nil];
-            }
-            else
-            {
+            } else {
                 NSLog(@"error.code = %i", error.code);
                 NSString *errStr;
                 if (error.code == 402) {
                     errStr = error.localizedDescription;
                 } else if ([ParticleSetupCustomization sharedInstance].productMode) {
-                    errStr = [NSString stringWithFormat:@"Could not communicate with Particle cloud. Are you sure your organization and product slugs are setup correctly?\n\n%@",error.localizedDescription];
+                    errStr = [NSString stringWithFormat:@"Could not communicate with Particle cloud. Are you sure your organization and product slugs are setup correctly?\n\n%@", error.localizedDescription];
                 } else {
-                    errStr = [NSString stringWithFormat:@"Could not communicate with Particle cloud. Make sure your iOS device is connected to the internet and retry.\n\n%@",error.localizedDescription];
+                    errStr = [NSString stringWithFormat:@"Could not communicate with Particle cloud. Make sure your iOS device is connected to the internet and retry.\n\n%@", error.localizedDescription];
                 }
-                
+
                 UIAlertView *errorAlertView = [[UIAlertView alloc] initWithTitle:@"Error" message:errStr delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
                 errorAlertView.delegate = self;
                 [errorAlertView show];
             }
         }
     };
-    
-    if ([ParticleCloud sharedInstance].isAuthenticated)
-    {
-        if ([ParticleSetupCustomization sharedInstance].productMode)
-        {
+
+    if ([ParticleCloud sharedInstance].isAuthenticated) {
+        if ([ParticleSetupCustomization sharedInstance].productMode) {
             [[ParticleCloud sharedInstance] generateClaimCodeForProduct:[ParticleSetupCustomization sharedInstance].productId completion:claimCodeCompletionBlock];
-        }
-        else
-        {
+        } else {
             [[ParticleCloud sharedInstance] generateClaimCode:claimCodeCompletionBlock];
         }
-    }
-    else
-    {
+    } else {
         [self selectSegue];
     }
-    
-    
+
+
 }
 
--(void)viewWillAppear:(BOOL)animated
-{
+- (void)viewWillAppear:(BOOL)animated {
 #ifdef ANALYTICS
     [[SEGAnalytics sharedAnalytics] track:@"DeviceSetup_GetReadyScreen"];
 //    NSLog(@"analytics enabled");
@@ -234,9 +214,7 @@
 }
 
 
-
-- (IBAction)logoutButtonTouched:(id)sender
-{
+- (IBAction)logoutButtonTouched:(id)sender {
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Log out" message:@"Are you sure you want to log out?" preferredStyle:UIAlertControllerStyleAlert];
     [alert addAction:[UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:nil]];
     [alert addAction:[UIAlertAction actionWithTitle:@"Log out" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
@@ -245,7 +223,6 @@
     }]];
     [self presentViewController:alert animated:YES completion:nil];
 }
-
 
 
 @end

@@ -10,10 +10,13 @@
 #import "ParticleUserSignupViewController.h"
 #import "ParticleSetupCommManager.h"
 #import "ParticleSetupConnection.h"
+
 #ifdef USE_FRAMEWORKS
 #import <ParticleSDK/ParticleSDK.h>
 #else
+
 #import "Particle-SDK.h"
+
 #endif
 
 #import "ParticleSetupCustomization.h"
@@ -29,25 +32,23 @@ NSString *const kParticleSetupDidFinishDeviceKey = @"kParticleSetupDidFinishDevi
 NSString *const kParticleSetupDidLogoutNotification = @"kParticleSetupDidLogoutNotification";
 NSString *const kParticleSetupDidFailDeviceIDKey = @"kParticleSetupDidFailDeviceIDKey";
 
-@interface ParticleSetupMainController() <ParticleUserLoginDelegate>
+@interface ParticleSetupMainController () <ParticleUserLoginDelegate>
 
 //@property (nonatomic, strong) UINavigationController *setupNavController;
-@property (weak, nonatomic) IBOutlet UIView *containerView;
-@property (nonatomic, strong) UIViewController *currentVC;
-@property (nonatomic) BOOL authenticationOnly;
-@property (nonatomic) BOOL setupOnly;
+@property(weak, nonatomic) IBOutlet UIView *containerView;
+@property(nonatomic, strong) UIViewController *currentVC;
+@property(nonatomic) BOOL authenticationOnly;
+@property(nonatomic) BOOL setupOnly;
 @end
 
 @implementation ParticleSetupMainController
 
-- (UIStatusBarStyle)preferredStatusBarStyle
-{
+- (UIStatusBarStyle)preferredStatusBarStyle {
     return ([ParticleSetupCustomization sharedInstance].lightStatusAndNavBar) ? UIStatusBarStyleLightContent : UIStatusBarStyleDefault;
 }
 
 
-+(NSBundle *)getResourcesBundle
-{
++ (NSBundle *)getResourcesBundle {
 #ifdef USE_FRAMEWORKS
     // frameework has assets as
     NSBundle *bundle = [NSBundle bundleForClass:self];
@@ -58,32 +59,29 @@ NSString *const kParticleSetupDidFailDeviceIDKey = @"kParticleSetupDidFailDevice
 }
 
 
-+(UIStoryboard *)getSetupStoryboard
-{
++ (UIStoryboard *)getSetupStoryboard {
     UIStoryboard *setupStoryboard = [UIStoryboard storyboardWithName:@"setup" bundle:[ParticleSetupMainController getResourcesBundle]];
     return setupStoryboard;
 }
 
-+(UIImage *)loadImageFromResourceBundle:(NSString *)imageName
-{
++ (UIImage *)loadImageFromResourceBundle:(NSString *)imageName {
     NSBundle *bundle = [ParticleSetupMainController getResourcesBundle];
-    NSString *imageFileName = [NSString stringWithFormat:@"%@.png",imageName];
+    NSString *imageFileName = [NSString stringWithFormat:@"%@.png", imageName];
     UIImage *image = [UIImage imageNamed:imageFileName inBundle:bundle compatibleWithTraitCollection:nil];
     return image;
 }
 
--(instancetype)init
-{
-    ParticleSetupMainController* mainVC = [super initWithNibName:nil bundle:nil]; // super init is not actually required, but supress the warning
+- (instancetype)init {
+    ParticleSetupMainController *mainVC = [super initWithNibName:nil bundle:nil]; // super init is not actually required, but supress the warning
     self.authenticationOnly = NO;
-    
+
     @try {
         mainVC = [[ParticleSetupMainController getSetupStoryboard] instantiateViewControllerWithIdentifier:@"root"];
     }
     @catch (NSException *exception) {
         return nil;
     }
-    
+
     return mainVC;
 }
 
@@ -94,75 +92,62 @@ NSString *const kParticleSetupDidFailDeviceIDKey = @"kParticleSetupDidFailDevice
 }
 
 
--(instancetype)initWithSetupOnly:(BOOL)yesOrNo
-{
-    ParticleSetupMainController* mainVC = [self init];
+- (instancetype)initWithSetupOnly:(BOOL)yesOrNo {
+    ParticleSetupMainController *mainVC = [self init];
     self.setupOnly = yesOrNo;
     return mainVC;
 }
 
 
--(instancetype)initWithAuthenticationOnly:(BOOL)yesOrNo
-{
-    ParticleSetupMainController* mainVC = [self init];
+- (instancetype)initWithAuthenticationOnly:(BOOL)yesOrNo {
+    ParticleSetupMainController *mainVC = [self init];
     self.authenticationOnly = yesOrNo;
     return mainVC;
 }
 
--(void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
-    
+
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(setupDidFinishObserver:) name:kParticleSetupDidFinishNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(setupDidLogoutObserver:) name:kParticleSetupDidLogoutNotification object:nil];
-    
-    if ([ParticleCloud sharedInstance].isAuthenticated)
-    {
+
+    if ([ParticleCloud sharedInstance].isAuthenticated) {
         // start from discover screen if user is already logged in
-        if (self.authenticationOnly == NO)
-        {
+        if (self.authenticationOnly == NO) {
             [self runSetup];
-        }
-        else
-        {
+        } else {
             // add a small delay and perform in another thread to let viewDidload finish, otherwise we might get a deadlock black screen
-            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                [[NSNotificationCenter defaultCenter] postNotificationName:kParticleSetupDidFinishNotification object:nil userInfo:@{kParticleSetupDidFinishStateKey:@(ParticleSetupMainControllerResultLoggedIn)}];
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t) (0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                [[NSNotificationCenter defaultCenter] postNotificationName:kParticleSetupDidFinishNotification object:nil userInfo:@{kParticleSetupDidFinishStateKey: @(ParticleSetupMainControllerResultLoggedIn)}];
             });
         }
-    }
-    else
-    {
+    } else {
         if (self.setupOnly)
             [self runSetup];
-        else
-            if (self.startWithLogin) {
-                [self showLogin];
-            } else {
-                [self showSignup];
-            }
+        else if (self.startWithLogin) {
+            [self showLogin];
+        } else {
+            [self showSignup];
+        }
 
     }
 
 
 }
 
--(void)runSetup
-{
-    UINavigationController* setupVC = [[ParticleSetupMainController getSetupStoryboard] instantiateViewControllerWithIdentifier:@"setup"];
+- (void)runSetup {
+    UINavigationController *setupVC = [[ParticleSetupMainController getSetupStoryboard] instantiateViewControllerWithIdentifier:@"setup"];
     [self showViewController:setupVC];
 }
 
--(void)showSignup
-{
+- (void)showSignup {
     ParticleUserSignupViewController *signupVC = [[ParticleSetupMainController getSetupStoryboard] instantiateViewControllerWithIdentifier:@"signup"];
     signupVC.delegate = self;
     [self showViewController:signupVC];
 }
 
 
--(void)showSignupWithPredefinedActivationCode:(NSString *)activationCode;
-{
+- (void)showSignupWithPredefinedActivationCode:(NSString *)activationCode; {
     // __deprecated
     ParticleUserSignupViewController *signupVC = [[ParticleSetupMainController getSetupStoryboard] instantiateViewControllerWithIdentifier:@"signup"];
 //    signupVC.predefinedActivationCode = activationCode;
@@ -171,21 +156,19 @@ NSString *const kParticleSetupDidFailDeviceIDKey = @"kParticleSetupDidFailDevice
 }
 
 
--(void)showLogin
-{
+- (void)showLogin {
     ParticleUserLoginViewController *loginVC = [[ParticleSetupMainController getSetupStoryboard] instantiateViewControllerWithIdentifier:@"login"];
     loginVC.delegate = self;
     [self showViewController:loginVC];
 }
 
--(void)showPasswordReset
-{
+- (void)showPasswordReset {
     ParticleUserLoginViewController *pwdrstVC = [[ParticleSetupMainController getSetupStoryboard] instantiateViewControllerWithIdentifier:@"password_reset"];
     pwdrstVC.delegate = self;
     [self showViewController:pwdrstVC];
 }
 
--(void)showMFAOTP:(NSString *)mfaToken username:(NSString *)username {
+- (void)showMFAOTP:(NSString *)mfaToken username:(NSString *)username {
     ParticleUserMFAViewController *otpVC = [[ParticleSetupMainController getSetupStoryboard] instantiateViewControllerWithIdentifier:@"mfa_otp"];
     otpVC.delegate = self;
     otpVC.mfaToken = mfaToken;
@@ -194,71 +177,63 @@ NSString *const kParticleSetupDidFailDeviceIDKey = @"kParticleSetupDidFailDevice
 }
 
 
--(void)setupDidLogoutObserver:(NSNotification *)note
-{
+- (void)setupDidLogoutObserver:(NSNotification *)note {
     // User intentionally logged out so display the login/signup screens
     [self showLogin];
 }
 
 #pragma mark ParticleUserLoginDelegate methods
+
 //-(void)didFinishUserLogin:(id)sender
--(void)didFinishUserAuthentication:(id)sender loggedIn:(BOOL)loggedIn;
-{
-    if (self.authenticationOnly)
-    {
+- (void)didFinishUserAuthentication:(id)sender loggedIn:(BOOL)loggedIn; {
+    if (self.authenticationOnly) {
         // if authentication only requested than just post a notification to remove modal screen and return to calling app
         // add a small delay and perform in another thread to let viewDidload finish (if we're still in it), otherwise we might get a deadlock black screen
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t) (0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             if (loggedIn)
-                [[NSNotificationCenter defaultCenter] postNotificationName:kParticleSetupDidFinishNotification object:nil userInfo:@{kParticleSetupDidFinishStateKey:@(ParticleSetupMainControllerResultLoggedIn)}];
+                [[NSNotificationCenter defaultCenter] postNotificationName:kParticleSetupDidFinishNotification object:nil userInfo:@{kParticleSetupDidFinishStateKey: @(ParticleSetupMainControllerResultLoggedIn)}];
             else
-                [[NSNotificationCenter defaultCenter] postNotificationName:kParticleSetupDidFinishNotification object:nil userInfo:@{kParticleSetupDidFinishStateKey:@(ParticleSetupMainControllerResultSkippedAuth)}];
-            
+                [[NSNotificationCenter defaultCenter] postNotificationName:kParticleSetupDidFinishNotification object:nil userInfo:@{kParticleSetupDidFinishStateKey: @(ParticleSetupMainControllerResultSkippedAuth)}];
+
         });
-    }
-    else
-    {
-        
+    } else {
+
         [self runSetup];
     }
 }
 
 
--(void)didRequestPasswordReset:(id)sender
-{
+- (void)didRequestPasswordReset:(id)sender {
     [self showPasswordReset];
 }
 
--(void)didRequestUserSignup:(id)sender
-{
+- (void)didRequestUserSignup:(id)sender {
     [self showSignup];
 }
 
--(void)didRequestUserLogin:(id)sender
-{
+- (void)didRequestUserLogin:(id)sender {
     [self showLogin];
 }
 
--(void)didTriggerMFA:(id)sender mfaToken:(NSString *)mfaToken username:(NSString *)username
-{
+- (void)didTriggerMFA:(id)sender mfaToken:(NSString *)mfaToken username:(NSString *)username {
     [self showMFAOTP:mfaToken username:username];
 }
 
 
 #pragma mark Observer for setup end notifications
--(void)setupDidFinishObserver:(NSNotification *)note
-{
+
+- (void)setupDidFinishObserver:(NSNotification *)note {
     // Setup finished so dismiss modal main controller and call delegate with state
-    
+
     NSDictionary *finishStateDict = note.userInfo;
-    NSNumber* state = finishStateDict[kParticleSetupDidFinishStateKey];
+    NSNumber *state = finishStateDict[kParticleSetupDidFinishStateKey];
     ParticleDevice *device = finishStateDict[kParticleSetupDidFinishDeviceKey];
     NSString *deviceID = finishStateDict[kParticleSetupDidFailDeviceIDKey];
-    
+
     [[NSNotificationCenter defaultCenter] removeObserver:self name:kParticleSetupDidFinishNotification object:nil];
     [[NSNotificationCenter defaultCenter] removeObserver:self name:kParticleSetupDidLogoutNotification object:nil];
-    
-    
+
+
     [self dismissViewControllerAnimated:YES completion:^{
         [self.delegate particleSetupViewController:self didFinishWithResult:[state integerValue] device:device]; // TODO: add NSError reporting?
         if ((!device) && (deviceID)) {
@@ -270,10 +245,8 @@ NSString *const kParticleSetupDidFailDeviceIDKey = @"kParticleSetupDidFailDevice
 }
 
 // viewcontroller container behaviour code
-- (void)showViewController:(UIViewController *)viewController
-{
-    if (self.currentVC)
-    {
+- (void)showViewController:(UIViewController *)viewController {
+    if (self.currentVC) {
         [self addChildViewController:viewController];
         [self transitionFromViewController:self.currentVC toViewController:viewController duration:0.5f options:UIViewAnimationOptionTransitionFlipFromTop animations:nil completion:nil];
         [self hideViewController:self.currentVC];
@@ -293,8 +266,7 @@ NSString *const kParticleSetupDidFailDeviceIDKey = @"kParticleSetupDidFailDevice
     [viewController didMoveToParentViewController:self];
 }
 
-- (void)hideViewController:(UIViewController *)viewController;
-{
+- (void)hideViewController:(UIViewController *)viewController; {
     [self.containerView endEditing:YES];
     [viewController willMoveToParentViewController:nil];
     [viewController.view removeFromSuperview];
@@ -302,8 +274,7 @@ NSString *const kParticleSetupDidFailDeviceIDKey = @"kParticleSetupDidFailDevice
 }
 
 
--(void)dealloc
-{
+- (void)dealloc {
     // check
     [[NSNotificationCenter defaultCenter] removeObserver:self name:kParticleSetupDidFinishNotification object:nil];
     [[NSNotificationCenter defaultCenter] removeObserver:self name:kParticleSetupDidLogoutNotification object:nil];

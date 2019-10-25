@@ -10,9 +10,9 @@
 #import "ParticleSetupUIViewController.h"
 
 @interface ParticleSetupWebViewController : ParticleSetupUIViewController
-@property (nonatomic, strong) NSURL *link;
-@property (nonatomic, strong) NSString *htmlFilename;
-@property (nonatomic, strong) NSString *htmlFileDirectory;
+@property(nonatomic, strong) NSURL *link;
+@property(nonatomic, strong) NSString *htmlFilename;
+@property(nonatomic, strong) NSString *htmlFileDirectory;
 @end
 
 

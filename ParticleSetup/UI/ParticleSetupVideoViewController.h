@@ -10,6 +10,6 @@
 #import "ParticleSetupUIViewController.h"
 
 @interface ParticleSetupVideoViewController : ParticleSetupUIViewController
-@property (nonatomic, strong) NSString *videoFilePath;
+@property(nonatomic, strong) NSString *videoFilePath;
 
 @end

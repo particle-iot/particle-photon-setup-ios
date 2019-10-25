@@ -2,45 +2,48 @@
 //  ParticleUserForgotPasswordViewController.m
 //  teacup-ios-app
 //
-//  Created by Ido on 2/13/15.
+//  Created by Raimundas Sakalauskas
 //  Copyright (c) 2015 particle. All rights reserved.
 //
 
 #import "ParticleUserMFAViewController.h"
 #import "ParticleSetupCustomization.h"
+
 #ifdef USE_FRAMEWORKS
 #import <ParticleSDK/ParticleSDK.h>
 #else
+
 #import "Particle-SDK.h"
+
 #endif
+
 #import "ParticleSetupWebViewController.h"
 #import "ParticleUserLoginViewController.h"
 #import "ParticleSetupUIElements.h"
+
 #ifdef ANALYTICS
 #import <SEGAnalytics.h>
 #endif
 
 @interface ParticleUserMFAViewController () <UIAlertViewDelegate, UITextFieldDelegate>
 
-@property (weak, nonatomic) IBOutlet UITextField *codeTextField;
-@property (weak, nonatomic) IBOutlet UIImageView *brandImageView;
-@property (weak, nonatomic) IBOutlet UIImageView *brandBackgroundImageView;
-@property (weak, nonatomic) IBOutlet ParticleSetupUISpinner *spinner;
+@property(weak, nonatomic) IBOutlet UITextField *codeTextField;
+@property(weak, nonatomic) IBOutlet UIImageView *brandImageView;
+@property(weak, nonatomic) IBOutlet UIImageView *brandBackgroundImageView;
+@property(weak, nonatomic) IBOutlet ParticleSetupUISpinner *spinner;
 
 
-@property (weak, nonatomic) IBOutlet UIButton *verifyButton;
-@property (weak, nonatomic) IBOutlet UIButton *recoveryCodeButton;
+@property(weak, nonatomic) IBOutlet UIButton *verifyButton;
+@property(weak, nonatomic) IBOutlet UIButton *recoveryCodeButton;
 
 @end
 
 @implementation ParticleUserMFAViewController
 
 
-- (UIStatusBarStyle)preferredStatusBarStyle
-{
+- (UIStatusBarStyle)preferredStatusBarStyle {
     return ([ParticleSetupCustomization sharedInstance].lightStatusAndNavBar) ? UIStatusBarStyleLightContent : UIStatusBarStyleDefault;
 }
-
 
 
 - (void)viewDidLoad {
@@ -52,9 +55,9 @@
     self.brandBackgroundImageView.image = [ParticleSetupCustomization sharedInstance].brandImageBackgroundImage;
 
     // Trick to add an inset from the left of the text fields
-    CGRect  viewRect = CGRectMake(0, 0, 10, 32);
-    UIView* emptyView = [[UIView alloc] initWithFrame:viewRect];
-    
+    CGRect viewRect = CGRectMake(0, 0, 10, 32);
+    UIView *emptyView = [[UIView alloc] initWithFrame:viewRect];
+
     self.codeTextField.leftView = emptyView;
     self.codeTextField.leftViewMode = UITextFieldViewModeAlways;
     self.codeTextField.delegate = self;
@@ -102,19 +105,15 @@
 }
 
 
--(void)viewWillAppear:(BOOL)animated
-{
+- (void)viewWillAppear:(BOOL)animated {
 #ifdef ANALYTICS
     [[SEGAnalytics sharedAnalytics] track:@"Auth_MFAOTPScreen"];
 #endif
 }
 
 
-
--(BOOL)textFieldShouldReturn:(UITextField *)textField
-{
-    if (textField == self.codeTextField)
-    {
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    if (textField == self.codeTextField) {
         [self otpVerifyButtonTapped:self];
 
         return YES;
@@ -124,8 +123,7 @@
 }
 
 
-- (IBAction)recoveryButtonTapped:(id)sender
-{
+- (IBAction)recoveryButtonTapped:(id)sender {
     NSURL *url = [[NSURL alloc] initWithString:@"https://login.particle.io/account-info"];
     if (@available(iOS 10, *)) {
         [[UIApplication sharedApplication] openURL:url options:nil completionHandler:nil];

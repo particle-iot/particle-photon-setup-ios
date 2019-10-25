@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface ParticleSetupUIButton : UIButton
-@property (nonatomic, strong) NSString *type; // "action", "link"
+@property(nonatomic, strong) NSString *type; // "action", "link"
 @end

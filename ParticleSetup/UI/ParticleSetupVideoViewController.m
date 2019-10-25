@@ -13,7 +13,7 @@
 
 @interface ParticleSetupVideoViewController ()
 
-@property (weak, nonatomic) IBOutlet UIButton *closeButton;
+@property(weak, nonatomic) IBOutlet UIButton *closeButton;
 
 @end
 
@@ -21,7 +21,6 @@
     AVPlayerLayer *_layer;
     AVPlayer *_player;
 }
-
 
 
 - (void)viewDidLoad {
@@ -33,12 +32,11 @@
 }
 
 
--(void)viewWillDisappear:(BOOL)animated
-{
+- (void)viewWillDisappear:(BOOL)animated {
 #ifdef ANALYTICS
     [[SEGAnalytics sharedAnalytics] track:@"DeviceSetup_HowToVideoScreenActivity"];
 #endif
-    
+
 }
 
 - (IBAction)closeButtonTapped:(id)sender {
@@ -50,19 +48,17 @@
     return YES;
 }
 
--(void)viewWillAppear:(BOOL)animated
-{
-    
+- (void)viewWillAppear:(BOOL)animated {
+
     [super viewDidAppear:animated];
     [self setNeedsStatusBarAppearanceUpdate];
-    
+
 #ifdef ANALYTICS
     [[SEGAnalytics sharedAnalytics] track:@"DeviceSetup_HowToVideoScreenActivity"];
 #endif
-   
-    
-    if (self.videoFilePath)
-    {
+
+
+    if (self.videoFilePath) {
 
         NSArray *videoFilenameArr = [self.videoFilePath componentsSeparatedByString:@"."];
         NSString *path = [[NSBundle mainBundle] pathForResource:videoFilenameArr[0] ofType:videoFilenameArr[1]];
@@ -121,8 +117,7 @@
 }
 
 
-
--(void)dismissPlayer {
+- (void)dismissPlayer {
     [[NSNotificationCenter defaultCenter] removeObserver:self name:AVPlayerItemDidPlayToEndTimeNotification object:_player.currentItem];
     [[NSNotificationCenter defaultCenter] removeObserver:self name:UIApplicationDidEnterBackgroundNotification object:nil];
     [[NSNotificationCenter defaultCenter] removeObserver:self name:UIApplicationWillEnterForegroundNotification object:nil];

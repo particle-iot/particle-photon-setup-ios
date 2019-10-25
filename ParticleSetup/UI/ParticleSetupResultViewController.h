@@ -8,6 +8,7 @@
 
 #import "ParticleSetupUIViewController.h"
 #import "ParticleSetupMainController.h"
+
 #ifdef USE_FRAMEWORKS
 #import <ParticleSDK/ParticleSDK.h>
 #else
@@ -17,8 +18,8 @@
 @class ParticleDevice;
 
 @interface ParticleSetupResultViewController : ParticleSetupUIViewController
-@property (nonatomic, strong) ParticleDevice *device; // device instance for successful setup
-@property (nonatomic, strong) NSString *deviceID; // device ID reporting for failed setup
-@property (nonatomic) ParticleSetupMainControllerResult setupResult;
+@property(nonatomic, strong) ParticleDevice *device; // device instance for successful setup
+@property(nonatomic, strong) NSString *deviceID; // device ID reporting for failed setup
+@property(nonatomic) ParticleSetupMainControllerResult setupResult;
 
 @end
