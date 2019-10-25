@@ -116,8 +116,8 @@
     
     self.gotPublicKey = NO;
     self.gotOwnershipInfo = NO;
-    
-    self.networkNameLabel.text = [NSString stringWithFormat:@"%@-XXXX",[ParticleSetupCustomization sharedInstance].networkNamePrefix];
+
+    self.networkNameLabel.text = [NSString replaceVariablesInStrings:ParticleSetupStrings_DiscoverDevices_WiFiCellText];
     self.wifiView.layer.borderColor = [UIColor lightGrayColor].CGColor;
     self.wifiView.layer.borderWidth = 1.0f;
     
