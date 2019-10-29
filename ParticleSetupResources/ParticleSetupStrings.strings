@@ -1,224 +1,224 @@
-// Generated on 2019-10-28 19:17:16 by iOS.py
+// Generated on 2019-10-29 13:18:01 by iOS.py
 
-"ParticleSetupStrings.Action.Cancel" = "_Cancel_";
-"ParticleSetupStrings.Action.LogOut" = "_Log out_";
-"ParticleSetupStrings.Action.No" = "_No_";
-"ParticleSetupStrings.Action.Ok" = "_Ok_";
-"ParticleSetupStrings.Action.Open" = "_Open_";
-"ParticleSetupStrings.Action.Understood" = "_Understood_";
-"ParticleSetupStrings.Action.Yes" = "_Yes_";
+"ParticleSetupStrings.Action.Cancel" = "Cancel";
+"ParticleSetupStrings.Action.LogOut" = "Log out";
+"ParticleSetupStrings.Action.No" = "No";
+"ParticleSetupStrings.Action.Ok" = "Ok";
+"ParticleSetupStrings.Action.Open" = "Open";
+"ParticleSetupStrings.Action.Understood" = "Understood";
+"ParticleSetupStrings.Action.Yes" = "Yes";
 
-"ParticleSetupStrings.Connecting.Text1" = "_Configure Wi-Fi credentials_";
-"ParticleSetupStrings.Connecting.Text2" = "_Connect to Wi-Fi network_";
-"ParticleSetupStrings.Connecting.Text3" = "_Wait for device cloud connection_";
-"ParticleSetupStrings.Connecting.Text4" = "_Check for internet connectivity_";
-"ParticleSetupStrings.Connecting.Text5" = "_Verify device ownership_";
-"ParticleSetupStrings.Connecting.Title1" = "_Your {device} is connecting to:_";
-"ParticleSetupStrings.Connecting.Title2" = "_This can take about a minute._";
+"ParticleSetupStrings.Connecting.Text1" = "Configure Wi-Fi credentials";
+"ParticleSetupStrings.Connecting.Text2" = "Connect to Wi-Fi network";
+"ParticleSetupStrings.Connecting.Text3" = "Wait for device cloud connection";
+"ParticleSetupStrings.Connecting.Text4" = "Check for internet connectivity";
+"ParticleSetupStrings.Connecting.Text5" = "Verify device ownership";
+"ParticleSetupStrings.Connecting.Title1" = "Your {device} is connecting to:";
+"ParticleSetupStrings.Connecting.Title2" = "This can take about a minute.";
 
-"ParticleSetupStrings.Default.DeviceName" = "_Particle device_";
-"ParticleSetupStrings.Default.ForgotPasswordLinkURL" = "_https://login.particle.io/forgot_";
-"ParticleSetupStrings.Default.ListenModeLEDColorName" = "_blue_";
-"ParticleSetupStrings.Default.ModeButton" = "_Setup button_";
-"ParticleSetupStrings.Default.PrivacyPolicyLinkURL" = "_https://www.particle.io/legal/privacy_";
-"ParticleSetupStrings.Default.SkipAuthenticationText" = "_Skipping authentication will allow you to configure Wi-Fi credentials to your device but it will not be claimed to your account. Are you sure you want to skip authentication?_";
-"ParticleSetupStrings.Default.TermsOfServiceLinkURL" = "_https://www.particle.io/legal/terms-of-service_";
-"ParticleSetupStrings.Default.TroubleshootingLinkURL" = "_https://community.spark.io/t/spark-core-troubleshooting-guide-spark-team/696_";
+"ParticleSetupStrings.Default.DeviceName" = "Particle device";
+"ParticleSetupStrings.Default.ForgotPasswordLinkURL" = "https://login.particle.io/forgot";
+"ParticleSetupStrings.Default.ListenModeLEDColorName" = "blue";
+"ParticleSetupStrings.Default.ModeButton" = "Setup button";
+"ParticleSetupStrings.Default.PrivacyPolicyLinkURL" = "https://www.particle.io/legal/privacy";
+"ParticleSetupStrings.Default.SkipAuthenticationText" = "Skipping authentication will allow you to configure Wi-Fi credentials to your device but it will not be claimed to your account. Are you sure you want to skip authentication?";
+"ParticleSetupStrings.Default.TermsOfServiceLinkURL" = "https://www.particle.io/legal/terms-of-service";
+"ParticleSetupStrings.Default.TroubleshootingLinkURL" = "https://community.spark.io/t/spark-core-troubleshooting-guide-spark-team/696";
 
-"ParticleSetupStrings.DeviceCommErrors.PublicKeyNotAvailable" = "_Could not retrieve public key from device_";
-"ParticleSetupStrings.DeviceCommErrors.PublicKeyStorageFailed" = "_Could not store public key in device keychain_";
+"ParticleSetupStrings.DeviceCommErrors.PublicKeyNotAvailable" = "Could not retrieve public key from device";
+"ParticleSetupStrings.DeviceCommErrors.PublicKeyStorageFailed" = "Could not store public key in device keychain";
 
-"ParticleSetupStrings.DiscoverDevices.Button.ShowMeHow" = "_SHOW ME HOW_";
+"ParticleSetupStrings.DiscoverDevices.Button.ShowMeHow" = "SHOW ME HOW";
 
-"ParticleSetupStrings.DiscoverDevices.Prompt.ClaimOwnership.Message" = "_Do you want to claim ownership of this {{deviceName}} to {{userName}}_";
-"ParticleSetupStrings.DiscoverDevices.Prompt.ClaimOwnership.Title" = "_Product ownership_";
+"ParticleSetupStrings.DiscoverDevices.Prompt.ClaimOwnership.Message" = "Do you want to claim ownership of this {{deviceName}} to {{userName}}";
+"ParticleSetupStrings.DiscoverDevices.Prompt.ClaimOwnership.Title" = "Product ownership";
 
-"ParticleSetupStrings.DiscoverDevices.Prompt.Notification.Message" = "_Your phone has connected to {{deviceName}}. Tap to continue Setup._";
-"ParticleSetupStrings.DiscoverDevices.Prompt.Notification.Title" = "_Connected_";
+"ParticleSetupStrings.DiscoverDevices.Prompt.Notification.Message" = "Your phone has connected to {{deviceName}}. Tap to continue Setup.";
+"ParticleSetupStrings.DiscoverDevices.Prompt.Notification.Title" = "Connected";
 
 
-"ParticleSetupStrings.DiscoverDevices.Text1" = "_Tap Home > Settings > Wi-Fi_";
-"ParticleSetupStrings.DiscoverDevices.Text2" = "_Make sure Wi-Fi is turned on, and choose the network below:_";
-"ParticleSetupStrings.DiscoverDevices.Text3" = "_Once connected, return to this app_";
-"ParticleSetupStrings.DiscoverDevices.WiFiCellNote" = "_XXXX will be a unique 4-digit code_";
-"ParticleSetupStrings.DiscoverDevices.WiFiCellText" = "_{network prefix}-XXXX_";
+"ParticleSetupStrings.DiscoverDevices.Text1" = "Tap Home > Settings > Wi-Fi";
+"ParticleSetupStrings.DiscoverDevices.Text2" = "Make sure Wi-Fi is turned on, and choose the network below:";
+"ParticleSetupStrings.DiscoverDevices.Text3" = "Once connected, return to this app";
+"ParticleSetupStrings.DiscoverDevices.WiFiCellNote" = "XXXX will be a unique 4-digit code";
+"ParticleSetupStrings.DiscoverDevices.WiFiCellText" = "{network prefix}-XXXX";
 
-"ParticleSetupStrings.ForgotPassword.Button.LogIn" = "_I remember my password_";
-"ParticleSetupStrings.ForgotPassword.Button.Reset" = "_RESET PASSWORD_";
+"ParticleSetupStrings.ForgotPassword.Button.LogIn" = "I remember my password";
+"ParticleSetupStrings.ForgotPassword.Button.Reset" = "RESET PASSWORD";
 
-"ParticleSetupStrings.ForgotPassword.EmailPlaceholder" = "_email_";
-"ParticleSetupStrings.ForgotPassword.Error.InvalidCredentials.Message" = "_Could not find a user with supplied email address, please check the address supplied or create a new user via signup screen_";
-"ParticleSetupStrings.ForgotPassword.Error.InvalidCredentials.Title" = "_Reset password_";
+"ParticleSetupStrings.ForgotPassword.EmailPlaceholder" = "email";
+"ParticleSetupStrings.ForgotPassword.Error.InvalidCredentials.Message" = "Could not find a user with supplied email address, please check the address supplied or create a new user via signup screen";
+"ParticleSetupStrings.ForgotPassword.Error.InvalidCredentials.Title" = "Reset password";
 
-"ParticleSetupStrings.ForgotPassword.Error.InvalidEmail.Message" = "_Invalid email address_";
-"ParticleSetupStrings.ForgotPassword.Error.InvalidEmail.Title" = "_Reset password_";
+"ParticleSetupStrings.ForgotPassword.Error.InvalidEmail.Message" = "Invalid email address";
+"ParticleSetupStrings.ForgotPassword.Error.InvalidEmail.Title" = "Reset password";
 
 
-"ParticleSetupStrings.ForgotPassword.Prompt.EmailSent.Message" = "_Instuctions how to reset your password will be sent to the provided email address. Please check your email and continue according to instructions._";
-"ParticleSetupStrings.ForgotPassword.Prompt.EmailSent.Title" = "_Reset password_";
+"ParticleSetupStrings.ForgotPassword.Prompt.EmailSent.Message" = "Instuctions how to reset your password will be sent to the provided email address. Please check your email and continue according to instructions.";
+"ParticleSetupStrings.ForgotPassword.Prompt.EmailSent.Title" = "Reset password";
 
 
-"ParticleSetupStrings.ForgotPassword.Text" = "_An email will be sent to you with a link to a webpage where you can create a new password._";
-"ParticleSetupStrings.ForgotPassword.Title" = "_Request password reset_";
+"ParticleSetupStrings.ForgotPassword.Text" = "An email will be sent to you with a link to a webpage where you can create a new password.";
+"ParticleSetupStrings.ForgotPassword.Title" = "Request password reset";
 
-"ParticleSetupStrings.GetLocationPermission.Button.GrantPermission" = "_GRANT PERMISSION_";
-"ParticleSetupStrings.GetLocationPermission.Button.OpenSettings" = "_OPEN SETTINGS_";
+"ParticleSetupStrings.GetLocationPermission.Button.GrantPermission" = "GRANT PERMISSION";
+"ParticleSetupStrings.GetLocationPermission.Button.OpenSettings" = "OPEN SETTINGS";
 
-"ParticleSetupStrings.GetLocationPermission.DeniedText" = "_Photon setup reads current Wi-Fi SSID to determine when your phone connects to a device.\n\nStarting iOS 13, for apps to have access to Wi-Fi SSID information, user must grant location services permission.\n\nYou have previously denied Particle application permission to access location services. Please grant the permission in Settings app.\n\nParticle app will only use this permission to read Wi-Fi SSID and not to track your location._";
-"ParticleSetupStrings.GetLocationPermission.Text" = "_Photon setup reads current Wi-Fi SSID to determine when your phone connects to a device.\n\nStarting iOS 13, for apps to have access to Wi-Fi SSID information, user must grant location services permission.\n\nParticle app will only use this permission to read Wi-Fi SSID and not to track your location._";
-"ParticleSetupStrings.GetLocationPermission.Title" = "_Permission to read WIFI SSID_";
+"ParticleSetupStrings.GetLocationPermission.DeniedText" = "Photon setup reads current Wi-Fi SSID to determine when your phone connects to a device.\n\nStarting iOS 13, for apps to have access to Wi-Fi SSID information, user must grant location services permission.\n\nYou have previously denied Particle application permission to access location services. Please grant the permission in Settings app.\n\nParticle app will only use this permission to read Wi-Fi SSID and not to track your location.";
+"ParticleSetupStrings.GetLocationPermission.Text" = "Photon setup reads current Wi-Fi SSID to determine when your phone connects to a device.\n\nStarting iOS 13, for apps to have access to Wi-Fi SSID information, user must grant location services permission.\n\nParticle app will only use this permission to read Wi-Fi SSID and not to track your location.";
+"ParticleSetupStrings.GetLocationPermission.Title" = "Permission to read WIFI SSID";
 
-"ParticleSetupStrings.GetReady.Button.LogIn" = "_Log in_";
-"ParticleSetupStrings.GetReady.Button.Ready" = "_READY_";
+"ParticleSetupStrings.GetReady.Button.LogIn" = "Log in";
+"ParticleSetupStrings.GetReady.Button.Ready" = "READY";
 
-"ParticleSetupStrings.GetReady.Error.AccessDenied.Message" = "_Sorry, you must be logged in as a {{brand}} customer._";
-"ParticleSetupStrings.GetReady.Error.AccessDenied.Title" = "_Access denied_";
+"ParticleSetupStrings.GetReady.Error.AccessDenied.Message" = "Sorry, you must be logged in as a {{brand}} customer.";
+"ParticleSetupStrings.GetReady.Error.AccessDenied.Title" = "Access denied";
 
-"ParticleSetupStrings.GetReady.Error.BadProductId.Message" = "_Could not communicate with Particle cloud. Are you sure your organization and product slugs are setup correctly?\n\n{{error}}_";
-"ParticleSetupStrings.GetReady.Error.BadProductId.Title" = "_Error_";
+"ParticleSetupStrings.GetReady.Error.BadProductId.Message" = "Could not communicate with Particle cloud. Are you sure your organization and product slugs are setup correctly?\n\n{{error}}";
+"ParticleSetupStrings.GetReady.Error.BadProductId.Title" = "Error";
 
-"ParticleSetupStrings.GetReady.Error.Generic.Message" = "_{{error}}_";
-"ParticleSetupStrings.GetReady.Error.Generic.Title" = "_Error_";
+"ParticleSetupStrings.GetReady.Error.Generic.Message" = "{{error}}";
+"ParticleSetupStrings.GetReady.Error.Generic.Title" = "Error";
 
-"ParticleSetupStrings.GetReady.Error.NoInternet.Message" = "_Could not communicate with Particle cloud. Make sure your iOS device is connected to the internet and retry.\n\n{{error}}_";
-"ParticleSetupStrings.GetReady.Error.NoInternet.Title" = "_Error_";
+"ParticleSetupStrings.GetReady.Error.NoInternet.Message" = "Could not communicate with Particle cloud. Make sure your iOS device is connected to the internet and retry.\n\n{{error}}";
+"ParticleSetupStrings.GetReady.Error.NoInternet.Title" = "Error";
 
 
-"ParticleSetupStrings.GetReady.Prompt.LogOut.Message" = "_Are you sure you want to log out?_";
-"ParticleSetupStrings.GetReady.Prompt.LogOut.Title" = "_Log out_";
+"ParticleSetupStrings.GetReady.Prompt.LogOut.Message" = "Are you sure you want to log out?";
+"ParticleSetupStrings.GetReady.Prompt.LogOut.Title" = "Log out";
 
 
-"ParticleSetupStrings.GetReady.Text1" = "_Plug in your {device} to power it on_";
-"ParticleSetupStrings.GetReady.Text2" = "_The on-board LED should be blinking blue. If not, hold the {mode button} for 3 seconds_";
-"ParticleSetupStrings.GetReady.Text3" = "_Make sure your iOS device is connected to the Internet_";
-"ParticleSetupStrings.GetReady.iPhone4MoreInstructions" = "_Scroll down for more instructions:\n{{instructions}}_";
+"ParticleSetupStrings.GetReady.Text1" = "Plug in your {device} to power it on";
+"ParticleSetupStrings.GetReady.Text2" = "The on-board LED should be blinking blue. If not, hold the {mode button} for 3 seconds";
+"ParticleSetupStrings.GetReady.Text3" = "Make sure your iOS device is connected to the Internet";
+"ParticleSetupStrings.GetReady.iPhone4MoreInstructions" = "Scroll down for more instructions:\n{{instructions}}";
 
-"ParticleSetupStrings.LogIn.Button.ForgotPassword" = "_I forgot my password_";
-"ParticleSetupStrings.LogIn.Button.LogIn" = "_LOG IN_";
-"ParticleSetupStrings.LogIn.Button.SignUp" = "_I don't have a {brand} account_";
-"ParticleSetupStrings.LogIn.Button.SkipAuthentication" = "_Skip authentication_";
+"ParticleSetupStrings.LogIn.Button.ForgotPassword" = "I forgot my password";
+"ParticleSetupStrings.LogIn.Button.LogIn" = "LOG IN";
+"ParticleSetupStrings.LogIn.Button.SignUp" = "I don't have a {brand} account";
+"ParticleSetupStrings.LogIn.Button.SkipAuthentication" = "Skip authentication";
 
-"ParticleSetupStrings.LogIn.EmailPlaceholder" = "_email_";
-"ParticleSetupStrings.LogIn.Error.EmptyPassword.Message" = "_Password cannot be blank_";
-"ParticleSetupStrings.LogIn.Error.EmptyPassword.Title" = "_Cannot Sign In_";
+"ParticleSetupStrings.LogIn.EmailPlaceholder" = "email";
+"ParticleSetupStrings.LogIn.Error.EmptyPassword.Message" = "Password cannot be blank";
+"ParticleSetupStrings.LogIn.Error.EmptyPassword.Title" = "Cannot Sign In";
 
-"ParticleSetupStrings.LogIn.Error.Generic.Message" = "_{{error}}_";
-"ParticleSetupStrings.LogIn.Error.Generic.Title" = "_Cannot Sign In_";
+"ParticleSetupStrings.LogIn.Error.Generic.Message" = "{{error}}";
+"ParticleSetupStrings.LogIn.Error.Generic.Title" = "Cannot Sign In";
 
-"ParticleSetupStrings.LogIn.Error.InvalidEmail.Message" = "_Invalid email address_";
-"ParticleSetupStrings.LogIn.Error.InvalidEmail.Title" = "_Cannot Sign In_";
+"ParticleSetupStrings.LogIn.Error.InvalidEmail.Message" = "Invalid email address";
+"ParticleSetupStrings.LogIn.Error.InvalidEmail.Title" = "Cannot Sign In";
 
 
-"ParticleSetupStrings.LogIn.PasswordPlaceholder" = "_password_";
-"ParticleSetupStrings.LogIn.Prompt.SkipAuthentication.Title" = "_Skip Authentication_";
+"ParticleSetupStrings.LogIn.PasswordPlaceholder" = "password";
+"ParticleSetupStrings.LogIn.Prompt.SkipAuthentication.Title" = "Skip Authentication";
 
 
-"ParticleSetupStrings.LogIn.Title" = "_Your account_";
+"ParticleSetupStrings.LogIn.Title" = "Your account";
 
-"ParticleSetupStrings.MFA.Button.LostPhone" = "_Lost access to your phone? Recover your account._";
-"ParticleSetupStrings.MFA.Button.Verify" = "_VERIFY_";
+"ParticleSetupStrings.MFA.Button.LostPhone" = "Lost access to your phone? Recover your account.";
+"ParticleSetupStrings.MFA.Button.Verify" = "VERIFY";
 
-"ParticleSetupStrings.MFA.CodePlaceholder" = "_login code_";
-"ParticleSetupStrings.MFA.Error.EmptyCode.Message" = "_Please enter the code._";
-"ParticleSetupStrings.MFA.Error.EmptyCode.Title" = "_Error_";
+"ParticleSetupStrings.MFA.CodePlaceholder" = "login code";
+"ParticleSetupStrings.MFA.Error.EmptyCode.Message" = "Please enter the code.";
+"ParticleSetupStrings.MFA.Error.EmptyCode.Title" = "Error";
 
-"ParticleSetupStrings.MFA.Error.Generic.Message" = "_{{error}}_";
-"ParticleSetupStrings.MFA.Error.Generic.Title" = "_Two-step Authentication Error_";
+"ParticleSetupStrings.MFA.Error.Generic.Message" = "{{error}}";
+"ParticleSetupStrings.MFA.Error.Generic.Title" = "Two-step Authentication Error";
 
 
-"ParticleSetupStrings.MFA.Text" = "_Open your authenticator app on your mobile device and enter the 6-digit login code_";
-"ParticleSetupStrings.MFA.Title" = "_Enter a login code_";
+"ParticleSetupStrings.MFA.Text" = "Open your authenticator app on your mobile device and enter the 6-digit login code";
+"ParticleSetupStrings.MFA.Title" = "Enter a login code";
 
-"ParticleSetupStrings.ManualNetwork.Button.Connect" = "_CONNECT_";
+"ParticleSetupStrings.ManualNetwork.Button.Connect" = "CONNECT";
 
-"ParticleSetupStrings.ManualNetwork.NamePlaceholder" = "_Network name_";
-"ParticleSetupStrings.ManualNetwork.RequiresPassword" = "_Network requires password_";
-"ParticleSetupStrings.ManualNetwork.Title" = "_Manual network name_";
+"ParticleSetupStrings.ManualNetwork.NamePlaceholder" = "Network name";
+"ParticleSetupStrings.ManualNetwork.RequiresPassword" = "Network requires password";
+"ParticleSetupStrings.ManualNetwork.Title" = "Manual network name";
 
-"ParticleSetupStrings.NetworkPassword.Button.Connect" = "_CONNECT_";
+"ParticleSetupStrings.NetworkPassword.Button.Connect" = "CONNECT";
 
-"ParticleSetupStrings.NetworkPassword.Error.InvalidPassword.Message" = "_Password must be {{length}} characters or longer_";
-"ParticleSetupStrings.NetworkPassword.Error.InvalidPassword.Title" = "_Invalid password_";
+"ParticleSetupStrings.NetworkPassword.Error.InvalidPassword.Message" = "Password must be {{length}} characters or longer";
+"ParticleSetupStrings.NetworkPassword.Error.InvalidPassword.Title" = "Invalid password";
 
 
-"ParticleSetupStrings.NetworkPassword.HidePassword" = "_Hide password_";
-"ParticleSetupStrings.NetworkPassword.PasswordPlaceholder" = "_Password_";
-"ParticleSetupStrings.NetworkPassword.Title" = "_Secured network password_";
+"ParticleSetupStrings.NetworkPassword.HidePassword" = "Hide password";
+"ParticleSetupStrings.NetworkPassword.PasswordPlaceholder" = "Password";
+"ParticleSetupStrings.NetworkPassword.Title" = "Secured network password";
 
-"ParticleSetupStrings.SelectNetwork.Button.NetworkNotListed" = "_My network is not listed_";
-"ParticleSetupStrings.SelectNetwork.Button.Refresh" = "_REFRESH_";
+"ParticleSetupStrings.SelectNetwork.Button.NetworkNotListed" = "My network is not listed";
+"ParticleSetupStrings.SelectNetwork.Button.Refresh" = "REFRESH";
 
-"ParticleSetupStrings.SelectNetwork.Title" = "_Select your Wi-Fi network_";
+"ParticleSetupStrings.SelectNetwork.Title" = "Select your Wi-Fi network";
 
-"ParticleSetupStrings.SetupResult.Button.Done" = "_DONE_";
-"ParticleSetupStrings.SetupResult.Button.Troubleshooting" = "_Troubleshooting_";
+"ParticleSetupStrings.SetupResult.Button.Done" = "DONE";
+"ParticleSetupStrings.SetupResult.Button.Troubleshooting" = "Troubleshooting";
 
-"ParticleSetupStrings.SetupResult.DeviceName" = "_Name your new device:_";
-"ParticleSetupStrings.SetupResult.DeviceNamePlaceholder" = "_DeviceNamePlaceholder_";
-"ParticleSetupStrings.SetupResult.Prompt.FirmwareUpdate.Message" = "_If this is the first time you are setting up this device it might blink its LED in magenta color for a while, this means the device is currently updating its firmware from the cloud to the latest version. Please be patient and do not press the reset button. Device LED will breathe cyan once update has completed and it has come online._";
-"ParticleSetupStrings.SetupResult.Prompt.FirmwareUpdate.Title" = "_Firmware update_";
+"ParticleSetupStrings.SetupResult.DeviceName" = "Name your new device:";
+"ParticleSetupStrings.SetupResult.DeviceNamePlaceholder" = "DeviceNamePlaceholder";
+"ParticleSetupStrings.SetupResult.Prompt.FirmwareUpdate.Message" = "If this is the first time you are setting up this device it might blink its LED in magenta color for a while, this means the device is currently updating its firmware from the cloud to the latest version. Please be patient and do not press the reset button. Device LED will breathe cyan once update has completed and it has come online.";
+"ParticleSetupStrings.SetupResult.Prompt.FirmwareUpdate.Title" = "Firmware update";
 
 
-"ParticleSetupStrings.SetupResult.Result.CannotDisconnectFromDevice.Message" = "_Setup process couldn't disconnect from the {device} Wi-fi network. This is an internal problem with the device, so please try running setup again after resetting your {device} and putting it back in listen mode (blinking blue LED) if needed._";
-"ParticleSetupStrings.SetupResult.Result.CannotDisconnectFromDevice.Title" = "_Oops!_";
+"ParticleSetupStrings.SetupResult.Result.CannotDisconnectFromDevice.Message" = "Setup process couldn't disconnect from the {device} Wi-fi network. This is an internal problem with the device, so please try running setup again after resetting your {device} and putting it back in listen mode (blinking blue LED) if needed.";
+"ParticleSetupStrings.SetupResult.Result.CannotDisconnectFromDevice.Title" = "Oops!";
 
-"ParticleSetupStrings.SetupResult.Result.ClaimingFailed.Message" = "_Setup process failed at claiming your {device}, if your {device} LED is blinking in blue or green this means that you provided wrong Wi-Fi credentials, please try setup process again._";
-"ParticleSetupStrings.SetupResult.Result.ClaimingFailed.Title" = "_Setup failed_";
+"ParticleSetupStrings.SetupResult.Result.ClaimingFailed.Message" = "Setup process failed at claiming your {device}, if your {device} LED is blinking in blue or green this means that you provided wrong Wi-Fi credentials, please try setup process again.";
+"ParticleSetupStrings.SetupResult.Result.ClaimingFailed.Title" = "Setup failed";
 
-"ParticleSetupStrings.SetupResult.Result.ConfigurationFailure.Message" = "_Setup process couldn't configure the Wi-Fi credentials for your {device}, please try running setup again after resetting your {device} and putting it back in blinking blue listen mode if needed._";
-"ParticleSetupStrings.SetupResult.Result.ConfigurationFailure.Title" = "_Error!_";
+"ParticleSetupStrings.SetupResult.Result.ConfigurationFailure.Message" = "Setup process couldn't configure the Wi-Fi credentials for your {device}, please try running setup again after resetting your {device} and putting it back in blinking blue listen mode if needed.";
+"ParticleSetupStrings.SetupResult.Result.ConfigurationFailure.Title" = "Error!";
 
-"ParticleSetupStrings.SetupResult.Result.Default.Message" = "_Setup lost connection to the device before finalizing configuration process, please try running setup again after putting {device} back in blinking blue listen mode._";
-"ParticleSetupStrings.SetupResult.Result.Default.Title" = "_Uh oh!_";
+"ParticleSetupStrings.SetupResult.Result.Default.Message" = "Setup lost connection to the device before finalizing configuration process, please try running setup again after putting {device} back in blinking blue listen mode.";
+"ParticleSetupStrings.SetupResult.Result.Default.Title" = "Uh oh!";
 
-"ParticleSetupStrings.SetupResult.Result.DeviceOffline.Message" = "_Your device has been successfully claimed to your account, however it is offline. If the device was already claimed before this setup, then the Wi-Fi connection may have failed, and you should try setup again._";
-"ParticleSetupStrings.SetupResult.Result.DeviceOffline.Title" = "_Setup completed_";
+"ParticleSetupStrings.SetupResult.Result.DeviceOffline.Message" = "Your device has been successfully claimed to your account, however it is offline. If the device was already claimed before this setup, then the Wi-Fi connection may have failed, and you should try setup again.";
+"ParticleSetupStrings.SetupResult.Result.DeviceOffline.Title" = "Setup completed";
 
-"ParticleSetupStrings.SetupResult.Result.NotClaimed.Message" = "_Setup was successful, but since you do not own this device we cannot know if the {device} has connected to the Internet. If you see the LED breathing cyan this means it worked! If not, please restart the setup process._";
-"ParticleSetupStrings.SetupResult.Result.NotClaimed.Title" = "_Setup completed_";
+"ParticleSetupStrings.SetupResult.Result.NotClaimed.Message" = "Setup was successful, but since you do not own this device we cannot know if the {device} has connected to the Internet. If you see the LED breathing cyan this means it worked! If not, please restart the setup process.";
+"ParticleSetupStrings.SetupResult.Result.NotClaimed.Title" = "Setup completed";
 
-"ParticleSetupStrings.SetupResult.Result.Success.Text" = "_Congrats! You've successfully set up your {device}._";
-"ParticleSetupStrings.SetupResult.Result.Success.Title" = "_Setup completed successfully_";
+"ParticleSetupStrings.SetupResult.Result.Success.Text" = "Congrats! You've successfully set up your {device}.";
+"ParticleSetupStrings.SetupResult.Result.Success.Title" = "Setup completed successfully";
 
 
 
-"ParticleSetupStrings.SignUp.BusinessAccount" = "_This is a business account_";
-"ParticleSetupStrings.SignUp.Button.LogIn" = "_I already have a {brand} account_";
-"ParticleSetupStrings.SignUp.Button.SignUp" = "_SIGN UP_";
-"ParticleSetupStrings.SignUp.Button.SkipAuthentication" = "_Skip authentication_";
+"ParticleSetupStrings.SignUp.BusinessAccount" = "This is a business account";
+"ParticleSetupStrings.SignUp.Button.LogIn" = "I already have a {brand} account";
+"ParticleSetupStrings.SignUp.Button.SignUp" = "SIGN UP";
+"ParticleSetupStrings.SignUp.Button.SkipAuthentication" = "Skip authentication";
 
-"ParticleSetupStrings.SignUp.CompanyNamePlaceholder" = "_company name_";
-"ParticleSetupStrings.SignUp.EmailPlaceholder" = "_email_";
-"ParticleSetupStrings.SignUp.Error.Generic.Message" = "_{{error}}_";
-"ParticleSetupStrings.SignUp.Error.Generic.Title" = "_Error_";
+"ParticleSetupStrings.SignUp.CompanyNamePlaceholder" = "company name";
+"ParticleSetupStrings.SignUp.EmailPlaceholder" = "email";
+"ParticleSetupStrings.SignUp.Error.Generic.Message" = "{{error}}";
+"ParticleSetupStrings.SignUp.Error.Generic.Title" = "Error";
 
-"ParticleSetupStrings.SignUp.Error.InvalidEmail.Message" = "_Invalid email address_";
-"ParticleSetupStrings.SignUp.Error.InvalidEmail.Title" = "_Error_";
+"ParticleSetupStrings.SignUp.Error.InvalidEmail.Message" = "Invalid email address";
+"ParticleSetupStrings.SignUp.Error.InvalidEmail.Title" = "Error";
 
-"ParticleSetupStrings.SignUp.Error.PasswordTooShort.Message" = "_Password must be at least 8 characters long_";
-"ParticleSetupStrings.SignUp.Error.PasswordTooShort.Title" = "_Error_";
+"ParticleSetupStrings.SignUp.Error.PasswordTooShort.Message" = "Password must be at least 8 characters long";
+"ParticleSetupStrings.SignUp.Error.PasswordTooShort.Title" = "Error";
 
-"ParticleSetupStrings.SignUp.Error.PasswordsDoNotMatch.Message" = "_Passwords do not match_";
-"ParticleSetupStrings.SignUp.Error.PasswordsDoNotMatch.Title" = "_Error_";
+"ParticleSetupStrings.SignUp.Error.PasswordsDoNotMatch.Message" = "Passwords do not match";
+"ParticleSetupStrings.SignUp.Error.PasswordsDoNotMatch.Title" = "Error";
 
-"ParticleSetupStrings.SignUp.Error.WrongCredentials.Message" = "_Make sure your user email does not already exist and that you have entered the activation code correctly and that it was not already used._";
-"ParticleSetupStrings.SignUp.Error.WrongCredentials.Title" = "_Could not signup_";
+"ParticleSetupStrings.SignUp.Error.WrongCredentials.Message" = "Make sure your user email does not already exist and that you have entered the activation code correctly and that it was not already used.";
+"ParticleSetupStrings.SignUp.Error.WrongCredentials.Title" = "Could not signup";
 
 
-"ParticleSetupStrings.SignUp.FirstNamePlaceholder" = "_first name_";
-"ParticleSetupStrings.SignUp.LastNamePlaceholder" = "_last name_";
-"ParticleSetupStrings.SignUp.Note.And" = "_and_";
-"ParticleSetupStrings.SignUp.Note.PP" = "_Privacy Policy_";
-"ParticleSetupStrings.SignUp.Note.Text" = "_By clicking \"SIGN UP\" you are indicating that you have read and agreed to the_";
-"ParticleSetupStrings.SignUp.Note.ToS" = "_Terms of Service_";
+"ParticleSetupStrings.SignUp.FirstNamePlaceholder" = "first name";
+"ParticleSetupStrings.SignUp.LastNamePlaceholder" = "last name";
+"ParticleSetupStrings.SignUp.Note.And" = "and";
+"ParticleSetupStrings.SignUp.Note.PP" = "Privacy Policy";
+"ParticleSetupStrings.SignUp.Note.Text" = "By clicking \"SIGN UP\" you are indicating that you have read and agreed to the";
+"ParticleSetupStrings.SignUp.Note.ToS" = "Terms of Service";
 
-"ParticleSetupStrings.SignUp.PasswordPlaceholder" = "_password_";
-"ParticleSetupStrings.SignUp.PersonalAccount" = "_This is a personal account_";
-"ParticleSetupStrings.SignUp.Prompt.SkipAuthentication.Title" = "_Skip Authentication_";
+"ParticleSetupStrings.SignUp.PasswordPlaceholder" = "password";
+"ParticleSetupStrings.SignUp.PersonalAccount" = "This is a personal account";
+"ParticleSetupStrings.SignUp.Prompt.SkipAuthentication.Title" = "Skip Authentication";
 
 
-"ParticleSetupStrings.SignUp.Title" = "_Create account_";
-"ParticleSetupStrings.SignUp.VerifyPasswordPlaceholder" = "_verify password_";
+"ParticleSetupStrings.SignUp.Title" = "Create account";
+"ParticleSetupStrings.SignUp.VerifyPasswordPlaceholder" = "verify password";
 
 
 

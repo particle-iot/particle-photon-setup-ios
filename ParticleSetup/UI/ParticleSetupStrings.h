@@ -1,4 +1,4 @@
-// Generated on 2019-10-28 19:17:16 by iOS.py
+// Generated on 2019-10-29 13:18:01 by iOS.py
 
 #define ParticleSetupStrings_Action_Cancel NSLocalizedStringFromTableInBundle(@"ParticleSetupStrings.Action.Cancel", @"ParticleSetupStrings", [ParticleSetupMainController getResourcesBundle], @"")
 #define ParticleSetupStrings_Action_LogOut NSLocalizedStringFromTableInBundle(@"ParticleSetupStrings.Action.LogOut", @"ParticleSetupStrings", [ParticleSetupMainController getResourcesBundle], @"")
