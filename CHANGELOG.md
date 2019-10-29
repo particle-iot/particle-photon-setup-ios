@@ -2,6 +2,12 @@
 All notable changes to this project will be documented in this file.
 Particle iOS Device Setup library adheres to [Semantic Versioning](http://semver.org/).
 
+## [1.0.0](https://github.com/spark/spark-setup-ios/releases/tag/1.0.0) (2019-10-29)
+
+* Added: `useAppResources` and `appResourcesStoryboardName` flags to enable shipping modified storyboard as part of main bundle. 
+
+* Added: All strings were extracted and now are available for localization. Also code constants for each string are created to avoid typos when using string keys.
+
 ## [0.9.3](https://github.com/spark/spark-setup-ios/releases/tag/0.9.3) (2019-08-30)
 
 * Bugfix: Fixed a problem with setup flow returning to get ready screen unexpectedly on all current iOS versions (< iOS 13)
