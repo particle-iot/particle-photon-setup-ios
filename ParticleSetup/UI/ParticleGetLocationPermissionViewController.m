@@ -92,7 +92,6 @@
 
 #ifdef ANALYTICS
     [[SEGAnalytics sharedAnalytics] track:@"DeviceSetup_GetLocationPermission"];
-//    NSLog(@"analytics enabled");
 #endif
 }
 
@@ -102,13 +101,10 @@
 }
 
 - (void)updateContent {
-    NSLog(@"updateContent called!!!");
     if ([CLLocationManager locationServicesEnabled] &&
             ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusNotDetermined)) {
-        [self.bodyLabel setText:@"Photon setup reads current Wi-Fi SSID to determine when your phone connects to a device.\n\n"
-                                "Starting iOS 13, for apps to have access to Wi-Fi SSID information, user must grant location services permission.\n\n"
-                                "Particle app will only use this permission to read Wi-Fi SSID and not to track your location."];
-        [self.continueButton setTitle:@"GRANT PERMISSION" forState:UIControlStateNormal];
+        [self.bodyLabel setText:ParticleSetupStrings_GetLocationPermission_Text];
+        [self.continueButton setTitle:ParticleSetupStrings_GetLocationPermission_Button_GrantPermission forState:UIControlStateNormal];
     } else if ([CLLocationManager locationServicesEnabled] &&
             (([CLLocationManager authorizationStatus] == kCLAuthorizationStatusAuthorizedAlways) || ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusAuthorizedWhenInUse))) {
         if (!_animating) {
@@ -116,11 +112,8 @@
             _animating = true;
         }
     } else {
-        [self.bodyLabel setText:@"Photon setup reads current Wi-Fi SSID to determine when your phone connects to a device.\n\n"
-                                "Starting iOS 13, for apps to have access to Wi-Fi SSID information, user must grant location services permission.\n\n"
-                                "You have previously denied Particle application permission to access location services. Please grant the permission in Settings app.\n\n"
-                                "Particle app will only use this permission to read Wi-Fi SSID and not to track your location."];
-        [self.continueButton setTitle:@"OPEN SETTINGS" forState:UIControlStateNormal];
+        [self.bodyLabel setText:ParticleSetupStrings_GetLocationPermission_DeniedText];
+        [self.continueButton setTitle:ParticleSetupStrings_GetLocationPermission_Button_OpenSettings forState:UIControlStateNormal];
     }
 }
 

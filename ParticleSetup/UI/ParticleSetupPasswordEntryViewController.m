@@ -110,7 +110,10 @@
         minWifiPassChars = 5;
 
     if (self.passwordTextField.text.length < minWifiPassChars) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Invalid password" message:[NSString stringWithFormat:@"Password must be %d characters or longer", minWifiPassChars] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:ParticleSetupStrings_NetworkPassword_Error_InvalidPassword_Title
+                                                        message:[ParticleSetupStrings_NetworkPassword_Error_InvalidPassword_Message stringByReplacingOccurrencesOfString:@"{{length}}" withString:[@(minWifiPassChars) stringValue]]
+                                                       delegate:nil cancelButtonTitle:ParticleSetupStrings_Action_Ok otherButtonTitles:nil];
         [alert show];
     } else {
         [self.view endEditing:YES];
@@ -159,9 +162,8 @@
         case ParticleSetupWifiSecurityTypeWPA2_MIXED_PSK:
             return @"WPA2-Mixed";
             break;
-
         default:
-            return @"unknown";
+            return @"Unknown";
             break;
     }
 }

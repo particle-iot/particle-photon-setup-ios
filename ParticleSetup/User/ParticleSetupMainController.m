@@ -24,8 +24,6 @@
 #import "ParticleSetupUIElements.h"
 #import "ParticleUserMFAViewController.h"
 
-//#define SPARK_SETUP_RESOURCE_BUNDLE_IDENTIFIER  @"io.spark.ParticleSetup"
-
 NSString *const kParticleSetupDidFinishNotification = @"kParticleSetupDidFinishNotification";
 NSString *const kParticleSetupDidFinishStateKey = @"kParticleSetupDidFinishStateKey";
 NSString *const kParticleSetupDidFinishDeviceKey = @"kParticleSetupDidFinishDeviceKey";

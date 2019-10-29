@@ -86,7 +86,7 @@
     if ([ParticleCloud sharedInstance].isAuthenticated) {
         self.loggedInLabel.text = [ParticleCloud sharedInstance].loggedInUsername;
     } else {
-        [self.logoutButton setTitle:@"Log in" forState:UIControlStateNormal];
+        [self.logoutButton setTitle:ParticleSetupStrings_GetReady_Button_LogIn forState:UIControlStateNormal];
         self.loggedInLabel.text = @"";
     }
     if ([ParticleSetupCustomization sharedInstance].disableLogOutOption) {
@@ -109,7 +109,7 @@
 
 
     if (isiPhone4) {
-        self.instructionsLabel.text = [NSString stringWithFormat:@"Scroll down for more instructions:\n%@", self.instructionsLabel.text];
+        self.instructionsLabel.text = [ParticleSetupStrings_GetReady_iPhone4MoreInstructions stringByReplacingOccurrencesOfString:@"{{instructions}}" withString:self.instructionsLabel.text];
         [self.view setNeedsUpdateConstraints];
 
         [UIView animateWithDuration:0.25f animations:^{
@@ -168,25 +168,30 @@
             self.claimedDevices = userClaimedDeviceIDs;
             [self selectSegue];
         } else {
-            if (error.code == 401)// localizedDescription containsString:@"unauthorized"])
+            if (error.code == 401)
             {
-                NSString *errStr = [NSString stringWithFormat:@"Sorry, you must be logged in as a %@ customer.", [ParticleSetupCustomization sharedInstance].brandName];
-                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Access denied" message:errStr delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+                NSString *errStr = [ParticleSetupStrings_GetReady_Error_AccessDenied_Title stringByReplacingOccurrencesOfString:@"{{brand}}" withString:[ParticleSetupCustomization sharedInstance].brandName];
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:ParticleSetupStrings_GetReady_Error_AccessDenied_Title message:errStr delegate:self cancelButtonTitle:ParticleSetupStrings_Action_Ok otherButtonTitles:nil];
                 [alert show];
                 [[ParticleCloud sharedInstance] logout];
                 [[NSNotificationCenter defaultCenter] postNotificationName:kParticleSetupDidLogoutNotification object:nil userInfo:nil];
             } else {
                 NSLog(@"error.code = %i", error.code);
                 NSString *errStr;
+                NSString *titleStr;
                 if (error.code == 402) {
-                    errStr = error.localizedDescription;
+                    errStr = [ParticleSetupStrings_GetReady_Error_Generic_Message stringByReplacingOccurrencesOfString:@"{{error}}" withString:error.localizedDescription];
+                    titleStr = ParticleSetupStrings_GetReady_Error_Generic_Title;
                 } else if ([ParticleSetupCustomization sharedInstance].productMode) {
-                    errStr = [NSString stringWithFormat:@"Could not communicate with Particle cloud. Are you sure your organization and product slugs are setup correctly?\n\n%@", error.localizedDescription];
+
+                    errStr = [ParticleSetupStrings_GetReady_Error_BadProductId_Message stringByReplacingOccurrencesOfString:@"{{error}}" withString:error.localizedDescription];
+                    titleStr = ParticleSetupStrings_GetReady_Error_BadProductId_Title;
                 } else {
-                    errStr = [NSString stringWithFormat:@"Could not communicate with Particle cloud. Make sure your iOS device is connected to the internet and retry.\n\n%@", error.localizedDescription];
+                    errStr = [ParticleSetupStrings_GetReady_Error_NoInternet_Message stringByReplacingOccurrencesOfString:@"{{error}}" withString:error.localizedDescription];
+                    titleStr = ParticleSetupStrings_GetReady_Error_NoInternet_Title;
                 }
 
-                UIAlertView *errorAlertView = [[UIAlertView alloc] initWithTitle:@"Error" message:errStr delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+                UIAlertView *errorAlertView = [[UIAlertView alloc] initWithTitle:titleStr message:errStr delegate:nil cancelButtonTitle:ParticleSetupStrings_Action_Ok otherButtonTitles:nil];
                 errorAlertView.delegate = self;
                 [errorAlertView show];
             }
@@ -209,15 +214,14 @@
 - (void)viewWillAppear:(BOOL)animated {
 #ifdef ANALYTICS
     [[SEGAnalytics sharedAnalytics] track:@"DeviceSetup_GetReadyScreen"];
-//    NSLog(@"analytics enabled");
 #endif
 }
 
 
 - (IBAction)logoutButtonTouched:(id)sender {
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Log out" message:@"Are you sure you want to log out?" preferredStyle:UIAlertControllerStyleAlert];
-    [alert addAction:[UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:nil]];
-    [alert addAction:[UIAlertAction actionWithTitle:@"Log out" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:ParticleSetupStrings_GetReady_Prompt_LogOut_Title message:ParticleSetupStrings_GetReady_Prompt_LogOut_Message preferredStyle:UIAlertControllerStyleAlert];
+    [alert addAction:[UIAlertAction actionWithTitle:ParticleSetupStrings_Action_Cancel style:UIAlertActionStyleCancel handler:nil]];
+    [alert addAction:[UIAlertAction actionWithTitle:ParticleSetupStrings_Action_LogOut style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
         [[ParticleCloud sharedInstance] logout];
         [[NSNotificationCenter defaultCenter] postNotificationName:kParticleSetupDidLogoutNotification object:nil userInfo:nil];
     }]];

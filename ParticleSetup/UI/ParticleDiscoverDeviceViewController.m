@@ -190,10 +190,10 @@
         if (state == UIApplicationStateBackground || state == UIApplicationStateInactive) {
             if ([ParticleSetupCommManager checkParticleDeviceWifiConnection:[ParticleSetupCustomization sharedInstance].networkNamePrefix]) {
                 UILocalNotification *localNotification = [[UILocalNotification alloc] init];
-                localNotification.alertAction = @"Connected";
-                NSString *notifText = [NSString stringWithFormat:@"Your phone has connected to %@. Tap to continue Setup.", [ParticleSetupCustomization sharedInstance].deviceName];
+                localNotification.alertAction = ParticleSetupStrings_DiscoverDevices_Prompt_Notification_Title;
+                NSString *notifText = [ParticleSetupStrings_DiscoverDevices_Prompt_Notification_Message stringByReplacingOccurrencesOfString:@"{{deviceName}}" withString:[ParticleSetupCustomization sharedInstance].deviceName];
                 localNotification.alertBody = notifText;
-                localNotification.alertAction = @"open"; // text that is displayed after "slide to..." on the lock screen - defaults to "slide to view"
+                localNotification.alertAction = ParticleSetupStrings_Action_Open; // text that is displayed after "slide to..." on the lock screen - defaults to "slide to view"
                 localNotification.soundName = UILocalNotificationDefaultSoundName; // play default sound
                 localNotification.fireDate = [[NSDate alloc] initWithTimeIntervalSinceNow:0];
                 [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
@@ -213,7 +213,6 @@
 
 
     self.backgroundTask = [[UIApplication sharedApplication] beginBackgroundTaskWithExpirationHandler:^{
-//        NSLog(@"Background handler called. Not running background tasks anymore.");
         [[UIApplication sharedApplication] endBackgroundTask:self.backgroundTask];
         self.backgroundTask = UIBackgroundTaskInvalid;
     }];
@@ -223,7 +222,6 @@
 
 - (void)ParticleSetupConnection:(ParticleSetupConnection *)connection didUpdateState:(ParticleSetupConnectionState)state error:(NSError *)error {
     if (state == ParticleSetupConnectionStateOpened) {
-//        NSLog(@"Photon detected!");
         [connection close];
         [self startPhotonQuery];
     }
@@ -300,7 +298,6 @@
 
         ParticleSetupCommManager *manager = [[ParticleSetupCommManager alloc] init];
         [manager deviceID:^(id deviceResponseDict, NSError *error) {
-//            NSLog(@"DeviceID sent");
             if (error) {
                 NSLog(@"Could not send device-id command: %@", error.localizedDescription);
                 [self restartDeviceDetectionTimer];
@@ -311,14 +308,11 @@
                 self.detectedDeviceID = (NSString *) deviceResponseDict[@"id"]; //TODO: fix that dict interpretation is done in comm manager (layer completion)
                 self.detectedDeviceID = [self.detectedDeviceID lowercaseString];
                 self.isDetectedDeviceClaimed = [deviceResponseDict[@"c"] boolValue];
-//                 NSLog(@"DeviceID response received: %@",self.detectedDeviceID );
 
                 [self photonPublicKey];
-//                 NSLog(@"Got device ID: %@",deviceResponseDict);
             }
         }];
     } else {
-//        NSLog(@"getDeviceID called again");
         [self photonPublicKey];
     }
 }
@@ -327,7 +321,6 @@
 - (void)photonScanAP {
     if (!self.scannedWifiList) {
         ParticleSetupCommManager *manager = [[ParticleSetupCommManager alloc] init];
-//        NSLog(@"ScanAP sent");
         [manager scanAP:^(id scanResponse, NSError *error) {
             if (error) {
                 NSLog(@"Could not send scan-ap command: %@", error.localizedDescription);
@@ -335,11 +328,8 @@
                 [self resetWifiSignalIconWithDelay];
             } else {
                 if (scanResponse) {
-//                    NSLog(@"ScanAP response received");
                     self.scannedWifiList = scanResponse;
-//                    NSLog(@"Scan data:\n%@",self.scannedWifiList);
                     [self checkDeviceOwnershipChange];
-
                 }
 
             }
@@ -356,7 +346,6 @@
         [self.checkConnectionTimer invalidate];
         self.needToCheckDeviceClaimed = NO;
 
-//        self.isDetectedDeviceClaimed = YES; // DEBUG
         if (!self.isDetectedDeviceClaimed) // device was never claimed before - so we need to claim it anyways
         {
             if (self.claimCode) {
@@ -386,12 +375,13 @@
 
                     if ([ParticleCloud sharedInstance].isAuthenticated) {
                         // that means device is claimed by somebody else - we want to check that with user (and set claimcode if user wants to change ownership)
-                        NSString *messageStr = [NSString stringWithFormat:@"Do you want to claim ownership of this %@ to %@?", [ParticleSetupCustomization sharedInstance].deviceName, [ParticleCloud sharedInstance].loggedInUsername];
-                        self.changeOwnershipAlertView = [[UIAlertView alloc] initWithTitle:@"Product ownership" message:messageStr delegate:self cancelButtonTitle:nil otherButtonTitles:@"Yes", @"No", nil];
+                        NSString *messageStr = [[ParticleSetupStrings_DiscoverDevices_Prompt_ClaimOwnership_Message
+                                stringByReplacingOccurrencesOfString:@"{{deviceName}}" withString:[ParticleSetupCustomization sharedInstance].deviceName]
+                                stringByReplacingOccurrencesOfString:@"{{userName}}" withString:[ParticleCloud sharedInstance].loggedInUsername];
+                        self.changeOwnershipAlertView = [[UIAlertView alloc] initWithTitle:ParticleSetupStrings_DiscoverDevices_Prompt_ClaimOwnership_Title message:messageStr delegate:self cancelButtonTitle:nil otherButtonTitles:ParticleSetupStrings_Action_Yes, ParticleSetupStrings_Action_No, nil];
                         [self.checkConnectionTimer invalidate];
                         [self.changeOwnershipAlertView show];
-                    } else // user skipped authentication so no need to claim or set claim code
-                    {
+                    } else { // user skipped authentication so no need to claim or set claim code
                         self.needToCheckDeviceClaimed = NO;
                         [self goToWifiListScreen];
 
@@ -437,7 +427,6 @@
 
 - (void)photonPublicKey {
     if (!self.gotPublicKey) {
-//        NSLog(@"PublicKey sent");
         [self.checkConnectionTimer invalidate];
         ParticleSetupCommManager *manager = [[ParticleSetupCommManager alloc] init];
         [manager publicKey:^(id responseCode, NSError *error) {
@@ -454,7 +443,6 @@
                     [self resetWifiSignalIconWithDelay];
 
                 } else {
-//                    NSLog(@"PublicKey response received");
                     self.gotPublicKey = YES;
                     [self photonScanAP];
                 }
@@ -469,14 +457,11 @@
 - (void)setDeviceClaimCode {
     ParticleSetupCommManager *manager = [[ParticleSetupCommManager alloc] init];
     [self.checkConnectionTimer invalidate];
-//    NSLog(@"Claim code - trying to set");
     [manager setClaimCode:self.claimCode completion:^(id responseCode, NSError *error) {
         if (error) {
             NSLog(@"Could not send set command: %@", error.localizedDescription);
             [self restartDeviceDetectionTimer];
         } else {
-//            NSLog(@"Device claim code set successfully: %@",self.claimCode);
-            // finished - segue
             [self goToWifiListScreen];
 
         }
@@ -493,8 +478,7 @@
         if (error) {
             NSLog(@"Could not send version command: %@", error.localizedDescription);
         } else {
-//            NSString *versionStr = version;
-//            NSLog(@"Device version:\n%@",versionStr);
+
         }
     }];
 }

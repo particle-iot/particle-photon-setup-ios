@@ -8,6 +8,7 @@
 
 #import "ParticleSetupCustomization.h"
 #import "ParticleSetupMainController.h"
+#import "ParticleSetupStrings.h"
 
 
 @interface UIColor (withDecimalRGB) // TODO: move to category in helpers
@@ -38,22 +39,21 @@
 - (instancetype)init {
     if (self = [super init]) {
         // Defaults
-        self.deviceName = @"Particle device";
+        self.deviceName = ParticleSetupStrings_Default_DeviceName;
         self.brandName = @"Particle";
         self.brandImage = [ParticleSetupMainController loadImageFromResourceBundle:@"spark-logo-head"];
         self.brandImageBackgroundColor = [UIColor colorWithRed:229 green:229 blue:237];
         self.brandImageBackgroundImage = nil;
 
-        self.modeButtonName = @"Setup button";
+        self.modeButtonName = ParticleSetupStrings_Default_ModeButton;
         self.networkNamePrefix = @"Photon";
-        self.listenModeLEDColorName = @"blue";
+        self.listenModeLEDColorName = ParticleSetupStrings_Default_ListenModeLEDColorName;
         self.fontSizeOffset = 0;
 
-        self.privacyPolicyLinkURL = [NSURL URLWithString:@"https://www.particle.io/legal/privacy"];
-        self.termsOfServiceLinkURL = [NSURL URLWithString:@"https://www.particle.io/legal/terms-of-service"];
-        self.forgotPasswordLinkURL = [NSURL URLWithString:@"https://login.particle.io/forgot"];
-        self.troubleshootingLinkURL = [NSURL URLWithString:@"https://community.spark.io/t/spark-core-troubleshooting-guide-spark-team/696"];
-        // TODO: add default HTMLs
+        self.privacyPolicyLinkURL = [NSURL URLWithString:ParticleSetupStrings_Default_PrivacyPolicyLinkURL];
+        self.termsOfServiceLinkURL = [NSURL URLWithString:ParticleSetupStrings_Default_TermsOfServiceLinkURL];
+        self.forgotPasswordLinkURL = [NSURL URLWithString:ParticleSetupStrings_Default_ForgotPasswordLinkURL];
+        self.troubleshootingLinkURL = [NSURL URLWithString:ParticleSetupStrings_Default_TroubleshootingLinkURL];
 
         self.normalTextColor = [UIColor colorWithRed:28 green:26 blue:25];
         self.pageBackgroundColor = [UIColor colorWithWhite:0.94 alpha:1.0f];
@@ -74,7 +74,7 @@
         self.allowPasswordManager = YES;
 
         self.allowSkipAuthentication = NO;
-        self.skipAuthenticationMessage = @"Skipping authentication will allow you to configure Wi-Fi credentials to your device but it will not be claimed to your account. Are you sure you want to skip authentication?";
+        self.skipAuthenticationMessage = ParticleSetupStrings_Default_SkipAuthenticationText;
         self.disableLogOutOption = NO;
         return self;
     }

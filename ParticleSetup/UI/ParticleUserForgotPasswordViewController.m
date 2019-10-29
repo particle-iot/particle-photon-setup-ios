@@ -79,11 +79,11 @@
             [[SEGAnalytics sharedAnalytics] track:@"Auth_RequestPasswordReset"];
 #endif
 
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Reset password" message:@"Instuctions how to reset your password will be sent to the provided email address. Please check your email and continue according to instructions." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:ParticleSetupStrings_ForgotPassword_Prompt_EmailSent_Title message:ParticleSetupStrings_ForgotPassword_Prompt_EmailSent_Message delegate:nil cancelButtonTitle:ParticleSetupStrings_Action_Ok otherButtonTitles:nil];
             alert.delegate = self;
             [alert show];
         } else {
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Reset password" message:@"Could not find a user with supplied email address, please check the address supplied or create a new user via signup screen" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:ParticleSetupStrings_ForgotPassword_Error_InvalidCredentials_Title message:ParticleSetupStrings_ForgotPassword_Error_InvalidCredentials_Message delegate:nil cancelButtonTitle:ParticleSetupStrings_Action_Ok otherButtonTitles:nil];
             [alert show];
 
         }
@@ -99,7 +99,7 @@
         }
     } else {
         [self.spinner stopAnimating];
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Reset password" message:@"Invalid email address" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle: ParticleSetupStrings_ForgotPassword_Error_InvalidEmail_Title message:ParticleSetupStrings_ForgotPassword_Error_InvalidEmail_Message delegate:nil cancelButtonTitle:ParticleSetupStrings_Action_Ok otherButtonTitles:nil];
         [alert show];
     }
 }
