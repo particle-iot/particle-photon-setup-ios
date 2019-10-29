@@ -23,7 +23,6 @@
 
 @implementation ParticleSetupCustomization
 
-
 + (instancetype)sharedInstance {
     static ParticleSetupCustomization *sharedInstance = nil;
     @synchronized (self) {
@@ -32,28 +31,33 @@
         }
     }
     return sharedInstance;
-
 }
 
 
 - (instancetype)init {
     if (self = [super init]) {
+        // set 'useAppResources' to YES if you want to supply the storyboard and asset catalog from
+        // the app bundle instead of using the SDK's built-in version.  Your storyboard and asset catalog
+        // must be named 'setup' or change it by setting 'appResourcesStoryboardName' to your liking.
+        self.useAppResources = NO;
+        self.appResourcesStoryboardName = @"setup";
+
         // Defaults
-        self.deviceName = ParticleSetupStrings_Default_DeviceName;
+        //self.deviceName = ParticleSetupStrings_Default_DeviceName;
         self.brandName = @"Particle";
-        self.brandImage = [ParticleSetupMainController loadImageFromResourceBundle:@"spark-logo-head"];
+        //self.brandImage = [ParticleSetupMainController loadImageFromResourceBundle:@"spark-logo-head"];
         self.brandImageBackgroundColor = [UIColor colorWithRed:229 green:229 blue:237];
         self.brandImageBackgroundImage = nil;
 
-        self.modeButtonName = ParticleSetupStrings_Default_ModeButton;
+        //self.modeButtonName = ParticleSetupStrings_Default_ModeButton;
         self.networkNamePrefix = @"Photon";
-        self.listenModeLEDColorName = ParticleSetupStrings_Default_ListenModeLEDColorName;
+        //self.listenModeLEDColorName = ParticleSetupStrings_Default_ListenModeLEDColorName;
         self.fontSizeOffset = 0;
 
-        self.privacyPolicyLinkURL = [NSURL URLWithString:ParticleSetupStrings_Default_PrivacyPolicyLinkURL];
-        self.termsOfServiceLinkURL = [NSURL URLWithString:ParticleSetupStrings_Default_TermsOfServiceLinkURL];
-        self.forgotPasswordLinkURL = [NSURL URLWithString:ParticleSetupStrings_Default_ForgotPasswordLinkURL];
-        self.troubleshootingLinkURL = [NSURL URLWithString:ParticleSetupStrings_Default_TroubleshootingLinkURL];
+        //self.privacyPolicyLinkURL = [NSURL URLWithString:ParticleSetupStrings_Default_PrivacyPolicyLinkURL];
+        //self.termsOfServiceLinkURL = [NSURL URLWithString:ParticleSetupStrings_Default_TermsOfServiceLinkURL];
+        //self.forgotPasswordLinkURL = [NSURL URLWithString:ParticleSetupStrings_Default_ForgotPasswordLinkURL];
+        //self.troubleshootingLinkURL = [NSURL URLWithString:ParticleSetupStrings_Default_TroubleshootingLinkURL];
 
         self.normalTextColor = [UIColor colorWithRed:28 green:26 blue:25];
         self.pageBackgroundColor = [UIColor colorWithWhite:0.94 alpha:1.0f];
@@ -73,19 +77,78 @@
         self.productName = @"Photon";
         self.allowPasswordManager = YES;
 
-        // set 'useAppResources' to YES if you want to supply the storyboard and asset catalog from
-        // the app bundle instead of using the SDK's built-in version.  Your storyboard and asset catalog
-        // must be named 'setup' or change it by setting 'appResourcesStoryboardName' to your liking.
-        self.useAppResources = NO;
-        self.appResourcesStoryboardName = @"setup";
-
         self.allowSkipAuthentication = NO;
-        self.skipAuthenticationMessage = ParticleSetupStrings_Default_SkipAuthenticationText;
+        //self.skipAuthenticationMessage = ParticleSetupStrings_Default_SkipAuthenticationText;
         self.disableLogOutOption = NO;
+
         return self;
     }
 
     return nil;
 }
+
+-(UIImage *)brandImage {
+    if (_brandImage == nil) {
+        _brandImage = [ParticleSetupMainController loadImageFromResourceBundle:@"spark-logo-head"];
+    }
+    return _brandImage;
+}
+
+- (NSString *)deviceName {
+    if (_deviceName == nil){
+        _deviceName = ParticleSetupStrings_Default_DeviceName;
+    }
+    return _deviceName;
+}
+
+- (NSString *)modeButtonName {
+    if (_modeButtonName == nil) {
+        _modeButtonName = ParticleSetupStrings_Default_ModeButton;
+    }
+    return _modeButtonName;
+}
+
+- (NSString *)listenModeLEDColorName {
+    if (_listenModeLEDColorName == nil) {
+        _listenModeLEDColorName = ParticleSetupStrings_Default_ListenModeLEDColorName;
+    }
+    return _listenModeLEDColorName;
+}
+
+- (NSURL *)termsOfServiceLinkURL {
+    if (_termsOfServiceLinkURL == nil) {
+        _termsOfServiceLinkURL = [NSURL URLWithString:ParticleSetupStrings_Default_TermsOfServiceLinkURL];
+    }
+    return _termsOfServiceLinkURL;
+}
+
+- (NSURL *)privacyPolicyLinkURL {
+    if (_privacyPolicyLinkURL == nil){
+        _privacyPolicyLinkURL = [NSURL URLWithString:ParticleSetupStrings_Default_PrivacyPolicyLinkURL];
+    }
+    return _privacyPolicyLinkURL;
+}
+
+- (NSURL *)forgotPasswordLinkURL {
+    if (_forgotPasswordLinkURL == nil) {
+        _forgotPasswordLinkURL = [NSURL URLWithString:ParticleSetupStrings_Default_ForgotPasswordLinkURL];
+    }
+    return _forgotPasswordLinkURL;
+}
+
+- (NSURL *)troubleshootingLinkURL {
+    if (_troubleshootingLinkURL == nil) {
+        _troubleshootingLinkURL = [NSURL URLWithString:ParticleSetupStrings_Default_TroubleshootingLinkURL];
+    }
+    return _troubleshootingLinkURL;
+}
+
+- (NSString *)skipAuthenticationMessage {
+    if (_skipAuthenticationMessage == nil) {
+        _skipAuthenticationMessage = ParticleSetupStrings_Default_SkipAuthenticationText;
+    }
+    return _skipAuthenticationMessage;
+}
+
 
 @end

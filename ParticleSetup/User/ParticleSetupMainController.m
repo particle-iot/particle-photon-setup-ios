@@ -64,7 +64,7 @@ NSString *const kParticleSetupDidFailDeviceIDKey = @"kParticleSetupDidFailDevice
 + (UIStoryboard *)getSetupStoryboard {
     UIStoryboard *setupStoryboard = nil;
 
-    if ( [[ParticleSetupMainController getResourcesBundle] pathForResource:[ParticleSetupCustomization sharedInstance].appResourcesStoryboardName ofType:@"storyboard"] != nil )
+    if ( [[ParticleSetupMainController getResourcesBundle] pathForResource:[ParticleSetupCustomization sharedInstance].appResourcesStoryboardName ofType:@"storyboardc"] != nil )
         setupStoryboard = [UIStoryboard storyboardWithName:[ParticleSetupCustomization sharedInstance].appResourcesStoryboardName bundle:[ParticleSetupMainController getResourcesBundle]];
     else
         NSLog(@"ERROR: app bundle must have storyboard with name \"%@\"\n", [ParticleSetupCustomization sharedInstance].appResourcesStoryboardName);
