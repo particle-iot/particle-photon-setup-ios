@@ -78,7 +78,10 @@
     if ([type isEqualToString:@"link"]) {
         NSMutableAttributedString *s = [[NSMutableAttributedString alloc] initWithString:[self titleForState:UIControlStateNormal]];
         [s addAttribute:NSUnderlineStyleAttributeName value:[NSNumber numberWithInteger:NSUnderlineStyleSingle] range:NSMakeRange(0, [s length])];
-        [self setAttributedTitle:s forState:UIControlStateNormal];
+        [UIView performWithoutAnimation:^{
+            [self setAttributedTitle:s forState:UIControlStateNormal];
+            [self layoutIfNeeded];
+        }];
 
         self.titleLabel.textColor = [ParticleSetupCustomization sharedInstance].linkTextColor;
         [self setTitleColor:[ParticleSetupCustomization sharedInstance].linkTextColor forState:UIControlStateNormal];

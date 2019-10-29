@@ -77,8 +77,11 @@
             UILabel *label = (UILabel *) subview;
             label.text = [label.text particleLocalized];
         } else if ([subview isKindOfClass:[UIButton class]]) {
-            UIButton *button = (UIButton *) subview;
-            [button setTitle:[button.currentTitle particleLocalized] forState:UIControlStateNormal];
+            [UIView performWithoutAnimation:^{
+                UIButton *button = (UIButton *) subview;
+                [button setTitle:[button.currentTitle particleLocalized] forState:UIControlStateNormal];
+                [button layoutIfNeeded];
+            }];
         } else if ([subview isKindOfClass:[UITextView class]]) {
             UITextView *textview = (UITextView *) subview;
             textview.text = [textview.text particleLocalized];
@@ -128,7 +131,7 @@
 
 - (BOOL)isValidEmail:(NSString *)checkString // TODO: move to NSString category under helpers (as well as encode/decode hex)
 {
-    NSString *emailRegex = //@".+@([A-Za-z0-9]+\\.)+[A-Za-z]{2}[A-Za-z]*";
+    NSString *emailRegex =
             @"(?:[a-z0-9!#$%\\&'*+/=?\\^_`{|}~-]+(?:\\.[a-z0-9!#$%\\&'*+/=?\\^_`{|}"
             @"~-]+)*|\"(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21\\x23-\\x5b\\x5d-\\"
             @"x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])*\")@(?:(?:[a-z0-9](?:[a-"
