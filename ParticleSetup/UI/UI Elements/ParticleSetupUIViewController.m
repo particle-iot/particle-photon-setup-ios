@@ -97,7 +97,7 @@
 
 
 - (void)trimTextFieldValue:(UITextField *)textfield {
-    textfield.text = [[textfield.text lowercaseString] stringByTrimmingCharactersInSet:NSCharacterSet.whitespaceCharacterSet];
+    textfield.text = [textfield.text stringByTrimmingCharactersInSet:NSCharacterSet.whitespaceCharacterSet];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
