@@ -78,6 +78,9 @@
 @property(nonatomic, strong) NSString *productSlug __deprecated_msg("Set productId number instead");        //;    // product string for API endpoint URL - must specify for orgMode
 @property(nonatomic) NSUInteger productId;
 
+@property (nonatomic, assign) BOOL useAppResources;           // use storyboard and assets (images and strings) from app instead of from this SDK
+@property (nonatomic, strong) NSString *appResourcesStoryboardName;  // name for storyboard and assets catalog. default: 'setup'
+
 @property(nonatomic, assign) BOOL allowSkipAuthentication;      // allow user to skip authentication
 @property(nonatomic, assign) BOOL allowPasswordManager;         // Display 1Password button next to password entry fields in login/signup
 @property(nonatomic, strong) NSString *skipAuthenticationMessage;    // Prompt to display to user when he's requesting to skip authentication

@@ -73,6 +73,12 @@
         self.productName = @"Photon";
         self.allowPasswordManager = YES;
 
+        // set 'useAppResources' to YES if you want to supply the storyboard and asset catalog from
+        // the app bundle instead of using the SDK's built-in version.  Your storyboard and asset catalog
+        // must be named 'setup' or change it by setting 'appResourcesStoryboardName' to your liking.
+        self.useAppResources = NO;
+        self.appResourcesStoryboardName = @"setup";
+
         self.allowSkipAuthentication = NO;
         self.skipAuthenticationMessage = ParticleSetupStrings_Default_SkipAuthenticationText;
         self.disableLogOutOption = NO;

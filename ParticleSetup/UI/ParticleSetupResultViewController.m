@@ -249,11 +249,9 @@
 
 
 - (IBAction)troubleshootingButtonTouched:(id)sender {
-
-    ParticleSetupWebViewController *webVC = [[UIStoryboard storyboardWithName:@"setup" bundle:[NSBundle bundleWithIdentifier:SPARK_SETUP_RESOURCE_BUNDLE_IDENTIFIER]] instantiateViewControllerWithIdentifier:@"webview"];
+    ParticleSetupWebViewController* webVC = [[ParticleSetupMainController getSetupStoryboard] instantiateViewControllerWithIdentifier:@"webview"];
     webVC.link = [ParticleSetupCustomization sharedInstance].troubleshootingLinkURL;
     [self presentViewController:webVC animated:YES completion:nil];
-
 }
 
 
