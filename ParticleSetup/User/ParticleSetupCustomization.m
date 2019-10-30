@@ -54,11 +54,6 @@
         //self.listenModeLEDColorName = ParticleSetupStrings_Default_ListenModeLEDColorName;
         self.fontSizeOffset = 0;
 
-        //self.privacyPolicyLinkURL = [NSURL URLWithString:ParticleSetupStrings_Default_PrivacyPolicyLinkURL];
-        //self.termsOfServiceLinkURL = [NSURL URLWithString:ParticleSetupStrings_Default_TermsOfServiceLinkURL];
-        //self.forgotPasswordLinkURL = [NSURL URLWithString:ParticleSetupStrings_Default_ForgotPasswordLinkURL];
-        //self.troubleshootingLinkURL = [NSURL URLWithString:ParticleSetupStrings_Default_TroubleshootingLinkURL];
-
         self.normalTextColor = [UIColor colorWithRed:28 green:26 blue:25];
         self.pageBackgroundColor = [UIColor colorWithWhite:0.94 alpha:1.0f];
         self.linkTextColor = [UIColor blueColor];
@@ -127,13 +122,6 @@
         _privacyPolicyLinkURL = [NSURL URLWithString:ParticleSetupStrings_Default_PrivacyPolicyLinkURL];
     }
     return _privacyPolicyLinkURL;
-}
-
-- (NSURL *)forgotPasswordLinkURL {
-    if (_forgotPasswordLinkURL == nil) {
-        _forgotPasswordLinkURL = [NSURL URLWithString:ParticleSetupStrings_Default_ForgotPasswordLinkURL];
-    }
-    return _forgotPasswordLinkURL;
 }
 
 - (NSURL *)troubleshootingLinkURL {

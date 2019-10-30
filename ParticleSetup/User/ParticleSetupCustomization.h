@@ -36,13 +36,7 @@
 // TODO: kill forgot password links
 @property(nonatomic, strong) NSURL *termsOfServiceLinkURL; // URL for terms of service of the app/device usage
 @property(nonatomic, strong) NSURL *privacyPolicyLinkURL;  // URL for privacy policy of the app/device usage
-@property(nonatomic, strong) NSURL *forgotPasswordLinkURL; // URL for user password reset (non-organization setup app only)
 @property(nonatomic, strong) NSURL *troubleshootingLinkURL; // URL for troubleshooting text of the app/device usage
-
-@property(nonatomic, strong) NSString *termsOfServiceHTMLFile; // Static HTML for terms of service of the app/device usage
-@property(nonatomic, strong) NSString *privacyPolicyHTMLFile;  // Static HTML for privacy policy of the app/device usage
-@property(nonatomic, strong) NSString *forgotPasswordHTMLFile; // Static HTML for user password reset (non-organization setup app only)
-@property(nonatomic, strong) NSString *troubleshootingHTMLFile; // Static HTML for troubleshooting text of the app/device usage
 
 @property(nonatomic, strong) UIColor *pageBackgroundColor;
 @property(nonatomic, strong) UIImage *pageBackgroundImage;
@@ -52,21 +46,13 @@
 @property(nonatomic, strong) UIColor *elementBackgroundColor;  // Buttons/spinners background color
 @property(nonatomic) BOOL lightStatusAndNavBar;
 
-// TODO: change to:
-//@property (nonatomic, strong) UIColor *buttonBackgroundColor; // new
-
 @property(nonatomic, strong) UIColor *elementTextColor;        // Buttons text color
-// TODO: change to:
-//@property (nonatomic, strong) UIColor *buttonTextColor; // new
 @property(nonatomic) BOOL tintSetupImages; // new // this will tint the checkmark/warning/ wifi symbols
 
 
 @property(nonatomic, strong) NSString *normalTextFontName;     // Customize setup font - include OTF/TTF file in project
-
 @property(nonatomic, strong) NSString *headerTextFontName; //new
-
 @property(nonatomic, strong) NSString *boldTextFontName;       // Customize setup font - include OTF/TTF file in project
-
 
 @property(nonatomic) CGFloat fontSizeOffset;                   // Set offset of font size so small/big fonts can be fine-adjusted
 
