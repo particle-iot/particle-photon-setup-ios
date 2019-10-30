@@ -775,7 +775,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "python \"shared-assets-mobile/tinker_strings/venv/iOS.py\" \"shared-assets-mobile/tinker_strings/venv/ParticleSetupStrings.json\" \"ParticleSetupResources/ParticleSetupStrings.strings\" \"ParticleSetup/UI/ParticleSetupStrings.h\" \"\" \"objc\"\n";
+			shellScript = "python \"shared-assets-mobile/tinker_strings/venv/iOS.py\" \"shared-assets-mobile/tinker_strings/venv/ParticleSetupStrings.json\" \"ParticleSetupResources/ParticleSetupStrings.strings\" \"ParticleSetup/User/ParticleSetupStrings.h\" \"\" \"objc\"\n";
 		};
 		932789442368B203009AE7FA /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
