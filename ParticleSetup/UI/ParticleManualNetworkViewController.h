@@ -9,6 +9,6 @@
 #import "ParticleSetupUIViewController.h"
 
 @interface ParticleManualNetworkViewController : ParticleSetupUIViewController
-@property (nonatomic, strong) NSString *deviceID;
-@property (nonatomic) BOOL needToClaimDevice;
+@property(nonatomic, strong) NSString *deviceID;
+@property(nonatomic) BOOL needToClaimDevice;
 @end

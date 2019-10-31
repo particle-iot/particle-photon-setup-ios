@@ -11,7 +11,7 @@
 #import "ParticleSetupMainController.h"
 
 @interface ParticleDiscoverDeviceViewController : ParticleSetupUIViewController
-@property (nonatomic, strong) NSString *claimCode;
-@property (nonatomic, strong) NSArray *claimedDevices;
+@property(nonatomic, strong) NSString *claimCode;
+@property(nonatomic, strong) NSArray *claimedDevices;
 
 @end

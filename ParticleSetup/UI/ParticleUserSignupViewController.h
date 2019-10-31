@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "ParticleSetupUIViewController.h"
+
 #ifdef USE_FRAMEWORKS
 #import <ParticleSDK/ParticleSDK.h>
 #else
@@ -16,16 +17,20 @@
 
 @protocol ParticleUserLoginDelegate <NSObject>
 @required
--(void)didFinishUserAuthentication:(id)sender loggedIn:(BOOL)loggedIn;
--(void)didRequestUserSignup:(id)sender;
--(void)didRequestUserLogin:(id)sender;
--(void)didRequestPasswordReset:(id)sender;
--(void)didTriggerMFA:(id)sender mfaToken:(NSString *)mfaToken username:(NSString *)username;
+- (void)didFinishUserAuthentication:(id)sender loggedIn:(BOOL)loggedIn;
+
+- (void)didRequestUserSignup:(id)sender;
+
+- (void)didRequestUserLogin:(id)sender;
+
+- (void)didRequestPasswordReset:(id)sender;
+
+- (void)didTriggerMFA:(id)sender mfaToken:(NSString *)mfaToken username:(NSString *)username;
 @end
 
 
 @interface ParticleUserSignupViewController : ParticleSetupUIViewController
-@property (nonatomic, strong) id<ParticleUserLoginDelegate> delegate;
-@property (nonatomic, strong) NSString *predefinedActivationCode;
+@property(nonatomic, strong) id <ParticleUserLoginDelegate> delegate;
+@property(nonatomic, strong) NSString *predefinedActivationCode;
 
 @end

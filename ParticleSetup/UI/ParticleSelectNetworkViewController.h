@@ -11,15 +11,15 @@
 
 @protocol ParticleSelectNetworkViewControllerDelegate <NSObject>
 
--(void)willPopBackToDeviceDiscovery;
+- (void)willPopBackToDeviceDiscovery;
 
 @end
 
 @interface ParticleSelectNetworkViewController : ParticleSetupUIViewController
-@property (nonatomic, strong) NSArray *wifiList;
-@property (nonatomic, strong) NSString *deviceID;
-@property (nonatomic) BOOL needToClaimDevice;
-@property (nonatomic, weak) id <ParticleSelectNetworkViewControllerDelegate> delegate;
+@property(nonatomic, strong) NSArray *wifiList;
+@property(nonatomic, strong) NSString *deviceID;
+@property(nonatomic) BOOL needToClaimDevice;
+@property(nonatomic, weak) id <ParticleSelectNetworkViewControllerDelegate> delegate;
 @end
 
 

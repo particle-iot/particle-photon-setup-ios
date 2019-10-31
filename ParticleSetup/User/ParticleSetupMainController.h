@@ -16,13 +16,13 @@
 //#endif
 
 typedef NS_ENUM(NSInteger, ParticleSetupMainControllerResult) {
-    ParticleSetupMainControllerResultSuccess=1,
+    ParticleSetupMainControllerResultSuccess = 1,
 //    ParticleSetupMainControllerResultFailure,                        // DEPRECATED starting 0.5.0
     ParticleSetupMainControllerResultUserCancel,                       // User cancelled setup
     ParticleSetupMainControllerResultLoggedIn,                         // relevant to initWithAuthenticationOnly:YES only (user successfully logged in)
     ParticleSetupMainControllerResultSkippedAuth,                      // relevant to initWithAuthenticationOnly:YES only (user skipped authentication)
     ParticleSetupMainControllerResultSuccessNotClaimed,                // Setup finished successfully but device does not belong to currently logged in user so cannot be determined if it came online
-    
+
     ParticleSetupMainControllerResultSuccessDeviceOffline,             // new 0.5.0 -- Setup finished successfully but device did not come online - might indicate a problem
     ParticleSetupMainControllerResultFailureClaiming,                  // new 0.5.0 -- setup was aborted because device claiming device timed out
     ParticleSetupMainControllerResultFailureConfigure,                 // new 0.5.0 -- Setup process couldn't send configure command to device - device Wi-fi network connection might have been dropped, running setup again after putting device back in listen mode is advised.
@@ -67,10 +67,10 @@ extern NSString *const kParticleSetupDidFailDeviceIDKey;
 @interface ParticleSetupMainController : UIViewController
 
 // Allows first screen to be login instead of setup
-@property (nonatomic) BOOL startWithLogin;
+@property(nonatomic) BOOL startWithLogin;
 
 // Viewcontroller displaying the modal setup UI control
-@property (nonatomic, weak) UIViewController<ParticleSetupMainControllerDelegate>* delegate;
+@property(nonatomic, weak) UIViewController <ParticleSetupMainControllerDelegate> *delegate;
 
 /**
  *  Entry point for invoking Particle Soft AP setup wizard, use by calling this on your viewController:
@@ -80,7 +80,7 @@ extern NSString *const kParticleSetupDidFailDeviceIDKey;
  *
  *  @return An initialized ParticleSetupMainController instance ready to be presented.
  */
--(instancetype)init; // NS_DESIGNATED_INITIALIZER;
+- (instancetype)init; // NS_DESIGNATED_INITIALIZER;
 
 /**
  *  Entry point for invoking Particle Cloud authentication (login/signup/password recovery screens) only, use by calling this on your viewController:
@@ -92,7 +92,7 @@ extern NSString *const kParticleSetupDidFailDeviceIDKey;
  *
  *  @return An inititalized ParticleSetupMainController instance ready to be presented.
  */
--(instancetype)initWithAuthenticationOnly:(BOOL)yesOrNo;
+- (instancetype)initWithAuthenticationOnly:(BOOL)yesOrNo;
 
 
 /**
@@ -108,7 +108,7 @@ extern NSString *const kParticleSetupDidFailDeviceIDKey;
  *
  *  @return An inititalized ParticleSetupMainController instance ready to be presented.
  */
--(instancetype)initWithSetupOnly:(BOOL)yesOrNo;
+- (instancetype)initWithSetupOnly:(BOOL)yesOrNo;
 
 
 /**
@@ -117,16 +117,18 @@ extern NSString *const kParticleSetupDidFailDeviceIDKey;
  *
  *  @param activationCode Activation code string
  */
--(void)showSignupWithPredefinedActivationCode:(NSString *)activationCode __deprecated;
+- (void)showSignupWithPredefinedActivationCode:(NSString *)activationCode __deprecated;
 
 /**
  *  Get default resource bundle for Particle Soft AP setup wizard assets
  *
  *  @return Default assets resource NSBundle instance
  */
-+(NSBundle *)getResourcesBundle;
-+(UIStoryboard *)getSetupStoryboard;
-+(UIImage *)loadImageFromResourceBundle:(NSString *)imageName;
++ (NSBundle *)getResourcesBundle;
+
++ (UIStoryboard *)getSetupStoryboard;
+
++ (UIImage *)loadImageFromResourceBundle:(NSString *)imageName;
 
 
 @end

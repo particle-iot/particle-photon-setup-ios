@@ -10,10 +10,10 @@
 #import "ParticleSetupUIViewController.h"
 
 @interface ParticleConnectingProgressViewController : ParticleSetupUIViewController
-@property (nonatomic, strong) NSString *networkName;
-@property (nonatomic, strong) NSString *deviceID;
-@property (nonatomic, strong) NSString *password;
-@property (nonatomic, strong) NSNumber *channel;
-@property (nonatomic, strong) NSNumber *security;
-@property (nonatomic) BOOL needToClaimDevice;
+@property(nonatomic, strong) NSString *networkName;
+@property(nonatomic, strong) NSString *deviceID;
+@property(nonatomic, strong) NSString *password;
+@property(nonatomic, strong) NSNumber *channel;
+@property(nonatomic, strong) NSNumber *security;
+@property(nonatomic) BOOL needToClaimDevice;
 @end

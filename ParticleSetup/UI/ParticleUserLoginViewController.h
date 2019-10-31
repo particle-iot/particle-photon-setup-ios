@@ -11,5 +11,5 @@
 #import "ParticleUserSignupViewController.h"
 
 @interface ParticleUserLoginViewController : ParticleSetupUIViewController
-@property (nonatomic, strong) id<ParticleUserLoginDelegate> delegate;
+@property(nonatomic, strong) id <ParticleUserLoginDelegate> delegate;
 @end

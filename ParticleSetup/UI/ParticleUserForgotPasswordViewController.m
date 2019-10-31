@@ -8,35 +8,38 @@
 
 #import "ParticleUserForgotPasswordViewController.h"
 #import "ParticleSetupCustomization.h"
+
 #ifdef USE_FRAMEWORKS
 #import <ParticleSDK/ParticleSDK.h>
 #else
+
 #import "Particle-SDK.h"
+
 #endif
+
 #import "ParticleSetupWebViewController.h"
 #import "ParticleUserLoginViewController.h"
 #import "ParticleSetupUIElements.h"
+
 #ifdef ANALYTICS
 #import <SEGAnalytics.h>
 #endif
 
 @interface ParticleUserForgotPasswordViewController () <UIAlertViewDelegate, UITextFieldDelegate>
-@property (weak, nonatomic) IBOutlet UITextField *emailTextField;
-@property (weak, nonatomic) IBOutlet UIImageView *brandImageView;
-@property (weak, nonatomic) IBOutlet UIImageView *brandBackgroundImageView;
-@property (weak, nonatomic) IBOutlet ParticleSetupUISpinner *spinner;
-@property (weak, nonatomic) IBOutlet ParticleSetupUIButton *resetPasswordButton;
+@property(weak, nonatomic) IBOutlet UITextField *emailTextField;
+@property(weak, nonatomic) IBOutlet UIImageView *brandImageView;
+@property(weak, nonatomic) IBOutlet UIImageView *brandBackgroundImageView;
+@property(weak, nonatomic) IBOutlet ParticleSetupUISpinner *spinner;
+@property(weak, nonatomic) IBOutlet ParticleSetupUIButton *resetPasswordButton;
 
 @end
 
 @implementation ParticleUserForgotPasswordViewController
 
 
-- (UIStatusBarStyle)preferredStatusBarStyle
-{
+- (UIStatusBarStyle)preferredStatusBarStyle {
     return ([ParticleSetupCustomization sharedInstance].lightStatusAndNavBar) ? UIStatusBarStyleLightContent : UIStatusBarStyleDefault;
 }
-
 
 
 - (void)viewDidLoad {
@@ -50,9 +53,9 @@
 
 
     // Trick to add an inset from the left of the text fields
-    CGRect  viewRect = CGRectMake(0, 0, 10, 32);
-    UIView* emptyView = [[UIView alloc] initWithFrame:viewRect];
-    
+    CGRect viewRect = CGRectMake(0, 0, 10, 32);
+    UIView *emptyView = [[UIView alloc] initWithFrame:viewRect];
+
     self.emailTextField.leftView = emptyView;
     self.emailTextField.leftViewMode = UITextFieldViewModeAlways;
     self.emailTextField.delegate = self;
@@ -61,79 +64,55 @@
 
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-- (IBAction)resetPasswordButtonTapped:(id)sender
-{
+- (IBAction)resetPasswordButtonTapped:(id)sender {
     [self.view endEditing:YES];
     [self trimTextFieldValue:self.emailTextField];
     [self.spinner startAnimating];
-    
+
     void (^passwordResetCallback)(NSError *) = ^void(NSError *error) {
-        
+
         [self.spinner stopAnimating];
         self.resetPasswordButton.userInteractionEnabled = YES;
-        
-        if (!error)
-        {
+
+        if (!error) {
 #ifdef ANALYTICS
             [[SEGAnalytics sharedAnalytics] track:@"Auth_RequestPasswordReset"];
 #endif
-            
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Reset password" message:@"Instuctions how to reset your password will be sent to the provided email address. Please check your email and continue according to instructions." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:ParticleSetupStrings_ForgotPassword_Prompt_EmailSent_Title message:ParticleSetupStrings_ForgotPassword_Prompt_EmailSent_Message delegate:nil cancelButtonTitle:ParticleSetupStrings_Action_Ok otherButtonTitles:nil];
             alert.delegate = self;
             [alert show];
-        }
-        else
-        {
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Reset password" message:@"Could not find a user with supplied email address, please check the address supplied or create a new user via signup screen" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        } else {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:ParticleSetupStrings_ForgotPassword_Error_InvalidCredentials_Title message:ParticleSetupStrings_ForgotPassword_Error_InvalidCredentials_Message delegate:nil cancelButtonTitle:ParticleSetupStrings_Action_Ok otherButtonTitles:nil];
             [alert show];
-            
+
         }
     };
-    
-    if ([self isValidEmail:self.emailTextField.text])
-    {
+
+    if ([self isValidEmail:self.emailTextField.text]) {
         self.resetPasswordButton.userInteractionEnabled = NO;
         if ([ParticleSetupCustomization sharedInstance].productMode) // TODO: fix that so it'll work for non-org too
         {
             [[ParticleCloud sharedInstance] requestPasswordResetForCustomer:self.emailTextField.text productId:[ParticleSetupCustomization sharedInstance].productId completion:passwordResetCallback];
-        }
-        else
-        {
+        } else {
             [[ParticleCloud sharedInstance] requestPasswordResetForUser:self.emailTextField.text completion:passwordResetCallback];
         }
-    }
-    else
-    {
+    } else {
         [self.spinner stopAnimating];
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Reset password" message:@"Invalid email address" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle: ParticleSetupStrings_ForgotPassword_Error_InvalidEmail_Title message:ParticleSetupStrings_ForgotPassword_Error_InvalidEmail_Message delegate:nil cancelButtonTitle:ParticleSetupStrings_Action_Ok otherButtonTitles:nil];
         [alert show];
     }
-
-
-//        ParticleSetupWebViewController* webVC = [[UIStoryboard storyboardWithName:@"setup" bundle:[NSBundle bundleWithIdentifier:SPARK_SETUP_RESOURCE_BUNDLE_IDENTIFIER]] instantiateViewControllerWithIdentifier:@"webview"];
-//        webVC.link = [ParticleSetupCustomization sharedInstance].forgotPasswordLinkURL;
-//        [self presentViewController:webVC animated:YES completion:nil];
-
 }
 
--(void)viewWillAppear:(BOOL)animated
-{
+- (void)viewWillAppear:(BOOL)animated {
 #ifdef ANALYTICS
     [[SEGAnalytics sharedAnalytics] track:@"Auth_ForgotPasswordScreen"];
 #endif
 }
 
 
-
--(BOOL)textFieldShouldReturn:(UITextField *)textField
-{
-    if (textField == self.emailTextField)
-    {
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    if (textField == self.emailTextField) {
         [self resetPasswordButtonTapped:self];
         return YES;
 
@@ -141,14 +120,12 @@
     return NO;
 }
 
--(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
-{
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
     [self.delegate didRequestUserLogin:self];
 }
 
-- (IBAction)cancelButtonTapped:(id)sender
-{
+- (IBAction)cancelButtonTapped:(id)sender {
     [self.delegate didRequestUserLogin:self];
-    
+
 }
 @end

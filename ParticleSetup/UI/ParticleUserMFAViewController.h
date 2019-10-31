@@ -1,8 +1,7 @@
 //
 //  ParticleUserForgotPasswordViewController.h
-//  teacup-ios-app
 //
-//  Created by Ido on 2/13/15.
+//  Created by Raimundas Sakalauskas
 //  Copyright (c) 2015 particle. All rights reserved.
 //
 
@@ -11,9 +10,9 @@
 
 @interface ParticleUserMFAViewController : ParticleSetupUIViewController
 
-@property (nonatomic, strong) id<ParticleUserLoginDelegate> delegate;
+@property(nonatomic, strong) id <ParticleUserLoginDelegate> delegate;
 
-@property (nonatomic, strong) NSString *mfaToken;
-@property (nonatomic, strong) NSString *username;
+@property(nonatomic, strong) NSString *mfaToken;
+@property(nonatomic, strong) NSString *username;
 
 @end
