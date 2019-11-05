@@ -15,12 +15,12 @@ PODS:
   - AFNetworking/Serialization (3.2.1)
   - AFNetworking/UIKit (3.2.1):
     - AFNetworking/NSURLSession
-  - Particle-SDK (0.8.1):
-    - Particle-SDK/Helpers (= 0.8.1)
-    - Particle-SDK/SDK (= 0.8.1)
-  - Particle-SDK/Helpers (0.8.1):
+  - Particle-SDK (1.0.0):
+    - Particle-SDK/Helpers (= 1.0.0)
+    - Particle-SDK/SDK (= 1.0.0)
+  - Particle-SDK/Helpers (1.0.0):
     - AFNetworking (~> 3.0)
-  - Particle-SDK/SDK (0.8.1):
+  - Particle-SDK/SDK (1.0.0):
     - AFNetworking (~> 3.0)
     - Particle-SDK/Helpers
 
@@ -30,7 +30,7 @@ DEPENDENCIES:
   - Particle-SDK
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  https://github.com/CocoaPods/Specs.git:
     - 1PasswordExtension
     - AFNetworking
     - Particle-SDK
@@ -38,8 +38,8 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   1PasswordExtension: e775a29310c65851e5a6cec1afc349ab4e334e47
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
-  Particle-SDK: 3e91cf117f74b131216dfec15d8655ce9594821c
+  Particle-SDK: e244ac9fe181eb4ca1286c2af9cca3675d64facb
 
 PODFILE CHECKSUM: 5b0c9ae923ca26da353fb155c35036abc7d1a858
 
-COCOAPODS: 1.7.5
+COCOAPODS: 1.8.4

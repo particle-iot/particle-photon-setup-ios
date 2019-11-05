@@ -91,12 +91,7 @@
 
     if ([self isValidEmail:self.emailTextField.text]) {
         self.resetPasswordButton.userInteractionEnabled = NO;
-        if ([ParticleSetupCustomization sharedInstance].productMode) // TODO: fix that so it'll work for non-org too
-        {
-            [[ParticleCloud sharedInstance] requestPasswordResetForCustomer:self.emailTextField.text productId:[ParticleSetupCustomization sharedInstance].productId completion:passwordResetCallback];
-        } else {
-            [[ParticleCloud sharedInstance] requestPasswordResetForUser:self.emailTextField.text completion:passwordResetCallback];
-        }
+        [[ParticleCloud sharedInstance] requestPasswordResetForUser:self.emailTextField.text completion:passwordResetCallback];
     } else {
         [self.spinner stopAnimating];
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle: ParticleSetupStrings_ForgotPassword_Error_InvalidEmail_Title message:ParticleSetupStrings_ForgotPassword_Error_InvalidEmail_Message delegate:nil cancelButtonTitle:ParticleSetupStrings_Action_Ok otherButtonTitles:nil];
