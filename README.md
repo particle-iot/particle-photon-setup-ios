@@ -4,7 +4,7 @@
 
 # Particle Device Setup library
 
-[![Platform](https://img.shields.io/badge/platform-iOS-10a4fa.svg)](https://github.com/particle-iot/particle-setup-ios) [![Build Status](https://api.travis-ci.org/particle-iot/particle-sdk-ios.svg)](https://travis-ci.org/particle-iot/particle-setup-ios) [![license](https://img.shields.io/hexpm/l/plug.svg)](https://github.com/particle-iot/particle-setup-ios/blob/master/LICENSE) [![version](https://img.shields.io/badge/cocoapods-0.9.0-green.svg)](https://github.com/particle-iot/particle-setup-ios/blob/master/CHANGELOG.md) [![Carthage compatible](https://img.shields.io/badge/carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+[![Platform](https://img.shields.io/badge/platform-iOS-10a4fa.svg)](https://github.com/particle-iot/particle-setup-ios) [![Build Status](https://api.travis-ci.org/particle-iot/particle-sdk-ios.svg)](https://travis-ci.org/particle-iot/particle-setup-ios) [![license](https://img.shields.io/hexpm/l/plug.svg)](https://github.com/particle-iot/particle-setup-ios/blob/master/LICENSE) [![version](https://img.shields.io/badge/cocoapods-1.0.0-green.svg)](https://github.com/particle-iot/particle-setup-ios/blob/master/CHANGELOG.md) [![Carthage compatible](https://img.shields.io/badge/carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
 ### Introduction
 
@@ -17,6 +17,7 @@ The wireless setup process for the Photon uses very different underlying technol
 
 With the Device Setup library, you make one simple call from your app, for example when the user hits a “Setup my device” button, and a whole series of screens then guide the user through the setup process. When the process finishes, the app user is back on the screen where she hit the “setup my device” button, and your code has been passed an instance of the device she just setup and claimed.
 iOS Device setup library is implemented as an open-source Cocoapod static library and also as Carthage dynamic framework dependancy.
+
 
 ### Getting Started
 
@@ -38,8 +39,8 @@ Contributions to the example apps are welcome by submitting pull requests.
 
 ### Maintainers
 
-- Ido Kleinman [Github](https://www.github.com/idokleinman) | [Twitter](https://www.twitter.com/idokleinman)
 - Raimundas Sakalauskas [Github](https://www.github.com/raimundassakalauskas)
+
 
 ### License
 
