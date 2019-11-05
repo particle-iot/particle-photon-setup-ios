@@ -9,7 +9,7 @@ Pod::Spec.new do |s|
                         logos/colors/fonts/texts and instructional video. Further customization can be done by directly modifying the setup.storyboard file.
                         DESC
     s.homepage         = "https://github.com/particle-iot/particle-photon-setup-ios"
-    s.screenshots      = "https://github.com/particle-iot/particle-photon-setup-ios/blob/master/particle-mark.png"
+    s.screenshots      = "https://github.com/particle-iot/particle-photon-setup-ios/raw/master/particle-mark.png"
     s.license          = 'Apache 2.0'
     s.author           = { "Particle" => "ido@particle.io" }
     s.source           = { :git => "https://github.com/particle-iot/particle-photon-setup-ios.git", :tag => s.version.to_s }
