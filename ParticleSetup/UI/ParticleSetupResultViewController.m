@@ -182,6 +182,7 @@
 
     }
 
+    [self replaceSetupStrings:self.view];
     [self.longMessageLabel setType:@"normal"];
 }
 
