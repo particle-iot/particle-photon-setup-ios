@@ -8,6 +8,7 @@
 @interface NSString (ParticleString)
 
 - (NSString *_Nullable)particleLocalized;
+- (NSString *_Nullable)variablesReplaced;
 
 + (NSString *)replaceVariablesInStrings:(NSString *)value;
 
