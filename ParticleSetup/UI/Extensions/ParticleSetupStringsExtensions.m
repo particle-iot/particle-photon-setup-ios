@@ -14,19 +14,19 @@
 
 
 + (NSString *)replaceVariablesInStrings:(NSString *)value {
-    value = [value stringByReplacingOccurrencesOfString:@"{device}" withString:[ParticleSetupCustomization sharedInstance].deviceName];
-    value = [value stringByReplacingOccurrencesOfString:@"{brand}" withString:[ParticleSetupCustomization sharedInstance].brandName];
-    value = [value stringByReplacingOccurrencesOfString:@"{color}" withString:[ParticleSetupCustomization sharedInstance].listenModeLEDColorName];
-    value = [value stringByReplacingOccurrencesOfString:@"{mode button}" withString:[ParticleSetupCustomization sharedInstance].modeButtonName];
-    value = [value stringByReplacingOccurrencesOfString:@"{network prefix}" withString:[ParticleSetupCustomization sharedInstance].networkNamePrefix];
-    value = [value stringByReplacingOccurrencesOfString:@"{product}" withString:[ParticleSetupCustomization sharedInstance].productName];
-
     value = [value stringByReplacingOccurrencesOfString:@"{{device}}" withString:[ParticleSetupCustomization sharedInstance].deviceName];
     value = [value stringByReplacingOccurrencesOfString:@"{{brand}}" withString:[ParticleSetupCustomization sharedInstance].brandName];
     value = [value stringByReplacingOccurrencesOfString:@"{{color}}" withString:[ParticleSetupCustomization sharedInstance].listenModeLEDColorName];
     value = [value stringByReplacingOccurrencesOfString:@"{{mode button}}" withString:[ParticleSetupCustomization sharedInstance].modeButtonName];
     value = [value stringByReplacingOccurrencesOfString:@"{{network prefix}}" withString:[ParticleSetupCustomization sharedInstance].networkNamePrefix];
     value = [value stringByReplacingOccurrencesOfString:@"{{product}}" withString:[ParticleSetupCustomization sharedInstance].productName];
+
+    value = [value stringByReplacingOccurrencesOfString:@"{device}" withString:[ParticleSetupCustomization sharedInstance].deviceName];
+    value = [value stringByReplacingOccurrencesOfString:@"{brand}" withString:[ParticleSetupCustomization sharedInstance].brandName];
+    value = [value stringByReplacingOccurrencesOfString:@"{color}" withString:[ParticleSetupCustomization sharedInstance].listenModeLEDColorName];
+    value = [value stringByReplacingOccurrencesOfString:@"{mode button}" withString:[ParticleSetupCustomization sharedInstance].modeButtonName];
+    value = [value stringByReplacingOccurrencesOfString:@"{network prefix}" withString:[ParticleSetupCustomization sharedInstance].networkNamePrefix];
+    value = [value stringByReplacingOccurrencesOfString:@"{product}" withString:[ParticleSetupCustomization sharedInstance].productName];
 
     return value;
 }
