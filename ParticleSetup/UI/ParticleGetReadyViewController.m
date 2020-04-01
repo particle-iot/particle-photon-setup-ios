@@ -86,7 +86,7 @@
     if ([ParticleCloud sharedInstance].isAuthenticated) {
         self.loggedInLabel.text = [ParticleCloud sharedInstance].loggedInUsername;
     } else {
-        [self.logoutButton setTitle:ParticleSetupStrings_GetReady_Button_LogIn forState:UIControlStateNormal];
+        [self.logoutButton setTitle:[ParticleSetupStrings_GetReady_Button_LogIn variablesReplaced] forState:UIControlStateNormal];
         self.loggedInLabel.text = @"";
     }
     if ([ParticleSetupCustomization sharedInstance].disableLogOutOption) {
@@ -109,7 +109,7 @@
 
 
     if (isiPhone4) {
-        self.instructionsLabel.text = [ParticleSetupStrings_GetReady_iPhone4MoreInstructions stringByReplacingOccurrencesOfString:@"{{instructions}}" withString:self.instructionsLabel.text];
+        self.instructionsLabel.text = [[ParticleSetupStrings_GetReady_iPhone4MoreInstructions stringByReplacingOccurrencesOfString:@"{{instructions}}" withString:self.instructionsLabel.text] variablesReplaced];
         [self.view setNeedsUpdateConstraints];
 
         [UIView animateWithDuration:0.25f animations:^{
@@ -169,8 +169,7 @@
         } else {
             if (error.code == 401)
             {
-                NSString *errStr = [ParticleSetupStrings_GetReady_Error_AccessDenied_Title stringByReplacingOccurrencesOfString:@"{{brand}}" withString:[ParticleSetupCustomization sharedInstance].brandName];
-                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:ParticleSetupStrings_GetReady_Error_AccessDenied_Title message:errStr delegate:self cancelButtonTitle:ParticleSetupStrings_Action_Ok otherButtonTitles:nil];
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:[ParticleSetupStrings_GetReady_Error_AccessDenied_Title variablesReplaced] message:[ParticleSetupStrings_GetReady_Error_AccessDenied_Title variablesReplaced] delegate:self cancelButtonTitle:[ParticleSetupStrings_Action_Ok variablesReplaced] otherButtonTitles:nil];
                 [alert show];
                 [[ParticleCloud sharedInstance] logout];
                 [[NSNotificationCenter defaultCenter] postNotificationName:kParticleSetupDidLogoutNotification object:nil userInfo:nil];
@@ -179,18 +178,18 @@
                 NSString *errStr;
                 NSString *titleStr;
                 if (error.code == 402) {
-                    errStr = [ParticleSetupStrings_GetReady_Error_Generic_Message stringByReplacingOccurrencesOfString:@"{{error}}" withString:error.localizedDescription];
-                    titleStr = ParticleSetupStrings_GetReady_Error_Generic_Title;
+                    errStr = [[ParticleSetupStrings_GetReady_Error_Generic_Message stringByReplacingOccurrencesOfString:@"{{error}}" withString:error.localizedDescription] variablesReplaced];
+                    titleStr = [ParticleSetupStrings_GetReady_Error_Generic_Title variablesReplaced];
                 } else if ([ParticleSetupCustomization sharedInstance].productMode) {
 
-                    errStr = [ParticleSetupStrings_GetReady_Error_BadProductId_Message stringByReplacingOccurrencesOfString:@"{{error}}" withString:error.localizedDescription];
-                    titleStr = ParticleSetupStrings_GetReady_Error_BadProductId_Title;
+                    errStr = [[ParticleSetupStrings_GetReady_Error_BadProductId_Message stringByReplacingOccurrencesOfString:@"{{error}}" withString:error.localizedDescription] variablesReplaced];
+                    titleStr = [ParticleSetupStrings_GetReady_Error_BadProductId_Title variablesReplaced];
                 } else {
-                    errStr = [ParticleSetupStrings_GetReady_Error_NoInternet_Message stringByReplacingOccurrencesOfString:@"{{error}}" withString:error.localizedDescription];
-                    titleStr = ParticleSetupStrings_GetReady_Error_NoInternet_Title;
+                    errStr = [[ParticleSetupStrings_GetReady_Error_NoInternet_Message stringByReplacingOccurrencesOfString:@"{{error}}" withString:error.localizedDescription] variablesReplaced];
+                    titleStr = [ParticleSetupStrings_GetReady_Error_NoInternet_Title variablesReplaced];
                 }
 
-                UIAlertView *errorAlertView = [[UIAlertView alloc] initWithTitle:titleStr message:errStr delegate:nil cancelButtonTitle:ParticleSetupStrings_Action_Ok otherButtonTitles:nil];
+                UIAlertView *errorAlertView = [[UIAlertView alloc] initWithTitle:titleStr message:errStr delegate:nil cancelButtonTitle:[ParticleSetupStrings_Action_Ok variablesReplaced] otherButtonTitles:nil];
                 errorAlertView.delegate = self;
                 [errorAlertView show];
             }
@@ -218,9 +217,9 @@
 
 
 - (IBAction)logoutButtonTouched:(id)sender {
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:ParticleSetupStrings_GetReady_Prompt_LogOut_Title message:ParticleSetupStrings_GetReady_Prompt_LogOut_Message preferredStyle:UIAlertControllerStyleAlert];
-    [alert addAction:[UIAlertAction actionWithTitle:ParticleSetupStrings_Action_Cancel style:UIAlertActionStyleCancel handler:nil]];
-    [alert addAction:[UIAlertAction actionWithTitle:ParticleSetupStrings_Action_LogOut style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:[ParticleSetupStrings_GetReady_Prompt_LogOut_Title variablesReplaced] message:[ParticleSetupStrings_GetReady_Prompt_LogOut_Message variablesReplaced] preferredStyle:UIAlertControllerStyleAlert];
+    [alert addAction:[UIAlertAction actionWithTitle:[ParticleSetupStrings_Action_Cancel variablesReplaced] style:UIAlertActionStyleCancel handler:nil]];
+    [alert addAction:[UIAlertAction actionWithTitle:[ParticleSetupStrings_Action_LogOut variablesReplaced] style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
         [[ParticleCloud sharedInstance] logout];
         [[NSNotificationCenter defaultCenter] postNotificationName:kParticleSetupDidLogoutNotification object:nil userInfo:nil];
     }]];

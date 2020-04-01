@@ -111,9 +111,9 @@
 
     if (self.passwordTextField.text.length < minWifiPassChars) {
 
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:ParticleSetupStrings_NetworkPassword_Error_InvalidPassword_Title
-                                                        message:[ParticleSetupStrings_NetworkPassword_Error_InvalidPassword_Message stringByReplacingOccurrencesOfString:@"{{length}}" withString:[@(minWifiPassChars) stringValue]]
-                                                       delegate:nil cancelButtonTitle:ParticleSetupStrings_Action_Ok otherButtonTitles:nil];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:[ParticleSetupStrings_NetworkPassword_Error_InvalidPassword_Title variablesReplaced]
+                                                        message:[[ParticleSetupStrings_NetworkPassword_Error_InvalidPassword_Message variablesReplaced] stringByReplacingOccurrencesOfString:@"{{length}}" withString:[@(minWifiPassChars) stringValue]]
+                                                       delegate:nil cancelButtonTitle:[ParticleSetupStrings_Action_Ok variablesReplaced] otherButtonTitles:nil];
         [alert show];
     } else {
         [self.view endEditing:YES];
