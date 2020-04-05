@@ -98,6 +98,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [self updateContent];
+    [self replaceSetupStrings:self.view];
 }
 
 - (void)updateContent {
@@ -119,6 +120,7 @@
 
 - (void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
     [self updateContent];
+    [self replaceSetupStrings:self.view];
 }
 
 - (IBAction)cancelButtonTouched:(id)sender {

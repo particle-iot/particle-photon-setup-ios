@@ -81,11 +81,11 @@
     if (self.businessAccountSwitch.on) {
         self.companyNameTextField.alpha = 1.0;
         self.companyNameTextField.userInteractionEnabled = YES;
-        self.businessAccountLabel.text = ParticleSetupStrings_SignUp_BusinessAccount;
+        self.businessAccountLabel.text = [ParticleSetupStrings_SignUp_BusinessAccount variablesReplaced];
     } else {
         self.companyNameTextField.alpha = 0.6;
         self.companyNameTextField.userInteractionEnabled = NO;
-        self.businessAccountLabel.text = ParticleSetupStrings_SignUp_PersonalAccount;
+        self.businessAccountLabel.text = [ParticleSetupStrings_SignUp_PersonalAccount variablesReplaced];
     }
 }
 
@@ -246,14 +246,14 @@
     [[NSUserDefaults standardUserDefaults] synchronize];
 
     if (password1.length < 8) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:ParticleSetupStrings_SignUp_Error_PasswordTooShort_Title
-                                                        message:ParticleSetupStrings_SignUp_Error_PasswordTooShort_Message
-                                                       delegate:nil cancelButtonTitle:ParticleSetupStrings_Action_Ok otherButtonTitles:nil];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:[ParticleSetupStrings_SignUp_Error_PasswordTooShort_Title variablesReplaced]
+                                                        message:[ParticleSetupStrings_SignUp_Error_PasswordTooShort_Message variablesReplaced]
+                                                       delegate:nil cancelButtonTitle:[ParticleSetupStrings_Action_Ok variablesReplaced] otherButtonTitles:nil];
         [alert show];
     } else if (![password1 isEqualToString:password2]) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:ParticleSetupStrings_SignUp_Error_PasswordsDoNotMatch_Title
-                                                        message:ParticleSetupStrings_SignUp_Error_PasswordsDoNotMatch_Message
-                                                       delegate:nil cancelButtonTitle:ParticleSetupStrings_Action_Ok otherButtonTitles:nil];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:[ParticleSetupStrings_SignUp_Error_PasswordsDoNotMatch_Title variablesReplaced]
+                                                        message:[ParticleSetupStrings_SignUp_Error_PasswordsDoNotMatch_Message variablesReplaced]
+                                                       delegate:nil cancelButtonTitle:[ParticleSetupStrings_Action_Ok variablesReplaced] otherButtonTitles:nil];
         [alert show];
     } else if ([self isValidEmail:email]) {
         BOOL productMode = [ParticleSetupCustomization sharedInstance].productMode;
@@ -275,9 +275,9 @@
                     [self.spinner stopAnimating];
                     self.signupButton.enabled = YES;
                     NSLog(@"Error signing up: %@", error.localizedDescription);
-                    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:ParticleSetupStrings_SignUp_Error_WrongCredentials_Title
-                            message:ParticleSetupStrings_SignUp_Error_WrongCredentials_Message
-                            delegate:nil cancelButtonTitle:ParticleSetupStrings_Action_Ok otherButtonTitles:nil];
+                    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:[ParticleSetupStrings_SignUp_Error_WrongCredentials_Title variablesReplaced]
+                            message:[ParticleSetupStrings_SignUp_Error_WrongCredentials_Message variablesReplaced]
+                            delegate:nil cancelButtonTitle:[ParticleSetupStrings_Action_Ok variablesReplaced] otherButtonTitles:nil];
                     [alert show];
                 }
 
@@ -327,9 +327,9 @@
                         if (!error) {
                             [self.delegate didFinishUserAuthentication:self loggedIn:YES];
                         } else {
-                            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:ParticleSetupStrings_SignUp_Error_Generic_Title
-                                                                            message:[ParticleSetupStrings_SignUp_Error_Generic_Message stringByReplacingOccurrencesOfString:@"{{error}}" withString:error.localizedDescription]
-                                                                           delegate:nil cancelButtonTitle:ParticleSetupStrings_Action_Ok otherButtonTitles:nil];
+                            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:[ParticleSetupStrings_SignUp_Error_Generic_Title variablesReplaced]
+                                                                            message:[[ParticleSetupStrings_SignUp_Error_Generic_Message variablesReplaced] stringByReplacingOccurrencesOfString:@"{{error}}" withString:error.localizedDescription]
+                                                                           delegate:nil cancelButtonTitle:[ParticleSetupStrings_Action_Ok variablesReplaced] otherButtonTitles:nil];
                             [alert show];
                         }
                     }];
@@ -337,9 +337,9 @@
                     [self.spinner stopAnimating];
                     self.signupButton.enabled = YES;
                     NSLog(@"Error signing up: %@", error.localizedDescription);
-                    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:ParticleSetupStrings_SignUp_Error_Generic_Title
-                                                                    message:[ParticleSetupStrings_SignUp_Error_Generic_Message stringByReplacingOccurrencesOfString:@"{{error}}" withString:error.localizedDescription]
-                                                                   delegate:nil cancelButtonTitle:ParticleSetupStrings_Action_Ok otherButtonTitles:nil];
+                    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:[ParticleSetupStrings_SignUp_Error_Generic_Title variablesReplaced]
+                                                                    message:[[ParticleSetupStrings_SignUp_Error_Generic_Message variablesReplaced] stringByReplacingOccurrencesOfString:@"{{error}}" withString:error.localizedDescription]
+                                                                   delegate:nil cancelButtonTitle:[ParticleSetupStrings_Action_Ok variablesReplaced] otherButtonTitles:nil];
                     [alert show];
 
                 }
@@ -347,9 +347,9 @@
         }
 
     } else {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:ParticleSetupStrings_SignUp_Error_InvalidEmail_Title
-                                                        message:ParticleSetupStrings_SignUp_Error_InvalidEmail_Message
-                                                       delegate:nil cancelButtonTitle:ParticleSetupStrings_Action_Ok otherButtonTitles:nil];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:[ParticleSetupStrings_SignUp_Error_InvalidEmail_Title variablesReplaced]
+                                                        message:[ParticleSetupStrings_SignUp_Error_InvalidEmail_Message variablesReplaced]
+                                                       delegate:nil cancelButtonTitle:[ParticleSetupStrings_Action_Ok variablesReplaced] otherButtonTitles:nil];
         [alert show];
     }
 }
@@ -381,9 +381,9 @@
 - (IBAction)skipAuthButtonTapped:(id)sender {
     // that means device is claimed by somebody else - we want to check that with user (and set claimcode if user wants to change ownership)
     NSString *messageStr = [ParticleSetupCustomization sharedInstance].skipAuthenticationMessage;
-    self.skipAuthAlertView = [[UIAlertView alloc] initWithTitle:ParticleSetupStrings_SignUp_Prompt_SkipAuthentication_Title
+    self.skipAuthAlertView = [[UIAlertView alloc] initWithTitle:[ParticleSetupStrings_SignUp_Prompt_SkipAuthentication_Title variablesReplaced]
                                                         message:messageStr
-                                                       delegate:self cancelButtonTitle:nil otherButtonTitles:ParticleSetupStrings_Action_Yes, ParticleSetupStrings_Action_No, nil];
+                                                       delegate:self cancelButtonTitle:nil otherButtonTitles:[ParticleSetupStrings_Action_Yes variablesReplaced], [ParticleSetupStrings_Action_No variablesReplaced], nil];
     [self.skipAuthAlertView show];
 
 }

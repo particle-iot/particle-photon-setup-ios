@@ -144,8 +144,8 @@
     [[NSUserDefaults standardUserDefaults] synchronize];
 
     if (self.passwordTextField.text.length == 0) {
-        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:ParticleSetupStrings_LogIn_Error_EmptyPassword_Title message:ParticleSetupStrings_LogIn_Error_EmptyPassword_Message preferredStyle:UIAlertControllerStyleAlert];
-        [alertController addAction:[UIAlertAction actionWithTitle:ParticleSetupStrings_Action_Ok style:UIAlertActionStyleDefault handler:nil]];
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:[ParticleSetupStrings_LogIn_Error_EmptyPassword_Title variablesReplaced] message:[ParticleSetupStrings_LogIn_Error_EmptyPassword_Message variablesReplaced] preferredStyle:UIAlertControllerStyleAlert];
+        [alertController addAction:[UIAlertAction actionWithTitle:[ParticleSetupStrings_Action_Ok variablesReplaced] style:UIAlertActionStyleDefault handler:nil]];
         [self presentViewController:alertController animated:YES completion:nil];
         return;
     }
@@ -178,15 +178,15 @@
                     [[SEGAnalytics sharedAnalytics] track:@"Auth_LoginFailure"];
 #endif
 
-                    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:ParticleSetupStrings_LogIn_Error_Generic_Title message:[ParticleSetupStrings_LogIn_Error_Generic_Message stringByReplacingOccurrencesOfString:@"{{error}}" withString:error.localizedDescription] preferredStyle:UIAlertControllerStyleAlert];
-                    [alertController addAction:[UIAlertAction actionWithTitle:ParticleSetupStrings_Action_Ok style:UIAlertActionStyleDefault handler:nil]];
+                    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:[ParticleSetupStrings_LogIn_Error_Generic_Title variablesReplaced] message:[[ParticleSetupStrings_LogIn_Error_Generic_Message variablesReplaced] stringByReplacingOccurrencesOfString:@"{{error}}" withString:error.localizedDescription] preferredStyle:UIAlertControllerStyleAlert];
+                    [alertController addAction:[UIAlertAction actionWithTitle:[ParticleSetupStrings_Action_Ok variablesReplaced] style:UIAlertActionStyleDefault handler:nil]];
                     [self presentViewController:alertController animated:YES completion:nil];
                 }
             }
         }];
     } else {
-        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:ParticleSetupStrings_LogIn_Error_InvalidEmail_Title message:ParticleSetupStrings_LogIn_Error_InvalidEmail_Message preferredStyle:UIAlertControllerStyleAlert];
-        [alertController addAction:[UIAlertAction actionWithTitle:ParticleSetupStrings_Action_Ok style:UIAlertActionStyleDefault handler:nil]];
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:[ParticleSetupStrings_LogIn_Error_InvalidEmail_Title variablesReplaced] message:[ParticleSetupStrings_LogIn_Error_InvalidEmail_Message variablesReplaced] preferredStyle:UIAlertControllerStyleAlert];
+        [alertController addAction:[UIAlertAction actionWithTitle:[ParticleSetupStrings_Action_Ok variablesReplaced] style:UIAlertActionStyleDefault handler:nil]];
         [self presentViewController:alertController animated:YES completion:nil];
     }
 
@@ -204,14 +204,14 @@
     // that means device is claimed by somebody else - we want to check that with user (and set claimcode if user wants to change ownership)
     NSString *messageStr = [ParticleSetupCustomization sharedInstance].skipAuthenticationMessage;
 
-    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:ParticleSetupStrings_LogIn_Prompt_SkipAuthentication_Title message:messageStr preferredStyle:UIAlertControllerStyleAlert];
-    [alertController addAction:[UIAlertAction actionWithTitle:ParticleSetupStrings_Action_Yes style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:[ParticleSetupStrings_LogIn_Prompt_SkipAuthentication_Title variablesReplaced] message:messageStr preferredStyle:UIAlertControllerStyleAlert];
+    [alertController addAction:[UIAlertAction actionWithTitle:[ParticleSetupStrings_Action_Yes variablesReplaced] style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
 #ifdef ANALYTICS
         [[SEGAnalytics sharedAnalytics] track:@"Auth_AuthSkipped"];
 #endif
         [self.delegate didFinishUserAuthentication:self loggedIn:NO];
     }]];
-    [alertController addAction:[UIAlertAction actionWithTitle:ParticleSetupStrings_Action_No style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+    [alertController addAction:[UIAlertAction actionWithTitle:[ParticleSetupStrings_Action_No variablesReplaced] style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
         // ???
     }]];
     [self presentViewController:alertController animated:YES completion:nil];

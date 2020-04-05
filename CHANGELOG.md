@@ -2,6 +2,10 @@
 All notable changes to this project will be documented in this file.
 Particle iOS Device Setup library adheres to [Semantic Versioning](http://semver.org/).
 
+## [1.0.3](https://github.com/particle-iot/particle-photon-setup-ios/releases/tag/1.0.3) (2019-04-02)
+
+* Bugfix: Fixed a bug where some texts would still not get their variables replaced.
+
 ## [1.0.2](https://github.com/particle-iot/particle-photon-setup-ios/releases/tag/1.0.2) (2019-01-13)
 
 * Bugfix: Fixed a bug where variable {device} would not be replaced in results screen

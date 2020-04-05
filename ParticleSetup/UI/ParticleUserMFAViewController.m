@@ -76,7 +76,7 @@
 
     if ([self.codeTextField.text isEqualToString:@""]) {
         [self.spinner stopAnimating];
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:ParticleSetupStrings_MFA_Error_EmptyCode_Title message:ParticleSetupStrings_MFA_Error_EmptyCode_Message delegate:nil cancelButtonTitle:ParticleSetupStrings_Action_Ok otherButtonTitles:nil];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:[ParticleSetupStrings_MFA_Error_EmptyCode_Title variablesReplaced] message:[ParticleSetupStrings_MFA_Error_EmptyCode_Message variablesReplaced] delegate:nil cancelButtonTitle:[ParticleSetupStrings_Action_Ok variablesReplaced] otherButtonTitles:nil];
         [alert show];
     } else {
         self.recoveryCodeButton.userInteractionEnabled = NO;
@@ -96,8 +96,8 @@
                 [[SEGAnalytics sharedAnalytics] track:@"Auth_MFAFailure"];
 #endif
 
-                UIAlertController *alertController = [UIAlertController alertControllerWithTitle:ParticleSetupStrings_MFA_Error_Generic_Title message:[ParticleSetupStrings_MFA_Error_Generic_Message stringByReplacingOccurrencesOfString:@"{{error}}" withString:error.localizedDescription] preferredStyle:UIAlertControllerStyleAlert];
-                [alertController addAction:[UIAlertAction actionWithTitle:ParticleSetupStrings_Action_Ok style:UIAlertActionStyleDefault handler:nil]];
+                UIAlertController *alertController = [UIAlertController alertControllerWithTitle:[ParticleSetupStrings_MFA_Error_Generic_Title variablesReplaced] message:[[ParticleSetupStrings_MFA_Error_Generic_Message variablesReplaced] stringByReplacingOccurrencesOfString:@"{{error}}" withString:error.localizedDescription] preferredStyle:UIAlertControllerStyleAlert];
+                [alertController addAction:[UIAlertAction actionWithTitle:[ParticleSetupStrings_Action_Ok variablesReplaced] style:UIAlertActionStyleDefault handler:nil]];
                 [self presentViewController:alertController animated:YES completion:nil];
             }
         }];

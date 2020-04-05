@@ -117,7 +117,7 @@
     self.gotPublicKey = NO;
     self.gotOwnershipInfo = NO;
 
-    self.networkNameLabel.text = [NSString replaceVariablesInStrings:ParticleSetupStrings_DiscoverDevices_WiFiCellText];
+    self.networkNameLabel.text = [ParticleSetupStrings_DiscoverDevices_WiFiCellText variablesReplaced];
     self.wifiView.layer.borderColor = [UIColor lightGrayColor].CGColor;
     self.wifiView.layer.borderWidth = 1.0f;
 
@@ -190,10 +190,10 @@
         if (state == UIApplicationStateBackground || state == UIApplicationStateInactive) {
             if ([ParticleSetupCommManager checkParticleDeviceWifiConnection:[ParticleSetupCustomization sharedInstance].networkNamePrefix]) {
                 UILocalNotification *localNotification = [[UILocalNotification alloc] init];
-                localNotification.alertAction = ParticleSetupStrings_DiscoverDevices_Prompt_Notification_Title;
-                NSString *notifText = [ParticleSetupStrings_DiscoverDevices_Prompt_Notification_Message stringByReplacingOccurrencesOfString:@"{{deviceName}}" withString:[ParticleSetupCustomization sharedInstance].deviceName];
+                localNotification.alertAction = [ParticleSetupStrings_DiscoverDevices_Prompt_Notification_Title variablesReplaced];
+                NSString *notifText = [ParticleSetupStrings_DiscoverDevices_Prompt_Notification_Message variablesReplaced];
                 localNotification.alertBody = notifText;
-                localNotification.alertAction = ParticleSetupStrings_Action_Open; // text that is displayed after "slide to..." on the lock screen - defaults to "slide to view"
+                localNotification.alertAction = [ParticleSetupStrings_Action_Open variablesReplaced]; // text that is displayed after "slide to..." on the lock screen - defaults to "slide to view"
                 localNotification.soundName = UILocalNotificationDefaultSoundName; // play default sound
                 localNotification.fireDate = [[NSDate alloc] initWithTimeIntervalSinceNow:0];
                 [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
@@ -375,10 +375,8 @@
 
                     if ([ParticleCloud sharedInstance].isAuthenticated) {
                         // that means device is claimed by somebody else - we want to check that with user (and set claimcode if user wants to change ownership)
-                        NSString *messageStr = [[ParticleSetupStrings_DiscoverDevices_Prompt_ClaimOwnership_Message
-                                stringByReplacingOccurrencesOfString:@"{{deviceName}}" withString:[ParticleSetupCustomization sharedInstance].deviceName]
-                                stringByReplacingOccurrencesOfString:@"{{userName}}" withString:[ParticleCloud sharedInstance].loggedInUsername];
-                        self.changeOwnershipAlertView = [[UIAlertView alloc] initWithTitle:ParticleSetupStrings_DiscoverDevices_Prompt_ClaimOwnership_Title message:messageStr delegate:self cancelButtonTitle:nil otherButtonTitles:ParticleSetupStrings_Action_Yes, ParticleSetupStrings_Action_No, nil];
+                        NSString *messageStr = [ParticleSetupStrings_DiscoverDevices_Prompt_ClaimOwnership_Message variablesReplaced];
+                        self.changeOwnershipAlertView = [[UIAlertView alloc] initWithTitle:[ParticleSetupStrings_DiscoverDevices_Prompt_ClaimOwnership_Title variablesReplaced] message:messageStr delegate:self cancelButtonTitle:nil otherButtonTitles:[ParticleSetupStrings_Action_Yes variablesReplaced], [ParticleSetupStrings_Action_No variablesReplaced], nil];
                         [self.checkConnectionTimer invalidate];
                         [self.changeOwnershipAlertView show];
                     } else { // user skipped authentication so no need to claim or set claim code

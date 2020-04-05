@@ -79,11 +79,11 @@
             [[SEGAnalytics sharedAnalytics] track:@"Auth_RequestPasswordReset"];
 #endif
 
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:ParticleSetupStrings_ForgotPassword_Prompt_EmailSent_Title message:ParticleSetupStrings_ForgotPassword_Prompt_EmailSent_Message delegate:nil cancelButtonTitle:ParticleSetupStrings_Action_Ok otherButtonTitles:nil];
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:[ParticleSetupStrings_ForgotPassword_Prompt_EmailSent_Title variablesReplaced] message:[ParticleSetupStrings_ForgotPassword_Prompt_EmailSent_Message variablesReplaced] delegate:nil cancelButtonTitle:[ParticleSetupStrings_Action_Ok variablesReplaced] otherButtonTitles:nil];
             alert.delegate = self;
             [alert show];
         } else {
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:ParticleSetupStrings_ForgotPassword_Error_InvalidCredentials_Title message:ParticleSetupStrings_ForgotPassword_Error_InvalidCredentials_Message delegate:nil cancelButtonTitle:ParticleSetupStrings_Action_Ok otherButtonTitles:nil];
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:[ParticleSetupStrings_ForgotPassword_Error_InvalidCredentials_Title variablesReplaced] message:[ParticleSetupStrings_ForgotPassword_Error_InvalidCredentials_Message variablesReplaced] delegate:nil cancelButtonTitle:[ParticleSetupStrings_Action_Ok variablesReplaced] otherButtonTitles:nil];
             [alert show];
 
         }
@@ -94,7 +94,7 @@
         [[ParticleCloud sharedInstance] requestPasswordResetForUser:self.emailTextField.text completion:passwordResetCallback];
     } else {
         [self.spinner stopAnimating];
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle: ParticleSetupStrings_ForgotPassword_Error_InvalidEmail_Title message:ParticleSetupStrings_ForgotPassword_Error_InvalidEmail_Message delegate:nil cancelButtonTitle:ParticleSetupStrings_Action_Ok otherButtonTitles:nil];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:[ParticleSetupStrings_ForgotPassword_Error_InvalidEmail_Title variablesReplaced] message:[ParticleSetupStrings_ForgotPassword_Error_InvalidEmail_Message variablesReplaced] delegate:nil cancelButtonTitle:[ParticleSetupStrings_Action_Ok variablesReplaced] otherButtonTitles:nil];
         [alert show];
     }
 }
