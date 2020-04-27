@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name             = "ParticleSetup"
-    s.version          = "1.0.3"
+    s.version          = "1.0.4"
     s.summary          = "Particle iOS Photon Setup library for easy integration of setup process for Particle Photon devices in your app"
     s.description      = <<-DESC
                         Particle (formerly Spark) Photon Setup library for integrating a customized setup process of Particle Photon (Wifi) devices in your app
