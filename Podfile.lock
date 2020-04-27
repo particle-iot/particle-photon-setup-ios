@@ -26,28 +26,19 @@ PODS:
 
 DEPENDENCIES:
   - 1PasswordExtension
-  - Particle-SDK (from `https://github.com/particle-iot/particle-cloud-sdk-ios.git`, branch `feature/update-afnetworking`)
+  - Particle-SDK
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - 1PasswordExtension
     - AFNetworking
-
-EXTERNAL SOURCES:
-  Particle-SDK:
-    :branch: feature/update-afnetworking
-    :git: https://github.com/particle-iot/particle-cloud-sdk-ios.git
-
-CHECKOUT OPTIONS:
-  Particle-SDK:
-    :commit: d780a786379a404dc29d2f4604d00668b28196a5
-    :git: https://github.com/particle-iot/particle-cloud-sdk-ios.git
+    - Particle-SDK
 
 SPEC CHECKSUMS:
   1PasswordExtension: e775a29310c65851e5a6cec1afc349ab4e334e47
   AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
-  Particle-SDK: 31debd19f297379321e4d9ac402ba161453fcbe4
+  Particle-SDK: cdda539eeb1e5464950657dff46e22ffc42c9525
 
-PODFILE CHECKSUM: 43c7970544f9cd2ff8567ccc5af44d817346656f
+PODFILE CHECKSUM: d292d6ee8d5648c1485dd7978064559a9a9de3ab
 
 COCOAPODS: 1.9.1
