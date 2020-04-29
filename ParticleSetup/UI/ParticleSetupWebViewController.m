@@ -27,7 +27,7 @@
 
 
 - (UIStatusBarStyle)preferredStatusBarStyle {
-    return ([ParticleSetupCustomization sharedInstance].lightStatusAndNavBar) ? UIStatusBarStyleLightContent : UIStatusBarStyleDefault;
+    return UIStatusBarStyleDefault;
 }
 
 - (void)viewDidLoad {

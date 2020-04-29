@@ -55,8 +55,13 @@
 
 
 - (UIStatusBarStyle)preferredStatusBarStyle {
-    return ([ParticleSetupCustomization sharedInstance].lightStatusAndNavBar) ? UIStatusBarStyleLightContent : UIStatusBarStyleDefault;
+    if (self.presentedViewController) {
+        return self.presentedViewController.preferredStatusBarStyle;
+    } else {
+        return ([ParticleSetupCustomization sharedInstance].lightStatusAndNavBar) ? UIStatusBarStyleLightContent : UIStatusBarStyleDefault;
+    }
 }
+
 
 
 - (void)viewDidLoad {
