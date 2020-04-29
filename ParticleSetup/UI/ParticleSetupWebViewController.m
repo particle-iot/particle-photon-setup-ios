@@ -8,17 +8,12 @@
 
 #import "ParticleSetupWebViewController.h"
 #import "ParticleSetupCustomization.h"
-#import <UIKit/UIKit.h>
 #import "ParticleSetupUIElements.h"
 
 #ifdef ANALYTICS
 #import <SEGAnalytics.h>
 #endif
 
-//#import "UIViewController+ParticleSetupMainController.h"
-
-@interface ParticleSetupWebViewController () <UIWebViewDelegate>
-@property(weak, nonatomic) IBOutlet UIWebView *webView;
 @property(weak, nonatomic) IBOutlet ParticleSetupUISpinner *spinner;
 
 @end
@@ -45,16 +40,7 @@
         }
     }
 
-
-    self.webView.scalesPageToFit = YES;
     self.navigationController.navigationBarHidden = NO;
-    self.webView.delegate = self;
-
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (IBAction)closeButtonTouched:(id)sender {
@@ -62,27 +48,12 @@
 }
 
 
-- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
-
     [self.spinner stopAnimating];
-    // TODO: show a nice error static HTML
 }
 
-- (void)webViewDidStartLoad:(UIWebView *)webView {
-    [self.spinner startAnimating];
 }
 
-- (void)webViewDidFinishLoad:(UIWebView *)webView {
     [self.spinner stopAnimating];
-
-    CGSize contentSize = self.webView.scrollView.contentSize;
-    CGSize viewSize = self.view.bounds.size;
-
-    float rw = viewSize.width / contentSize.width;
-
-    self.webView.scrollView.minimumZoomScale = rw;
-    self.webView.scrollView.maximumZoomScale = rw;
-    self.webView.scrollView.zoomScale = rw;
 }
 
 - (void)viewWillAppear:(BOOL)animated {

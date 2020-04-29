@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina4_0" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -963,10 +963,6 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
-                            <webView contentMode="scaleToFill" allowsInlineMediaPlayback="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FS3-ev-VCh">
-                                <rect key="frame" x="0.0" y="44" width="320" height="524"/>
-                                <dataDetectorType key="dataDetectorTypes"/>
-                            </webView>
                             <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HvA-k3-JhB">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <items>
@@ -991,13 +987,9 @@
                             </imageView>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="FS3-ev-VCh" firstAttribute="leading" secondItem="4yi-OT-GLm" secondAttribute="leading" id="1gX-zp-Iz9"/>
                             <constraint firstItem="HvA-k3-JhB" firstAttribute="top" secondItem="jtl-HM-QAd" secondAttribute="top" id="2WC-aT-DLD"/>
-                            <constraint firstItem="FS3-ev-VCh" firstAttribute="trailing" secondItem="4yi-OT-GLm" secondAttribute="trailing" id="4cO-jo-OsO"/>
                             <constraint firstAttribute="trailing" secondItem="HvA-k3-JhB" secondAttribute="trailing" id="Jmg-Dv-hbR"/>
-                            <constraint firstItem="jtl-HM-QAd" firstAttribute="bottom" secondItem="FS3-ev-VCh" secondAttribute="bottom" id="Kdw-cg-Pmp"/>
                             <constraint firstItem="dzc-FZ-SgA" firstAttribute="leading" secondItem="4yi-OT-GLm" secondAttribute="leading" id="L59-OU-ihE"/>
-                            <constraint firstItem="FS3-ev-VCh" firstAttribute="top" secondItem="HvA-k3-JhB" secondAttribute="bottom" id="SAn-6T-yPH"/>
                             <constraint firstItem="jtl-HM-QAd" firstAttribute="centerX" secondItem="asE-42-lNZ" secondAttribute="centerX" id="Ufc-Ym-ChM"/>
                             <constraint firstItem="dzc-FZ-SgA" firstAttribute="top" secondItem="4yi-OT-GLm" secondAttribute="top" id="cjt-ZD-Oid"/>
                             <constraint firstItem="HvA-k3-JhB" firstAttribute="leading" secondItem="4yi-OT-GLm" secondAttribute="leading" id="hEb-DM-O9U"/>
@@ -1008,8 +1000,8 @@
                         <viewLayoutGuide key="safeArea" id="jtl-HM-QAd"/>
                     </view>
                     <connections>
+                        <outlet property="navBar" destination="HvA-k3-JhB" id="613-No-WoQ"/>
                         <outlet property="spinner" destination="asE-42-lNZ" id="kvZ-gS-8Ly"/>
-                        <outlet property="webView" destination="FS3-ev-VCh" id="ig6-19-uJk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Sx-Ve-tZt" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2531,6 +2523,11 @@
             <point key="canvasLocation" x="3735" y="-908"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="dk3-1h-vwt"/>
+        <segue reference="MPJ-t5-PGI"/>
+        <segue reference="gy6-c9-WWy"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="1" width="200" height="200"/>
         <image name="2" width="200" height="200"/>
@@ -2548,9 +2545,4 @@
         <image name="wifi3" width="64" height="64"/>
         <image name="x" width="30" height="30"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="dk3-1h-vwt"/>
-        <segue reference="MPJ-t5-PGI"/>
-        <segue reference="gy6-c9-WWy"/>
-    </inferredMetricsTieBreakers>
 </document>
