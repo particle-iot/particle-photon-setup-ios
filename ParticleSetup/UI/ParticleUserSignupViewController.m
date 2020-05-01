@@ -58,11 +58,18 @@
 
 @end
 
-@implementation ParticleUserSignupViewController
+@implementation ParticleUserSignupViewController {
+    CGFloat _spacerHeight;
+    CGFloat _scrollViewHeight;
+}
 
 
 - (UIStatusBarStyle)preferredStatusBarStyle {
-    return ([ParticleSetupCustomization sharedInstance].lightStatusAndNavBar) ? UIStatusBarStyleLightContent : UIStatusBarStyleDefault;
+    if (self.presentedViewController) {
+        return self.presentedViewController.preferredStatusBarStyle;
+    } else {
+        return ([ParticleSetupCustomization sharedInstance].lightStatusAndNavBar) ? UIStatusBarStyleLightContent : UIStatusBarStyleDefault;
+    }
 }
 
 
@@ -152,24 +159,48 @@
     return YES;
 }
 
+- (void)updateViewConstraints {
+    [super updateViewConstraints];
+}
 
-- (void)viewWillLayoutSubviews {
-    [super viewWillLayoutSubviews];
+- (void)viewDidLayoutSubviews {
+    [super viewDidLayoutSubviews];
 
-    UIEdgeInsets scrollViewInsets = UIEdgeInsetsZero;
+    NSLog(@"CGRectGetHeight(self.scrollView.bounds) = %lf, CGRectGetHeight(self.contentView.bounds) = %lf", CGRectGetHeight(self.scrollView.bounds), CGRectGetHeight(self.contentView.bounds));
 
-    self.TOSSpacerHeightConstraint.constant = 6;
-    self.BottomSpacer.hidden = NO;
-
-    if (CGRectGetHeight(self.scrollView.bounds) > (CGRectGetHeight(self.contentView.bounds) + 10)) {
-        CGFloat inset = (CGRectGetHeight(self.scrollView.bounds) - CGRectGetHeight(self.contentView.bounds)) / 2;
-        scrollViewInsets.top = inset - 5.0f;
-
-        self.TOSSpacerHeightConstraint.constant = inset + 10;
-        self.BottomSpacer.hidden = YES;
+    if (_spacerHeight > 0 && _scrollViewHeight == CGRectGetHeight(self.scrollView.bounds)) {
+        return;
     }
 
+    if (_spacerHeight == 0) {
+        _spacerHeight = 6; //this is set in storyboard
+    }
+
+    _scrollViewHeight = CGRectGetHeight(self.scrollView.bounds);
+    CGFloat contentHeight = CGRectGetHeight(self.contentView.bounds) - _spacerHeight + 6;
+    if (self.BottomSpacer.hidden) {
+        contentHeight += 20;
+    }
+
+    UIEdgeInsets scrollViewInsets = UIEdgeInsetsZero;
+    if (_scrollViewHeight > contentHeight) {
+        CGFloat inset = (_scrollViewHeight - contentHeight) / 2;
+        NSLog(@"inset = %lf", inset);
+        scrollViewInsets.top = inset;
+        _spacerHeight = inset;
+        self.BottomSpacer.hidden = YES;
+    } else {
+        _spacerHeight = 6;
+        self.BottomSpacer.hidden = NO;
+    }
+
+    self.TOSSpacerHeightConstraint.constant = _spacerHeight;
     self.scrollView.contentInset = scrollViewInsets;
+
+
+    [self.view setNeedsLayout];
+    [self.view layoutIfNeeded];
+
 }
 
 

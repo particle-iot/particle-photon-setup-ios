@@ -8,17 +8,16 @@
 
 #import "ParticleSetupWebViewController.h"
 #import "ParticleSetupCustomization.h"
-#import <UIKit/UIKit.h>
 #import "ParticleSetupUIElements.h"
+#import <WebKit/WebKit.h>
 
 #ifdef ANALYTICS
 #import <SEGAnalytics.h>
 #endif
 
-//#import "UIViewController+ParticleSetupMainController.h"
-
-@interface ParticleSetupWebViewController () <UIWebViewDelegate>
-@property(weak, nonatomic) IBOutlet UIWebView *webView;
+@interface ParticleSetupWebViewController () <WKNavigationDelegate>
+@property (weak, nonatomic) IBOutlet UINavigationBar *navBar;
+@property(weak, nonatomic) IBOutlet WKWebView *webView;
 @property(weak, nonatomic) IBOutlet ParticleSetupUISpinner *spinner;
 
 @end
@@ -27,11 +26,32 @@
 
 
 - (UIStatusBarStyle)preferredStatusBarStyle {
-    return ([ParticleSetupCustomization sharedInstance].lightStatusAndNavBar) ? UIStatusBarStyleLightContent : UIStatusBarStyleDefault;
+    return UIStatusBarStyleDefault;
 }
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
+    //Force light mode on iOS 13
+    if (@available(iOS 13.0, *)) {
+        if ([self respondsToSelector:NSSelectorFromString(@"overrideUserInterfaceStyle")]) {
+            [self setValue:@(UIUserInterfaceStyleLight) forKey:@"overrideUserInterfaceStyle"];
+        }
+    }
+
+    WKWebViewConfiguration *webConfiguration = [[WKWebViewConfiguration alloc] init];
+    self.webView = [[WKWebView alloc] initWithFrame:CGRectZero configuration:webConfiguration];
+    self.webView.translatesAutoresizingMaskIntoConstraints = NO;
+    [self.view insertSubview:self.webView belowSubview:self.spinner];
+
+    [self.webView.bottomAnchor constraintEqualToAnchor:self.view.bottomAnchor].active = YES;
+    [self.webView.leftAnchor constraintEqualToAnchor:self.view.leftAnchor].active = YES;
+    [self.webView.rightAnchor constraintEqualToAnchor:self.view.rightAnchor].active = YES;
+
+    [self.webView.topAnchor constraintEqualToAnchor:self.navBar.bottomAnchor].active = YES;
+
+    self.webView.navigationDelegate = self;
 
 
     if (self.link) {
@@ -45,44 +65,27 @@
         }
     }
 
-
-    self.webView.scalesPageToFit = YES;
     self.navigationController.navigationBarHidden = NO;
-    self.webView.delegate = self;
-
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (IBAction)closeButtonTouched:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-
-- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
-
-    [self.spinner stopAnimating];
-    // TODO: show a nice error static HTML
-}
-
-- (void)webViewDidStartLoad:(UIWebView *)webView {
+- (void)webView:(WKWebView *)webView didStartProvisionalNavigation:(WKNavigation *)navigation {
     [self.spinner startAnimating];
 }
 
-- (void)webViewDidFinishLoad:(UIWebView *)webView {
+- (void)webView:(WKWebView *)webView didFailNavigation:(WKNavigation *)navigation withError:(NSError *)error {
     [self.spinner stopAnimating];
+}
 
-    CGSize contentSize = self.webView.scrollView.contentSize;
-    CGSize viewSize = self.view.bounds.size;
+- (void)webView:(WKWebView *)webView didFailProvisionalNavigation:(WKNavigation *)navigation withError:(NSError *)error {
+    [self.spinner stopAnimating];
+}
 
-    float rw = viewSize.width / contentSize.width;
-
-    self.webView.scrollView.minimumZoomScale = rw;
-    self.webView.scrollView.maximumZoomScale = rw;
-    self.webView.scrollView.zoomScale = rw;
+- (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation {
+    [self.spinner stopAnimating];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
