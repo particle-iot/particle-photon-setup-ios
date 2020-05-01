@@ -4,11 +4,11 @@ Particle iOS Device Setup library adheres to [Semantic Versioning](http://semver
 
 ## [1.0.5](https://github.com/particle-iot/particle-photon-setup-ios/releases/tag/1.0.5) (2020-05-01)
 
-* Refactor ParticleSetupWebViewController replacing UIWebView with WKWebView
+* Refactor `ParticleSetupWebViewController` replacing `UIWebView` with `WKWebView`
 
-* Bugfix: fix status bar color in WKWebView
+* Bugfix: fix status bar color in `ParticleSetupWebviewController`
 
-* Bugfix: fix terms of service and privacy policy button placement in SignupViewController
+* Bugfix: fix terms of service and privacy policy button placement in `ParticleUserSignupViewController`
 
 ## [1.0.4](https://github.com/particle-iot/particle-photon-setup-ios/releases/tag/1.0.4) (2020-04-27)
 
