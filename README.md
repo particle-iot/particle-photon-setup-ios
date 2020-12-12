@@ -30,6 +30,11 @@ Contributions to the example apps are welcome by submitting pull requests.
 - If you **want to contribute**, submit a pull request.
 
 
+### Contributors
+
+- Raimundas Sakalauskas [Github](https://www.github.com/raimundassakalauskas)
+
+
 ### License
 
 Particle iOS Photon Setup Library is available under the Apache License 2.0. See the [LICENSE file](https://github.com/particle-iot/particle-photon-setup-ios/blob/master/LICENSE) for more info.
