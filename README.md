@@ -30,7 +30,7 @@ Contributions to the example apps are welcome by submitting pull requests.
 - If you **want to contribute**, submit a pull request.
 
 
-### Maintainers
+### Contributors
 
 - Raimundas Sakalauskas [Github](https://www.github.com/raimundassakalauskas)
 
