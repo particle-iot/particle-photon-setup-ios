@@ -2,6 +2,10 @@
 All notable changes to this project will be documented in this file.
 Particle iOS Device Setup library adheres to [Semantic Versioning](http://semver.org/).
 
+## [1.0.6](https://github.com/particle-iot/particle-photon-setup-ios/releases/tag/1.0.6) (2021-04-24)
+
+* Fix Cocoapods issue
+
 ## [1.0.5](https://github.com/particle-iot/particle-photon-setup-ios/releases/tag/1.0.5) (2020-05-01)
 
 * Refactor `ParticleSetupWebViewController` replacing `UIWebView` with `WKWebView`
