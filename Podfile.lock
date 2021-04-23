@@ -15,12 +15,12 @@ PODS:
   - AFNetworking/Serialization (4.0.1)
   - AFNetworking/UIKit (4.0.1):
     - AFNetworking/NSURLSession
-  - Particle-SDK (1.0.5):
-    - Particle-SDK/Helpers (= 1.0.5)
-    - Particle-SDK/SDK (= 1.0.5)
-  - Particle-SDK/Helpers (1.0.5):
+  - Particle-SDK (1.0.6):
+    - Particle-SDK/Helpers (= 1.0.6)
+    - Particle-SDK/SDK (= 1.0.6)
+  - Particle-SDK/Helpers (1.0.6):
     - AFNetworking (~> 4.0)
-  - Particle-SDK/SDK (1.0.5):
+  - Particle-SDK/SDK (1.0.6):
     - AFNetworking (~> 4.0)
     - Particle-SDK/Helpers
 
@@ -37,8 +37,8 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   1PasswordExtension: e775a29310c65851e5a6cec1afc349ab4e334e47
   AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
-  Particle-SDK: cdda539eeb1e5464950657dff46e22ffc42c9525
+  Particle-SDK: 493ecd9edf020ca25f56f26c9c6e50473d84129e
 
 PODFILE CHECKSUM: d292d6ee8d5648c1485dd7978064559a9a9de3ab
 
-COCOAPODS: 1.9.1
+COCOAPODS: 1.10.1
